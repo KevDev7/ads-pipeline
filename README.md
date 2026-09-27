@@ -89,4 +89,6 @@ The [central results page](results/README.md) tracks experiments and findings.
 The [shared comparison runner](docs/comparisons.md) runs correctness tests first,
 repeats both versions in fresh processes, checks actual table equality, and saves
 individual measurements plus medians and ranges. The baseline implementation and
-its original tag remain unchanged. Optimization iteration 1 is not implemented yet.
+its original tag remain unchanged. [Iteration 1](experiments/01_compression/README.md)
+tests Snappy versus ZSTD compression. CSV-versus-Parquet is a separate optional
+learning lab, not a numbered pipeline iteration.
