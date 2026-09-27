@@ -1,0 +1,30 @@
+{
+  "dataset": "Taobao display advertising CTR dataset",
+  "files": {
+    "ad_feature.csv": {
+      "bytes": 31286431,
+      "rows": 846811,
+      "sha256": "358a298178a6286196b82fe151024c63f4b081cf7685f1ebf8ff4da776e3c745",
+      "url": "https://huggingface.co/datasets/Angrybird12/ad-display_click-data_taobao.com/resolve/main/ad_feature.csv"
+    },
+    "raw_sample.csv": {
+      "bytes": 1088060964,
+      "rows": 26557961,
+      "sha256": "aad792d63b81b5b7788f91e35364975b83ce3fdb923009fdfb6f798545d2b93d",
+      "url": "https://huggingface.co/datasets/Angrybird12/ad-display_click-data_taobao.com/resolve/main/raw_sample.csv"
+    },
+    "user_profile.csv": {
+      "bytes": 24056588,
+      "rows": 1061768,
+      "sha256": "63355e02e302768d79db658e0f25498f368b4b5e037318bc67973835380a0532",
+      "url": "https://huggingface.co/datasets/Angrybird12/ad-display_click-data_taobao.com/resolve/main/user_profile.csv"
+    }
+  },
+  "publisher_url": "https://tianchi.aliyun.com/dataset/56",
+  "reference_totals": {
+    "clicks": 1366056,
+    "impressions": 26557961,
+    "missing_profile_impressions": 1528526
+  },
+  "verification": "SHA-256 values were verified against the download mirror; this does not independently authenticate the original publisher. Row counts and reference totals come from the earlier full-file inspection."
+}
