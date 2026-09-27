@@ -73,3 +73,12 @@ Local seconds and bytes are measured; no cloud dollar cost is claimed.
 The runnable implementation stays in `experiments/00_baseline/`. Raw data,
 generated tables, event logs, runtime files, and local configuration are ignored
 by Git. Only code, documentation, and selected small result summaries are pushed.
+
+## First complete baseline
+
+The [recorded full-data run](results/00_baseline/README.md) processed 26,557,961
+impressions in **33.769 seconds of pipeline work**, or **42.910 seconds overall**.
+All correctness checks passed. The eight Delta tables occupy **925.72 MB** in
+addition to the source CSV files. This is one local reference measurement; read
+the result notes before comparing timings. The preserved version is tagged
+`baseline-v0.1`.
