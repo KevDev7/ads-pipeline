@@ -1,0 +1,9 @@
+[project]
+name = "ads-pipeline"
+version = "0.1.0"
+description = "A local batch advertising lakehouse baseline for learning Spark"
+requires-python = ">=3.11,<3.12"
+dependencies = [
+    "pyspark==4.0.1",
+    "delta-spark==4.0.0",
+]
