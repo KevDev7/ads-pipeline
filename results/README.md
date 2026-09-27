@@ -9,7 +9,7 @@ no measurable difference.
 | --- | --- | --- | --- |
 | 00 — Baseline | Full three-file Bronze/Silver/Gold rebuild, default SQL settings | Complete: one recorded reference run; 33.769 s processing, 925.72 MB tables | [Baseline report](00_baseline/README.md) |
 | Comparison runner control | Baseline versus itself, no optimization | Passed: 15 tests, four full-data runs, 24 exact table comparisons | [Control results](comparison_control/README.md) |
-| 01 — Compression | Snappy versus ZSTD; same full pipeline and logical model | Implementation and testing in progress | [Experiment](../experiments/01_compression/README.md) |
+| 01 — Compression | Snappy versus ZSTD; same full pipeline and logical model | Complete: 31.85% smaller tables; no clear runtime gain; 16 tests and 40 exact comparisons passed | [Results](01_compression/README.md) |
 | Learning lab — CSV versus Parquet | Same input records and analytical queries; conversion measured separately | Optional lab, not a pipeline iteration; not implemented | — |
 
 ## How to read comparisons

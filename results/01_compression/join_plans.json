@@ -1,0 +1,125 @@
+{
+  "method": "For SQL executions tagged with a gold job group, take the latest recorded physical plan, isolate its current tree before Initial Plan/annotation details, and list join operators. These are runtime plan snapshots, not wall-time measurements.",
+  "runs": {
+    "01-left": [
+      {
+        "execution_completed": true,
+        "execution_id": 81,
+        "group": "gold.campaign_daily",
+        "join_operators": [
+          "BroadcastHashJoin",
+          "BroadcastHashJoin"
+        ]
+      },
+      {
+        "execution_completed": true,
+        "execution_id": 98,
+        "group": "gold.audience_daily",
+        "join_operators": [
+          "BroadcastHashJoin",
+          "BroadcastHashJoin"
+        ]
+      }
+    ],
+    "01-right": [
+      {
+        "execution_completed": true,
+        "execution_id": 81,
+        "group": "gold.campaign_daily",
+        "join_operators": [
+          "BroadcastHashJoin",
+          "BroadcastHashJoin"
+        ]
+      },
+      {
+        "execution_completed": true,
+        "execution_id": 98,
+        "group": "gold.audience_daily",
+        "join_operators": [
+          "BroadcastHashJoin",
+          "BroadcastHashJoin"
+        ]
+      }
+    ],
+    "02-left": [
+      {
+        "execution_completed": true,
+        "execution_id": 81,
+        "group": "gold.campaign_daily",
+        "join_operators": [
+          "BroadcastHashJoin",
+          "BroadcastHashJoin"
+        ]
+      },
+      {
+        "execution_completed": true,
+        "execution_id": 98,
+        "group": "gold.audience_daily",
+        "join_operators": [
+          "BroadcastHashJoin",
+          "BroadcastHashJoin"
+        ]
+      }
+    ],
+    "02-right": [
+      {
+        "execution_completed": true,
+        "execution_id": 81,
+        "group": "gold.campaign_daily",
+        "join_operators": [
+          "BroadcastHashJoin",
+          "BroadcastHashJoin"
+        ]
+      },
+      {
+        "execution_completed": true,
+        "execution_id": 98,
+        "group": "gold.audience_daily",
+        "join_operators": [
+          "BroadcastHashJoin",
+          "BroadcastHashJoin"
+        ]
+      }
+    ],
+    "03-left": [
+      {
+        "execution_completed": true,
+        "execution_id": 81,
+        "group": "gold.campaign_daily",
+        "join_operators": [
+          "BroadcastHashJoin",
+          "BroadcastHashJoin"
+        ]
+      },
+      {
+        "execution_completed": true,
+        "execution_id": 98,
+        "group": "gold.audience_daily",
+        "join_operators": [
+          "BroadcastHashJoin",
+          "BroadcastHashJoin"
+        ]
+      }
+    ],
+    "03-right": [
+      {
+        "execution_completed": true,
+        "execution_id": 81,
+        "group": "gold.campaign_daily",
+        "join_operators": [
+          "BroadcastHashJoin",
+          "BroadcastHashJoin"
+        ]
+      },
+      {
+        "execution_completed": true,
+        "execution_id": 98,
+        "group": "gold.audience_daily",
+        "join_operators": [
+          "BroadcastHashJoin",
+          "BroadcastHashJoin"
+        ]
+      }
+    ]
+  }
+}

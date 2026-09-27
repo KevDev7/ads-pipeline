@@ -10,6 +10,10 @@ description, success message, and default output directory. Transforms, schemas,
 validation, measurements, resource budget, and SQL defaults are otherwise identical.
 No compression level, join hints, partitioning, sorting, or caching is tuned.
 
+**Completed:** [results and evidence](../../results/01_compression/README.md) show
+31.85% smaller tables, no clear processing-speed improvement, and identical
+reporting results. Preserved as `iteration-01-compression`.
+
 ## Hypothesis and measurements
 
 ZSTD may reduce table bytes and downstream bytes read, but compression/decompression

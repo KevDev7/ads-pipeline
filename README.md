@@ -2,8 +2,9 @@
 
 A learning project for Apache Spark using Python (PySpark), SQL, and the Taobao advertising dataset.
 
-The current version is **baseline only**: full batch rebuilds, correctness checks,
-and runtime/storage measurements. No manual performance tuning or cloud services.
+The project includes a preserved **untuned baseline** and **iteration 1: ZSTD
+compression**. Both run full batch rebuilds with correctness checks and
+runtime/storage measurements, locally without cloud services.
 
 ```text
 Three CSV files → Bronze Delta → Silver Delta → Gold Delta reports
@@ -83,12 +84,15 @@ addition to the source CSV files. This is one local reference measurement; read
 the result notes before comparing timings. The preserved version is tagged
 `baseline-v0.1`.
 
-## Comparing future iterations
+## Comparing iterations
 
 The [central results page](results/README.md) tracks experiments and findings.
 The [shared comparison runner](docs/comparisons.md) runs correctness tests first,
 repeats both versions in fresh processes, checks actual table equality, and saves
 individual measurements plus medians and ranges. The baseline implementation and
 its original tag remain unchanged. [Iteration 1](experiments/01_compression/README.md)
-tests Snappy versus ZSTD compression. CSV-versus-Parquet is a separate optional
-learning lab, not a numbered pipeline iteration.
+tests Snappy versus ZSTD compression. Its [completed results](results/01_compression/README.md)
+show **31.85% smaller tables**, with no clear processing-speed improvement across
+three runs per version. All 40 exact table comparisons passed. The snapshot and
+results are tagged `iteration-01-compression`. CSV-versus-Parquet is a separate
+optional learning lab, not a numbered pipeline iteration.
