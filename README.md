@@ -82,3 +82,11 @@ All correctness checks passed. The eight Delta tables occupy **925.72 MB** in
 addition to the source CSV files. This is one local reference measurement; read
 the result notes before comparing timings. The preserved version is tagged
 `baseline-v0.1`.
+
+## Comparing future iterations
+
+The [central results page](results/README.md) tracks experiments and findings.
+The [shared comparison runner](docs/comparisons.md) runs correctness tests first,
+repeats both versions in fresh processes, checks actual table equality, and saves
+individual measurements plus medians and ranges. The baseline implementation and
+its original tag remain unchanged. Optimization iteration 1 is not implemented yet.
