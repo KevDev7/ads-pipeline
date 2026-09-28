@@ -1,0 +1,191 @@
+{
+  "status": "completed",
+  "at": "2026-09-28T20:24:57.349690+00:00",
+  "authorization": "User: ok can remove the old tables when you need to from now on",
+  "scope": "Old successful comparison generated Bronze/Silver/Gold only; preserve source, code, reports, logs, plans, failed runs, original baseline.",
+  "free_before": 3305472000,
+  "items": [
+    {
+      "path": "outputs/comparisons/ads-join-04-20260927/runs/01-left/bronze",
+      "bytes": 227336979,
+      "files": 46,
+      "removed": true
+    },
+    {
+      "path": "outputs/comparisons/ads-join-04-20260927/runs/01-left/silver",
+      "bytes": 367941965,
+      "files": 38,
+      "removed": true
+    },
+    {
+      "path": "outputs/comparisons/ads-join-04-20260927/runs/01-left/gold",
+      "bytes": 35575538,
+      "files": 24,
+      "removed": true
+    },
+    {
+      "path": "outputs/comparisons/ads-join-04-20260927/runs/01-right/bronze",
+      "bytes": 227336979,
+      "files": 46,
+      "removed": true
+    },
+    {
+      "path": "outputs/comparisons/ads-join-04-20260927/runs/01-right/silver",
+      "bytes": 367941965,
+      "files": 38,
+      "removed": true
+    },
+    {
+      "path": "outputs/comparisons/ads-join-04-20260927/runs/01-right/gold",
+      "bytes": 35497710,
+      "files": 24,
+      "removed": true
+    },
+    {
+      "path": "outputs/comparisons/ads-join-04-20260927/runs/02-right/bronze",
+      "bytes": 227336979,
+      "files": 46,
+      "removed": true
+    },
+    {
+      "path": "outputs/comparisons/ads-join-04-20260927/runs/02-right/silver",
+      "bytes": 367941965,
+      "files": 38,
+      "removed": true
+    },
+    {
+      "path": "outputs/comparisons/ads-join-04-20260927/runs/02-right/gold",
+      "bytes": 35497710,
+      "files": 24,
+      "removed": true
+    },
+    {
+      "path": "outputs/comparisons/ads-join-04-20260927/runs/02-left/bronze",
+      "bytes": 227336979,
+      "files": 46,
+      "removed": true
+    },
+    {
+      "path": "outputs/comparisons/ads-join-04-20260927/runs/02-left/silver",
+      "bytes": 367941965,
+      "files": 38,
+      "removed": true
+    },
+    {
+      "path": "outputs/comparisons/ads-join-04-20260927/runs/02-left/gold",
+      "bytes": 35575538,
+      "files": 24,
+      "removed": true
+    },
+    {
+      "path": "outputs/comparisons/profile-join-05-retry-20260927/runs/01-left/bronze",
+      "bytes": 227336979,
+      "files": 46,
+      "removed": true
+    },
+    {
+      "path": "outputs/comparisons/profile-join-05-retry-20260927/runs/01-left/silver",
+      "bytes": 367941965,
+      "files": 38,
+      "removed": true
+    },
+    {
+      "path": "outputs/comparisons/profile-join-05-retry-20260927/runs/01-left/gold",
+      "bytes": 35575538,
+      "files": 24,
+      "removed": true
+    },
+    {
+      "path": "outputs/comparisons/profile-join-05-retry-20260927/runs/01-right/bronze",
+      "bytes": 227336979,
+      "files": 46,
+      "removed": true
+    },
+    {
+      "path": "outputs/comparisons/profile-join-05-retry-20260927/runs/01-right/silver",
+      "bytes": 367941965,
+      "files": 38,
+      "removed": true
+    },
+    {
+      "path": "outputs/comparisons/profile-join-05-retry-20260927/runs/01-right/gold",
+      "bytes": 33295385,
+      "files": 28,
+      "removed": true
+    },
+    {
+      "path": "outputs/comparisons/profile-join-05-retry-20260927/runs/02-right/bronze",
+      "bytes": 227336979,
+      "files": 46,
+      "removed": true
+    },
+    {
+      "path": "outputs/comparisons/profile-join-05-retry-20260927/runs/02-right/silver",
+      "bytes": 367941965,
+      "files": 38,
+      "removed": true
+    },
+    {
+      "path": "outputs/comparisons/profile-join-05-retry-20260927/runs/02-right/gold",
+      "bytes": 35480221,
+      "files": 28,
+      "removed": true
+    },
+    {
+      "path": "outputs/comparisons/profile-join-05-retry-20260927/runs/02-left/bronze",
+      "bytes": 227336979,
+      "files": 46,
+      "removed": true
+    },
+    {
+      "path": "outputs/comparisons/profile-join-05-retry-20260927/runs/02-left/silver",
+      "bytes": 367941965,
+      "files": 38,
+      "removed": true
+    },
+    {
+      "path": "outputs/comparisons/profile-join-05-retry-20260927/runs/02-left/gold",
+      "bytes": 35575538,
+      "files": 24,
+      "removed": true
+    },
+    {
+      "path": "outputs/comparisons/profile-join-05-retry-20260927/runs/03-left/bronze",
+      "bytes": 227336979,
+      "files": 46,
+      "removed": true
+    },
+    {
+      "path": "outputs/comparisons/profile-join-05-retry-20260927/runs/03-left/silver",
+      "bytes": 367941965,
+      "files": 38,
+      "removed": true
+    },
+    {
+      "path": "outputs/comparisons/profile-join-05-retry-20260927/runs/03-left/gold",
+      "bytes": 35575538,
+      "files": 24,
+      "removed": true
+    },
+    {
+      "path": "outputs/comparisons/profile-join-05-retry-20260927/runs/03-right/bronze",
+      "bytes": 227336979,
+      "files": 46,
+      "removed": true
+    },
+    {
+      "path": "outputs/comparisons/profile-join-05-retry-20260927/runs/03-right/silver",
+      "bytes": 367941965,
+      "files": 38,
+      "removed": true
+    },
+    {
+      "path": "outputs/comparisons/profile-join-05-retry-20260927/runs/03-right/gold",
+      "bytes": 35480221,
+      "files": 28,
+      "removed": true
+    }
+  ],
+  "free_after": 9707520000,
+  "total_bytes": 6305918377
+}

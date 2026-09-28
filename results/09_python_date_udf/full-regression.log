@@ -1,0 +1,237 @@
+test_latest_plan_detects_an_unintended_profile_join_change (test_ads_join.JoinStrategyTests.test_latest_plan_detects_an_unintended_profile_join_change) ... ok
+test_missing_runtime_evidence_is_not_a_pass (test_ads_join.JoinStrategyTests.test_missing_runtime_evidence_is_not_a_pass) ... ok
+test_real_entrypoints_preserve_rows_and_change_only_target_strategy (test_ads_join.JoinStrategyTests.test_real_entrypoints_preserve_rows_and_change_only_target_strategy) ... WARNING: Using incubator modules: jdk.incubator.vector
+:: loading settings :: url = jar:file:<repo>/.venv/lib/python3.11/site-packages/pyspark/jars/ivy-2.5.3.jar!/org/apache/ivy/core/settings/ivysettings.xml
+Ivy Default Cache set to: <repo>/.runtime/ivy/cache
+The jars for the packages stored in: <repo>/.runtime/ivy/jars
+io.delta#delta-spark_2.13 added as a dependency
+:: resolving dependencies :: org.apache.spark#spark-submit-parent-bf5a7691-2a7b-482a-90f0-bcf4dac550b3;1.0
+	confs: [default]
+	found io.delta#delta-spark_2.13;4.0.0 in central
+	found io.delta#delta-storage;4.0.0 in central
+	found org.antlr#antlr4-runtime;4.13.1 in central
+:: resolution report :: resolve 53ms :: artifacts dl 1ms
+	:: modules in use:
+	io.delta#delta-spark_2.13;4.0.0 from central in [default]
+	io.delta#delta-storage;4.0.0 from central in [default]
+	org.antlr#antlr4-runtime;4.13.1 from central in [default]
+	---------------------------------------------------------------------
+	|                  |            modules            ||   artifacts   |
+	|       conf       | number| search|dwnlded|evicted|| number|dwnlded|
+	---------------------------------------------------------------------
+	|      default     |   3   |   0   |   0   |   0   ||   3   |   0   |
+	---------------------------------------------------------------------
+:: retrieving :: org.apache.spark#spark-submit-parent-bf5a7691-2a7b-482a-90f0-bcf4dac550b3
+	confs: [default]
+	0 artifacts copied, 3 already retrieved (0kB/2ms)
+26/09/28 15:26:02 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Using Spark's default log4j profile: org/apache/spark/log4j2-defaults.properties
+Setting default log level to "WARN".
+To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
+26/09/28 15:26:02 WARN SparkConf: Note that spark.local.dir will be overridden by the value set by the cluster manager (via SPARK_LOCAL_DIRS in standalone/kubernetes and LOCAL_DIRS in YARN).
+26/09/28 15:26:04 WARN SparkStringUtils: Truncated the string representation of a plan since it was too large. This behavior can be adjusted by setting 'spark.sql.debug.maxToStringFields'.
+ok
+26/09/28 15:26:18 WARN SparkConf: Note that spark.local.dir will be overridden by the value set by the cluster manager (via SPARK_LOCAL_DIRS in standalone/kubernetes and LOCAL_DIRS in YARN).
+test_counts_ctr_unknown_profile_and_timezone (test_baseline.TransformTests.test_counts_ctr_unknown_profile_and_timezone) ... /opt/homebrew/Cellar/python@3.11/3.11.15/Frameworks/Python.framework/Versions/3.11/lib/python3.11/socket.py:789: ResourceWarning: unclosed <socket.socket fd=9, family=2, type=1, proto=6, laddr=('127.0.0.1', 57006), raddr=('127.0.0.1', 57005)>
+  self._sock = None
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/opt/homebrew/Cellar/python@3.11/3.11.15/Frameworks/Python.framework/Versions/3.11/lib/python3.11/socket.py:789: ResourceWarning: unclosed <socket.socket fd=9, family=2, type=1, proto=6, laddr=('127.0.0.1', 57008), raddr=('127.0.0.1', 57007)>
+  self._sock = None
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/opt/homebrew/Cellar/python@3.11/3.11.15/Frameworks/Python.framework/Versions/3.11/lib/python3.11/socket.py:789: ResourceWarning: unclosed <socket.socket fd=9, family=2, type=1, proto=6, laddr=('127.0.0.1', 57010), raddr=('127.0.0.1', 57009)>
+  self._sock = None
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/opt/homebrew/Cellar/python@3.11/3.11.15/Frameworks/Python.framework/Versions/3.11/lib/python3.11/socket.py:789: ResourceWarning: unclosed <socket.socket fd=9, family=2, type=1, proto=6, laddr=('127.0.0.1', 57012), raddr=('127.0.0.1', 57011)>
+  self._sock = None
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+ok
+test_duplicate_dimension_key_rejected (test_baseline.TransformTests.test_duplicate_dimension_key_rejected) ... ok
+test_invalid_flags_and_missing_ads_rejected (test_baseline.TransformTests.test_invalid_flags_and_missing_ads_rejected) ... ok
+test_malformed_numeric_value_is_not_silently_nulled (test_baseline.TransformTests.test_malformed_numeric_value_is_not_silently_nulled) ... {"ts": "2026-09-28 15:26:19.491", "level": "ERROR", "logger": "DataFrameQueryContextLogger", "msg": "[CAST_INVALID_INPUT] The value 'broken' of the type \"STRING\" cannot be cast to \"BIGINT\" because it is malformed. Correct the value as per the syntax, or change its target type. Use `try_cast` to tolerate malformed input and return NULL instead. SQLSTATE: 22018", "context": {"file": "<repo>/experiments/00_baseline/tables.py", "line": "34", "fragment": "cast", "errorClass": "CAST_INVALID_INPUT"}, "exception": {"class": "Py4JJavaError", "msg": "An error occurred while calling o1531.collectToPython.\n: org.apache.spark.SparkNumberFormatException: [CAST_INVALID_INPUT] The value 'broken' of the type \"STRING\" cannot be cast to \"BIGINT\" because it is malformed. Correct the value as per the syntax, or change its target type. Use `try_cast` to tolerate malformed input and return NULL instead. SQLSTATE: 22018\n== DataFrame ==\n\"cast\" was called from\n<repo>/experiments/00_baseline/tables.py:34\n\n\tat org.apache.spark.sql.errors.QueryExecutionErrors$.invalidInputInCastToNumberError(QueryExecutionErrors.scala:145)\n\tat org.apache.spark.sql.catalyst.util.UTF8StringUtils$.withException(UTF8StringUtils.scala:51)\n\tat org.apache.spark.sql.catalyst.util.UTF8StringUtils$.toLongExact(UTF8StringUtils.scala:31)\n\tat org.apache.spark.sql.catalyst.expressions.Cast.$anonfun$castToLong$2(Cast.scala:783)\n\tat org.apache.spark.sql.catalyst.expressions.Cast.$anonfun$castToLong$2$adapted(Cast.scala:783)\n\tat org.apache.spark.sql.catalyst.expressions.Cast.buildCast(Cast.scala:580)\n\tat org.apache.spark.sql.catalyst.expressions.Cast.$anonfun$castToLong$1(Cast.scala:783)\n\tat org.apache.spark.sql.catalyst.expressions.Cast.nullSafeEval(Cast.scala:1196)\n\tat org.apache.spark.sql.catalyst.expressions.UnaryExpression.eval(Expression.scala:577)\n\tat org.apache.spark.sql.catalyst.optimizer.ConstantFolding$.tryFold(expressions.scala:63)\n\tat org.apache.spark.sql.catalyst.optimizer.ConstantFolding$.org$apache$spark$sql$catalyst$optimizer$ConstantFolding$$constantFolding(expressions.scala:93)\n\tat org.apache.spark.sql.catalyst.optimizer.ConstantFolding$.$anonfun$constantFolding$4(expressions.scala:106)\n\tat org.apache.spark.sql.catalyst.trees.UnaryLike.mapChildren(TreeNode.scala:1231)\n\tat org.apache.spark.sql.catalyst.trees.UnaryLike.mapChildren$(TreeNode.scala:1230)\n\tat org.apache.spark.sql.catalyst.expressions.UnaryExpression.mapChildren(Expression.scala:563)\n\tat org.apache.spark.sql.catalyst.optimizer.ConstantFolding$.org$apache$spark$sql$catalyst$optimizer$ConstantFolding$$constantFolding(expressions.scala:106)\n\tat org.apache.spark.sql.catalyst.optimizer.ConstantFolding$$anonfun$apply$1.$anonfun$applyOrElse$1(expressions.scala:115)\n\tat org.apache.spark.sql.catalyst.plans.QueryPlan.$anonfun$mapExpressions$1(QueryPlan.scala:226)\n\tat org.apache.spark.sql.catalyst.trees.CurrentOrigin$.withOrigin(origin.scala:86)\n\tat org.apache.spark.sql.catalyst.plans.QueryPlan.transformExpression$1(QueryPlan.scala:226)\n\tat org.apache.spark.sql.catalyst.plans.QueryPlan.recursiveTransform$1(QueryPlan.scala:238)\n\tat org.apache.spark.sql.catalyst.plans.QueryPlan.$anonfun$mapExpressions$4(QueryPlan.scala:244)\n\tat scala.collection.immutable.List.map(List.scala:251)\n\tat scala.collection.immutable.List.map(List.scala:79)\n\tat org.apache.spark.sql.catalyst.plans.QueryPlan.recursiveTransform$1(QueryPlan.scala:244)\n\tat org.apache.spark.sql.catalyst.plans.QueryPlan.$anonfun$mapExpressions$5(QueryPlan.scala:249)\n\tat org.apache.spark.sql.catalyst.trees.TreeNode.mapProductIterator(TreeNode.scala:312)\n\tat org.apache.spark.sql.catalyst.plans.QueryPlan.mapExpressions(QueryPlan.scala:249)\n\tat org.apache.spark.sql.catalyst.optimizer.ConstantFolding$$anonfun$apply$1.applyOrElse(expressions.scala:115)\n\tat org.apache.spark.sql.catalyst.optimizer.ConstantFolding$$anonfun$apply$1.applyOrElse(expressions.scala:114)\n\tat org.apache.spark.sql.catalyst.trees.TreeNode.$anonfun$transformDownWithPruning$1(TreeNode.scala:470)\n\tat org.apache.spark.sql.catalyst.trees.CurrentOrigin$.withOrigin(origin.scala:86)\n\tat org.apache.spark.sql.catalyst.trees.TreeNode.transformDownWithPruning(TreeNode.scala:470)\n\tat org.apache.spark.sql.catalyst.plans.logical.LogicalPlan.org$apache$spark$sql$catalyst$plans$logical$AnalysisHelper$$super$transformDownWithPruning(LogicalPlan.scala:37)\n\tat org.apache.spark.sql.catalyst.plans.logical.AnalysisHelper.transformDownWithPruning(AnalysisHelper.scala:360)\n\tat org.apache.spark.sql.catalyst.plans.logical.AnalysisHelper.transformDownWithPruning$(AnalysisHelper.scala:356)\n\tat org.apache.spark.sql.catalyst.plans.logical.LogicalPlan.transformDownWithPruning(LogicalPlan.scala:37)\n\tat org.apache.spark.sql.catalyst.plans.logical.LogicalPlan.transformDownWithPruning(LogicalPlan.scala:37)\n\tat org.apache.spark.sql.catalyst.trees.TreeNode.transformWithPruning(TreeNode.scala:436)\n\tat org.apache.spark.sql.catalyst.optimizer.ConstantFolding$.apply(expressions.scala:114)\n\tat org.apache.spark.sql.catalyst.optimizer.ConstantFolding$.apply(expressions.scala:48)\n\tat org.apache.spark.sql.catalyst.rules.RuleExecutor.$anonfun$execute$2(RuleExecutor.scala:242)\n\tat scala.collection.LinearSeqOps.foldLeft(LinearSeq.scala:183)\n\tat scala.collection.LinearSeqOps.foldLeft$(LinearSeq.scala:179)\n\tat scala.collection.immutable.List.foldLeft(List.scala:79)\n\tat org.apache.spark.sql.catalyst.rules.RuleExecutor.$anonfun$execute$1(RuleExecutor.scala:239)\n\tat org.apache.spark.sql.catalyst.rules.RuleExecutor.$anonfun$execute$1$adapted(RuleExecutor.scala:231)\n\tat scala.collection.immutable.List.foreach(List.scala:334)\n\tat org.apache.spark.sql.catalyst.rules.RuleExecutor.execute(RuleExecutor.scala:231)\n\tat org.apache.spark.sql.catalyst.rules.RuleExecutor.$anonfun$executeAndTrack$1(RuleExecutor.scala:201)\n\tat org.apache.spark.sql.catalyst.QueryPlanningTracker$.withTracker(QueryPlanningTracker.scala:89)\n\tat org.apache.spark.sql.catalyst.rules.RuleExecutor.executeAndTrack(RuleExecutor.scala:201)\n\tat org.apache.spark.sql.execution.QueryExecution.$anonfun$lazyOptimizedPlan$2(QueryExecution.scala:202)\n\tat org.apache.spark.sql.catalyst.QueryPlanningTracker.measurePhase(QueryPlanningTracker.scala:148)\n\tat org.apache.spark.sql.execution.QueryExecution.$anonfun$executePhase$2(QueryExecution.scala:278)\n\tat org.apache.spark.sql.execution.QueryExecution$.withInternalError(QueryExecution.scala:654)\n\tat org.apache.spark.sql.execution.QueryExecution.$anonfun$executePhase$1(QueryExecution.scala:278)\n\tat org.apache.spark.sql.SparkSession.withActive(SparkSession.scala:804)\n\tat org.apache.spark.sql.execution.QueryExecution.executePhase(QueryExecution.scala:277)\n\tat org.apache.spark.sql.execution.QueryExecution.$anonfun$lazyOptimizedPlan$1(QueryExecution.scala:198)\n\tat scala.util.Try$.apply(Try.scala:217)\n\tat org.apache.spark.util.Utils$.doTryWithCallerStacktrace(Utils.scala:1378)\n\tat org.apache.spark.util.LazyTry.tryT$lzycompute(LazyTry.scala:46)\n\tat org.apache.spark.util.LazyTry.tryT(LazyTry.scala:46)\n\tat org.apache.spark.util.LazyTry.get(LazyTry.scala:58)\n\tat org.apache.spark.sql.execution.QueryExecution.optimizedPlan(QueryExecution.scala:212)\n\tat org.apache.spark.sql.execution.QueryExecution.assertOptimized(QueryExecution.scala:214)\n\tat org.apache.spark.sql.execution.QueryExecution.$anonfun$lazyExecutedPlan$1(QueryExecution.scala:234)\n\tat scala.util.Try$.apply(Try.scala:217)\n\tat org.apache.spark.util.Utils$.getTryWithCallerStacktrace(Utils.scala:1439)\n\tat org.apache.spark.util.LazyTry.get(LazyTry.scala:58)\n\tat org.apache.spark.sql.execution.QueryExecution.executedPlan(QueryExecution.scala:248)\n\tat org.apache.spark.sql.execution.QueryExecution.simpleString(QueryExecution.scala:306)\n\tat org.apache.spark.sql.execution.QueryExecution.org$apache$spark$sql$execution$QueryExecution$$explainString(QueryExecution.scala:344)\n\tat org.apache.spark.sql.execution.QueryExecution.explainString(QueryExecution.scala:312)\n\tat org.apache.spark.sql.execution.SQLExecution$.$anonfun$withNewExecutionId0$8(SQLExecution.scala:149)\n\tat org.apache.spark.sql.execution.SQLExecution$.withSessionTagsApplied(SQLExecution.scala:272)\n\tat org.apache.spark.sql.execution.SQLExecution$.$anonfun$withNewExecutionId0$7(SQLExecution.scala:125)\n\tat org.apache.spark.JobArtifactSet$.withActiveJobArtifactState(JobArtifactSet.scala:94)\n\tat org.apache.spark.sql.artifact.ArtifactManager.$anonfun$withResources$1(ArtifactManager.scala:112)\n\tat org.apache.spark.sql.artifact.ArtifactManager.withClassLoaderIfNeeded(ArtifactManager.scala:106)\n\tat org.apache.spark.sql.artifact.ArtifactManager.withResources(ArtifactManager.scala:111)\n\tat org.apache.spark.sql.execution.SQLExecution$.$anonfun$withNewExecutionId0$6(SQLExecution.scala:125)\n\tat org.apache.spark.sql.execution.SQLExecution$.withSQLConfPropagated(SQLExecution.scala:295)\n\tat org.apache.spark.sql.execution.SQLExecution$.$anonfun$withNewExecutionId0$1(SQLExecution.scala:124)\n\tat org.apache.spark.sql.SparkSession.withActive(SparkSession.scala:804)\n\tat org.apache.spark.sql.execution.SQLExecution$.withNewExecutionId0(SQLExecution.scala:78)\n\tat org.apache.spark.sql.execution.SQLExecution$.withNewExecutionId(SQLExecution.scala:237)\n\tat org.apache.spark.sql.classic.Dataset.withAction(Dataset.scala:2232)\n\tat org.apache.spark.sql.classic.Dataset.collectToPython(Dataset.scala:2054)\n\tat java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)\n\tat java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:75)\n\tat java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:52)\n\tat java.base/java.lang.reflect.Method.invoke(Method.java:580)\n\tat py4j.reflection.MethodInvoker.invoke(MethodInvoker.java:244)\n\tat py4j.reflection.ReflectionEngine.invoke(ReflectionEngine.java:374)\n\tat py4j.Gateway.invoke(Gateway.java:282)\n\tat py4j.commands.AbstractCommand.invokeMethod(AbstractCommand.java:132)\n\tat py4j.commands.CallCommand.execute(CallCommand.java:79)\n\tat py4j.ClientServerConnection.waitForCommands(ClientServerConnection.java:184)\n\tat py4j.ClientServerConnection.run(ClientServerConnection.java:108)\n\tat java.base/java.lang.Thread.run(Thread.java:1583)\n\tSuppressed: org.apache.spark.util.Utils$OriginalTryStackTraceException: Full stacktrace of original doTryWithCallerStacktrace caller\n\t\tat org.apache.spark.sql.errors.QueryExecutionErrors$.invalidInputInCastToNumberError(QueryExecutionErrors.scala:145)\n\t\tat org.apache.spark.sql.catalyst.util.UTF8StringUtils$.withException(UTF8StringUtils.scala:51)\n\t\tat org.apache.spark.sql.catalyst.util.UTF8StringUtils$.toLongExact(UTF8StringUtils.scala:31)\n\t\tat org.apache.spark.sql.catalyst.expressions.Cast.$anonfun$castToLong$2(Cast.scala:783)\n\t\tat org.apache.spark.sql.catalyst.expressions.Cast.$anonfun$castToLong$2$adapted(Cast.scala:783)\n\t\tat org.apache.spark.sql.catalyst.expressions.Cast.buildCast(Cast.scala:580)\n\t\tat org.apache.spark.sql.catalyst.expressions.Cast.$anonfun$castToLong$1(Cast.scala:783)\n\t\tat org.apache.spark.sql.catalyst.expressions.Cast.nullSafeEval(Cast.scala:1196)\n\t\tat org.apache.spark.sql.catalyst.expressions.UnaryExpression.eval(Expression.scala:577)\n\t\tat org.apache.spark.sql.catalyst.optimizer.ConstantFolding$.tryFold(expressions.scala:63)\n\t\tat org.apache.spark.sql.catalyst.optimizer.ConstantFolding$.org$apache$spark$sql$catalyst$optimizer$ConstantFolding$$constantFolding(expressions.scala:93)\n\t\tat org.apache.spark.sql.catalyst.optimizer.ConstantFolding$.$anonfun$constantFolding$4(expressions.scala:106)\n\t\tat org.apache.spark.sql.catalyst.trees.UnaryLike.mapChildren(TreeNode.scala:1231)\n\t\tat org.apache.spark.sql.catalyst.trees.UnaryLike.mapChildren$(TreeNode.scala:1230)\n\t\tat org.apache.spark.sql.catalyst.expressions.UnaryExpression.mapChildren(Expression.scala:563)\n\t\tat org.apache.spark.sql.catalyst.optimizer.ConstantFolding$.org$apache$spark$sql$catalyst$optimizer$ConstantFolding$$constantFolding(expressions.scala:106)\n\t\tat org.apache.spark.sql.catalyst.optimizer.ConstantFolding$$anonfun$apply$1.$anonfun$applyOrElse$1(expressions.scala:115)\n\t\tat org.apache.spark.sql.catalyst.plans.QueryPlan.$anonfun$mapExpressions$1(QueryPlan.scala:226)\n\t\tat org.apache.spark.sql.catalyst.trees.CurrentOrigin$.withOrigin(origin.scala:86)\n\t\tat org.apache.spark.sql.catalyst.plans.QueryPlan.transformExpression$1(QueryPlan.scala:226)\n\t\tat org.apache.spark.sql.catalyst.plans.QueryPlan.recursiveTransform$1(QueryPlan.scala:238)\n\t\tat org.apache.spark.sql.catalyst.plans.QueryPlan.$anonfun$mapExpressions$4(QueryPlan.scala:244)\n\t\tat scala.collection.immutable.List.map(List.scala:251)\n\t\tat scala.collection.immutable.List.map(List.scala:79)\n\t\tat org.apache.spark.sql.catalyst.plans.QueryPlan.recursiveTransform$1(QueryPlan.scala:244)\n\t\tat org.apache.spark.sql.catalyst.plans.QueryPlan.$anonfun$mapExpressions$5(QueryPlan.scala:249)\n\t\tat org.apache.spark.sql.catalyst.trees.TreeNode.mapProductIterator(TreeNode.scala:312)\n\t\tat org.apache.spark.sql.catalyst.plans.QueryPlan.mapExpressions(QueryPlan.scala:249)\n\t\tat org.apache.spark.sql.catalyst.optimizer.ConstantFolding$$anonfun$apply$1.applyOrElse(expressions.scala:115)\n\t\tat org.apache.spark.sql.catalyst.optimizer.ConstantFolding$$anonfun$apply$1.applyOrElse(expressions.scala:114)\n\t\tat org.apache.spark.sql.catalyst.trees.TreeNode.$anonfun$transformDownWithPruning$1(TreeNode.scala:470)\n\t\tat org.apache.spark.sql.catalyst.trees.CurrentOrigin$.withOrigin(origin.scala:86)\n\t\tat org.apache.spark.sql.catalyst.trees.TreeNode.transformDownWithPruning(TreeNode.scala:470)\n\t\tat org.apache.spark.sql.catalyst.plans.logical.LogicalPlan.org$apache$spark$sql$catalyst$plans$logical$AnalysisHelper$$super$transformDownWithPruning(LogicalPlan.scala:37)\n\t\tat org.apache.spark.sql.catalyst.plans.logical.AnalysisHelper.transformDownWithPruning(AnalysisHelper.scala:360)\n\t\tat org.apache.spark.sql.catalyst.plans.logical.AnalysisHelper.transformDownWithPruning$(AnalysisHelper.scala:356)\n\t\tat org.apache.spark.sql.catalyst.plans.logical.LogicalPlan.transformDownWithPruning(LogicalPlan.scala:37)\n\t\tat org.apache.spark.sql.catalyst.plans.logical.LogicalPlan.transformDownWithPruning(LogicalPlan.scala:37)\n\t\tat org.apache.spark.sql.catalyst.trees.TreeNode.transformWithPruning(TreeNode.scala:436)\n\t\tat org.apache.spark.sql.catalyst.optimizer.ConstantFolding$.apply(expressions.scala:114)\n\t\tat org.apache.spark.sql.catalyst.optimizer.ConstantFolding$.apply(expressions.scala:48)\n\t\tat org.apache.spark.sql.catalyst.rules.RuleExecutor.$anonfun$execute$2(RuleExecutor.scala:242)\n\t\tat scala.collection.LinearSeqOps.foldLeft(LinearSeq.scala:183)\n\t\tat scala.collection.LinearSeqOps.foldLeft$(LinearSeq.scala:179)\n\t\tat scala.collection.immutable.List.foldLeft(List.scala:79)\n\t\tat org.apache.spark.sql.catalyst.rules.RuleExecutor.$anonfun$execute$1(RuleExecutor.scala:239)\n\t\tat org.apache.spark.sql.catalyst.rules.RuleExecutor.$anonfun$execute$1$adapted(RuleExecutor.scala:231)\n\t\tat scala.collection.immutable.List.foreach(List.scala:334)\n\t\tat org.apache.spark.sql.catalyst.rules.RuleExecutor.execute(RuleExecutor.scala:231)\n\t\tat org.apache.spark.sql.catalyst.rules.RuleExecutor.$anonfun$executeAndTrack$1(RuleExecutor.scala:201)\n\t\tat org.apache.spark.sql.catalyst.QueryPlanningTracker$.withTracker(QueryPlanningTracker.scala:89)\n\t\tat org.apache.spark.sql.catalyst.rules.RuleExecutor.executeAndTrack(RuleExecutor.scala:201)\n\t\tat org.apache.spark.sql.execution.QueryExecution.$anonfun$lazyOptimizedPlan$2(QueryExecution.scala:202)\n\t\tat org.apache.spark.sql.catalyst.QueryPlanningTracker.measurePhase(QueryPlanningTracker.scala:148)\n\t\tat org.apache.spark.sql.execution.QueryExecution.$anonfun$executePhase$2(QueryExecution.scala:278)\n\t\tat org.apache.spark.sql.execution.QueryExecution$.withInternalError(QueryExecution.scala:654)\n\t\tat org.apache.spark.sql.execution.QueryExecution.$anonfun$executePhase$1(QueryExecution.scala:278)\n\t\tat org.apache.spark.sql.SparkSession.withActive(SparkSession.scala:804)\n\t\tat org.apache.spark.sql.execution.QueryExecution.executePhase(QueryExecution.scala:277)\n\t\tat org.apache.spark.sql.execution.QueryExecution.$anonfun$lazyOptimizedPlan$1(QueryExecution.scala:198)\n\t\tat scala.util.Try$.apply(Try.scala:217)\n\t\tat org.apache.spark.util.Utils$.doTryWithCallerStacktrace(Utils.scala:1378)\n\t\tat org.apache.spark.util.LazyTry.tryT$lzycompute(LazyTry.scala:46)\n\t\tat org.apache.spark.util.LazyTry.tryT(LazyTry.scala:46)\n\t\tat org.apache.spark.util.LazyTry.get(LazyTry.scala:58)\n\t\tat org.apache.spark.sql.execution.QueryExecution.optimizedPlan(QueryExecution.scala:212)\n\t\tat org.apache.spark.sql.execution.QueryExecution.assertOptimized(QueryExecution.scala:214)\n\t\tat org.apache.spark.sql.execution.QueryExecution.$anonfun$lazyExecutedPlan$1(QueryExecution.scala:234)\n\t\tat scala.util.Try$.apply(Try.scala:217)\n\t\tat org.apache.spark.util.Utils$.doTryWithCallerStacktrace(Utils.scala:1378)\n\t\tat org.apache.spark.util.LazyTry.tryT$lzycompute(LazyTry.scala:46)\n\t\tat org.apache.spark.util.LazyTry.tryT(LazyTry.scala:46)\n\t\tat org.apache.spark.util.LazyTry.get(LazyTry.scala:58)\n\t\tat org.apache.spark.sql.execution.QueryExecution.executedPlan(QueryExecution.scala:248)\n\t\tat org.apache.spark.sql.execution.QueryExecution.simpleString(QueryExecution.scala:297)\n\t\t... 29 more\n", "stacktrace": [{"class": null, "method": "deco", "file": "<repo>/.venv/lib/python3.11/site-packages/pyspark/errors/exceptions/captured.py", "line": "282"}, {"class": null, "method": "get_return_value", "file": "<repo>/.venv/lib/python3.11/site-packages/py4j/protocol.py", "line": "327"}]}}
+ok
+test_source_values_nulls_and_price_are_preserved (test_baseline.TransformTests.test_source_values_nulls_and_price_are_preserved) ... /opt/homebrew/Cellar/python@3.11/3.11.15/Frameworks/Python.framework/Versions/3.11/lib/python3.11/socket.py:789: ResourceWarning: unclosed <socket.socket fd=9, family=2, type=1, proto=6, laddr=('127.0.0.1', 57014), raddr=('127.0.0.1', 57013)>
+  self._sock = None
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/opt/homebrew/Cellar/python@3.11/3.11.15/Frameworks/Python.framework/Versions/3.11/lib/python3.11/socket.py:789: ResourceWarning: unclosed <socket.socket fd=9, family=2, type=1, proto=6, laddr=('127.0.0.1', 57016), raddr=('127.0.0.1', 57015)>
+  self._sock = None
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/opt/homebrew/Cellar/python@3.11/3.11.15/Frameworks/Python.framework/Versions/3.11/lib/python3.11/socket.py:789: ResourceWarning: unclosed <socket.socket fd=9, family=2, type=1, proto=6, laddr=('127.0.0.1', 57018), raddr=('127.0.0.1', 57017)>
+  self._sock = None
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/opt/homebrew/Cellar/python@3.11/3.11.15/Frameworks/Python.framework/Versions/3.11/lib/python3.11/socket.py:789: ResourceWarning: unclosed <socket.socket fd=9, family=2, type=1, proto=6, laddr=('127.0.0.1', 57020), raddr=('127.0.0.1', 57019)>
+  self._sock = None
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+ok
+test_unexpected_header_rejected (test_baseline.TransformTests.test_unexpected_header_rejected) ... ok
+test_fresh_runs_reconcile_and_existing_run_is_protected (test_baseline.ZEndToEndTests.test_fresh_runs_reconcile_and_existing_run_is_protected) ... Starting source_fingerprints
+source_fingerprints: 0.0s
+Starting spark_startup
+26/09/28 15:26:19 WARN SparkConf: Note that spark.local.dir will be overridden by the value set by the cluster manager (via SPARK_LOCAL_DIRS in standalone/kubernetes and LOCAL_DIRS in YARN).
+spark_startup: 0.155s
+Starting bronze.impressions
+bronze.impressions: 0.81s
+Starting bronze.ads
+bronze.ads: 0.378s
+Starting bronze.user_profiles
+bronze.user_profiles: 0.38s
+Starting silver.impressions
+silver.impressions: 0.622s
+Starting silver.ads
+silver.ads: 0.572s
+Starting silver.user_profiles
+silver.user_profiles: 0.574s
+Starting validate.silver
+/opt/homebrew/Cellar/python@3.11/3.11.15/Frameworks/Python.framework/Versions/3.11/lib/python3.11/socket.py:789: ResourceWarning: unclosed <socket.socket fd=9, family=2, type=1, proto=6, laddr=('127.0.0.1', 57026), raddr=('127.0.0.1', 57025)>
+  self._sock = None
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+validate.silver: 2.05s
+Starting gold.campaign_daily
+gold.campaign_daily: 0.859s
+Starting validate.campaign_daily
+/opt/homebrew/Cellar/python@3.11/3.11.15/Frameworks/Python.framework/Versions/3.11/lib/python3.11/socket.py:789: ResourceWarning: unclosed <socket.socket fd=9, family=2, type=1, proto=6, laddr=('127.0.0.1', 57028), raddr=('127.0.0.1', 57027)>
+  self._sock = None
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+validate.campaign_daily: 0.35s
+Starting gold.audience_daily
+gold.audience_daily: 0.81s
+Starting validate.audience_daily
+/opt/homebrew/Cellar/python@3.11/3.11.15/Frameworks/Python.framework/Versions/3.11/lib/python3.11/socket.py:789: ResourceWarning: unclosed <socket.socket fd=9, family=2, type=1, proto=6, laddr=('127.0.0.1', 57031), raddr=('127.0.0.1', 57030)>
+  self._sock = None
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+validate.audience_daily: 0.332s
+Starting spark_shutdown
+spark_shutdown: 0.214s
+Baseline succeeded. Report: /private/var/folders/hj/lyhxkqjn2l9f2hb9w7zlrp980000gn/T/tmph9d124wl/output/first/report.json
+Starting source_fingerprints
+source_fingerprints: 0.0s
+Starting spark_startup
+26/09/28 15:26:28 WARN SparkConf: Note that spark.local.dir will be overridden by the value set by the cluster manager (via SPARK_LOCAL_DIRS in standalone/kubernetes and LOCAL_DIRS in YARN).
+spark_startup: 0.122s
+Starting bronze.impressions
+bronze.impressions: 0.446s
+Starting bronze.ads
+bronze.ads: 0.343s
+Starting bronze.user_profiles
+bronze.user_profiles: 0.37s
+Starting silver.impressions
+silver.impressions: 0.595s
+Starting silver.ads
+silver.ads: 0.543s
+Starting silver.user_profiles
+silver.user_profiles: 0.555s
+Starting validate.silver
+/opt/homebrew/Cellar/python@3.11/3.11.15/Frameworks/Python.framework/Versions/3.11/lib/python3.11/socket.py:789: ResourceWarning: unclosed <socket.socket fd=9, family=2, type=1, proto=6, laddr=('127.0.0.1', 57037), raddr=('127.0.0.1', 57036)>
+  self._sock = None
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+validate.silver: 1.899s
+Starting gold.campaign_daily
+gold.campaign_daily: 0.827s
+Starting validate.campaign_daily
+/opt/homebrew/Cellar/python@3.11/3.11.15/Frameworks/Python.framework/Versions/3.11/lib/python3.11/socket.py:789: ResourceWarning: unclosed <socket.socket fd=9, family=2, type=1, proto=6, laddr=('127.0.0.1', 57039), raddr=('127.0.0.1', 57038)>
+  self._sock = None
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+validate.campaign_daily: 0.329s
+Starting gold.audience_daily
+gold.audience_daily: 0.716s
+Starting validate.audience_daily
+/opt/homebrew/Cellar/python@3.11/3.11.15/Frameworks/Python.framework/Versions/3.11/lib/python3.11/socket.py:789: ResourceWarning: unclosed <socket.socket fd=9, family=2, type=1, proto=6, laddr=('127.0.0.1', 57041), raddr=('127.0.0.1', 57040)>
+  self._sock = None
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+validate.audience_daily: 0.303s
+Starting spark_shutdown
+spark_shutdown: 0.039s
+Baseline succeeded. Report: /private/var/folders/hj/lyhxkqjn2l9f2hb9w7zlrp980000gn/T/tmph9d124wl/output/second/report.json
+Starting source_fingerprints
+source_fingerprints: 0.0s
+Starting spark_startup
+26/09/28 15:26:35 WARN SparkConf: Note that spark.local.dir will be overridden by the value set by the cluster manager (via SPARK_LOCAL_DIRS in standalone/kubernetes and LOCAL_DIRS in YARN).
+spark_startup: 0.118s
+Starting bronze.impressions
+bronze.impressions: 0.0s
+ok
+test_entrypoints_and_cache_evidence (test_cached_enrichment.CacheTests.test_entrypoints_and_cache_evidence) ... 26/09/28 15:27:05 WARN SparkConf: Note that spark.local.dir will be overridden by the value set by the cluster manager (via SPARK_LOCAL_DIRS in standalone/kubernetes and LOCAL_DIRS in YARN).
+ok
+test_failure_cleanup_and_original_error (test_cached_enrichment.CacheTests.test_failure_cleanup_and_original_error) ... ok
+test_missing_storage_is_rejected (test_cached_enrichment.CacheTests.test_missing_storage_is_rejected) ... ok
+test_missing_settings_and_execution_evidence (test_coalescing.CoalescingTests.test_missing_settings_and_execution_evidence) ... ok
+test_real_entrypoints_observer_neutrality_and_evidence (test_coalescing.CoalescingTests.test_real_entrypoints_observer_neutrality_and_evidence) ... 26/09/28 15:28:25 WARN SparkConf: Note that spark.local.dir will be overridden by the value set by the cluster manager (via SPARK_LOCAL_DIRS in standalone/kubernetes and LOCAL_DIRS in YARN).
+ok
+test_only_declared_settings_may_differ (test_comparison.ComparisonRulesTests.test_only_declared_settings_may_differ) ... ok
+test_runner_tests_first_alternates_and_never_overwrites (test_comparison.ComparisonRulesTests.test_runner_tests_first_alternates_and_never_overwrites) ... Running the correctness test suite first
+Running 01-left: run.py
+Running 01-right: run.py
+Running 02-right: run.py
+Running 02-left: run.py
+Comparison succeeded: /private/var/folders/hj/lyhxkqjn2l9f2hb9w7zlrp980000gn/T/tmp2syur6ge/out/check/README.md
+ok
+test_same_sources_environment_and_tables_required (test_comparison.ComparisonRulesTests.test_same_sources_environment_and_tables_required) ... ok
+test_statistics_keep_outliers_and_zero_denominators (test_comparison.ComparisonRulesTests.test_statistics_keep_outliers_and_zero_denominators) ... ok
+test_subprocess_failure_is_persisted_without_summary (test_comparison.ComparisonRulesTests.test_subprocess_failure_is_persisted_without_summary) ... Running the correctness test suite first
+ok
+26/09/28 15:28:37 WARN SparkConf: Note that spark.local.dir will be overridden by the value set by the cluster manager (via SPARK_LOCAL_DIRS in standalone/kubernetes and LOCAL_DIRS in YARN).
+test_matching_totals_do_not_hide_wrong_group_results (test_comparison.ExactEqualityTests.test_matching_totals_do_not_hide_wrong_group_results) ... ok
+test_nulls_duplicates_and_reordered_rows_columns (test_comparison.ExactEqualityTests.test_nulls_duplicates_and_reordered_rows_columns) ... ok
+test_schema_changes_and_empty_tables (test_comparison.ExactEqualityTests.test_schema_changes_and_empty_tables) ... ok
+test_entrypoints_preserve_all_tables_and_write_requested_codecs (test_compression.CompressionTests.test_entrypoints_preserve_all_tables_and_write_requested_codecs) ... 26/09/28 15:29:11 WARN SparkConf: Note that spark.local.dir will be overridden by the value set by the cluster manager (via SPARK_LOCAL_DIRS in standalone/kubernetes and LOCAL_DIRS in YARN).
+ok
+test_failure_stops_later_steps_and_keeps_failed_report (test_experiment.ExperimentRunnerTests.test_failure_stops_later_steps_and_keeps_failed_report) ... Running pipeline; log: /private/var/folders/hj/lyhxkqjn2l9f2hb9w7zlrp980000gn/T/tmp8ukxj7yc/trial-suite-logs/pipeline.log
+Running queries; log: /private/var/folders/hj/lyhxkqjn2l9f2hb9w7zlrp980000gn/T/tmp8ukxj7yc/trial-suite-logs/queries.log
+Suite failed: /private/var/folders/hj/lyhxkqjn2l9f2hb9w7zlrp980000gn/T/tmp8ukxj7yc/trial/RESULTS.md
+ok
+test_presets_choose_reference_and_only_applicable_checks (test_experiment.ExperimentRunnerTests.test_presets_choose_reference_and_only_applicable_checks) ... ok
+test_success_requires_successful_artifacts (test_experiment.ExperimentRunnerTests.test_success_requires_successful_artifacts) ... Running pipeline; log: /private/var/folders/hj/lyhxkqjn2l9f2hb9w7zlrp980000gn/T/tmp392rnonk/trial-suite-logs/pipeline.log
+Suite failed: /private/var/folders/hj/lyhxkqjn2l9f2hb9w7zlrp980000gn/T/tmp392rnonk/trial/RESULTS.md
+ok
+test_roundtrip_queries_and_uncompressed_files (test_formats.FormatTests.test_roundtrip_queries_and_uncompressed_files) ... 26/09/28 15:29:18 WARN SparkConf: Note that spark.local.dir will be overridden by the value set by the cluster manager (via SPARK_LOCAL_DIRS in standalone/kubernetes and LOCAL_DIRS in YARN).
+26/09/28 15:29:19 WARN SparkConf: Note that spark.local.dir will be overridden by the value set by the cluster manager (via SPARK_LOCAL_DIRS in standalone/kubernetes and LOCAL_DIRS in YARN).
+/opt/homebrew/Cellar/python@3.11/3.11.15/Frameworks/Python.framework/Versions/3.11/lib/python3.11/socket.py:789: ResourceWarning: unclosed <socket.socket fd=9, family=2, type=1, proto=6, laddr=('127.0.0.1', 57210), raddr=('127.0.0.1', 57209)>
+  self._sock = None
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/opt/homebrew/Cellar/python@3.11/3.11.15/Frameworks/Python.framework/Versions/3.11/lib/python3.11/socket.py:789: ResourceWarning: unclosed <socket.socket fd=9, family=2, type=1, proto=6, laddr=('127.0.0.1', 57212), raddr=('127.0.0.1', 57211)>
+  self._sock = None
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/opt/homebrew/Cellar/python@3.11/3.11.15/Frameworks/Python.framework/Versions/3.11/lib/python3.11/socket.py:789: ResourceWarning: unclosed <socket.socket fd=9, family=2, type=1, proto=6, laddr=('127.0.0.1', 57214), raddr=('127.0.0.1', 57213)>
+  self._sock = None
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+26/09/28 15:29:20 WARN SparkConf: Note that spark.local.dir will be overridden by the value set by the cluster manager (via SPARK_LOCAL_DIRS in standalone/kubernetes and LOCAL_DIRS in YARN).
+/opt/homebrew/Cellar/python@3.11/3.11.15/Frameworks/Python.framework/Versions/3.11/lib/python3.11/socket.py:789: ResourceWarning: unclosed <socket.socket fd=9, family=2, type=1, proto=6, laddr=('127.0.0.1', 57220), raddr=('127.0.0.1', 57219)>
+  self._sock = None
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/opt/homebrew/Cellar/python@3.11/3.11.15/Frameworks/Python.framework/Versions/3.11/lib/python3.11/socket.py:789: ResourceWarning: unclosed <socket.socket fd=9, family=2, type=1, proto=6, laddr=('127.0.0.1', 57222), raddr=('127.0.0.1', 57221)>
+  self._sock = None
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/opt/homebrew/Cellar/python@3.11/3.11.15/Frameworks/Python.framework/Versions/3.11/lib/python3.11/socket.py:789: ResourceWarning: unclosed <socket.socket fd=9, family=2, type=1, proto=6, laddr=('127.0.0.1', 57224), raddr=('127.0.0.1', 57223)>
+  self._sock = None
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+26/09/28 15:29:20 WARN SparkConf: Note that spark.local.dir will be overridden by the value set by the cluster manager (via SPARK_LOCAL_DIRS in standalone/kubernetes and LOCAL_DIRS in YARN).
+ok
+test_layout_pruning_and_full_results (test_partitioning.PartitioningTests.test_layout_pruning_and_full_results) ... 26/09/28 15:30:02 WARN SparkConf: Note that spark.local.dir will be overridden by the value set by the cluster manager (via SPARK_LOCAL_DIRS in standalone/kubernetes and LOCAL_DIRS in YARN).
+ok
+test_preset (test_python_udf.PythonUdfTests.test_preset) ... ok
+test_real_entrypoints_dates_and_evidence (test_python_udf.PythonUdfTests.test_real_entrypoints_dates_and_evidence) ... <repo>/tests/test_python_udf.py:59: ResourceWarning: unclosed file <_io.TextIOWrapper name='/var/folders/hj/lyhxkqjn2l9f2hb9w7zlrp980000gn/T/tmp2df8vzxo/runs/variant/events/local-1790627438021' mode='r' encoding='UTF-8'>
+  events.extend(json.loads(line) for line in path.open())
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+26/09/28 15:30:53 WARN SparkConf: Note that spark.local.dir will be overridden by the value set by the cluster manager (via SPARK_LOCAL_DIRS in standalone/kubernetes and LOCAL_DIRS in YARN).
+/opt/homebrew/Cellar/python@3.11/3.11.15/Frameworks/Python.framework/Versions/3.11/lib/python3.11/socket.py:789: ResourceWarning: unclosed <socket.socket fd=10, family=2, type=1, proto=6, laddr=('127.0.0.1', 57355), raddr=('127.0.0.1', 57354)>
+  self._sock = None
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+Iteration 9 fixture evidence: {"exact_table_comparisons": 16, "settings_identical": true, "python_metrics": {"time to run Python workers": {"accumulator_id": "812", "metric_type": "timing", "total": 364}, "data returned from Python workers": {"accumulator_id": "809", "metric_type": "size", "total": 31}, "time to start Python workers": {"accumulator_id": "810", "metric_type": "timing", "total": 269}, "time to initialize Python workers": {"accumulator_id": "811", "metric_type": "timing", "total": 94}, "data sent to Python workers": {"accumulator_id": "808", "metric_type": "size", "total": 43}, "number of output rows": {"accumulator_id": "813", "metric_type": "sum", "total": 5}}, "gold_python_operators": {"gold.campaign_daily": [], "gold.audience_daily": []}}
+ok
+test_failed_sql_execution_is_rejected_even_if_it_ended (test_shuffle_partitions.ShufflePartitionTests.test_failed_sql_execution_is_rejected_even_if_it_ended) ... <repo>/benchmarks/shuffle_partitions.py:15: ResourceWarning: unclosed file <_io.TextIOWrapper name='/var/folders/hj/lyhxkqjn2l9f2hb9w7zlrp980000gn/T/tmpp07su6ij/events' mode='r' encoding='UTF-8'>
+  for line in path.open():
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+ok
+test_missing_evidence_is_not_a_pass (test_shuffle_partitions.ShufflePartitionTests.test_missing_evidence_is_not_a_pass) ... ok
+test_real_entrypoints_change_only_initial_count_and_preserve_rows (test_shuffle_partitions.ShufflePartitionTests.test_real_entrypoints_change_only_initial_count_and_preserve_rows) ... <repo>/benchmarks/shuffle_partitions.py:15: ResourceWarning: unclosed file <_io.TextIOWrapper name='/var/folders/hj/lyhxkqjn2l9f2hb9w7zlrp980000gn/T/tmpyscg9g1b/runs/02_compression/events/local-1790627467592' mode='r' encoding='UTF-8'>
+  for line in path.open():
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+<repo>/benchmarks/shuffle_partitions.py:15: ResourceWarning: unclosed file <_io.TextIOWrapper name='/var/folders/hj/lyhxkqjn2l9f2hb9w7zlrp980000gn/T/tmpyscg9g1b/runs/06_shuffle_partitions/events/local-1790627481603' mode='r' encoding='UTF-8'>
+  for line in path.open():
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+26/09/28 15:31:34 WARN SparkConf: Note that spark.local.dir will be overridden by the value set by the cluster manager (via SPARK_LOCAL_DIRS in standalone/kubernetes and LOCAL_DIRS in YARN).
+ok
+
+----------------------------------------------------------------------
+Ran 34 tests in 384.285s
+
+OK

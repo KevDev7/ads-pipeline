@@ -219,3 +219,17 @@ reporting-date UDF. Its `python-udf-evidence.json` checks the Silver data write,
 Python transfer bytes and output rows, successful tasks, and downstream Gold plans.
 No SQL-setting changes are allowed. `--observe-setting` extends observation metadata
 without setting a value; iteration 8’s `--observe-coalescing` behavior is unchanged.
+
+## Standing permission for generated-table cleanup
+
+On 2026-09-28 the user authorized removing old generated tables when space is
+needed for this project, without asking again for each cleanup.
+
+Apply that permission to Bronze/Silver/Gold output directories from old successful
+comparison runs. Prefer the oldest completed comparisons and remove only enough
+to meet the documented free-space requirement. Preserve raw source data, all
+experiment implementations, reports, logs, plans, correctness evidence, failed
+runs, the original baseline run, and outputs needed by an active process.
+Record exactly which directories and bytes were removed in a cleanup manifest,
+and recheck free space before benchmarking. Deletion of other material is not
+covered by this retention policy.

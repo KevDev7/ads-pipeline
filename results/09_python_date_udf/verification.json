@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-09-28T19:24:45.900259+00:00",
+  "checked_at": "2026-09-28T20:48:59.013701+00:00",
   "fixture": {
     "exact_table_comparisons": 16,
     "gold_python_operators": {
@@ -44,27 +44,62 @@
     "workload": "Five-impression fixture; not a full-data performance benchmark"
   },
   "full_data": {
-    "exact_table_comparisons_completed": 0,
-    "rebuilds_completed": 0,
-    "started": false,
-    "zstd_footer_checks_completed": 0
+    "comparison_id": "python-udf-09-20260928",
+    "completed": true,
+    "exact_table_comparisons_completed": 40,
+    "rebuilds_completed": 6,
+    "resource_warnings": [],
+    "started": true,
+    "verification_seconds": 720.511,
+    "zstd_footer_checks_completed": 228
   },
+  "implementation_commit": "7e0c344d601b8d4b1771e6b2519fd49eb9c025a4",
   "prior_versions_unchanged": true,
   "reference_commit": "399385020efccf8ada00b263a68b19cd081c8770",
   "regression": {
     "passed": true,
-    "seconds": 386.548,
+    "seconds": 384.285,
     "tests": 34
   },
-  "status": "implemented_full_benchmark_paused",
+  "status": "completed",
   "storage": {
-    "cleanup_approved": false,
-    "deleted_directories": [],
-    "free_bytes": 3670016000,
+    "cleanup_approved": true,
+    "deleted_directories": [
+      "outputs/comparisons/ads-join-04-20260927/runs/01-left/bronze",
+      "outputs/comparisons/ads-join-04-20260927/runs/01-left/silver",
+      "outputs/comparisons/ads-join-04-20260927/runs/01-left/gold",
+      "outputs/comparisons/ads-join-04-20260927/runs/01-right/bronze",
+      "outputs/comparisons/ads-join-04-20260927/runs/01-right/silver",
+      "outputs/comparisons/ads-join-04-20260927/runs/01-right/gold",
+      "outputs/comparisons/ads-join-04-20260927/runs/02-right/bronze",
+      "outputs/comparisons/ads-join-04-20260927/runs/02-right/silver",
+      "outputs/comparisons/ads-join-04-20260927/runs/02-right/gold",
+      "outputs/comparisons/ads-join-04-20260927/runs/02-left/bronze",
+      "outputs/comparisons/ads-join-04-20260927/runs/02-left/silver",
+      "outputs/comparisons/ads-join-04-20260927/runs/02-left/gold",
+      "outputs/comparisons/profile-join-05-retry-20260927/runs/01-left/bronze",
+      "outputs/comparisons/profile-join-05-retry-20260927/runs/01-left/silver",
+      "outputs/comparisons/profile-join-05-retry-20260927/runs/01-left/gold",
+      "outputs/comparisons/profile-join-05-retry-20260927/runs/01-right/bronze",
+      "outputs/comparisons/profile-join-05-retry-20260927/runs/01-right/silver",
+      "outputs/comparisons/profile-join-05-retry-20260927/runs/01-right/gold",
+      "outputs/comparisons/profile-join-05-retry-20260927/runs/02-right/bronze",
+      "outputs/comparisons/profile-join-05-retry-20260927/runs/02-right/silver",
+      "outputs/comparisons/profile-join-05-retry-20260927/runs/02-right/gold",
+      "outputs/comparisons/profile-join-05-retry-20260927/runs/02-left/bronze",
+      "outputs/comparisons/profile-join-05-retry-20260927/runs/02-left/silver",
+      "outputs/comparisons/profile-join-05-retry-20260927/runs/02-left/gold",
+      "outputs/comparisons/profile-join-05-retry-20260927/runs/03-left/bronze",
+      "outputs/comparisons/profile-join-05-retry-20260927/runs/03-left/silver",
+      "outputs/comparisons/profile-join-05-retry-20260927/runs/03-left/gold",
+      "outputs/comparisons/profile-join-05-retry-20260927/runs/03-right/bronze",
+      "outputs/comparisons/profile-join-05-retry-20260927/runs/03-right/silver",
+      "outputs/comparisons/profile-join-05-retry-20260927/runs/03-right/gold"
+    ],
+    "free_after_suite": 5611520000,
+    "free_before_benchmark": 9707520000,
     "minimum_free_bytes": 7516192768,
-    "proposed_comparisons": [
-      "ads-join-04-20260927",
-      "profile-join-05-retry-20260927"
-    ]
+    "removed_bytes": 6305918377,
+    "standing_permission": true
   }
 }

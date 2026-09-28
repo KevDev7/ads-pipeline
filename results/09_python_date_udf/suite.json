@@ -1,0 +1,22 @@
+{
+  "comparison_id": "python-udf-09-20260928",
+  "finished_at": "2026-09-28T20:48:23.098386+00:00",
+  "iteration": "9",
+  "repeats": 3,
+  "started_at": "2026-09-28T20:25:17.238385+00:00",
+  "status": "succeeded",
+  "steps": {
+    "codecs": {
+      "log": "python-udf-09-20260928-suite-logs/codecs.log",
+      "status": "succeeded"
+    },
+    "pipeline": {
+      "log": "python-udf-09-20260928-suite-logs/pipeline.log",
+      "status": "succeeded"
+    },
+    "python-udf": {
+      "log": "python-udf-09-20260928-suite-logs/python-udf.log",
+      "status": "succeeded"
+    }
+  }
+}

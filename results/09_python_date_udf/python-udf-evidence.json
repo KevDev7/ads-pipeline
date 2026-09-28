@@ -1,0 +1,1641 @@
+{
+  "combined_gold_seconds": {
+    "left": {
+      "max": 7.364,
+      "median": 7.242,
+      "min": 6.517,
+      "samples": [
+        6.517,
+        7.364,
+        7.242
+      ],
+      "stdev": 0.4578788049254953
+    },
+    "right": {
+      "max": 7.003,
+      "median": 6.913,
+      "min": 6.629,
+      "samples": [
+        6.629,
+        7.003,
+        6.913
+      ],
+      "stdev": 0.1952058742285525
+    }
+  },
+  "method": "Successful data SQL executions, completed stages and task accumulator updates; no extra data actions. JVM task CPU/memory exclude complete Python worker usage. Worker timings are cumulative, not wall-clock.",
+  "runs": {
+    "01-left": {
+      "combined_gold_seconds": 6.517,
+      "executions": {
+        "gold.audience_daily": {
+          "execution_id": "98",
+          "joins": [
+            {
+              "description": "BroadcastHashJoin [user_id#5063L], [user_id#5079L], LeftOuter, BuildRight, false",
+              "key": "user_id",
+              "operator": "BroadcastHashJoin"
+            },
+            {
+              "description": "BroadcastHashJoin [adgroup_id#5065L], [adgroup_id#5072L], LeftOuter, BuildRight, false",
+              "key": "adgroup_id",
+              "operator": "BroadcastHashJoin"
+            }
+          ],
+          "python_metrics": {},
+          "python_operators": [],
+          "stages": [
+            {
+              "attempt_id": 0,
+              "completed": true,
+              "disk_spill_bytes": 0,
+              "execution_id": "98",
+              "executor_cpu_ns": 417818000,
+              "executor_run_ms": 429,
+              "failed_tasks": 0,
+              "group": "gold.audience_daily",
+              "memory_spill_bytes": 0,
+              "scheduled_tasks": 4,
+              "shuffle_read_bytes": 0,
+              "shuffle_write_bytes": 0,
+              "stage_id": 190,
+              "task_durations_ms": [
+                70,
+                128,
+                128,
+                131
+              ],
+              "tasks": 4
+            },
+            {
+              "attempt_id": 0,
+              "completed": true,
+              "disk_spill_bytes": 0,
+              "execution_id": "98",
+              "executor_cpu_ns": 139407000,
+              "executor_run_ms": 138,
+              "failed_tasks": 0,
+              "group": "gold.audience_daily",
+              "memory_spill_bytes": 0,
+              "scheduled_tasks": 4,
+              "shuffle_read_bytes": 0,
+              "shuffle_write_bytes": 0,
+              "stage_id": 191,
+              "task_durations_ms": [
+                67,
+                18,
+                34,
+                34
+              ],
+              "tasks": 4
+            },
+            {
+              "attempt_id": 0,
+              "completed": true,
+              "disk_spill_bytes": 0,
+              "execution_id": "98",
+              "executor_cpu_ns": 6605171000,
+              "executor_run_ms": 6815,
+              "failed_tasks": 0,
+              "group": "gold.audience_daily",
+              "memory_spill_bytes": 0,
+              "scheduled_tasks": 5,
+              "shuffle_read_bytes": 0,
+              "shuffle_write_bytes": 91609785,
+              "stage_id": 192,
+              "task_durations_ms": [
+                1468,
+                1568,
+                123,
+                1834,
+                1835
+              ],
+              "tasks": 5
+            },
+            {
+              "attempt_id": 0,
+              "completed": true,
+              "disk_spill_bytes": 0,
+              "execution_id": "98",
+              "executor_cpu_ns": 3036559000,
+              "executor_run_ms": 3132,
+              "failed_tasks": 0,
+              "group": "gold.audience_daily",
+              "memory_spill_bytes": 0,
+              "scheduled_tasks": 4,
+              "shuffle_read_bytes": 91609785,
+              "shuffle_write_bytes": 0,
+              "stage_id": 194,
+              "task_durations_ms": [
+                772,
+                787,
+                814,
+                817
+              ],
+              "tasks": 4
+            }
+          ]
+        },
+        "gold.campaign_daily": {
+          "execution_id": "81",
+          "joins": [
+            {
+              "description": "BroadcastHashJoin [user_id#5063L], [user_id#5079L], LeftOuter, BuildRight, false",
+              "key": "user_id",
+              "operator": "BroadcastHashJoin"
+            },
+            {
+              "description": "BroadcastHashJoin [adgroup_id#5065L], [adgroup_id#5072L], LeftOuter, BuildRight, false",
+              "key": "adgroup_id",
+              "operator": "BroadcastHashJoin"
+            }
+          ],
+          "python_metrics": {},
+          "python_operators": [],
+          "stages": [
+            {
+              "attempt_id": 0,
+              "completed": true,
+              "disk_spill_bytes": 0,
+              "execution_id": "81",
+              "executor_cpu_ns": 131584000,
+              "executor_run_ms": 143,
+              "failed_tasks": 0,
+              "group": "gold.campaign_daily",
+              "memory_spill_bytes": 0,
+              "scheduled_tasks": 4,
+              "shuffle_read_bytes": 0,
+              "shuffle_write_bytes": 0,
+              "stage_id": 156,
+              "task_durations_ms": [
+                31,
+                46,
+                47,
+                48
+              ],
+              "tasks": 4
+            },
+            {
+              "attempt_id": 0,
+              "completed": true,
+              "disk_spill_bytes": 0,
+              "execution_id": "81",
+              "executor_cpu_ns": 153214000,
+              "executor_run_ms": 154,
+              "failed_tasks": 0,
+              "group": "gold.campaign_daily",
+              "memory_spill_bytes": 0,
+              "scheduled_tasks": 4,
+              "shuffle_read_bytes": 0,
+              "shuffle_write_bytes": 0,
+              "stage_id": 157,
+              "task_durations_ms": [
+                22,
+                54,
+                47,
+                48
+              ],
+              "tasks": 4
+            },
+            {
+              "attempt_id": 0,
+              "completed": true,
+              "disk_spill_bytes": 0,
+              "execution_id": "81",
+              "executor_cpu_ns": 3821609000,
+              "executor_run_ms": 3942,
+              "failed_tasks": 0,
+              "group": "gold.campaign_daily",
+              "memory_spill_bytes": 0,
+              "scheduled_tasks": 5,
+              "shuffle_read_bytes": 0,
+              "shuffle_write_bytes": 47077324,
+              "stage_id": 158,
+              "task_durations_ms": [
+                851,
+                922,
+                90,
+                1033,
+                1060
+              ],
+              "tasks": 5
+            },
+            {
+              "attempt_id": 0,
+              "completed": true,
+              "disk_spill_bytes": 0,
+              "execution_id": "81",
+              "executor_cpu_ns": 1746041000,
+              "executor_run_ms": 1902,
+              "failed_tasks": 0,
+              "group": "gold.campaign_daily",
+              "memory_spill_bytes": 0,
+              "scheduled_tasks": 4,
+              "shuffle_read_bytes": 47077324,
+              "shuffle_write_bytes": 0,
+              "stage_id": 160,
+              "task_durations_ms": [
+                475,
+                508,
+                510,
+                514
+              ],
+              "tasks": 4
+            }
+          ]
+        },
+        "silver.impressions": {
+          "execution_id": "16",
+          "joins": [],
+          "python_metrics": {},
+          "python_operators": [],
+          "stages": [
+            {
+              "attempt_id": 0,
+              "completed": true,
+              "disk_spill_bytes": 0,
+              "execution_id": "16",
+              "executor_cpu_ns": 26904974000,
+              "executor_run_ms": 31797,
+              "failed_tasks": 0,
+              "group": "silver.impressions",
+              "memory_spill_bytes": 0,
+              "scheduled_tasks": 5,
+              "shuffle_read_bytes": 0,
+              "shuffle_write_bytes": 0,
+              "stage_id": 19,
+              "task_durations_ms": [
+                7239,
+                483,
+                7985,
+                8095,
+                8095
+              ],
+              "tasks": 5
+            }
+          ]
+        }
+      }
+    },
+    "01-right": {
+      "combined_gold_seconds": 6.629,
+      "executions": {
+        "gold.audience_daily": {
+          "execution_id": "98",
+          "joins": [
+            {
+              "description": "BroadcastHashJoin [user_id#5065L], [user_id#5081L], LeftOuter, BuildRight, false",
+              "key": "user_id",
+              "operator": "BroadcastHashJoin"
+            },
+            {
+              "description": "BroadcastHashJoin [adgroup_id#5067L], [adgroup_id#5074L], LeftOuter, BuildRight, false",
+              "key": "adgroup_id",
+              "operator": "BroadcastHashJoin"
+            }
+          ],
+          "python_metrics": {},
+          "python_operators": [],
+          "stages": [
+            {
+              "attempt_id": 0,
+              "completed": true,
+              "disk_spill_bytes": 0,
+              "execution_id": "98",
+              "executor_cpu_ns": 474056000,
+              "executor_run_ms": 477,
+              "failed_tasks": 0,
+              "group": "gold.audience_daily",
+              "memory_spill_bytes": 0,
+              "scheduled_tasks": 4,
+              "shuffle_read_bytes": 0,
+              "shuffle_write_bytes": 0,
+              "stage_id": 190,
+              "task_durations_ms": [
+                67,
+                144,
+                144,
+                146
+              ],
+              "tasks": 4
+            },
+            {
+              "attempt_id": 0,
+              "completed": true,
+              "disk_spill_bytes": 0,
+              "execution_id": "98",
+              "executor_cpu_ns": 151711000,
+              "executor_run_ms": 150,
+              "failed_tasks": 0,
+              "group": "gold.audience_daily",
+              "memory_spill_bytes": 0,
+              "scheduled_tasks": 4,
+              "shuffle_read_bytes": 0,
+              "shuffle_write_bytes": 0,
+              "stage_id": 191,
+              "task_durations_ms": [
+                83,
+                22,
+                31,
+                31
+              ],
+              "tasks": 4
+            },
+            {
+              "attempt_id": 0,
+              "completed": true,
+              "disk_spill_bytes": 0,
+              "execution_id": "98",
+              "executor_cpu_ns": 6796286000,
+              "executor_run_ms": 6939,
+              "failed_tasks": 0,
+              "group": "gold.audience_daily",
+              "memory_spill_bytes": 0,
+              "scheduled_tasks": 5,
+              "shuffle_read_bytes": 0,
+              "shuffle_write_bytes": 91609785,
+              "stage_id": 192,
+              "task_durations_ms": [
+                1522,
+                1611,
+                156,
+                1830,
+                1833
+              ],
+              "tasks": 5
+            },
+            {
+              "attempt_id": 0,
+              "completed": true,
+              "disk_spill_bytes": 0,
+              "execution_id": "98",
+              "executor_cpu_ns": 3359368000,
+              "executor_run_ms": 3506,
+              "failed_tasks": 0,
+              "group": "gold.audience_daily",
+              "memory_spill_bytes": 0,
+              "scheduled_tasks": 4,
+              "shuffle_read_bytes": 91609785,
+              "shuffle_write_bytes": 0,
+              "stage_id": 194,
+              "task_durations_ms": [
+                853,
+                866,
+                920,
+                929
+              ],
+              "tasks": 4
+            }
+          ]
+        },
+        "gold.campaign_daily": {
+          "execution_id": "81",
+          "joins": [
+            {
+              "description": "BroadcastHashJoin [user_id#5065L], [user_id#5081L], LeftOuter, BuildRight, false",
+              "key": "user_id",
+              "operator": "BroadcastHashJoin"
+            },
+            {
+              "description": "BroadcastHashJoin [adgroup_id#5067L], [adgroup_id#5074L], LeftOuter, BuildRight, false",
+              "key": "adgroup_id",
+              "operator": "BroadcastHashJoin"
+            }
+          ],
+          "python_metrics": {},
+          "python_operators": [],
+          "stages": [
+            {
+              "attempt_id": 0,
+              "completed": true,
+              "disk_spill_bytes": 0,
+              "execution_id": "81",
+              "executor_cpu_ns": 216142000,
+              "executor_run_ms": 221,
+              "failed_tasks": 0,
+              "group": "gold.campaign_daily",
+              "memory_spill_bytes": 0,
+              "scheduled_tasks": 4,
+              "shuffle_read_bytes": 0,
+              "shuffle_write_bytes": 0,
+              "stage_id": 156,
+              "task_durations_ms": [
+                28,
+                68,
+                76,
+                77
+              ],
+              "tasks": 4
+            },
+            {
+              "attempt_id": 0,
+              "completed": true,
+              "disk_spill_bytes": 0,
+              "execution_id": "81",
+              "executor_cpu_ns": 119207000,
+              "executor_run_ms": 125,
+              "failed_tasks": 0,
+              "group": "gold.campaign_daily",
+              "memory_spill_bytes": 0,
+              "scheduled_tasks": 4,
+              "shuffle_read_bytes": 0,
+              "shuffle_write_bytes": 0,
+              "stage_id": 157,
+              "task_durations_ms": [
+                54,
+                18,
+                33,
+                33
+              ],
+              "tasks": 4
+            },
+            {
+              "attempt_id": 0,
+              "completed": true,
+              "disk_spill_bytes": 0,
+              "execution_id": "81",
+              "executor_cpu_ns": 3959481000,
+              "executor_run_ms": 4051,
+              "failed_tasks": 0,
+              "group": "gold.campaign_daily",
+              "memory_spill_bytes": 0,
+              "scheduled_tasks": 5,
+              "shuffle_read_bytes": 0,
+              "shuffle_write_bytes": 47077324,
+              "stage_id": 158,
+              "task_durations_ms": [
+                864,
+                963,
+                112,
+                1036,
+                1089
+              ],
+              "tasks": 5
+            },
+            {
+              "attempt_id": 0,
+              "completed": true,
+              "disk_spill_bytes": 0,
+              "execution_id": "81",
+              "executor_cpu_ns": 1795015000,
+              "executor_run_ms": 1871,
+              "failed_tasks": 0,
+              "group": "gold.campaign_daily",
+              "memory_spill_bytes": 0,
+              "scheduled_tasks": 4,
+              "shuffle_read_bytes": 47077324,
+              "shuffle_write_bytes": 0,
+              "stage_id": 160,
+              "task_durations_ms": [
+                465,
+                476,
+                487,
+                493
+              ],
+              "tasks": 4
+            }
+          ]
+        },
+        "silver.impressions": {
+          "execution_id": "16",
+          "joins": [],
+          "python_metrics": {
+            "data returned from Python workers": {
+              "accumulator_id": "809",
+              "metric_type": "size",
+              "total": 83923211
+            },
+            "data sent to Python workers": {
+              "accumulator_id": "808",
+              "metric_type": "size",
+              "total": 161738032
+            },
+            "number of output rows": {
+              "accumulator_id": "813",
+              "metric_type": "sum",
+              "total": 26557961
+            },
+            "time to initialize Python workers": {
+              "accumulator_id": "811",
+              "metric_type": "timing",
+              "total": 1023
+            },
+            "time to run Python workers": {
+              "accumulator_id": "812",
+              "metric_type": "timing",
+              "total": 38965
+            },
+            "time to start Python workers": {
+              "accumulator_id": "810",
+              "metric_type": "timing",
+              "total": 1111
+            }
+          },
+          "python_operators": [
+            "BatchEvalPython"
+          ],
+          "stages": [
+            {
+              "attempt_id": 0,
+              "completed": true,
+              "disk_spill_bytes": 0,
+              "execution_id": "16",
+              "executor_cpu_ns": 37950317000,
+              "executor_run_ms": 42763,
+              "failed_tasks": 0,
+              "group": "silver.impressions",
+              "memory_spill_bytes": 0,
+              "scheduled_tasks": 5,
+              "shuffle_read_bytes": 0,
+              "shuffle_write_bytes": 0,
+              "stage_id": 19,
+              "task_durations_ms": [
+                10104,
+                10446,
+                522,
+                10875,
+                10916
+              ],
+              "tasks": 5
+            }
+          ]
+        }
+      }
+    },
+    "02-left": {
+      "combined_gold_seconds": 7.364,
+      "executions": {
+        "gold.audience_daily": {
+          "execution_id": "98",
+          "joins": [
+            {
+              "description": "BroadcastHashJoin [user_id#5063L], [user_id#5079L], LeftOuter, BuildRight, false",
+              "key": "user_id",
+              "operator": "BroadcastHashJoin"
+            },
+            {
+              "description": "BroadcastHashJoin [adgroup_id#5065L], [adgroup_id#5072L], LeftOuter, BuildRight, false",
+              "key": "adgroup_id",
+              "operator": "BroadcastHashJoin"
+            }
+          ],
+          "python_metrics": {},
+          "python_operators": [],
+          "stages": [
+            {
+              "attempt_id": 0,
+              "completed": true,
+              "disk_spill_bytes": 0,
+              "execution_id": "98",
+              "executor_cpu_ns": 469368000,
+              "executor_run_ms": 475,
+              "failed_tasks": 0,
+              "group": "gold.audience_daily",
+              "memory_spill_bytes": 0,
+              "scheduled_tasks": 4,
+              "shuffle_read_bytes": 0,
+              "shuffle_write_bytes": 0,
+              "stage_id": 190,
+              "task_durations_ms": [
+                76,
+                140,
+                142,
+                144
+              ],
+              "tasks": 4
+            },
+            {
+              "attempt_id": 0,
+              "completed": true,
+              "disk_spill_bytes": 0,
+              "execution_id": "98",
+              "executor_cpu_ns": 164463000,
+              "executor_run_ms": 164,
+              "failed_tasks": 0,
+              "group": "gold.audience_daily",
+              "memory_spill_bytes": 0,
+              "scheduled_tasks": 4,
+              "shuffle_read_bytes": 0,
+              "shuffle_write_bytes": 0,
+              "stage_id": 191,
+              "task_durations_ms": [
+                79,
+                27,
+                36,
+                37
+              ],
+              "tasks": 4
+            },
+            {
+              "attempt_id": 0,
+              "completed": true,
+              "disk_spill_bytes": 0,
+              "execution_id": "98",
+              "executor_cpu_ns": 7669459000,
+              "executor_run_ms": 8393,
+              "failed_tasks": 0,
+              "group": "gold.audience_daily",
+              "memory_spill_bytes": 0,
+              "scheduled_tasks": 5,
+              "shuffle_read_bytes": 0,
+              "shuffle_write_bytes": 91609785,
+              "stage_id": 192,
+              "task_durations_ms": [
+                1861,
+                1989,
+                145,
+                2178,
+                2233
+              ],
+              "tasks": 5
+            },
+            {
+              "attempt_id": 0,
+              "completed": true,
+              "disk_spill_bytes": 0,
+              "execution_id": "98",
+              "executor_cpu_ns": 3236455000,
+              "executor_run_ms": 3560,
+              "failed_tasks": 0,
+              "group": "gold.audience_daily",
+              "memory_spill_bytes": 0,
+              "scheduled_tasks": 4,
+              "shuffle_read_bytes": 91609785,
+              "shuffle_write_bytes": 0,
+              "stage_id": 194,
+              "task_durations_ms": [
+                884,
+                884,
+                927,
+                927
+              ],
+              "tasks": 4
+            }
+          ]
+        },
+        "gold.campaign_daily": {
+          "execution_id": "81",
+          "joins": [
+            {
+              "description": "BroadcastHashJoin [user_id#5063L], [user_id#5079L], LeftOuter, BuildRight, false",
+              "key": "user_id",
+              "operator": "BroadcastHashJoin"
+            },
+            {
+              "description": "BroadcastHashJoin [adgroup_id#5065L], [adgroup_id#5072L], LeftOuter, BuildRight, false",
+              "key": "adgroup_id",
+              "operator": "BroadcastHashJoin"
+            }
+          ],
+          "python_metrics": {},
+          "python_operators": [],
+          "stages": [
+            {
+              "attempt_id": 0,
+              "completed": true,
+              "disk_spill_bytes": 0,
+              "execution_id": "81",
+              "executor_cpu_ns": 159881000,
+              "executor_run_ms": 173,
+              "failed_tasks": 0,
+              "group": "gold.campaign_daily",
+              "memory_spill_bytes": 0,
+              "scheduled_tasks": 4,
+              "shuffle_read_bytes": 0,
+              "shuffle_write_bytes": 0,
+              "stage_id": 156,
+              "task_durations_ms": [
+                28,
+                54,
+                62,
+                71
+              ],
+              "tasks": 4
+            },
+            {
+              "attempt_id": 0,
+              "completed": true,
+              "disk_spill_bytes": 0,
+              "execution_id": "81",
+              "executor_cpu_ns": 201248000,
+              "executor_run_ms": 256,
+              "failed_tasks": 0,
+              "group": "gold.campaign_daily",
+              "memory_spill_bytes": 0,
+              "scheduled_tasks": 4,
+              "shuffle_read_bytes": 0,
+              "shuffle_write_bytes": 0,
+              "stage_id": 157,
+              "task_durations_ms": [
+                42,
+                82,
+                82,
+                74
+              ],
+              "tasks": 4
+            },
+            {
+              "attempt_id": 0,
+              "completed": true,
+              "disk_spill_bytes": 0,
+              "execution_id": "81",
+              "executor_cpu_ns": 3925975000,
+              "executor_run_ms": 4043,
+              "failed_tasks": 0,
+              "group": "gold.campaign_daily",
+              "memory_spill_bytes": 0,
+              "scheduled_tasks": 5,
+              "shuffle_read_bytes": 0,
+              "shuffle_write_bytes": 47077324,
+              "stage_id": 158,
+              "task_durations_ms": [
+                858,
+                99,
+                962,
+                1048,
+                1088
+              ],
+              "tasks": 5
+            },
+            {
+              "attempt_id": 0,
+              "completed": true,
+              "disk_spill_bytes": 0,
+              "execution_id": "81",
+              "executor_cpu_ns": 2277507000,
+              "executor_run_ms": 2410,
+              "failed_tasks": 0,
+              "group": "gold.campaign_daily",
+              "memory_spill_bytes": 0,
+              "scheduled_tasks": 4,
+              "shuffle_read_bytes": 47077324,
+              "shuffle_write_bytes": 0,
+              "stage_id": 160,
+              "task_durations_ms": [
+                594,
+                619,
+                627,
+                629
+              ],
+              "tasks": 4
+            }
+          ]
+        },
+        "silver.impressions": {
+          "execution_id": "16",
+          "joins": [],
+          "python_metrics": {},
+          "python_operators": [],
+          "stages": [
+            {
+              "attempt_id": 0,
+              "completed": true,
+              "disk_spill_bytes": 0,
+              "execution_id": "16",
+              "executor_cpu_ns": 26929050000,
+              "executor_run_ms": 30822,
+              "failed_tasks": 0,
+              "group": "silver.impressions",
+              "memory_spill_bytes": 0,
+              "scheduled_tasks": 5,
+              "shuffle_read_bytes": 0,
+              "shuffle_write_bytes": 0,
+              "stage_id": 19,
+              "task_durations_ms": [
+                7425,
+                7545,
+                7756,
+                7789,
+                417
+              ],
+              "tasks": 5
+            }
+          ]
+        }
+      }
+    },
+    "02-right": {
+      "combined_gold_seconds": 7.003,
+      "executions": {
+        "gold.audience_daily": {
+          "execution_id": "98",
+          "joins": [
+            {
+              "description": "BroadcastHashJoin [user_id#5065L], [user_id#5081L], LeftOuter, BuildRight, false",
+              "key": "user_id",
+              "operator": "BroadcastHashJoin"
+            },
+            {
+              "description": "BroadcastHashJoin [adgroup_id#5067L], [adgroup_id#5074L], LeftOuter, BuildRight, false",
+              "key": "adgroup_id",
+              "operator": "BroadcastHashJoin"
+            }
+          ],
+          "python_metrics": {},
+          "python_operators": [],
+          "stages": [
+            {
+              "attempt_id": 0,
+              "completed": true,
+              "disk_spill_bytes": 0,
+              "execution_id": "98",
+              "executor_cpu_ns": 453718000,
+              "executor_run_ms": 458,
+              "failed_tasks": 0,
+              "group": "gold.audience_daily",
+              "memory_spill_bytes": 0,
+              "scheduled_tasks": 4,
+              "shuffle_read_bytes": 0,
+              "shuffle_write_bytes": 0,
+              "stage_id": 190,
+              "task_durations_ms": [
+                45,
+                139,
+                143,
+                151
+              ],
+              "tasks": 4
+            },
+            {
+              "attempt_id": 0,
+              "completed": true,
+              "disk_spill_bytes": 0,
+              "execution_id": "98",
+              "executor_cpu_ns": 175354000,
+              "executor_run_ms": 175,
+              "failed_tasks": 0,
+              "group": "gold.audience_daily",
+              "memory_spill_bytes": 0,
+              "scheduled_tasks": 4,
+              "shuffle_read_bytes": 0,
+              "shuffle_write_bytes": 0,
+              "stage_id": 191,
+              "task_durations_ms": [
+                93,
+                26,
+                38,
+                34
+              ],
+              "tasks": 4
+            },
+            {
+              "attempt_id": 0,
+              "completed": true,
+              "disk_spill_bytes": 0,
+              "execution_id": "98",
+              "executor_cpu_ns": 7149238000,
+              "executor_run_ms": 7470,
+              "failed_tasks": 0,
+              "group": "gold.audience_daily",
+              "memory_spill_bytes": 0,
+              "scheduled_tasks": 5,
+              "shuffle_read_bytes": 0,
+              "shuffle_write_bytes": 91609785,
+              "stage_id": 192,
+              "task_durations_ms": [
+                1584,
+                1701,
+                167,
+                1974,
+                2059
+              ],
+              "tasks": 5
+            },
+            {
+              "attempt_id": 0,
+              "completed": true,
+              "disk_spill_bytes": 0,
+              "execution_id": "98",
+              "executor_cpu_ns": 3164040000,
+              "executor_run_ms": 3465,
+              "failed_tasks": 0,
+              "group": "gold.audience_daily",
+              "memory_spill_bytes": 0,
+              "scheduled_tasks": 4,
+              "shuffle_read_bytes": 91609785,
+              "shuffle_write_bytes": 0,
+              "stage_id": 194,
+              "task_durations_ms": [
+                835,
+                888,
+                888,
+                913
+              ],
+              "tasks": 4
+            }
+          ]
+        },
+        "gold.campaign_daily": {
+          "execution_id": "81",
+          "joins": [
+            {
+              "description": "BroadcastHashJoin [user_id#5065L], [user_id#5081L], LeftOuter, BuildRight, false",
+              "key": "user_id",
+              "operator": "BroadcastHashJoin"
+            },
+            {
+              "description": "BroadcastHashJoin [adgroup_id#5067L], [adgroup_id#5074L], LeftOuter, BuildRight, false",
+              "key": "adgroup_id",
+              "operator": "BroadcastHashJoin"
+            }
+          ],
+          "python_metrics": {},
+          "python_operators": [],
+          "stages": [
+            {
+              "attempt_id": 0,
+              "completed": true,
+              "disk_spill_bytes": 0,
+              "execution_id": "81",
+              "executor_cpu_ns": 320143000,
+              "executor_run_ms": 326,
+              "failed_tasks": 0,
+              "group": "gold.campaign_daily",
+              "memory_spill_bytes": 0,
+              "scheduled_tasks": 4,
+              "shuffle_read_bytes": 0,
+              "shuffle_write_bytes": 0,
+              "stage_id": 156,
+              "task_durations_ms": [
+                73,
+                92,
+                93,
+                94
+              ],
+              "tasks": 4
+            },
+            {
+              "attempt_id": 0,
+              "completed": true,
+              "disk_spill_bytes": 0,
+              "execution_id": "81",
+              "executor_cpu_ns": 202355000,
+              "executor_run_ms": 211,
+              "failed_tasks": 0,
+              "group": "gold.campaign_daily",
+              "memory_spill_bytes": 0,
+              "scheduled_tasks": 4,
+              "shuffle_read_bytes": 0,
+              "shuffle_write_bytes": 0,
+              "stage_id": 157,
+              "task_durations_ms": [
+                23,
+                74,
+                70,
+                71
+              ],
+              "tasks": 4
+            },
+            {
+              "attempt_id": 0,
+              "completed": true,
+              "disk_spill_bytes": 0,
+              "execution_id": "81",
+              "executor_cpu_ns": 4085898000,
+              "executor_run_ms": 4253,
+              "failed_tasks": 0,
+              "group": "gold.campaign_daily",
+              "memory_spill_bytes": 0,
+              "scheduled_tasks": 5,
+              "shuffle_read_bytes": 0,
+              "shuffle_write_bytes": 47077324,
+              "stage_id": 158,
+              "task_durations_ms": [
+                907,
+                971,
+                100,
+                1145,
+                1145
+              ],
+              "tasks": 5
+            },
+            {
+              "attempt_id": 0,
+              "completed": true,
+              "disk_spill_bytes": 0,
+              "execution_id": "81",
+              "executor_cpu_ns": 1923061000,
+              "executor_run_ms": 2077,
+              "failed_tasks": 0,
+              "group": "gold.campaign_daily",
+              "memory_spill_bytes": 0,
+              "scheduled_tasks": 4,
+              "shuffle_read_bytes": 47077324,
+              "shuffle_write_bytes": 0,
+              "stage_id": 160,
+              "task_durations_ms": [
+                505,
+                542,
+                542,
+                542
+              ],
+              "tasks": 4
+            }
+          ]
+        },
+        "silver.impressions": {
+          "execution_id": "16",
+          "joins": [],
+          "python_metrics": {
+            "data returned from Python workers": {
+              "accumulator_id": "809",
+              "metric_type": "size",
+              "total": 83923211
+            },
+            "data sent to Python workers": {
+              "accumulator_id": "808",
+              "metric_type": "size",
+              "total": 161738032
+            },
+            "number of output rows": {
+              "accumulator_id": "813",
+              "metric_type": "sum",
+              "total": 26557961
+            },
+            "time to initialize Python workers": {
+              "accumulator_id": "811",
+              "metric_type": "timing",
+              "total": 1653
+            },
+            "time to run Python workers": {
+              "accumulator_id": "812",
+              "metric_type": "timing",
+              "total": 41771
+            },
+            "time to start Python workers": {
+              "accumulator_id": "810",
+              "metric_type": "timing",
+              "total": 1101
+            }
+          },
+          "python_operators": [
+            "BatchEvalPython"
+          ],
+          "stages": [
+            {
+              "attempt_id": 0,
+              "completed": true,
+              "disk_spill_bytes": 0,
+              "execution_id": "16",
+              "executor_cpu_ns": 39421807000,
+              "executor_run_ms": 46879,
+              "failed_tasks": 0,
+              "group": "silver.impressions",
+              "memory_spill_bytes": 0,
+              "scheduled_tasks": 5,
+              "shuffle_read_bytes": 0,
+              "shuffle_write_bytes": 0,
+              "stage_id": 19,
+              "task_durations_ms": [
+                11489,
+                11488,
+                11754,
+                11798,
+                445
+              ],
+              "tasks": 5
+            }
+          ]
+        }
+      }
+    },
+    "03-left": {
+      "combined_gold_seconds": 7.242,
+      "executions": {
+        "gold.audience_daily": {
+          "execution_id": "98",
+          "joins": [
+            {
+              "description": "BroadcastHashJoin [user_id#5063L], [user_id#5079L], LeftOuter, BuildRight, false",
+              "key": "user_id",
+              "operator": "BroadcastHashJoin"
+            },
+            {
+              "description": "BroadcastHashJoin [adgroup_id#5065L], [adgroup_id#5072L], LeftOuter, BuildRight, false",
+              "key": "adgroup_id",
+              "operator": "BroadcastHashJoin"
+            }
+          ],
+          "python_metrics": {},
+          "python_operators": [],
+          "stages": [
+            {
+              "attempt_id": 0,
+              "completed": true,
+              "disk_spill_bytes": 0,
+              "execution_id": "98",
+              "executor_cpu_ns": 285834000,
+              "executor_run_ms": 311,
+              "failed_tasks": 0,
+              "group": "gold.audience_daily",
+              "memory_spill_bytes": 0,
+              "scheduled_tasks": 4,
+              "shuffle_read_bytes": 0,
+              "shuffle_write_bytes": 0,
+              "stage_id": 190,
+              "task_durations_ms": [
+                63,
+                89,
+                103,
+                104
+              ],
+              "tasks": 4
+            },
+            {
+              "attempt_id": 0,
+              "completed": true,
+              "disk_spill_bytes": 0,
+              "execution_id": "98",
+              "executor_cpu_ns": 422060000,
+              "executor_run_ms": 467,
+              "failed_tasks": 0,
+              "group": "gold.audience_daily",
+              "memory_spill_bytes": 0,
+              "scheduled_tasks": 4,
+              "shuffle_read_bytes": 0,
+              "shuffle_write_bytes": 0,
+              "stage_id": 191,
+              "task_durations_ms": [
+                99,
+                126,
+                132,
+                130
+              ],
+              "tasks": 4
+            },
+            {
+              "attempt_id": 0,
+              "completed": true,
+              "disk_spill_bytes": 0,
+              "execution_id": "98",
+              "executor_cpu_ns": 7238662000,
+              "executor_run_ms": 7716,
+              "failed_tasks": 0,
+              "group": "gold.audience_daily",
+              "memory_spill_bytes": 0,
+              "scheduled_tasks": 5,
+              "shuffle_read_bytes": 0,
+              "shuffle_write_bytes": 91609785,
+              "stage_id": 192,
+              "task_durations_ms": [
+                1637,
+                1779,
+                163,
+                2066,
+                2091
+              ],
+              "tasks": 5
+            },
+            {
+              "attempt_id": 0,
+              "completed": true,
+              "disk_spill_bytes": 0,
+              "execution_id": "98",
+              "executor_cpu_ns": 3069119000,
+              "executor_run_ms": 3420,
+              "failed_tasks": 0,
+              "group": "gold.audience_daily",
+              "memory_spill_bytes": 0,
+              "scheduled_tasks": 4,
+              "shuffle_read_bytes": 91609785,
+              "shuffle_write_bytes": 0,
+              "stage_id": 194,
+              "task_durations_ms": [
+                852,
+                872,
+                872,
+                893
+              ],
+              "tasks": 4
+            }
+          ]
+        },
+        "gold.campaign_daily": {
+          "execution_id": "81",
+          "joins": [
+            {
+              "description": "BroadcastHashJoin [user_id#5063L], [user_id#5079L], LeftOuter, BuildRight, false",
+              "key": "user_id",
+              "operator": "BroadcastHashJoin"
+            },
+            {
+              "description": "BroadcastHashJoin [adgroup_id#5065L], [adgroup_id#5072L], LeftOuter, BuildRight, false",
+              "key": "adgroup_id",
+              "operator": "BroadcastHashJoin"
+            }
+          ],
+          "python_metrics": {},
+          "python_operators": [],
+          "stages": [
+            {
+              "attempt_id": 0,
+              "completed": true,
+              "disk_spill_bytes": 0,
+              "execution_id": "81",
+              "executor_cpu_ns": 122087000,
+              "executor_run_ms": 127,
+              "failed_tasks": 0,
+              "group": "gold.campaign_daily",
+              "memory_spill_bytes": 0,
+              "scheduled_tasks": 4,
+              "shuffle_read_bytes": 0,
+              "shuffle_write_bytes": 0,
+              "stage_id": 156,
+              "task_durations_ms": [
+                19,
+                40,
+                42,
+                46
+              ],
+              "tasks": 4
+            },
+            {
+              "attempt_id": 0,
+              "completed": true,
+              "disk_spill_bytes": 0,
+              "execution_id": "81",
+              "executor_cpu_ns": 191187000,
+              "executor_run_ms": 203,
+              "failed_tasks": 0,
+              "group": "gold.campaign_daily",
+              "memory_spill_bytes": 0,
+              "scheduled_tasks": 4,
+              "shuffle_read_bytes": 0,
+              "shuffle_write_bytes": 0,
+              "stage_id": 157,
+              "task_durations_ms": [
+                30,
+                70,
+                58,
+                65
+              ],
+              "tasks": 4
+            },
+            {
+              "attempt_id": 0,
+              "completed": true,
+              "disk_spill_bytes": 0,
+              "execution_id": "81",
+              "executor_cpu_ns": 4128450000,
+              "executor_run_ms": 4498,
+              "failed_tasks": 0,
+              "group": "gold.campaign_daily",
+              "memory_spill_bytes": 0,
+              "scheduled_tasks": 5,
+              "shuffle_read_bytes": 0,
+              "shuffle_write_bytes": 47077324,
+              "stage_id": 158,
+              "task_durations_ms": [
+                970,
+                1052,
+                118,
+                1183,
+                1198
+              ],
+              "tasks": 5
+            },
+            {
+              "attempt_id": 0,
+              "completed": true,
+              "disk_spill_bytes": 0,
+              "execution_id": "81",
+              "executor_cpu_ns": 1978540000,
+              "executor_run_ms": 2442,
+              "failed_tasks": 0,
+              "group": "gold.campaign_daily",
+              "memory_spill_bytes": 0,
+              "scheduled_tasks": 4,
+              "shuffle_read_bytes": 47077324,
+              "shuffle_write_bytes": 0,
+              "stage_id": 160,
+              "task_durations_ms": [
+                529,
+                626,
+                671,
+                671
+              ],
+              "tasks": 4
+            }
+          ]
+        },
+        "silver.impressions": {
+          "execution_id": "16",
+          "joins": [],
+          "python_metrics": {},
+          "python_operators": [],
+          "stages": [
+            {
+              "attempt_id": 0,
+              "completed": true,
+              "disk_spill_bytes": 0,
+              "execution_id": "16",
+              "executor_cpu_ns": 27214051000,
+              "executor_run_ms": 34853,
+              "failed_tasks": 0,
+              "group": "silver.impressions",
+              "memory_spill_bytes": 0,
+              "scheduled_tasks": 5,
+              "shuffle_read_bytes": 0,
+              "shuffle_write_bytes": 0,
+              "stage_id": 19,
+              "task_durations_ms": [
+                7884,
+                598,
+                8612,
+                8921,
+                8921
+              ],
+              "tasks": 5
+            }
+          ]
+        }
+      }
+    },
+    "03-right": {
+      "combined_gold_seconds": 6.913,
+      "executions": {
+        "gold.audience_daily": {
+          "execution_id": "98",
+          "joins": [
+            {
+              "description": "BroadcastHashJoin [user_id#5065L], [user_id#5081L], LeftOuter, BuildRight, false",
+              "key": "user_id",
+              "operator": "BroadcastHashJoin"
+            },
+            {
+              "description": "BroadcastHashJoin [adgroup_id#5067L], [adgroup_id#5074L], LeftOuter, BuildRight, false",
+              "key": "adgroup_id",
+              "operator": "BroadcastHashJoin"
+            }
+          ],
+          "python_metrics": {},
+          "python_operators": [],
+          "stages": [
+            {
+              "attempt_id": 0,
+              "completed": true,
+              "disk_spill_bytes": 0,
+              "execution_id": "98",
+              "executor_cpu_ns": 385284000,
+              "executor_run_ms": 390,
+              "failed_tasks": 0,
+              "group": "gold.audience_daily",
+              "memory_spill_bytes": 0,
+              "scheduled_tasks": 4,
+              "shuffle_read_bytes": 0,
+              "shuffle_write_bytes": 0,
+              "stage_id": 190,
+              "task_durations_ms": [
+                76,
+                111,
+                111,
+                113
+              ],
+              "tasks": 4
+            },
+            {
+              "attempt_id": 0,
+              "completed": true,
+              "disk_spill_bytes": 0,
+              "execution_id": "98",
+              "executor_cpu_ns": 173922000,
+              "executor_run_ms": 173,
+              "failed_tasks": 0,
+              "group": "gold.audience_daily",
+              "memory_spill_bytes": 0,
+              "scheduled_tasks": 4,
+              "shuffle_read_bytes": 0,
+              "shuffle_write_bytes": 0,
+              "stage_id": 191,
+              "task_durations_ms": [
+                59,
+                37,
+                50,
+                51
+              ],
+              "tasks": 4
+            },
+            {
+              "attempt_id": 0,
+              "completed": true,
+              "disk_spill_bytes": 0,
+              "execution_id": "98",
+              "executor_cpu_ns": 7011615000,
+              "executor_run_ms": 7494,
+              "failed_tasks": 0,
+              "group": "gold.audience_daily",
+              "memory_spill_bytes": 0,
+              "scheduled_tasks": 5,
+              "shuffle_read_bytes": 0,
+              "shuffle_write_bytes": 91609785,
+              "stage_id": 192,
+              "task_durations_ms": [
+                1592,
+                141,
+                1748,
+                1978,
+                2045
+              ],
+              "tasks": 5
+            },
+            {
+              "attempt_id": 0,
+              "completed": true,
+              "disk_spill_bytes": 0,
+              "execution_id": "98",
+              "executor_cpu_ns": 3303091000,
+              "executor_run_ms": 3495,
+              "failed_tasks": 0,
+              "group": "gold.audience_daily",
+              "memory_spill_bytes": 0,
+              "scheduled_tasks": 4,
+              "shuffle_read_bytes": 91609785,
+              "shuffle_write_bytes": 0,
+              "stage_id": 194,
+              "task_durations_ms": [
+                865,
+                880,
+                909,
+                915
+              ],
+              "tasks": 4
+            }
+          ]
+        },
+        "gold.campaign_daily": {
+          "execution_id": "81",
+          "joins": [
+            {
+              "description": "BroadcastHashJoin [user_id#5065L], [user_id#5081L], LeftOuter, BuildRight, false",
+              "key": "user_id",
+              "operator": "BroadcastHashJoin"
+            },
+            {
+              "description": "BroadcastHashJoin [adgroup_id#5067L], [adgroup_id#5074L], LeftOuter, BuildRight, false",
+              "key": "adgroup_id",
+              "operator": "BroadcastHashJoin"
+            }
+          ],
+          "python_metrics": {},
+          "python_operators": [],
+          "stages": [
+            {
+              "attempt_id": 0,
+              "completed": true,
+              "disk_spill_bytes": 0,
+              "execution_id": "81",
+              "executor_cpu_ns": 113722000,
+              "executor_run_ms": 118,
+              "failed_tasks": 0,
+              "group": "gold.campaign_daily",
+              "memory_spill_bytes": 0,
+              "scheduled_tasks": 4,
+              "shuffle_read_bytes": 0,
+              "shuffle_write_bytes": 0,
+              "stage_id": 156,
+              "task_durations_ms": [
+                20,
+                40,
+                41,
+                43
+              ],
+              "tasks": 4
+            },
+            {
+              "attempt_id": 0,
+              "completed": true,
+              "disk_spill_bytes": 0,
+              "execution_id": "81",
+              "executor_cpu_ns": 172142000,
+              "executor_run_ms": 177,
+              "failed_tasks": 0,
+              "group": "gold.campaign_daily",
+              "memory_spill_bytes": 0,
+              "scheduled_tasks": 4,
+              "shuffle_read_bytes": 0,
+              "shuffle_write_bytes": 0,
+              "stage_id": 157,
+              "task_durations_ms": [
+                29,
+                67,
+                55,
+                59
+              ],
+              "tasks": 4
+            },
+            {
+              "attempt_id": 0,
+              "completed": true,
+              "disk_spill_bytes": 0,
+              "execution_id": "81",
+              "executor_cpu_ns": 3985164000,
+              "executor_run_ms": 4170,
+              "failed_tasks": 0,
+              "group": "gold.campaign_daily",
+              "memory_spill_bytes": 0,
+              "scheduled_tasks": 5,
+              "shuffle_read_bytes": 0,
+              "shuffle_write_bytes": 47077324,
+              "stage_id": 158,
+              "task_durations_ms": [
+                897,
+                968,
+                103,
+                1086,
+                1127
+              ],
+              "tasks": 5
+            },
+            {
+              "attempt_id": 0,
+              "completed": true,
+              "disk_spill_bytes": 0,
+              "execution_id": "81",
+              "executor_cpu_ns": 1915319000,
+              "executor_run_ms": 2055,
+              "failed_tasks": 0,
+              "group": "gold.campaign_daily",
+              "memory_spill_bytes": 0,
+              "scheduled_tasks": 4,
+              "shuffle_read_bytes": 47077324,
+              "shuffle_write_bytes": 0,
+              "stage_id": 160,
+              "task_durations_ms": [
+                515,
+                527,
+                531,
+                535
+              ],
+              "tasks": 4
+            }
+          ]
+        },
+        "silver.impressions": {
+          "execution_id": "16",
+          "joins": [],
+          "python_metrics": {
+            "data returned from Python workers": {
+              "accumulator_id": "809",
+              "metric_type": "size",
+              "total": 83923211
+            },
+            "data sent to Python workers": {
+              "accumulator_id": "808",
+              "metric_type": "size",
+              "total": 161738032
+            },
+            "number of output rows": {
+              "accumulator_id": "813",
+              "metric_type": "sum",
+              "total": 26557961
+            },
+            "time to initialize Python workers": {
+              "accumulator_id": "811",
+              "metric_type": "timing",
+              "total": 1914
+            },
+            "time to run Python workers": {
+              "accumulator_id": "812",
+              "metric_type": "timing",
+              "total": 41812
+            },
+            "time to start Python workers": {
+              "accumulator_id": "810",
+              "metric_type": "timing",
+              "total": 1148
+            }
+          },
+          "python_operators": [
+            "BatchEvalPython"
+          ],
+          "stages": [
+            {
+              "attempt_id": 0,
+              "completed": true,
+              "disk_spill_bytes": 0,
+              "execution_id": "16",
+              "executor_cpu_ns": 40476951000,
+              "executor_run_ms": 48325,
+              "failed_tasks": 0,
+              "group": "silver.impressions",
+              "memory_spill_bytes": 0,
+              "scheduled_tasks": 5,
+              "shuffle_read_bytes": 0,
+              "shuffle_write_bytes": 0,
+              "stage_id": 19,
+              "task_durations_ms": [
+                11693,
+                12005,
+                12090,
+                12114,
+                517
+              ],
+              "tasks": 5
+            }
+          ]
+        }
+      }
+    }
+  },
+  "status": "succeeded"
+}

@@ -172,5 +172,8 @@ files per Gold report instead of four. See [the coalescing results](results/08_n
 built-in reporting-date calculation with a regular Python UDF. Run
 `bash scripts/test_iteration.sh 9` for repeatable correctness and execution checks,
 or `bash scripts/run_python_date_udf.sh --run-id my-python-date-run` for the variant.
-See [the iteration report](results/09_python_date_udf/README.md) for verification
-status and the full-data benchmark's storage gate.
+The Python version increased median Silver build time by 43.25% and pipeline
+processing by 6.56%, with identical storage and all 40 exact comparisons passing.
+See [the completed report](results/09_python_date_udf/README.md).
+Old successful comparison tables may be removed when space is needed under the
+[standing retention policy](docs/comparisons.md#standing-permission-for-generated-table-cleanup).

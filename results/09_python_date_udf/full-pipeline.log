@@ -1,0 +1,78 @@
+Running the correctness test suite first
+Running 01-left: run.py
+Running 01-right: run.py
+Running 02-right: run.py
+Running 02-left: run.py
+Running 03-left: run.py
+Running 03-right: run.py
+WARNING: Using incubator modules: jdk.incubator.vector
+:: loading settings :: url = jar:file:<repo>/.venv/lib/python3.11/site-packages/pyspark/jars/ivy-2.5.3.jar!/org/apache/ivy/core/settings/ivysettings.xml
+Ivy Default Cache set to: <repo>/.runtime/ivy/cache
+The jars for the packages stored in: <repo>/.runtime/ivy/jars
+io.delta#delta-spark_2.13 added as a dependency
+:: resolving dependencies :: org.apache.spark#spark-submit-parent-b2ebf9ec-16fb-4533-97a3-b38acaac76fe;1.0
+	confs: [default]
+	found io.delta#delta-spark_2.13;4.0.0 in central
+	found io.delta#delta-storage;4.0.0 in central
+	found org.antlr#antlr4-runtime;4.13.1 in central
+:: resolution report :: resolve 64ms :: artifacts dl 2ms
+	:: modules in use:
+	io.delta#delta-spark_2.13;4.0.0 from central in [default]
+	io.delta#delta-storage;4.0.0 from central in [default]
+	org.antlr#antlr4-runtime;4.13.1 from central in [default]
+	---------------------------------------------------------------------
+	|                  |            modules            ||   artifacts   |
+	|       conf       | number| search|dwnlded|evicted|| number|dwnlded|
+	---------------------------------------------------------------------
+	|      default     |   3   |   0   |   0   |   0   ||   3   |   0   |
+	---------------------------------------------------------------------
+:: retrieving :: org.apache.spark#spark-submit-parent-b2ebf9ec-16fb-4533-97a3-b38acaac76fe
+	confs: [default]
+	0 artifacts copied, 3 already retrieved (0kB/2ms)
+26/09/28 15:36:17 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Using Spark's default log4j profile: org/apache/spark/log4j2-defaults.properties
+Setting default log level to "WARN".
+To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
+26/09/28 15:36:17 WARN SparkConf: Note that spark.local.dir will be overridden by the value set by the cluster manager (via SPARK_LOCAL_DIRS in standalone/kubernetes and LOCAL_DIRS in YARN).
+Comparing 01-right: bronze/ads
+26/09/28 15:36:20 WARN SparkStringUtils: Truncated the string representation of a plan since it was too large. This behavior can be adjusted by setting 'spark.sql.debug.maxToStringFields'.
+Comparing 01-right: bronze/impressions
+Comparing 01-right: bronze/user_profiles
+Comparing 01-right: gold/audience_daily
+Comparing 01-right: gold/campaign_daily
+Comparing 01-right: silver/ads
+Comparing 01-right: silver/impressions
+Comparing 01-right: silver/user_profiles
+Comparing 02-right: bronze/ads
+Comparing 02-right: bronze/impressions
+Comparing 02-right: bronze/user_profiles
+Comparing 02-right: gold/audience_daily
+Comparing 02-right: gold/campaign_daily
+Comparing 02-right: silver/ads
+Comparing 02-right: silver/impressions
+Comparing 02-right: silver/user_profiles
+Comparing 02-left: bronze/ads
+Comparing 02-left: bronze/impressions
+Comparing 02-left: bronze/user_profiles
+Comparing 02-left: gold/audience_daily
+Comparing 02-left: gold/campaign_daily
+Comparing 02-left: silver/ads
+Comparing 02-left: silver/impressions
+Comparing 02-left: silver/user_profiles
+Comparing 03-left: bronze/ads
+Comparing 03-left: bronze/impressions
+Comparing 03-left: bronze/user_profiles
+Comparing 03-left: gold/audience_daily
+Comparing 03-left: gold/campaign_daily
+Comparing 03-left: silver/ads
+Comparing 03-left: silver/impressions
+Comparing 03-left: silver/user_profiles
+Comparing 03-right: bronze/ads
+Comparing 03-right: bronze/impressions
+Comparing 03-right: bronze/user_profiles
+Comparing 03-right: gold/audience_daily
+Comparing 03-right: gold/campaign_daily
+Comparing 03-right: silver/ads
+Comparing 03-right: silver/impressions
+Comparing 03-right: silver/user_profiles
+Comparison succeeded: <repo>/outputs/comparisons/python-udf-09-20260928/README.md

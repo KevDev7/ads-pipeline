@@ -17,7 +17,7 @@ no measurable difference.
 | 06 — Shuffle partitions | Iteration 2 versus 32 initial SQL shuffle partitions; AQE unchanged | Complete: Gold median -6.71%; overall timing mixed; AQE readers 4 → 5; 40 exact comparisons passed | [Results](06_shuffle_partitions/README.md) |
 | 07 — Cached enrichment | Iteration 2 versus persisting full enrichment for both reports | Complete: reuse verified, Gold +132.45%, processing +22.32%; keep iteration 2; 40 exact comparisons passed | [Results](07_cached_enrichment/README.md) |
 | 08 — Shuffle coalescing | Iteration 2 versus disabling automatic shuffle-partition combining | Complete: Gold +27.96%, processing +8.90%; 4 → 200 readers/files per Gold report; 40 exact comparisons passed | [Results](08_no_shuffle_coalescing/README.md) |
-| 09 — Python date UDF | Iteration 2 built-in date versus regular Python UDF | Implemented: 34 regression tests and 16 fixture comparisons passed; full benchmark awaits storage approval | [Results](09_python_date_udf/README.md) |
+| 09 — Python date UDF | Iteration 2 built-in date versus regular Python UDF | Complete: Silver +43.25%, processing +6.56%; same storage; 40 exact comparisons and 228 ZSTD footer checks passed | [Results](09_python_date_udf/README.md) |
 
 ## Reproduce an experiment
 

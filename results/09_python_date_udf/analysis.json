@@ -1,0 +1,802 @@
+{
+  "samples": [
+    {
+      "run_id": "01-left",
+      "side": "left",
+      "silver": 8.967,
+      "campaign": 2.77,
+      "audience": 3.747,
+      "gold": 6.517,
+      "processing": 34.096,
+      "validation": 5.672,
+      "total": 42.527,
+      "processing_validation": 39.768,
+      "table_bytes": 630854482,
+      "parquet_files": 38,
+      "silver_sql_tasks": 5,
+      "silver_sql_executor_cpu_ns": 26904974000,
+      "silver_sql_executor_run_ms": 31797,
+      "silver_sql_shuffle_read_bytes": 0,
+      "silver_sql_shuffle_write_bytes": 0,
+      "silver_sql_disk_spill_bytes": 0,
+      "silver_sql_memory_spill_bytes": 0,
+      "silver_sql_task_ms_median": 7985,
+      "silver_sql_task_ms_max": 8095,
+      "silver_group_task_attempts": 157,
+      "silver_group_executor_cpu_ns": 27665101000,
+      "silver_group_executor_run_ms": 32688,
+      "silver_group_shuffle_read_bytes": 7847,
+      "silver_group_shuffle_write_bytes": 7847,
+      "silver_group_disk_spill_bytes": 0,
+      "silver_group_memory_spill_bytes": 0
+    },
+    {
+      "run_id": "01-right",
+      "side": "right",
+      "silver": 11.827,
+      "campaign": 2.737,
+      "audience": 3.892,
+      "gold": 6.629,
+      "processing": 36.184,
+      "validation": 5.277,
+      "total": 44.611,
+      "processing_validation": 41.461,
+      "table_bytes": 630854482,
+      "parquet_files": 38,
+      "silver_sql_tasks": 5,
+      "silver_sql_executor_cpu_ns": 37950317000,
+      "silver_sql_executor_run_ms": 42763,
+      "silver_sql_shuffle_read_bytes": 0,
+      "silver_sql_shuffle_write_bytes": 0,
+      "silver_sql_disk_spill_bytes": 0,
+      "silver_sql_memory_spill_bytes": 0,
+      "silver_sql_task_ms_median": 10446,
+      "silver_sql_task_ms_max": 10916,
+      "python.data returned from Python workers": 83923211,
+      "python.data sent to Python workers": 161738032,
+      "python.number of output rows": 26557961,
+      "python.time to initialize Python workers": 1023,
+      "python.time to run Python workers": 38965,
+      "python.time to start Python workers": 1111,
+      "silver_group_task_attempts": 157,
+      "silver_group_executor_cpu_ns": 38679310000,
+      "silver_group_executor_run_ms": 43590,
+      "silver_group_shuffle_read_bytes": 8251,
+      "silver_group_shuffle_write_bytes": 8251,
+      "silver_group_disk_spill_bytes": 0,
+      "silver_group_memory_spill_bytes": 0
+    },
+    {
+      "run_id": "02-right",
+      "side": "right",
+      "silver": 12.845,
+      "campaign": 2.894,
+      "audience": 4.109,
+      "gold": 7.003,
+      "processing": 37.762,
+      "validation": 5.459,
+      "total": 46.766,
+      "processing_validation": 43.221,
+      "table_bytes": 630854482,
+      "parquet_files": 38,
+      "silver_sql_tasks": 5,
+      "silver_sql_executor_cpu_ns": 39421807000,
+      "silver_sql_executor_run_ms": 46879,
+      "silver_sql_shuffle_read_bytes": 0,
+      "silver_sql_shuffle_write_bytes": 0,
+      "silver_sql_disk_spill_bytes": 0,
+      "silver_sql_memory_spill_bytes": 0,
+      "silver_sql_task_ms_median": 11489,
+      "silver_sql_task_ms_max": 11798,
+      "python.data returned from Python workers": 83923211,
+      "python.data sent to Python workers": 161738032,
+      "python.number of output rows": 26557961,
+      "python.time to initialize Python workers": 1653,
+      "python.time to run Python workers": 41771,
+      "python.time to start Python workers": 1101,
+      "silver_group_task_attempts": 157,
+      "silver_group_executor_cpu_ns": 40202150000,
+      "silver_group_executor_run_ms": 47783,
+      "silver_group_shuffle_read_bytes": 8265,
+      "silver_group_shuffle_write_bytes": 8265,
+      "silver_group_disk_spill_bytes": 0,
+      "silver_group_memory_spill_bytes": 0
+    },
+    {
+      "run_id": "02-left",
+      "side": "left",
+      "silver": 8.777,
+      "campaign": 3.02,
+      "audience": 4.344,
+      "gold": 7.364,
+      "processing": 35.436,
+      "validation": 5.866,
+      "total": 44.407,
+      "processing_validation": 41.302,
+      "table_bytes": 630854482,
+      "parquet_files": 38,
+      "silver_sql_tasks": 5,
+      "silver_sql_executor_cpu_ns": 26929050000,
+      "silver_sql_executor_run_ms": 30822,
+      "silver_sql_shuffle_read_bytes": 0,
+      "silver_sql_shuffle_write_bytes": 0,
+      "silver_sql_disk_spill_bytes": 0,
+      "silver_sql_memory_spill_bytes": 0,
+      "silver_sql_task_ms_median": 7545,
+      "silver_sql_task_ms_max": 7789,
+      "silver_group_task_attempts": 157,
+      "silver_group_executor_cpu_ns": 27709842000,
+      "silver_group_executor_run_ms": 31736,
+      "silver_group_shuffle_read_bytes": 8270,
+      "silver_group_shuffle_write_bytes": 8270,
+      "silver_group_disk_spill_bytes": 0,
+      "silver_group_memory_spill_bytes": 0
+    },
+    {
+      "run_id": "03-left",
+      "side": "left",
+      "silver": 9.852,
+      "campaign": 3.141,
+      "audience": 4.101,
+      "gold": 7.242,
+      "processing": 37.582,
+      "validation": 6.24,
+      "total": 47.137,
+      "processing_validation": 43.822,
+      "table_bytes": 630854482,
+      "parquet_files": 38,
+      "silver_sql_tasks": 5,
+      "silver_sql_executor_cpu_ns": 27214051000,
+      "silver_sql_executor_run_ms": 34853,
+      "silver_sql_shuffle_read_bytes": 0,
+      "silver_sql_shuffle_write_bytes": 0,
+      "silver_sql_disk_spill_bytes": 0,
+      "silver_sql_memory_spill_bytes": 0,
+      "silver_sql_task_ms_median": 8612,
+      "silver_sql_task_ms_max": 8921,
+      "silver_group_task_attempts": 157,
+      "silver_group_executor_cpu_ns": 27923523000,
+      "silver_group_executor_run_ms": 35735,
+      "silver_group_shuffle_read_bytes": 8267,
+      "silver_group_shuffle_write_bytes": 8267,
+      "silver_group_disk_spill_bytes": 0,
+      "silver_group_memory_spill_bytes": 0
+    },
+    {
+      "run_id": "03-right",
+      "side": "right",
+      "silver": 13.121,
+      "campaign": 2.874,
+      "audience": 4.039,
+      "gold": 6.913,
+      "processing": 38.727,
+      "validation": 5.574,
+      "total": 48.478,
+      "processing_validation": 44.301,
+      "table_bytes": 630854482,
+      "parquet_files": 38,
+      "silver_sql_tasks": 5,
+      "silver_sql_executor_cpu_ns": 40476951000,
+      "silver_sql_executor_run_ms": 48325,
+      "silver_sql_shuffle_read_bytes": 0,
+      "silver_sql_shuffle_write_bytes": 0,
+      "silver_sql_disk_spill_bytes": 0,
+      "silver_sql_memory_spill_bytes": 0,
+      "silver_sql_task_ms_median": 12005,
+      "silver_sql_task_ms_max": 12114,
+      "python.data returned from Python workers": 83923211,
+      "python.data sent to Python workers": 161738032,
+      "python.number of output rows": 26557961,
+      "python.time to initialize Python workers": 1914,
+      "python.time to run Python workers": 41812,
+      "python.time to start Python workers": 1148,
+      "silver_group_task_attempts": 157,
+      "silver_group_executor_cpu_ns": 41240510000,
+      "silver_group_executor_run_ms": 49213,
+      "silver_group_shuffle_read_bytes": 8238,
+      "silver_group_shuffle_write_bytes": 8238,
+      "silver_group_disk_spill_bytes": 0,
+      "silver_group_memory_spill_bytes": 0
+    }
+  ],
+  "summary": {
+    "audience": {
+      "left": {
+        "samples": [
+          3.747,
+          4.344,
+          4.101
+        ],
+        "median": 4.101,
+        "min": 3.747,
+        "max": 4.344
+      },
+      "right": {
+        "samples": [
+          3.892,
+          4.109,
+          4.039
+        ],
+        "median": 4.039,
+        "min": 3.892,
+        "max": 4.109
+      },
+      "change_percent": -1.5118263838088342
+    },
+    "campaign": {
+      "left": {
+        "samples": [
+          2.77,
+          3.02,
+          3.141
+        ],
+        "median": 3.02,
+        "min": 2.77,
+        "max": 3.141
+      },
+      "right": {
+        "samples": [
+          2.737,
+          2.894,
+          2.874
+        ],
+        "median": 2.874,
+        "min": 2.737,
+        "max": 2.894
+      },
+      "change_percent": -4.834437086092713
+    },
+    "gold": {
+      "left": {
+        "samples": [
+          6.517,
+          7.364,
+          7.242
+        ],
+        "median": 7.242,
+        "min": 6.517,
+        "max": 7.364
+      },
+      "right": {
+        "samples": [
+          6.629,
+          7.003,
+          6.913
+        ],
+        "median": 6.913,
+        "min": 6.629,
+        "max": 7.003
+      },
+      "change_percent": -4.542943938138633
+    },
+    "parquet_files": {
+      "left": {
+        "samples": [
+          38,
+          38,
+          38
+        ],
+        "median": 38,
+        "min": 38,
+        "max": 38
+      },
+      "right": {
+        "samples": [
+          38,
+          38,
+          38
+        ],
+        "median": 38,
+        "min": 38,
+        "max": 38
+      },
+      "change_percent": 0.0
+    },
+    "processing": {
+      "left": {
+        "samples": [
+          34.096,
+          35.436,
+          37.582
+        ],
+        "median": 35.436,
+        "min": 34.096,
+        "max": 37.582
+      },
+      "right": {
+        "samples": [
+          36.184,
+          37.762,
+          38.727
+        ],
+        "median": 37.762,
+        "min": 36.184,
+        "max": 38.727
+      },
+      "change_percent": 6.563946269330634
+    },
+    "processing_validation": {
+      "left": {
+        "samples": [
+          39.768,
+          41.302,
+          43.822
+        ],
+        "median": 41.302,
+        "min": 39.768,
+        "max": 43.822
+      },
+      "right": {
+        "samples": [
+          41.461,
+          43.221,
+          44.301
+        ],
+        "median": 43.221,
+        "min": 41.461,
+        "max": 44.301
+      },
+      "change_percent": 4.646264103433251
+    },
+    "silver": {
+      "left": {
+        "samples": [
+          8.967,
+          8.777,
+          9.852
+        ],
+        "median": 8.967,
+        "min": 8.777,
+        "max": 9.852
+      },
+      "right": {
+        "samples": [
+          11.827,
+          12.845,
+          13.121
+        ],
+        "median": 12.845,
+        "min": 11.827,
+        "max": 13.121
+      },
+      "change_percent": 43.24746291959407
+    },
+    "silver_group_disk_spill_bytes": {
+      "left": {
+        "samples": [
+          0,
+          0,
+          0
+        ],
+        "median": 0,
+        "min": 0,
+        "max": 0
+      },
+      "right": {
+        "samples": [
+          0,
+          0,
+          0
+        ],
+        "median": 0,
+        "min": 0,
+        "max": 0
+      },
+      "change_percent": null
+    },
+    "silver_group_executor_cpu_ns": {
+      "left": {
+        "samples": [
+          27665101000,
+          27709842000,
+          27923523000
+        ],
+        "median": 27709842000,
+        "min": 27665101000,
+        "max": 27923523000
+      },
+      "right": {
+        "samples": [
+          38679310000,
+          40202150000,
+          41240510000
+        ],
+        "median": 40202150000,
+        "min": 38679310000,
+        "max": 41240510000
+      },
+      "change_percent": 45.08256669236872
+    },
+    "silver_group_executor_run_ms": {
+      "left": {
+        "samples": [
+          32688,
+          31736,
+          35735
+        ],
+        "median": 32688,
+        "min": 31736,
+        "max": 35735
+      },
+      "right": {
+        "samples": [
+          43590,
+          47783,
+          49213
+        ],
+        "median": 47783,
+        "min": 43590,
+        "max": 49213
+      },
+      "change_percent": 46.17902594224179
+    },
+    "silver_group_memory_spill_bytes": {
+      "left": {
+        "samples": [
+          0,
+          0,
+          0
+        ],
+        "median": 0,
+        "min": 0,
+        "max": 0
+      },
+      "right": {
+        "samples": [
+          0,
+          0,
+          0
+        ],
+        "median": 0,
+        "min": 0,
+        "max": 0
+      },
+      "change_percent": null
+    },
+    "silver_group_shuffle_read_bytes": {
+      "left": {
+        "samples": [
+          7847,
+          8270,
+          8267
+        ],
+        "median": 8267,
+        "min": 7847,
+        "max": 8270
+      },
+      "right": {
+        "samples": [
+          8251,
+          8265,
+          8238
+        ],
+        "median": 8251,
+        "min": 8238,
+        "max": 8265
+      },
+      "change_percent": -0.19354058304100752
+    },
+    "silver_group_shuffle_write_bytes": {
+      "left": {
+        "samples": [
+          7847,
+          8270,
+          8267
+        ],
+        "median": 8267,
+        "min": 7847,
+        "max": 8270
+      },
+      "right": {
+        "samples": [
+          8251,
+          8265,
+          8238
+        ],
+        "median": 8251,
+        "min": 8238,
+        "max": 8265
+      },
+      "change_percent": -0.19354058304100752
+    },
+    "silver_group_task_attempts": {
+      "left": {
+        "samples": [
+          157,
+          157,
+          157
+        ],
+        "median": 157,
+        "min": 157,
+        "max": 157
+      },
+      "right": {
+        "samples": [
+          157,
+          157,
+          157
+        ],
+        "median": 157,
+        "min": 157,
+        "max": 157
+      },
+      "change_percent": 0.0
+    },
+    "silver_sql_disk_spill_bytes": {
+      "left": {
+        "samples": [
+          0,
+          0,
+          0
+        ],
+        "median": 0,
+        "min": 0,
+        "max": 0
+      },
+      "right": {
+        "samples": [
+          0,
+          0,
+          0
+        ],
+        "median": 0,
+        "min": 0,
+        "max": 0
+      },
+      "change_percent": null
+    },
+    "silver_sql_executor_cpu_ns": {
+      "left": {
+        "samples": [
+          26904974000,
+          26929050000,
+          27214051000
+        ],
+        "median": 26929050000,
+        "min": 26904974000,
+        "max": 27214051000
+      },
+      "right": {
+        "samples": [
+          37950317000,
+          39421807000,
+          40476951000
+        ],
+        "median": 39421807000,
+        "min": 37950317000,
+        "max": 40476951000
+      },
+      "change_percent": 46.39137659887742
+    },
+    "silver_sql_executor_run_ms": {
+      "left": {
+        "samples": [
+          31797,
+          30822,
+          34853
+        ],
+        "median": 31797,
+        "min": 30822,
+        "max": 34853
+      },
+      "right": {
+        "samples": [
+          42763,
+          46879,
+          48325
+        ],
+        "median": 46879,
+        "min": 42763,
+        "max": 48325
+      },
+      "change_percent": 47.432147686888705
+    },
+    "silver_sql_memory_spill_bytes": {
+      "left": {
+        "samples": [
+          0,
+          0,
+          0
+        ],
+        "median": 0,
+        "min": 0,
+        "max": 0
+      },
+      "right": {
+        "samples": [
+          0,
+          0,
+          0
+        ],
+        "median": 0,
+        "min": 0,
+        "max": 0
+      },
+      "change_percent": null
+    },
+    "silver_sql_shuffle_read_bytes": {
+      "left": {
+        "samples": [
+          0,
+          0,
+          0
+        ],
+        "median": 0,
+        "min": 0,
+        "max": 0
+      },
+      "right": {
+        "samples": [
+          0,
+          0,
+          0
+        ],
+        "median": 0,
+        "min": 0,
+        "max": 0
+      },
+      "change_percent": null
+    },
+    "silver_sql_shuffle_write_bytes": {
+      "left": {
+        "samples": [
+          0,
+          0,
+          0
+        ],
+        "median": 0,
+        "min": 0,
+        "max": 0
+      },
+      "right": {
+        "samples": [
+          0,
+          0,
+          0
+        ],
+        "median": 0,
+        "min": 0,
+        "max": 0
+      },
+      "change_percent": null
+    },
+    "silver_sql_task_ms_max": {
+      "left": {
+        "samples": [
+          8095,
+          7789,
+          8921
+        ],
+        "median": 8095,
+        "min": 7789,
+        "max": 8921
+      },
+      "right": {
+        "samples": [
+          10916,
+          11798,
+          12114
+        ],
+        "median": 11798,
+        "min": 10916,
+        "max": 12114
+      },
+      "change_percent": 45.74428659666461
+    },
+    "silver_sql_task_ms_median": {
+      "left": {
+        "samples": [
+          7985,
+          7545,
+          8612
+        ],
+        "median": 7985,
+        "min": 7545,
+        "max": 8612
+      },
+      "right": {
+        "samples": [
+          10446,
+          11489,
+          12005
+        ],
+        "median": 11489,
+        "min": 10446,
+        "max": 12005
+      },
+      "change_percent": 43.88227927363808
+    },
+    "silver_sql_tasks": {
+      "left": {
+        "samples": [
+          5,
+          5,
+          5
+        ],
+        "median": 5,
+        "min": 5,
+        "max": 5
+      },
+      "right": {
+        "samples": [
+          5,
+          5,
+          5
+        ],
+        "median": 5,
+        "min": 5,
+        "max": 5
+      },
+      "change_percent": 0.0
+    },
+    "table_bytes": {
+      "left": {
+        "samples": [
+          630854482,
+          630854482,
+          630854482
+        ],
+        "median": 630854482,
+        "min": 630854482,
+        "max": 630854482
+      },
+      "right": {
+        "samples": [
+          630854482,
+          630854482,
+          630854482
+        ],
+        "median": 630854482,
+        "min": 630854482,
+        "max": 630854482
+      },
+      "change_percent": 0.0
+    },
+    "total": {
+      "left": {
+        "samples": [
+          42.527,
+          44.407,
+          47.137
+        ],
+        "median": 44.407,
+        "min": 42.527,
+        "max": 47.137
+      },
+      "right": {
+        "samples": [
+          44.611,
+          46.766,
+          48.478
+        ],
+        "median": 46.766,
+        "min": 44.611,
+        "max": 48.478
+      },
+      "change_percent": 5.312225550025906
+    },
+    "validation": {
+      "left": {
+        "samples": [
+          5.672,
+          5.866,
+          6.24
+        ],
+        "median": 5.866,
+        "min": 5.672,
+        "max": 6.24
+      },
+      "right": {
+        "samples": [
+          5.277,
+          5.459,
+          5.574
+        ],
+        "median": 5.459,
+        "min": 5.277,
+        "max": 5.574
+      },
+      "change_percent": -6.93828844186839
+    }
+  }
+}

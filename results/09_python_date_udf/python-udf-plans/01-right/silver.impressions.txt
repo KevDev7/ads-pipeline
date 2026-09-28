@@ -1,0 +1,29 @@
+== Physical Plan ==
+* Project (5)
++- BatchEvalPython (4)
+   +- * Project (3)
+      +- * ColumnarToRow (2)
+         +- Scan parquet  (1)
+
+
+(1) Scan parquet 
+Output [7]: [user#1728, time_stamp#1729, adgroup_id#1730, pid#1731, nonclk#1732, clk#1733, source_file#1734]
+Batched: true
+Location: PreparedDeltaFileIndex [file:<repo>/outputs/comparisons/python-udf-09-20260928/runs/01-right/bronze/impressions]
+ReadSchema: struct<user:string,time_stamp:string,adgroup_id:string,pid:string,nonclk:string,clk:string,source_file:string>
+
+(2) ColumnarToRow [codegen id : 1]
+Input [7]: [user#1728, time_stamp#1729, adgroup_id#1730, pid#1731, nonclk#1732, clk#1733, source_file#1734]
+
+(3) Project [codegen id : 1]
+Output [7]: [CASE WHEN trim(user#1728, None) IN (,NULL) THEN null ELSE cast(trim(user#1728, None) as bigint) END AS user_id#1735L, CASE WHEN trim(time_stamp#1729, None) IN (,NULL) THEN null ELSE cast(trim(time_stamp#1729, None) as bigint) END AS timestamp_seconds#1736L, CASE WHEN trim(adgroup_id#1730, None) IN (,NULL) THEN null ELSE cast(trim(adgroup_id#1730, None) as bigint) END AS adgroup_id#1737L, pid#1731 AS placement_id#1738, CASE WHEN trim(nonclk#1732, None) IN (,NULL) THEN null ELSE cast(trim(nonclk#1732, None) as int) END AS nonclick#1739, CASE WHEN trim(clk#1733, None) IN (,NULL) THEN null ELSE cast(trim(clk#1733, None) as int) END AS clicked#1740, source_file#1734]
+Input [7]: [user#1728, time_stamp#1729, adgroup_id#1730, pid#1731, nonclk#1732, clk#1733, source_file#1734]
+
+(4) BatchEvalPython
+Input [7]: [user_id#1735L, timestamp_seconds#1736L, adgroup_id#1737L, placement_id#1738, nonclick#1739, clicked#1740, source_file#1734]
+Arguments: [reporting_date_python(timestamp_seconds#1736L)#1743], [pythonUDF0#2445]
+
+(5) Project [codegen id : 2]
+Output [9]: [user_id#1735L, timestamp_seconds#1736L, adgroup_id#1737L, placement_id#1738, nonclick#1739, clicked#1740, source_file#1734, timestamp_seconds(timestamp_seconds#1736L) AS event_timestamp#1742, pythonUDF0#2445 AS reporting_date#1744]
+Input [8]: [user_id#1735L, timestamp_seconds#1736L, adgroup_id#1737L, placement_id#1738, nonclick#1739, clicked#1740, source_file#1734, pythonUDF0#2445]
+
