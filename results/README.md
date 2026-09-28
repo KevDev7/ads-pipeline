@@ -15,10 +15,9 @@ no measurable difference.
 | 04 — Ads join | Iteration 2 versus ads sort-merge join; profile join unchanged | Complete: Gold median 7.947 → 14.871 s, 5.02× shuffle writes; 24 exact comparisons passed; two repeats per side | [Results](04_ads_shuffle_join/README.md) |
 | 05 — Profile join | Iteration 2 versus profile sort-merge join; ads join unchanged | Complete with failure history: Gold median 6.591 → 17.302 s; processing +33.05%; one earlier memory failure; fresh series passed 40 exact comparisons | [Results](05_profile_shuffle_join/README.md) |
 | 06 — Shuffle partitions | Iteration 2 versus 32 initial SQL shuffle partitions; AQE unchanged | Complete: Gold median -6.71%; overall timing mixed; AQE readers 4 → 5; 40 exact comparisons passed | [Results](06_shuffle_partitions/README.md) |
-
 | 07 — Cached enrichment | Iteration 2 versus persisting full enrichment for both reports | Complete: reuse verified, Gold +132.45%, processing +22.32%; keep iteration 2; 40 exact comparisons passed | [Results](07_cached_enrichment/README.md) |
-
 | 08 — Shuffle coalescing | Iteration 2 versus disabling automatic shuffle-partition combining | Complete: Gold +27.96%, processing +8.90%; 4 → 200 readers/files per Gold report; 40 exact comparisons passed | [Results](08_no_shuffle_coalescing/README.md) |
+| 09 — Python date UDF | Iteration 2 built-in date versus regular Python UDF | Implemented: 34 regression tests and 16 fixture comparisons passed; full benchmark awaits storage approval | [Results](09_python_date_udf/README.md) |
 
 ## Reproduce an experiment
 
@@ -29,7 +28,8 @@ Run `bash scripts/test_iteration.sh 1` for CSV versus Parquet,
 `bash scripts/test_iteration.sh 5` for the profile join, or
 `bash scripts/test_iteration.sh 6` for initial shuffle partitions, or
 `bash scripts/test_iteration.sh 7` for cached enrichment, or
-`bash scripts/test_iteration.sh 8` for shuffle coalescing. Each creates a fresh
+`bash scripts/test_iteration.sh 8` for shuffle coalescing, or
+`bash scripts/test_iteration.sh 9` for the Python date UDF. Each creates a fresh
 comparison and a `RESULTS.md` linking all applicable automated checks. See
 [the command options and manual interpretation boundary](../docs/comparisons.md#one-command-per-implemented-iteration).
 

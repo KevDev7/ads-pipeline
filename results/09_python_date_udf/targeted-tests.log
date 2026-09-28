@@ -1,0 +1,43 @@
+test_preset (test_python_udf.PythonUdfTests.test_preset) ... ok
+test_real_entrypoints_dates_and_evidence (test_python_udf.PythonUdfTests.test_real_entrypoints_dates_and_evidence) ... <repo>/tests/test_python_udf.py:59: ResourceWarning: unclosed file <_io.TextIOWrapper name='/var/folders/hj/lyhxkqjn2l9f2hb9w7zlrp980000gn/T/tmp1kjqvqws/runs/variant/events/local-1790622978066' mode='r' encoding='UTF-8'>
+  events.extend(json.loads(line) for line in path.open())
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+WARNING: Using incubator modules: jdk.incubator.vector
+:: loading settings :: url = jar:file:<repo>/.venv/lib/python3.11/site-packages/pyspark/jars/ivy-2.5.3.jar!/org/apache/ivy/core/settings/ivysettings.xml
+Ivy Default Cache set to: <repo>/.runtime/ivy/cache
+The jars for the packages stored in: <repo>/.runtime/ivy/jars
+io.delta#delta-spark_2.13 added as a dependency
+:: resolving dependencies :: org.apache.spark#spark-submit-parent-38ea07e4-a1ba-4b18-ae41-742a36865e42;1.0
+	confs: [default]
+	found io.delta#delta-spark_2.13;4.0.0 in central
+	found io.delta#delta-storage;4.0.0 in central
+	found org.antlr#antlr4-runtime;4.13.1 in central
+:: resolution report :: resolve 57ms :: artifacts dl 2ms
+	:: modules in use:
+	io.delta#delta-spark_2.13;4.0.0 from central in [default]
+	io.delta#delta-storage;4.0.0 from central in [default]
+	org.antlr#antlr4-runtime;4.13.1 from central in [default]
+	---------------------------------------------------------------------
+	|                  |            modules            ||   artifacts   |
+	|       conf       | number| search|dwnlded|evicted|| number|dwnlded|
+	---------------------------------------------------------------------
+	|      default     |   3   |   0   |   0   |   0   ||   3   |   0   |
+	---------------------------------------------------------------------
+:: retrieving :: org.apache.spark#spark-submit-parent-38ea07e4-a1ba-4b18-ae41-742a36865e42
+	confs: [default]
+	0 artifacts copied, 3 already retrieved (0kB/2ms)
+26/09/28 14:16:34 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Using Spark's default log4j profile: org/apache/spark/log4j2-defaults.properties
+Setting default log level to "WARN".
+To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
+26/09/28 14:16:34 WARN SparkConf: Note that spark.local.dir will be overridden by the value set by the cluster manager (via SPARK_LOCAL_DIRS in standalone/kubernetes and LOCAL_DIRS in YARN).
+26/09/28 14:16:36 WARN SparkStringUtils: Truncated the string representation of a plan since it was too large. This behavior can be adjusted by setting 'spark.sql.debug.maxToStringFields'.
+/opt/homebrew/Cellar/python@3.11/3.11.15/Frameworks/Python.framework/Versions/3.11/lib/python3.11/socket.py:789: ResourceWarning: unclosed <socket.socket fd=10, family=2, type=1, proto=6, laddr=('127.0.0.1', 56100), raddr=('127.0.0.1', 56099)>
+  self._sock = None
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+ok
+
+----------------------------------------------------------------------
+Ran 2 tests in 63.580s
+
+OK

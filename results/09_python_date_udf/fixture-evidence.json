@@ -1,0 +1,43 @@
+{
+  "exact_table_comparisons": 16,
+  "gold_python_operators": {
+    "gold.audience_daily": [],
+    "gold.campaign_daily": []
+  },
+  "metric_note": "Python timing totals are milliseconds accumulated across tasks; do not add overlapping timings or treat them as pipeline wall time.",
+  "python_metrics": {
+    "data returned from Python workers": {
+      "accumulator_id": "809",
+      "metric_type": "size",
+      "total": 31
+    },
+    "data sent to Python workers": {
+      "accumulator_id": "808",
+      "metric_type": "size",
+      "total": 43
+    },
+    "number of output rows": {
+      "accumulator_id": "813",
+      "metric_type": "sum",
+      "total": 5
+    },
+    "time to initialize Python workers": {
+      "accumulator_id": "811",
+      "metric_type": "timing",
+      "total": 102
+    },
+    "time to run Python workers": {
+      "accumulator_id": "812",
+      "metric_type": "timing",
+      "total": 378
+    },
+    "time to start Python workers": {
+      "accumulator_id": "810",
+      "metric_type": "timing",
+      "total": 276
+    }
+  },
+  "settings_identical": true,
+  "status": "succeeded",
+  "workload": "Five-impression fixture; not a full-data performance benchmark"
+}

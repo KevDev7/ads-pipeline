@@ -15,7 +15,7 @@ SETTINGS = (
 )
 
 
-def run(entry, source, output, run_id):
+def run(entry, source, output, run_id, extra_settings=(), observe_coalescing=True):
     # Invoked in its own process: experiment-local imports cannot leak across runs.
     entry = entry.resolve()
     sys.path.insert(0, str(entry.parent))
@@ -26,7 +26,8 @@ def run(entry, source, output, run_id):
 
     def environment(spark):
         result = original(spark)
-        result['spark_sql_settings'].update({key: spark.conf.get(key) for key in SETTINGS
+        keys = (*SETTINGS, *extra_settings) if observe_coalescing else extra_settings
+        result['spark_sql_settings'].update({key: spark.conf.get(key) for key in keys
                                              if key not in result['spark_sql_settings']})
         return result
 
@@ -40,5 +41,7 @@ if __name__ == '__main__':
     parser.add_argument('--source-dir', type=Path, required=True)
     parser.add_argument('--output-dir', type=Path, required=True)
     parser.add_argument('--run-id', required=True)
+    parser.add_argument('--extra-setting', action='append', default=[])
+    parser.add_argument('--only-extra-settings', action='store_true')
     args = parser.parse_args()
-    run(args.entry, args.source_dir, args.output_dir, args.run_id)
+    run(args.entry, args.source_dir, args.output_dir, args.run_id, args.extra_setting, not args.only_extra_settings)

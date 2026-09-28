@@ -167,3 +167,10 @@ remains the preferred reference for independent experiments.
 Iteration 8 confirms that automatic shuffle-partition combining helps this
 workload: disabling it increased median Gold time by 27.96% and produced 200
 files per Gold report instead of four. See [the coalescing results](results/08_no_shuffle_coalescing/README.md).
+
+[Iteration 9](experiments/09_python_date_udf/README.md) compares iteration 2's
+built-in reporting-date calculation with a regular Python UDF. Run
+`bash scripts/test_iteration.sh 9` for repeatable correctness and execution checks,
+or `bash scripts/run_python_date_udf.sh --run-id my-python-date-run` for the variant.
+See [the iteration report](results/09_python_date_udf/README.md) for verification
+status and the full-data benchmark's storage gate.

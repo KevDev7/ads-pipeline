@@ -211,3 +211,11 @@ file-size distributions. Other Gold stages are reported separately from joined
 report SQL. The session-wide switch may also affect validation/metadata work;
 these costs must not be attributed solely to the Gold aggregation readers.
 Maintain at least 7 GiB free before starting the full-data benchmark.
+
+### Iteration 9: Python date calculation
+
+`bash scripts/test_iteration.sh 9` compares iteration 2 against a regular Python
+reporting-date UDF. Its `python-udf-evidence.json` checks the Silver data write,
+Python transfer bytes and output rows, successful tasks, and downstream Gold plans.
+No SQL-setting changes are allowed. `--observe-setting` extends observation metadata
+without setting a value; iteration 8’s `--observe-coalescing` behavior is unchanged.

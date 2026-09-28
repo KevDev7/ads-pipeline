@@ -8,6 +8,13 @@ import sys
 
 REPO = Path(__file__).resolve().parents[1]
 EXPERIMENTS = {
+    '9': {
+        'name': 'Built-in date calculation versus a regular Python UDF',
+        'left': 'experiments/02_compression/run.py',
+        'right': 'experiments/09_python_date_udf/run.py',
+        'change': 'Compute only Silver reporting_date with a non-Arrow Python UDF in Asia/Shanghai',
+        'changed_settings': [], 'queries': False, 'python_udf_evidence': True,
+    },
     '8': {
         'name': 'Automatic shuffle-partition coalescing',
         'left': 'experiments/02_compression/run.py',
@@ -85,7 +92,11 @@ def commands(iteration, source, output, comparison_id, repeats):
         pipeline += ['--changed-setting', key]
     if spec.get('coalescing_evidence'):
         pipeline += ['--observe-coalescing']
+    if spec.get('python_udf_evidence'):
+        pipeline += ['--observe-setting', 'spark.sql.execution.pythonUDF.arrow.enabled']
     steps = [('pipeline', pipeline)]
+    if spec.get('python_udf_evidence'):
+        steps.append(('python-udf', [sys.executable, '-m', 'benchmarks.python_udf', str(root)]))
     if spec.get('coalescing_evidence'):
         steps.append(('coalescing', [sys.executable, '-m', 'benchmarks.coalescing', str(root)]))
     if spec['queries']:
@@ -127,6 +138,7 @@ def report(root, state):
         ('comparison.json', 'Every pipeline sample and exact table comparison'),
         ('query-comparison.json', 'Every query result, timing, executed scan metric, and task counter'),
         ('join-strategies.json', 'Executed ads and user-profile join strategies'),
+        ('python-udf-evidence.json', 'Executed Python date calculation, task metrics and downstream joins'),
         ('coalescing-evidence.json', 'Effective AQE settings, executed reader stages, task durations and file sizes'),
         ('cache-evidence.json', 'Cache materialization, reuse, release, and executed joins'),
         ('codecs.json', 'Actual Parquet file compression checks'),
@@ -189,7 +201,7 @@ def run(iteration, source, output, comparison_id, repeats):
             print(f'Running {name}; log: {logs / (name + ".log")}', flush=True)
             with (logs / f'{name}.log').open('w') as log:
                 subprocess.run(command, cwd=REPO, stdout=log, stderr=subprocess.STDOUT, check=True)
-            artifact = {'coalescing': 'coalescing-evidence.json', 'cache': 'cache-evidence.json', 'formats': 'format-comparison.json', 'pipeline': 'comparison.json', 'joins': 'join-strategies.json', 'shuffle': 'shuffle-partitions.json', 'queries': 'query-comparison.json', 'codecs': 'codecs.json'}[name]
+            artifact = {'python-udf': 'python-udf-evidence.json', 'coalescing': 'coalescing-evidence.json', 'cache': 'cache-evidence.json', 'formats': 'format-comparison.json', 'pipeline': 'comparison.json', 'joins': 'join-strategies.json', 'shuffle': 'shuffle-partitions.json', 'queries': 'query-comparison.json', 'codecs': 'codecs.json'}[name]
             evidence = json.loads((root / artifact).read_text())
             if name != 'codecs' and evidence.get('status') != 'succeeded':
                 raise ValueError(f'{name} did not report success')
@@ -212,7 +224,7 @@ def run(iteration, source, output, comparison_id, repeats):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('iteration', choices=EXPERIMENTS, help='Implemented experiment: 1, 2, 3, 4, 5, 6, 7, or 8')
+    parser.add_argument('iteration', choices=EXPERIMENTS, help='Implemented experiment: 1, 2, 3, 4, 5, 6, 7, 8, or 9')
     parser.add_argument('--source-dir', type=Path, default=REPO / 'data/raw/taobao')
     parser.add_argument('--output-dir', type=Path, default=REPO / 'outputs/comparisons')
     parser.add_argument('--comparison-id', default=datetime.now(timezone.utc).strftime('suite-%Y%m%dT%H%M%S%fZ'))
