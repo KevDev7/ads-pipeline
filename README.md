@@ -110,12 +110,13 @@ and 18 query executions matched. It is preserved as `iteration-03-date-partition
 ```bash
 bash scripts/test_iteration.sh 1  # CSV versus Parquet
 bash scripts/test_iteration.sh 2  # Compression
-bash scripts/test_iteration.sh 3  # Date partitioning, including query tests
+bash scripts/test_iteration.sh 3  # Date partitioning
+bash scripts/test_iteration.sh 4  # Ads broadcast versus sort-merge join, including query tests
 ```
 
 These run the test suite, the iteration’s repeated workloads, exact equality
 checks, and actual compression checks. Iteration 1 measures format conversion
-and reads; iterations 2 and 3 also compare full rebuilds. Open the generated `RESULTS.md`
+and reads; iterations 2–4 also compare full rebuilds. Open the generated `RESULTS.md`
 under `outputs/comparisons/<id>/` for all evidence. Each run gets a fresh ID;
 large outputs remain local. See [options and limitations](docs/comparisons.md#one-command-per-implemented-iteration).
 
@@ -125,3 +126,7 @@ Parquet used **58.18% fewer data bytes**, with **3.89–8.44× faster median rea
 across three measured workloads; conversion cost was measured separately. This
 is a read-workload comparison, not a full-pipeline speedup claim. All records
 and query results matched. Tag: `iteration-01-csv-vs-parquet`.
+
+[Iteration 4](experiments/04_ads_shuffle_join/README.md) changes only the ads join
+to sort-merge from the unpartitioned ZSTD reference. Its automated checks verify
+the actual ads and profile join strategies from runtime event logs.

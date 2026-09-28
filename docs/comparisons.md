@@ -16,12 +16,15 @@ bash scripts/test_iteration.sh 2
 
 # Date partitioning: iteration 2 versus iteration 3
 bash scripts/test_iteration.sh 3
+
+# Ads join: iteration 2 versus iteration 4
+bash scripts/test_iteration.sh 4
 ```
 
 Each command uses a fresh timestamped comparison ID and three runs per side.
-All commands run the automated test suite first. Iterations 2 and 3 run full
+All commands run the automated test suite first. Iterations 2, 3, and 4 run full
 rebuilds and exact table comparisons, followed by date-query benchmarks for
-iteration 3 and actual file-codec checks. Iteration 1 instead prepares one
+iteration 3, executed join-strategy checks for iteration 4, and actual file-codec checks. Iteration 1 instead prepares one
 Parquet copy and compares repeated reads with CSV, then verifies records/codecs. Steps
 run sequentially; codec inspection follows timed queries. Pipeline/query timing
 methods and implementations are unchanged.
@@ -156,3 +159,13 @@ input bytes. Query timing and rebuild timing remain separate. See the
 [experiment method](../experiments/03_date_partitioning/README.md) and
 [measured results](../results/03_date_partitioning/README.md) for dates, warm-up
 policy, limitations, and all timing samples.
+
+## Executed join evidence
+
+Iteration 4 automatically runs `benchmarks.join_strategies` after exact equality
+checks. It reads the latest structured runtime plan for completed Gold SQL
+executions from event logs and identifies joins by key. Both controls must use
+broadcast hash joins; the variant must use sort-merge for ads while retaining
+broadcast hash for profiles. Missing evidence or an unintended join change fails
+the suite. This is stronger than inspecting the hint or an initial `explain()`.
+The result is `join-strategies.json`, plus sanitized runtime plans.
