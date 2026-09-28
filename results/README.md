@@ -16,6 +16,8 @@ no measurable difference.
 | 05 — Profile join | Iteration 2 versus profile sort-merge join; ads join unchanged | Complete with failure history: Gold median 6.591 → 17.302 s; processing +33.05%; one earlier memory failure; fresh series passed 40 exact comparisons | [Results](05_profile_shuffle_join/README.md) |
 | 06 — Shuffle partitions | Iteration 2 versus 32 initial SQL shuffle partitions; AQE unchanged | Complete: Gold median -6.71%; overall timing mixed; AQE readers 4 → 5; 40 exact comparisons passed | [Results](06_shuffle_partitions/README.md) |
 
+| 07 — Cached enrichment | Iteration 2 versus persisting full enrichment for both reports | Fixture verification passed; full-data comparison pending | [Runnable version](../experiments/07_cached_enrichment/README.md) |
+
 ## Reproduce an experiment
 
 Run `bash scripts/test_iteration.sh 1` for CSV versus Parquet,
@@ -23,7 +25,8 @@ Run `bash scripts/test_iteration.sh 1` for CSV versus Parquet,
 `bash scripts/test_iteration.sh 3` for date partitioning, or
 `bash scripts/test_iteration.sh 4` for the ads join, or
 `bash scripts/test_iteration.sh 5` for the profile join, or
-`bash scripts/test_iteration.sh 6` for initial shuffle partitions. Each creates a fresh
+`bash scripts/test_iteration.sh 6` for initial shuffle partitions, or
+`bash scripts/test_iteration.sh 7` for cached enrichment. Each creates a fresh
 comparison and a `RESULTS.md` linking all applicable automated checks. See
 [the command options and manual interpretation boundary](../docs/comparisons.md#one-command-per-implemented-iteration).
 

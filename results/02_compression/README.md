@@ -169,3 +169,11 @@ iteration 1 for CSV versus Parquet. The raw JSON evidence and generated
 code now lives in `experiments/02_compression`. The old `iteration-01-compression`
 tag remains a historical snapshot; `iteration-02-compression` preserves the
 renamed version. This rename does not represent a new benchmark run.
+
+## Retention update for iteration 7
+
+On 2026-09-28, with user authorization, only the generated Bronze/Silver/Gold
+folders of the six `compression-01-20260927` comparison runs were removed
+(18 folders; 4,669,734,037 bytes). Reports, logs, plans, source data, original
+baseline run, and every project version were retained. The local manifest is
+`outputs/comparisons/compression-01-20260927/table-cleanup.json`.

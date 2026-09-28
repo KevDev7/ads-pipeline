@@ -186,3 +186,13 @@ It reports actual reader task counts and AQE coalescing without assuming they
 equal the configured value. Stage SQL execution IDs exclude unrelated Delta
 metadata work from this Gold aggregation evidence. The output is
 `shuffle-partitions.json` plus sanitized plans under `shuffle-plans/`.
+
+### Iteration 7: cached enrichment
+
+`bash scripts/test_iteration.sh 7` compares iteration 2 with iteration 7 using
+no declared SQL-setting changes. In addition to exact table and codec checks,
+`cache-evidence.json` verifies materialization, reuse, and scoped release using
+live storage snapshots and SQL/stage task metrics. See
+[the runnable version](../experiments/07_cached_enrichment/README.md).
+Compare combined Gold time **including `gold.cache_release`**. Cache snapshot
+memory/disk bytes are separate from shuffle spill, stored tables, and peak RAM.
