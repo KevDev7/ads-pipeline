@@ -1,0 +1,2967 @@
+{
+  "change": "Persist full enrichment for both Gold reports; blocking scoped release",
+  "comparison_id": "cache-07-20260928",
+  "comparisons": [
+    {
+      "candidate": "01-right",
+      "reference": "01-left",
+      "tables": {
+        "bronze/ads": {
+          "equal": true,
+          "left_has_unmatched_rows": false,
+          "method": "bidirectional EXCEPT ALL; exact values/types; unordered rows; duplicates retained",
+          "right_has_unmatched_rows": false
+        },
+        "bronze/impressions": {
+          "equal": true,
+          "left_has_unmatched_rows": false,
+          "method": "bidirectional EXCEPT ALL; exact values/types; unordered rows; duplicates retained",
+          "right_has_unmatched_rows": false
+        },
+        "bronze/user_profiles": {
+          "equal": true,
+          "left_has_unmatched_rows": false,
+          "method": "bidirectional EXCEPT ALL; exact values/types; unordered rows; duplicates retained",
+          "right_has_unmatched_rows": false
+        },
+        "gold/audience_daily": {
+          "equal": true,
+          "left_has_unmatched_rows": false,
+          "method": "bidirectional EXCEPT ALL; exact values/types; unordered rows; duplicates retained",
+          "right_has_unmatched_rows": false
+        },
+        "gold/campaign_daily": {
+          "equal": true,
+          "left_has_unmatched_rows": false,
+          "method": "bidirectional EXCEPT ALL; exact values/types; unordered rows; duplicates retained",
+          "right_has_unmatched_rows": false
+        },
+        "silver/ads": {
+          "equal": true,
+          "left_has_unmatched_rows": false,
+          "method": "bidirectional EXCEPT ALL; exact values/types; unordered rows; duplicates retained",
+          "right_has_unmatched_rows": false
+        },
+        "silver/impressions": {
+          "equal": true,
+          "left_has_unmatched_rows": false,
+          "method": "bidirectional EXCEPT ALL; exact values/types; unordered rows; duplicates retained",
+          "right_has_unmatched_rows": false
+        },
+        "silver/user_profiles": {
+          "equal": true,
+          "left_has_unmatched_rows": false,
+          "method": "bidirectional EXCEPT ALL; exact values/types; unordered rows; duplicates retained",
+          "right_has_unmatched_rows": false
+        }
+      }
+    },
+    {
+      "candidate": "02-right",
+      "reference": "01-left",
+      "tables": {
+        "bronze/ads": {
+          "equal": true,
+          "left_has_unmatched_rows": false,
+          "method": "bidirectional EXCEPT ALL; exact values/types; unordered rows; duplicates retained",
+          "right_has_unmatched_rows": false
+        },
+        "bronze/impressions": {
+          "equal": true,
+          "left_has_unmatched_rows": false,
+          "method": "bidirectional EXCEPT ALL; exact values/types; unordered rows; duplicates retained",
+          "right_has_unmatched_rows": false
+        },
+        "bronze/user_profiles": {
+          "equal": true,
+          "left_has_unmatched_rows": false,
+          "method": "bidirectional EXCEPT ALL; exact values/types; unordered rows; duplicates retained",
+          "right_has_unmatched_rows": false
+        },
+        "gold/audience_daily": {
+          "equal": true,
+          "left_has_unmatched_rows": false,
+          "method": "bidirectional EXCEPT ALL; exact values/types; unordered rows; duplicates retained",
+          "right_has_unmatched_rows": false
+        },
+        "gold/campaign_daily": {
+          "equal": true,
+          "left_has_unmatched_rows": false,
+          "method": "bidirectional EXCEPT ALL; exact values/types; unordered rows; duplicates retained",
+          "right_has_unmatched_rows": false
+        },
+        "silver/ads": {
+          "equal": true,
+          "left_has_unmatched_rows": false,
+          "method": "bidirectional EXCEPT ALL; exact values/types; unordered rows; duplicates retained",
+          "right_has_unmatched_rows": false
+        },
+        "silver/impressions": {
+          "equal": true,
+          "left_has_unmatched_rows": false,
+          "method": "bidirectional EXCEPT ALL; exact values/types; unordered rows; duplicates retained",
+          "right_has_unmatched_rows": false
+        },
+        "silver/user_profiles": {
+          "equal": true,
+          "left_has_unmatched_rows": false,
+          "method": "bidirectional EXCEPT ALL; exact values/types; unordered rows; duplicates retained",
+          "right_has_unmatched_rows": false
+        }
+      }
+    },
+    {
+      "candidate": "02-left",
+      "reference": "01-left",
+      "tables": {
+        "bronze/ads": {
+          "equal": true,
+          "left_has_unmatched_rows": false,
+          "method": "bidirectional EXCEPT ALL; exact values/types; unordered rows; duplicates retained",
+          "right_has_unmatched_rows": false
+        },
+        "bronze/impressions": {
+          "equal": true,
+          "left_has_unmatched_rows": false,
+          "method": "bidirectional EXCEPT ALL; exact values/types; unordered rows; duplicates retained",
+          "right_has_unmatched_rows": false
+        },
+        "bronze/user_profiles": {
+          "equal": true,
+          "left_has_unmatched_rows": false,
+          "method": "bidirectional EXCEPT ALL; exact values/types; unordered rows; duplicates retained",
+          "right_has_unmatched_rows": false
+        },
+        "gold/audience_daily": {
+          "equal": true,
+          "left_has_unmatched_rows": false,
+          "method": "bidirectional EXCEPT ALL; exact values/types; unordered rows; duplicates retained",
+          "right_has_unmatched_rows": false
+        },
+        "gold/campaign_daily": {
+          "equal": true,
+          "left_has_unmatched_rows": false,
+          "method": "bidirectional EXCEPT ALL; exact values/types; unordered rows; duplicates retained",
+          "right_has_unmatched_rows": false
+        },
+        "silver/ads": {
+          "equal": true,
+          "left_has_unmatched_rows": false,
+          "method": "bidirectional EXCEPT ALL; exact values/types; unordered rows; duplicates retained",
+          "right_has_unmatched_rows": false
+        },
+        "silver/impressions": {
+          "equal": true,
+          "left_has_unmatched_rows": false,
+          "method": "bidirectional EXCEPT ALL; exact values/types; unordered rows; duplicates retained",
+          "right_has_unmatched_rows": false
+        },
+        "silver/user_profiles": {
+          "equal": true,
+          "left_has_unmatched_rows": false,
+          "method": "bidirectional EXCEPT ALL; exact values/types; unordered rows; duplicates retained",
+          "right_has_unmatched_rows": false
+        }
+      }
+    },
+    {
+      "candidate": "03-left",
+      "reference": "01-left",
+      "tables": {
+        "bronze/ads": {
+          "equal": true,
+          "left_has_unmatched_rows": false,
+          "method": "bidirectional EXCEPT ALL; exact values/types; unordered rows; duplicates retained",
+          "right_has_unmatched_rows": false
+        },
+        "bronze/impressions": {
+          "equal": true,
+          "left_has_unmatched_rows": false,
+          "method": "bidirectional EXCEPT ALL; exact values/types; unordered rows; duplicates retained",
+          "right_has_unmatched_rows": false
+        },
+        "bronze/user_profiles": {
+          "equal": true,
+          "left_has_unmatched_rows": false,
+          "method": "bidirectional EXCEPT ALL; exact values/types; unordered rows; duplicates retained",
+          "right_has_unmatched_rows": false
+        },
+        "gold/audience_daily": {
+          "equal": true,
+          "left_has_unmatched_rows": false,
+          "method": "bidirectional EXCEPT ALL; exact values/types; unordered rows; duplicates retained",
+          "right_has_unmatched_rows": false
+        },
+        "gold/campaign_daily": {
+          "equal": true,
+          "left_has_unmatched_rows": false,
+          "method": "bidirectional EXCEPT ALL; exact values/types; unordered rows; duplicates retained",
+          "right_has_unmatched_rows": false
+        },
+        "silver/ads": {
+          "equal": true,
+          "left_has_unmatched_rows": false,
+          "method": "bidirectional EXCEPT ALL; exact values/types; unordered rows; duplicates retained",
+          "right_has_unmatched_rows": false
+        },
+        "silver/impressions": {
+          "equal": true,
+          "left_has_unmatched_rows": false,
+          "method": "bidirectional EXCEPT ALL; exact values/types; unordered rows; duplicates retained",
+          "right_has_unmatched_rows": false
+        },
+        "silver/user_profiles": {
+          "equal": true,
+          "left_has_unmatched_rows": false,
+          "method": "bidirectional EXCEPT ALL; exact values/types; unordered rows; duplicates retained",
+          "right_has_unmatched_rows": false
+        }
+      }
+    },
+    {
+      "candidate": "03-right",
+      "reference": "01-left",
+      "tables": {
+        "bronze/ads": {
+          "equal": true,
+          "left_has_unmatched_rows": false,
+          "method": "bidirectional EXCEPT ALL; exact values/types; unordered rows; duplicates retained",
+          "right_has_unmatched_rows": false
+        },
+        "bronze/impressions": {
+          "equal": true,
+          "left_has_unmatched_rows": false,
+          "method": "bidirectional EXCEPT ALL; exact values/types; unordered rows; duplicates retained",
+          "right_has_unmatched_rows": false
+        },
+        "bronze/user_profiles": {
+          "equal": true,
+          "left_has_unmatched_rows": false,
+          "method": "bidirectional EXCEPT ALL; exact values/types; unordered rows; duplicates retained",
+          "right_has_unmatched_rows": false
+        },
+        "gold/audience_daily": {
+          "equal": true,
+          "left_has_unmatched_rows": false,
+          "method": "bidirectional EXCEPT ALL; exact values/types; unordered rows; duplicates retained",
+          "right_has_unmatched_rows": false
+        },
+        "gold/campaign_daily": {
+          "equal": true,
+          "left_has_unmatched_rows": false,
+          "method": "bidirectional EXCEPT ALL; exact values/types; unordered rows; duplicates retained",
+          "right_has_unmatched_rows": false
+        },
+        "silver/ads": {
+          "equal": true,
+          "left_has_unmatched_rows": false,
+          "method": "bidirectional EXCEPT ALL; exact values/types; unordered rows; duplicates retained",
+          "right_has_unmatched_rows": false
+        },
+        "silver/impressions": {
+          "equal": true,
+          "left_has_unmatched_rows": false,
+          "method": "bidirectional EXCEPT ALL; exact values/types; unordered rows; duplicates retained",
+          "right_has_unmatched_rows": false
+        },
+        "silver/user_profiles": {
+          "equal": true,
+          "left_has_unmatched_rows": false,
+          "method": "bidirectional EXCEPT ALL; exact values/types; unordered rows; duplicates retained",
+          "right_has_unmatched_rows": false
+        }
+      }
+    }
+  ],
+  "control": false,
+  "declared_setting_changes": [],
+  "finished_at": "2026-09-28T16:33:31.294422+00:00",
+  "harness_seconds": 1257.302,
+  "left": "experiments/02_compression/run.py",
+  "repeats_per_side": 3,
+  "right": "experiments/07_cached_enrichment/run.py",
+  "runs": [
+    {
+      "report": {
+        "checks": {
+          "audience_daily": {
+            "clicks": 1366056,
+            "impressions": 26557961,
+            "missing_profile_impressions": 1528526,
+            "rows": 3738362
+          },
+          "bronze_silver_row_counts_match": true,
+          "campaign_daily": {
+            "clicks": 1366056,
+            "impressions": 26557961,
+            "missing_profile_impressions": 1528526,
+            "rows": 1819995
+          },
+          "dimension_keys_unique_and_present": true,
+          "silver_totals": {
+            "clicks": 1366056,
+            "first_date": "2017-05-06",
+            "impressions": 26557961,
+            "last_date": "2017-05-13",
+            "missing_profile_impressions": 1528526
+          }
+        },
+        "environment": {
+          "delta": "4.0.0",
+          "driver_memory": "2g",
+          "git_commit": "88d7a77b9be5931512d02be8479251000a046464",
+          "git_dirty": false,
+          "java": "21.0.12.1",
+          "machine": "arm64",
+          "master": "local[4]",
+          "platform": "macOS-27.0-arm64-arm-64bit",
+          "python": "3.11.15",
+          "spark": "4.0.1",
+          "spark_sql_settings": {
+            "spark.sql.adaptive.enabled": "true",
+            "spark.sql.ansi.enabled": "true",
+            "spark.sql.autoBroadcastJoinThreshold": "10485760b",
+            "spark.sql.files.maxPartitionBytes": "134217728b",
+            "spark.sql.parquet.compression.codec": "zstd",
+            "spark.sql.session.timeZone": "Asia/Shanghai",
+            "spark.sql.shuffle.partitions": "200"
+          }
+        },
+        "finished_at": "2026-09-28T16:17:47.926832+00:00",
+        "run_id": "01-left",
+        "seconds": {
+          "bronze.ads": 1.319,
+          "bronze.impressions": 13.82,
+          "bronze.user_profiles": 1.395,
+          "gold.audience_daily": 4.201,
+          "gold.campaign_daily": 3.651,
+          "pipeline_writes": 37.325,
+          "silver.ads": 1.814,
+          "silver.impressions": 9.786,
+          "silver.user_profiles": 1.339,
+          "source_fingerprints": 0.539,
+          "spark_shutdown": 0.532,
+          "spark_startup": 2.029,
+          "total": 47.492,
+          "validate.audience_daily": 0.439,
+          "validate.campaign_daily": 0.459,
+          "validate.silver": 6.058,
+          "validation": 6.956
+        },
+        "sources": {
+          "ad_feature.csv": {
+            "bytes": 31286431,
+            "sha256": "358a298178a6286196b82fe151024c63f4b081cf7685f1ebf8ff4da776e3c745"
+          },
+          "raw_sample.csv": {
+            "bytes": 1088060964,
+            "sha256": "aad792d63b81b5b7788f91e35364975b83ce3fdb923009fdfb6f798545d2b93d"
+          },
+          "user_profile.csv": {
+            "bytes": 24056588,
+            "sha256": "63355e02e302768d79db658e0f25498f368b4b5e037318bc67973835380a0532"
+          }
+        },
+        "spark_tasks": {
+          "by_operation": {
+            "bronze.ads": {
+              "disk_spill_bytes": 0,
+              "executor_cpu_ns": 2964316000,
+              "executor_run_ms": 3299,
+              "failed_task_attempts": 0,
+              "input_bytes": 31615178,
+              "input_records": 846818,
+              "memory_spill_bytes": 0,
+              "peak_task_execution_memory_bytes": 16842736,
+              "shuffle_read_bytes": 2549,
+              "shuffle_write_bytes": 2549,
+              "task_attempts": 55
+            },
+            "bronze.impressions": {
+              "disk_spill_bytes": 0,
+              "executor_cpu_ns": 40299405000,
+              "executor_run_ms": 45048,
+              "failed_task_attempts": 0,
+              "input_bytes": 1088592619,
+              "input_records": 26557973,
+              "memory_spill_bytes": 0,
+              "peak_task_execution_memory_bytes": 16842736,
+              "shuffle_read_bytes": 4131,
+              "shuffle_write_bytes": 4131,
+              "task_attempts": 60
+            },
+            "bronze.user_profiles": {
+              "disk_spill_bytes": 0,
+              "executor_cpu_ns": 3189914000,
+              "executor_run_ms": 3511,
+              "failed_task_attempts": 0,
+              "input_bytes": 24304026,
+              "input_records": 1061775,
+              "memory_spill_bytes": 0,
+              "peak_task_execution_memory_bytes": 16842736,
+              "shuffle_read_bytes": 2881,
+              "shuffle_write_bytes": 2881,
+              "task_attempts": 55
+            },
+            "gold.audience_daily": {
+              "disk_spill_bytes": 0,
+              "executor_cpu_ns": 11636495000,
+              "executor_run_ms": 12141,
+              "failed_task_attempts": 0,
+              "input_bytes": 110121521,
+              "input_records": 28466577,
+              "memory_spill_bytes": 0,
+              "peak_task_execution_memory_bytes": 317898080,
+              "shuffle_read_bytes": 91612358,
+              "shuffle_write_bytes": 91612358,
+              "task_attempts": 368
+            },
+            "gold.campaign_daily": {
+              "disk_spill_bytes": 0,
+              "executor_cpu_ns": 8214593000,
+              "executor_run_ms": 9130,
+              "failed_task_attempts": 0,
+              "input_bytes": 112432219,
+              "input_records": 28466577,
+              "memory_spill_bytes": 0,
+              "peak_task_execution_memory_bytes": 250789280,
+              "shuffle_read_bytes": 47079897,
+              "shuffle_write_bytes": 47079897,
+              "task_attempts": 368
+            },
+            "silver.ads": {
+              "disk_spill_bytes": 0,
+              "executor_cpu_ns": 3089496000,
+              "executor_run_ms": 4027,
+              "failed_task_attempts": 0,
+              "input_bytes": 11310726,
+              "input_records": 846830,
+              "memory_spill_bytes": 0,
+              "peak_task_execution_memory_bytes": 16842736,
+              "shuffle_read_bytes": 6988,
+              "shuffle_write_bytes": 6988,
+              "task_attempts": 156
+            },
+            "silver.impressions": {
+              "disk_spill_bytes": 0,
+              "executor_cpu_ns": 29035887000,
+              "executor_run_ms": 35209,
+              "failed_task_attempts": 0,
+              "input_bytes": 209870400,
+              "input_records": 26557991,
+              "memory_spill_bytes": 0,
+              "peak_task_execution_memory_bytes": 16842736,
+              "shuffle_read_bytes": 8242,
+              "shuffle_write_bytes": 8242,
+              "task_attempts": 157
+            },
+            "silver.user_profiles": {
+              "disk_spill_bytes": 0,
+              "executor_cpu_ns": 2690896000,
+              "executor_run_ms": 2828,
+              "failed_task_attempts": 0,
+              "input_bytes": 6159408,
+              "input_records": 1061787,
+              "memory_spill_bytes": 0,
+              "peak_task_execution_memory_bytes": 16842736,
+              "shuffle_read_bytes": 7520,
+              "shuffle_write_bytes": 7520,
+              "task_attempts": 156
+            },
+            "validate.audience_daily": {
+              "disk_spill_bytes": 0,
+              "executor_cpu_ns": 687549000,
+              "executor_run_ms": 698,
+              "failed_task_attempts": 0,
+              "input_bytes": 4021473,
+              "input_records": 3738380,
+              "memory_spill_bytes": 0,
+              "peak_task_execution_memory_bytes": 0,
+              "shuffle_read_bytes": 4977,
+              "shuffle_write_bytes": 4977,
+              "task_attempts": 157
+            },
+            "validate.campaign_daily": {
+              "disk_spill_bytes": 0,
+              "executor_cpu_ns": 539994000,
+              "executor_run_ms": 552,
+              "failed_task_attempts": 0,
+              "input_bytes": 2706359,
+              "input_records": 1820013,
+              "memory_spill_bytes": 0,
+              "peak_task_execution_memory_bytes": 0,
+              "shuffle_read_bytes": 4961,
+              "shuffle_write_bytes": 4961,
+              "task_attempts": 157
+            },
+            "validate.silver": {
+              "disk_spill_bytes": 0,
+              "executor_cpu_ns": 10715232000,
+              "executor_run_ms": 11780,
+              "failed_task_attempts": 0,
+              "input_bytes": 298246150,
+              "input_records": 110049121,
+              "memory_spill_bytes": 0,
+              "peak_task_execution_memory_bytes": 42688264,
+              "shuffle_read_bytes": 12611988,
+              "shuffle_write_bytes": 12611988,
+              "task_attempts": 1062
+            }
+          },
+          "events_read": 6433,
+          "note": "All task attempts, including validation and retries. Input bytes are task counters, not unique physical disk reads. Peak memory is per task, not process RAM."
+        },
+        "started_at": "2026-09-28T16:17:00.434810+00:00",
+        "status": "succeeded",
+        "storage": {
+          "event_log_bytes": 19964568,
+          "source_bytes": 1143403983,
+          "table_bytes": 630854482
+        },
+        "tables": {
+          "bronze/ads": {
+            "parquet_bytes": 11186011,
+            "parquet_files": 4,
+            "rows": 846811,
+            "total_bytes": 11281208
+          },
+          "bronze/impressions": {
+            "parquet_bytes": 208286860,
+            "parquet_files": 9,
+            "rows": 26557961,
+            "total_bytes": 209928646
+          },
+          "bronze/user_profiles": {
+            "parquet_bytes": 6069239,
+            "parquet_files": 4,
+            "rows": 1061768,
+            "total_bytes": 6127125
+          },
+          "gold/audience_daily": {
+            "parquet_bytes": 19656706,
+            "parquet_files": 4,
+            "rows": 3738362,
+            "total_bytes": 19818192
+          },
+          "gold/campaign_daily": {
+            "parquet_bytes": 15627292,
+            "parquet_files": 4,
+            "rows": 1819995,
+            "total_bytes": 15757346
+          },
+          "silver/ads": {
+            "parquet_bytes": 10329136,
+            "parquet_files": 4,
+            "rows": 846811,
+            "total_bytes": 10417819
+          },
+          "silver/impressions": {
+            "parquet_bytes": 350074879,
+            "parquet_files": 5,
+            "rows": 26557961,
+            "total_bytes": 352821843
+          },
+          "silver/user_profiles": {
+            "parquet_bytes": 4656001,
+            "parquet_files": 4,
+            "rows": 1061768,
+            "total_bytes": 4702303
+          }
+        }
+      },
+      "run_id": "01-left",
+      "setting_differences": {},
+      "side": "left"
+    },
+    {
+      "report": {
+        "cache": {
+          "requested_storage_level": "MEMORY_AND_DISK_DESER",
+          "snapshots": {
+            "after_audience": {
+              "cached_partitions": 5,
+              "disk_bytes": 142723458,
+              "memory_bytes": 570528808,
+              "rdd_id": 340,
+              "registered": true,
+              "storage_info_present": true,
+              "storage_level": {
+                "deserialized": true,
+                "replication": 1,
+                "use_disk": true,
+                "use_memory": true
+              },
+              "total_partitions": 5
+            },
+            "after_campaign": {
+              "cached_partitions": 5,
+              "disk_bytes": 6860306,
+              "memory_bytes": 772217368,
+              "rdd_id": 340,
+              "registered": true,
+              "storage_info_present": true,
+              "storage_level": {
+                "deserialized": true,
+                "replication": 1,
+                "use_disk": true,
+                "use_memory": true
+              },
+              "total_partitions": 5
+            },
+            "after_release": {
+              "cached_partitions": 0,
+              "disk_bytes": 0,
+              "memory_bytes": 0,
+              "rdd_id": 340,
+              "registered": false,
+              "storage_info_present": false,
+              "storage_level": {
+                "deserialized": false,
+                "replication": 1,
+                "use_disk": false,
+                "use_memory": false
+              },
+              "total_partitions": 0
+            },
+            "before_audience": {
+              "cached_partitions": 5,
+              "disk_bytes": 6860306,
+              "memory_bytes": 772217368,
+              "rdd_id": 340,
+              "registered": true,
+              "storage_info_present": true,
+              "storage_level": {
+                "deserialized": true,
+                "replication": 1,
+                "use_disk": true,
+                "use_memory": true
+              },
+              "total_partitions": 5
+            }
+          }
+        },
+        "checks": {
+          "audience_daily": {
+            "clicks": 1366056,
+            "impressions": 26557961,
+            "missing_profile_impressions": 1528526,
+            "rows": 3738362
+          },
+          "bronze_silver_row_counts_match": true,
+          "campaign_daily": {
+            "clicks": 1366056,
+            "impressions": 26557961,
+            "missing_profile_impressions": 1528526,
+            "rows": 1819995
+          },
+          "dimension_keys_unique_and_present": true,
+          "silver_totals": {
+            "clicks": 1366056,
+            "first_date": "2017-05-06",
+            "impressions": 26557961,
+            "last_date": "2017-05-13",
+            "missing_profile_impressions": 1528526
+          }
+        },
+        "environment": {
+          "delta": "4.0.0",
+          "driver_memory": "2g",
+          "git_commit": "88d7a77b9be5931512d02be8479251000a046464",
+          "git_dirty": false,
+          "java": "21.0.12.1",
+          "machine": "arm64",
+          "master": "local[4]",
+          "platform": "macOS-27.0-arm64-arm-64bit",
+          "python": "3.11.15",
+          "spark": "4.0.1",
+          "spark_sql_settings": {
+            "spark.sql.adaptive.enabled": "true",
+            "spark.sql.ansi.enabled": "true",
+            "spark.sql.autoBroadcastJoinThreshold": "10485760b",
+            "spark.sql.files.maxPartitionBytes": "134217728b",
+            "spark.sql.parquet.compression.codec": "zstd",
+            "spark.sql.session.timeZone": "Asia/Shanghai",
+            "spark.sql.shuffle.partitions": "200"
+          }
+        },
+        "finished_at": "2026-09-28T16:18:41.626462+00:00",
+        "run_id": "01-right",
+        "seconds": {
+          "bronze.ads": 1.276,
+          "bronze.impressions": 13.11,
+          "bronze.user_profiles": 1.36,
+          "gold.audience_daily": 4.519,
+          "gold.cache_release": 0.021,
+          "gold.campaign_daily": 12.638,
+          "pipeline_writes": 44.54,
+          "silver.ads": 1.132,
+          "silver.impressions": 9.258,
+          "silver.user_profiles": 1.226,
+          "source_fingerprints": 0.522,
+          "spark_shutdown": 0.084,
+          "spark_startup": 2.127,
+          "total": 53.56,
+          "validate.audience_daily": 0.455,
+          "validate.campaign_daily": 0.479,
+          "validate.silver": 5.269,
+          "validation": 6.203
+        },
+        "sources": {
+          "ad_feature.csv": {
+            "bytes": 31286431,
+            "sha256": "358a298178a6286196b82fe151024c63f4b081cf7685f1ebf8ff4da776e3c745"
+          },
+          "raw_sample.csv": {
+            "bytes": 1088060964,
+            "sha256": "aad792d63b81b5b7788f91e35364975b83ce3fdb923009fdfb6f798545d2b93d"
+          },
+          "user_profile.csv": {
+            "bytes": 24056588,
+            "sha256": "63355e02e302768d79db658e0f25498f368b4b5e037318bc67973835380a0532"
+          }
+        },
+        "spark_tasks": {
+          "by_operation": {
+            "bronze.ads": {
+              "disk_spill_bytes": 0,
+              "executor_cpu_ns": 3046547000,
+              "executor_run_ms": 3278,
+              "failed_task_attempts": 0,
+              "input_bytes": 31615178,
+              "input_records": 846818,
+              "memory_spill_bytes": 0,
+              "peak_task_execution_memory_bytes": 16842736,
+              "shuffle_read_bytes": 2547,
+              "shuffle_write_bytes": 2547,
+              "task_attempts": 55
+            },
+            "bronze.impressions": {
+              "disk_spill_bytes": 0,
+              "executor_cpu_ns": 38579770000,
+              "executor_run_ms": 42899,
+              "failed_task_attempts": 0,
+              "input_bytes": 1088592619,
+              "input_records": 26557973,
+              "memory_spill_bytes": 0,
+              "peak_task_execution_memory_bytes": 16842736,
+              "shuffle_read_bytes": 4339,
+              "shuffle_write_bytes": 4339,
+              "task_attempts": 60
+            },
+            "bronze.user_profiles": {
+              "disk_spill_bytes": 0,
+              "executor_cpu_ns": 3284513000,
+              "executor_run_ms": 3539,
+              "failed_task_attempts": 0,
+              "input_bytes": 24304026,
+              "input_records": 1061775,
+              "memory_spill_bytes": 0,
+              "peak_task_execution_memory_bytes": 16842736,
+              "shuffle_read_bytes": 2882,
+              "shuffle_write_bytes": 2882,
+              "task_attempts": 55
+            },
+            "gold.audience_daily": {
+              "disk_spill_bytes": 71440030,
+              "executor_cpu_ns": 12663396000,
+              "executor_run_ms": 14808,
+              "failed_task_attempts": 0,
+              "input_bytes": 783375177,
+              "input_records": 2665,
+              "memory_spill_bytes": 655377556,
+              "peak_task_execution_memory_bytes": 125838034,
+              "shuffle_read_bytes": 78743124,
+              "shuffle_write_bytes": 78743124,
+              "task_attempts": 60
+            },
+            "gold.campaign_daily": {
+              "disk_spill_bytes": 16641380,
+              "executor_cpu_ns": 41704414000,
+              "executor_run_ms": 44225,
+              "failed_task_attempts": 0,
+              "input_bytes": 1145940575,
+              "input_records": 28469220,
+              "memory_spill_bytes": 147849104,
+              "peak_task_execution_memory_bytes": 150126048,
+              "shuffle_read_bytes": 44516943,
+              "shuffle_write_bytes": 44516943,
+              "task_attempts": 223
+            },
+            "silver.ads": {
+              "disk_spill_bytes": 0,
+              "executor_cpu_ns": 2202585000,
+              "executor_run_ms": 2319,
+              "failed_task_attempts": 0,
+              "input_bytes": 11310724,
+              "input_records": 846830,
+              "memory_spill_bytes": 0,
+              "peak_task_execution_memory_bytes": 16842736,
+              "shuffle_read_bytes": 7283,
+              "shuffle_write_bytes": 7283,
+              "task_attempts": 156
+            },
+            "silver.impressions": {
+              "disk_spill_bytes": 0,
+              "executor_cpu_ns": 27715278000,
+              "executor_run_ms": 33471,
+              "failed_task_attempts": 0,
+              "input_bytes": 209870830,
+              "input_records": 26557991,
+              "memory_spill_bytes": 0,
+              "peak_task_execution_memory_bytes": 16842736,
+              "shuffle_read_bytes": 8251,
+              "shuffle_write_bytes": 8251,
+              "task_attempts": 157
+            },
+            "silver.user_profiles": {
+              "disk_spill_bytes": 0,
+              "executor_cpu_ns": 2633485000,
+              "executor_run_ms": 2687,
+              "failed_task_attempts": 0,
+              "input_bytes": 6159408,
+              "input_records": 1061787,
+              "memory_spill_bytes": 0,
+              "peak_task_execution_memory_bytes": 16842736,
+              "shuffle_read_bytes": 7140,
+              "shuffle_write_bytes": 7140,
+              "task_attempts": 156
+            },
+            "validate.audience_daily": {
+              "disk_spill_bytes": 0,
+              "executor_cpu_ns": 593252000,
+              "executor_run_ms": 621,
+              "failed_task_attempts": 0,
+              "input_bytes": 4153004,
+              "input_records": 3738380,
+              "memory_spill_bytes": 0,
+              "peak_task_execution_memory_bytes": 0,
+              "shuffle_read_bytes": 4977,
+              "shuffle_write_bytes": 4977,
+              "task_attempts": 157
+            },
+            "validate.campaign_daily": {
+              "disk_spill_bytes": 0,
+              "executor_cpu_ns": 583029000,
+              "executor_run_ms": 628,
+              "failed_task_attempts": 0,
+              "input_bytes": 2705788,
+              "input_records": 1820013,
+              "memory_spill_bytes": 0,
+              "peak_task_execution_memory_bytes": 0,
+              "shuffle_read_bytes": 4962,
+              "shuffle_write_bytes": 4962,
+              "task_attempts": 157
+            },
+            "validate.silver": {
+              "disk_spill_bytes": 0,
+              "executor_cpu_ns": 10495015000,
+              "executor_run_ms": 10938,
+              "failed_task_attempts": 0,
+              "input_bytes": 298246312,
+              "input_records": 110049121,
+              "memory_spill_bytes": 0,
+              "peak_task_execution_memory_bytes": 42688264,
+              "shuffle_read_bytes": 12611998,
+              "shuffle_write_bytes": 12611998,
+              "task_attempts": 1062
+            }
+          },
+          "events_read": 5462,
+          "note": "All task attempts, including validation and retries. Input bytes are task counters, not unique physical disk reads. Peak memory is per task, not process RAM."
+        },
+        "started_at": "2026-09-28T16:17:48.065831+00:00",
+        "status": "succeeded",
+        "storage": {
+          "event_log_bytes": 18196023,
+          "source_bytes": 1143403983,
+          "table_bytes": 626073326
+        },
+        "tables": {
+          "bronze/ads": {
+            "parquet_bytes": 11186011,
+            "parquet_files": 4,
+            "rows": 846811,
+            "total_bytes": 11281208
+          },
+          "bronze/impressions": {
+            "parquet_bytes": 208286860,
+            "parquet_files": 9,
+            "rows": 26557961,
+            "total_bytes": 209928646
+          },
+          "bronze/user_profiles": {
+            "parquet_bytes": 6069239,
+            "parquet_files": 4,
+            "rows": 1061768,
+            "total_bytes": 6127125
+          },
+          "gold/audience_daily": {
+            "parquet_bytes": 15881446,
+            "parquet_files": 4,
+            "rows": 3738362,
+            "total_bytes": 16013436
+          },
+          "gold/campaign_daily": {
+            "parquet_bytes": 14658460,
+            "parquet_files": 4,
+            "rows": 1819995,
+            "total_bytes": 14780946
+          },
+          "silver/ads": {
+            "parquet_bytes": 10329136,
+            "parquet_files": 4,
+            "rows": 846811,
+            "total_bytes": 10417819
+          },
+          "silver/impressions": {
+            "parquet_bytes": 350074879,
+            "parquet_files": 5,
+            "rows": 26557961,
+            "total_bytes": 352821843
+          },
+          "silver/user_profiles": {
+            "parquet_bytes": 4656001,
+            "parquet_files": 4,
+            "rows": 1061768,
+            "total_bytes": 4702303
+          }
+        }
+      },
+      "run_id": "01-right",
+      "setting_differences": {},
+      "side": "right"
+    },
+    {
+      "report": {
+        "cache": {
+          "requested_storage_level": "MEMORY_AND_DISK_DESER",
+          "snapshots": {
+            "after_audience": {
+              "cached_partitions": 5,
+              "disk_bytes": 142723458,
+              "memory_bytes": 570528808,
+              "rdd_id": 340,
+              "registered": true,
+              "storage_info_present": true,
+              "storage_level": {
+                "deserialized": true,
+                "replication": 1,
+                "use_disk": true,
+                "use_memory": true
+              },
+              "total_partitions": 5
+            },
+            "after_campaign": {
+              "cached_partitions": 5,
+              "disk_bytes": 6860306,
+              "memory_bytes": 772217368,
+              "rdd_id": 340,
+              "registered": true,
+              "storage_info_present": true,
+              "storage_level": {
+                "deserialized": true,
+                "replication": 1,
+                "use_disk": true,
+                "use_memory": true
+              },
+              "total_partitions": 5
+            },
+            "after_release": {
+              "cached_partitions": 0,
+              "disk_bytes": 0,
+              "memory_bytes": 0,
+              "rdd_id": 340,
+              "registered": false,
+              "storage_info_present": false,
+              "storage_level": {
+                "deserialized": false,
+                "replication": 1,
+                "use_disk": false,
+                "use_memory": false
+              },
+              "total_partitions": 0
+            },
+            "before_audience": {
+              "cached_partitions": 5,
+              "disk_bytes": 6860306,
+              "memory_bytes": 772217368,
+              "rdd_id": 340,
+              "registered": true,
+              "storage_info_present": true,
+              "storage_level": {
+                "deserialized": true,
+                "replication": 1,
+                "use_disk": true,
+                "use_memory": true
+              },
+              "total_partitions": 5
+            }
+          }
+        },
+        "checks": {
+          "audience_daily": {
+            "clicks": 1366056,
+            "impressions": 26557961,
+            "missing_profile_impressions": 1528526,
+            "rows": 3738362
+          },
+          "bronze_silver_row_counts_match": true,
+          "campaign_daily": {
+            "clicks": 1366056,
+            "impressions": 26557961,
+            "missing_profile_impressions": 1528526,
+            "rows": 1819995
+          },
+          "dimension_keys_unique_and_present": true,
+          "silver_totals": {
+            "clicks": 1366056,
+            "first_date": "2017-05-06",
+            "impressions": 26557961,
+            "last_date": "2017-05-13",
+            "missing_profile_impressions": 1528526
+          }
+        },
+        "environment": {
+          "delta": "4.0.0",
+          "driver_memory": "2g",
+          "git_commit": "88d7a77b9be5931512d02be8479251000a046464",
+          "git_dirty": false,
+          "java": "21.0.12.1",
+          "machine": "arm64",
+          "master": "local[4]",
+          "platform": "macOS-27.0-arm64-arm-64bit",
+          "python": "3.11.15",
+          "spark": "4.0.1",
+          "spark_sql_settings": {
+            "spark.sql.adaptive.enabled": "true",
+            "spark.sql.ansi.enabled": "true",
+            "spark.sql.autoBroadcastJoinThreshold": "10485760b",
+            "spark.sql.files.maxPartitionBytes": "134217728b",
+            "spark.sql.parquet.compression.codec": "zstd",
+            "spark.sql.session.timeZone": "Asia/Shanghai",
+            "spark.sql.shuffle.partitions": "200"
+          }
+        },
+        "finished_at": "2026-09-28T16:19:35.760086+00:00",
+        "run_id": "02-right",
+        "seconds": {
+          "bronze.ads": 1.317,
+          "bronze.impressions": 13.528,
+          "bronze.user_profiles": 1.395,
+          "gold.audience_daily": 5.054,
+          "gold.cache_release": 0.022,
+          "gold.campaign_daily": 12.309,
+          "pipeline_writes": 44.752,
+          "silver.ads": 1.122,
+          "silver.impressions": 8.78,
+          "silver.user_profiles": 1.225,
+          "source_fingerprints": 0.522,
+          "spark_shutdown": 0.506,
+          "spark_startup": 2.059,
+          "total": 54.009,
+          "validate.audience_daily": 0.435,
+          "validate.campaign_daily": 0.459,
+          "validate.silver": 5.159,
+          "validation": 6.053
+        },
+        "sources": {
+          "ad_feature.csv": {
+            "bytes": 31286431,
+            "sha256": "358a298178a6286196b82fe151024c63f4b081cf7685f1ebf8ff4da776e3c745"
+          },
+          "raw_sample.csv": {
+            "bytes": 1088060964,
+            "sha256": "aad792d63b81b5b7788f91e35364975b83ce3fdb923009fdfb6f798545d2b93d"
+          },
+          "user_profile.csv": {
+            "bytes": 24056588,
+            "sha256": "63355e02e302768d79db658e0f25498f368b4b5e037318bc67973835380a0532"
+          }
+        },
+        "spark_tasks": {
+          "by_operation": {
+            "bronze.ads": {
+              "disk_spill_bytes": 0,
+              "executor_cpu_ns": 2998542000,
+              "executor_run_ms": 3390,
+              "failed_task_attempts": 0,
+              "input_bytes": 31615178,
+              "input_records": 846818,
+              "memory_spill_bytes": 0,
+              "peak_task_execution_memory_bytes": 16842736,
+              "shuffle_read_bytes": 2444,
+              "shuffle_write_bytes": 2444,
+              "task_attempts": 55
+            },
+            "bronze.impressions": {
+              "disk_spill_bytes": 0,
+              "executor_cpu_ns": 40395071000,
+              "executor_run_ms": 44812,
+              "failed_task_attempts": 0,
+              "input_bytes": 1088592619,
+              "input_records": 26557973,
+              "memory_spill_bytes": 0,
+              "peak_task_execution_memory_bytes": 16842736,
+              "shuffle_read_bytes": 4660,
+              "shuffle_write_bytes": 4660,
+              "task_attempts": 60
+            },
+            "bronze.user_profiles": {
+              "disk_spill_bytes": 0,
+              "executor_cpu_ns": 3271164000,
+              "executor_run_ms": 3574,
+              "failed_task_attempts": 0,
+              "input_bytes": 24304026,
+              "input_records": 1061775,
+              "memory_spill_bytes": 0,
+              "peak_task_execution_memory_bytes": 16842736,
+              "shuffle_read_bytes": 2749,
+              "shuffle_write_bytes": 2749,
+              "task_attempts": 55
+            },
+            "gold.audience_daily": {
+              "disk_spill_bytes": 72779812,
+              "executor_cpu_ns": 13879394000,
+              "executor_run_ms": 16052,
+              "failed_task_attempts": 0,
+              "input_bytes": 783375177,
+              "input_records": 2665,
+              "memory_spill_bytes": 678953362,
+              "peak_task_execution_memory_bytes": 117440432,
+              "shuffle_read_bytes": 78743125,
+              "shuffle_write_bytes": 78743125,
+              "task_attempts": 60
+            },
+            "gold.campaign_daily": {
+              "disk_spill_bytes": 16641380,
+              "executor_cpu_ns": 41348672000,
+              "executor_run_ms": 43510,
+              "failed_task_attempts": 0,
+              "input_bytes": 1145940638,
+              "input_records": 28469220,
+              "memory_spill_bytes": 147849104,
+              "peak_task_execution_memory_bytes": 150126048,
+              "shuffle_read_bytes": 44516943,
+              "shuffle_write_bytes": 44516943,
+              "task_attempts": 223
+            },
+            "silver.ads": {
+              "disk_spill_bytes": 0,
+              "executor_cpu_ns": 2105509000,
+              "executor_run_ms": 2224,
+              "failed_task_attempts": 0,
+              "input_bytes": 11310402,
+              "input_records": 846830,
+              "memory_spill_bytes": 0,
+              "peak_task_execution_memory_bytes": 16842736,
+              "shuffle_read_bytes": 7154,
+              "shuffle_write_bytes": 7154,
+              "task_attempts": 156
+            },
+            "silver.impressions": {
+              "disk_spill_bytes": 0,
+              "executor_cpu_ns": 25305302000,
+              "executor_run_ms": 32247,
+              "failed_task_attempts": 0,
+              "input_bytes": 209871604,
+              "input_records": 26557991,
+              "memory_spill_bytes": 0,
+              "peak_task_execution_memory_bytes": 16842736,
+              "shuffle_read_bytes": 8119,
+              "shuffle_write_bytes": 8119,
+              "task_attempts": 157
+            },
+            "silver.user_profiles": {
+              "disk_spill_bytes": 0,
+              "executor_cpu_ns": 2570394000,
+              "executor_run_ms": 2644,
+              "failed_task_attempts": 0,
+              "input_bytes": 6159026,
+              "input_records": 1061787,
+              "memory_spill_bytes": 0,
+              "peak_task_execution_memory_bytes": 16842736,
+              "shuffle_read_bytes": 7516,
+              "shuffle_write_bytes": 7516,
+              "task_attempts": 156
+            },
+            "validate.audience_daily": {
+              "disk_spill_bytes": 0,
+              "executor_cpu_ns": 514821000,
+              "executor_run_ms": 500,
+              "failed_task_attempts": 0,
+              "input_bytes": 4153004,
+              "input_records": 3738380,
+              "memory_spill_bytes": 0,
+              "peak_task_execution_memory_bytes": 0,
+              "shuffle_read_bytes": 4978,
+              "shuffle_write_bytes": 4978,
+              "task_attempts": 157
+            },
+            "validate.campaign_daily": {
+              "disk_spill_bytes": 0,
+              "executor_cpu_ns": 484964000,
+              "executor_run_ms": 487,
+              "failed_task_attempts": 0,
+              "input_bytes": 2705788,
+              "input_records": 1820013,
+              "memory_spill_bytes": 0,
+              "peak_task_execution_memory_bytes": 0,
+              "shuffle_read_bytes": 4962,
+              "shuffle_write_bytes": 4962,
+              "task_attempts": 157
+            },
+            "validate.silver": {
+              "disk_spill_bytes": 0,
+              "executor_cpu_ns": 10009594000,
+              "executor_run_ms": 10424,
+              "failed_task_attempts": 0,
+              "input_bytes": 298246641,
+              "input_records": 110049121,
+              "memory_spill_bytes": 0,
+              "peak_task_execution_memory_bytes": 42688264,
+              "shuffle_read_bytes": 12612021,
+              "shuffle_write_bytes": 12612021,
+              "task_attempts": 1062
+            }
+          },
+          "events_read": 5462,
+          "note": "All task attempts, including validation and retries. Input bytes are task counters, not unique physical disk reads. Peak memory is per task, not process RAM."
+        },
+        "started_at": "2026-09-28T16:18:41.751050+00:00",
+        "status": "succeeded",
+        "storage": {
+          "event_log_bytes": 18180836,
+          "source_bytes": 1143403983,
+          "table_bytes": 626073326
+        },
+        "tables": {
+          "bronze/ads": {
+            "parquet_bytes": 11186011,
+            "parquet_files": 4,
+            "rows": 846811,
+            "total_bytes": 11281208
+          },
+          "bronze/impressions": {
+            "parquet_bytes": 208286860,
+            "parquet_files": 9,
+            "rows": 26557961,
+            "total_bytes": 209928646
+          },
+          "bronze/user_profiles": {
+            "parquet_bytes": 6069239,
+            "parquet_files": 4,
+            "rows": 1061768,
+            "total_bytes": 6127125
+          },
+          "gold/audience_daily": {
+            "parquet_bytes": 15881446,
+            "parquet_files": 4,
+            "rows": 3738362,
+            "total_bytes": 16013436
+          },
+          "gold/campaign_daily": {
+            "parquet_bytes": 14658460,
+            "parquet_files": 4,
+            "rows": 1819995,
+            "total_bytes": 14780946
+          },
+          "silver/ads": {
+            "parquet_bytes": 10329136,
+            "parquet_files": 4,
+            "rows": 846811,
+            "total_bytes": 10417819
+          },
+          "silver/impressions": {
+            "parquet_bytes": 350074879,
+            "parquet_files": 5,
+            "rows": 26557961,
+            "total_bytes": 352821843
+          },
+          "silver/user_profiles": {
+            "parquet_bytes": 4656001,
+            "parquet_files": 4,
+            "rows": 1061768,
+            "total_bytes": 4702303
+          }
+        }
+      },
+      "run_id": "02-right",
+      "setting_differences": {},
+      "side": "right"
+    },
+    {
+      "report": {
+        "checks": {
+          "audience_daily": {
+            "clicks": 1366056,
+            "impressions": 26557961,
+            "missing_profile_impressions": 1528526,
+            "rows": 3738362
+          },
+          "bronze_silver_row_counts_match": true,
+          "campaign_daily": {
+            "clicks": 1366056,
+            "impressions": 26557961,
+            "missing_profile_impressions": 1528526,
+            "rows": 1819995
+          },
+          "dimension_keys_unique_and_present": true,
+          "silver_totals": {
+            "clicks": 1366056,
+            "first_date": "2017-05-06",
+            "impressions": 26557961,
+            "last_date": "2017-05-13",
+            "missing_profile_impressions": 1528526
+          }
+        },
+        "environment": {
+          "delta": "4.0.0",
+          "driver_memory": "2g",
+          "git_commit": "88d7a77b9be5931512d02be8479251000a046464",
+          "git_dirty": false,
+          "java": "21.0.12.1",
+          "machine": "arm64",
+          "master": "local[4]",
+          "platform": "macOS-27.0-arm64-arm-64bit",
+          "python": "3.11.15",
+          "spark": "4.0.1",
+          "spark_sql_settings": {
+            "spark.sql.adaptive.enabled": "true",
+            "spark.sql.ansi.enabled": "true",
+            "spark.sql.autoBroadcastJoinThreshold": "10485760b",
+            "spark.sql.files.maxPartitionBytes": "134217728b",
+            "spark.sql.parquet.compression.codec": "zstd",
+            "spark.sql.session.timeZone": "Asia/Shanghai",
+            "spark.sql.shuffle.partitions": "200"
+          }
+        },
+        "finished_at": "2026-09-28T16:20:21.805827+00:00",
+        "run_id": "02-left",
+        "seconds": {
+          "bronze.ads": 1.411,
+          "bronze.impressions": 13.769,
+          "bronze.user_profiles": 1.426,
+          "gold.audience_daily": 3.935,
+          "gold.campaign_daily": 3.455,
+          "pipeline_writes": 36.412,
+          "silver.ads": 1.254,
+          "silver.impressions": 9.97,
+          "silver.user_profiles": 1.192,
+          "source_fingerprints": 0.499,
+          "spark_shutdown": 0.284,
+          "spark_startup": 1.984,
+          "total": 45.921,
+          "validate.audience_daily": 0.565,
+          "validate.campaign_daily": 0.452,
+          "validate.silver": 5.626,
+          "validation": 6.643
+        },
+        "sources": {
+          "ad_feature.csv": {
+            "bytes": 31286431,
+            "sha256": "358a298178a6286196b82fe151024c63f4b081cf7685f1ebf8ff4da776e3c745"
+          },
+          "raw_sample.csv": {
+            "bytes": 1088060964,
+            "sha256": "aad792d63b81b5b7788f91e35364975b83ce3fdb923009fdfb6f798545d2b93d"
+          },
+          "user_profile.csv": {
+            "bytes": 24056588,
+            "sha256": "63355e02e302768d79db658e0f25498f368b4b5e037318bc67973835380a0532"
+          }
+        },
+        "spark_tasks": {
+          "by_operation": {
+            "bronze.ads": {
+              "disk_spill_bytes": 0,
+              "executor_cpu_ns": 3105307000,
+              "executor_run_ms": 3552,
+              "failed_task_attempts": 0,
+              "input_bytes": 31615178,
+              "input_records": 846818,
+              "memory_spill_bytes": 0,
+              "peak_task_execution_memory_bytes": 16842736,
+              "shuffle_read_bytes": 2549,
+              "shuffle_write_bytes": 2549,
+              "task_attempts": 55
+            },
+            "bronze.impressions": {
+              "disk_spill_bytes": 0,
+              "executor_cpu_ns": 40783900000,
+              "executor_run_ms": 45854,
+              "failed_task_attempts": 0,
+              "input_bytes": 1088592619,
+              "input_records": 26557973,
+              "memory_spill_bytes": 0,
+              "peak_task_execution_memory_bytes": 16842736,
+              "shuffle_read_bytes": 4433,
+              "shuffle_write_bytes": 4433,
+              "task_attempts": 60
+            },
+            "bronze.user_profiles": {
+              "disk_spill_bytes": 0,
+              "executor_cpu_ns": 3302920000,
+              "executor_run_ms": 3579,
+              "failed_task_attempts": 0,
+              "input_bytes": 24304026,
+              "input_records": 1061775,
+              "memory_spill_bytes": 0,
+              "peak_task_execution_memory_bytes": 16842736,
+              "shuffle_read_bytes": 2879,
+              "shuffle_write_bytes": 2879,
+              "task_attempts": 55
+            },
+            "gold.audience_daily": {
+              "disk_spill_bytes": 0,
+              "executor_cpu_ns": 11131489000,
+              "executor_run_ms": 11487,
+              "failed_task_attempts": 0,
+              "input_bytes": 110122019,
+              "input_records": 28466577,
+              "memory_spill_bytes": 0,
+              "peak_task_execution_memory_bytes": 317898080,
+              "shuffle_read_bytes": 91612358,
+              "shuffle_write_bytes": 91612358,
+              "task_attempts": 368
+            },
+            "gold.campaign_daily": {
+              "disk_spill_bytes": 0,
+              "executor_cpu_ns": 7945453000,
+              "executor_run_ms": 8672,
+              "failed_task_attempts": 0,
+              "input_bytes": 112432717,
+              "input_records": 28466577,
+              "memory_spill_bytes": 0,
+              "peak_task_execution_memory_bytes": 250789280,
+              "shuffle_read_bytes": 47079767,
+              "shuffle_write_bytes": 47079767,
+              "task_attempts": 368
+            },
+            "silver.ads": {
+              "disk_spill_bytes": 0,
+              "executor_cpu_ns": 2337852000,
+              "executor_run_ms": 2575,
+              "failed_task_attempts": 0,
+              "input_bytes": 11310726,
+              "input_records": 846830,
+              "memory_spill_bytes": 0,
+              "peak_task_execution_memory_bytes": 16842736,
+              "shuffle_read_bytes": 7283,
+              "shuffle_write_bytes": 7283,
+              "task_attempts": 156
+            },
+            "silver.impressions": {
+              "disk_spill_bytes": 0,
+              "executor_cpu_ns": 30154020000,
+              "executor_run_ms": 36499,
+              "failed_task_attempts": 0,
+              "input_bytes": 209871130,
+              "input_records": 26557991,
+              "memory_spill_bytes": 0,
+              "peak_task_execution_memory_bytes": 16842736,
+              "shuffle_read_bytes": 8255,
+              "shuffle_write_bytes": 8255,
+              "task_attempts": 157
+            },
+            "silver.user_profiles": {
+              "disk_spill_bytes": 0,
+              "executor_cpu_ns": 2348872000,
+              "executor_run_ms": 2487,
+              "failed_task_attempts": 0,
+              "input_bytes": 6159408,
+              "input_records": 1061787,
+              "memory_spill_bytes": 0,
+              "peak_task_execution_memory_bytes": 16842736,
+              "shuffle_read_bytes": 7520,
+              "shuffle_write_bytes": 7520,
+              "task_attempts": 156
+            },
+            "validate.audience_daily": {
+              "disk_spill_bytes": 0,
+              "executor_cpu_ns": 696961000,
+              "executor_run_ms": 715,
+              "failed_task_attempts": 0,
+              "input_bytes": 4021479,
+              "input_records": 3738380,
+              "memory_spill_bytes": 0,
+              "peak_task_execution_memory_bytes": 0,
+              "shuffle_read_bytes": 4978,
+              "shuffle_write_bytes": 4978,
+              "task_attempts": 157
+            },
+            "validate.campaign_daily": {
+              "disk_spill_bytes": 0,
+              "executor_cpu_ns": 533373000,
+              "executor_run_ms": 579,
+              "failed_task_attempts": 0,
+              "input_bytes": 2705849,
+              "input_records": 1820013,
+              "memory_spill_bytes": 0,
+              "peak_task_execution_memory_bytes": 0,
+              "shuffle_read_bytes": 4957,
+              "shuffle_write_bytes": 4957,
+              "task_attempts": 157
+            },
+            "validate.silver": {
+              "disk_spill_bytes": 0,
+              "executor_cpu_ns": 10021496000,
+              "executor_run_ms": 11066,
+              "failed_task_attempts": 0,
+              "input_bytes": 298248354,
+              "input_records": 110049121,
+              "memory_spill_bytes": 0,
+              "peak_task_execution_memory_bytes": 42688264,
+              "shuffle_read_bytes": 12612023,
+              "shuffle_write_bytes": 12612023,
+              "task_attempts": 1062
+            }
+          },
+          "events_read": 6433,
+          "note": "All task attempts, including validation and retries. Input bytes are task counters, not unique physical disk reads. Peak memory is per task, not process RAM."
+        },
+        "started_at": "2026-09-28T16:19:35.884615+00:00",
+        "status": "succeeded",
+        "storage": {
+          "event_log_bytes": 19964436,
+          "source_bytes": 1143403983,
+          "table_bytes": 630854482
+        },
+        "tables": {
+          "bronze/ads": {
+            "parquet_bytes": 11186011,
+            "parquet_files": 4,
+            "rows": 846811,
+            "total_bytes": 11281208
+          },
+          "bronze/impressions": {
+            "parquet_bytes": 208286860,
+            "parquet_files": 9,
+            "rows": 26557961,
+            "total_bytes": 209928646
+          },
+          "bronze/user_profiles": {
+            "parquet_bytes": 6069239,
+            "parquet_files": 4,
+            "rows": 1061768,
+            "total_bytes": 6127125
+          },
+          "gold/audience_daily": {
+            "parquet_bytes": 19656706,
+            "parquet_files": 4,
+            "rows": 3738362,
+            "total_bytes": 19818192
+          },
+          "gold/campaign_daily": {
+            "parquet_bytes": 15627292,
+            "parquet_files": 4,
+            "rows": 1819995,
+            "total_bytes": 15757346
+          },
+          "silver/ads": {
+            "parquet_bytes": 10329136,
+            "parquet_files": 4,
+            "rows": 846811,
+            "total_bytes": 10417819
+          },
+          "silver/impressions": {
+            "parquet_bytes": 350074879,
+            "parquet_files": 5,
+            "rows": 26557961,
+            "total_bytes": 352821843
+          },
+          "silver/user_profiles": {
+            "parquet_bytes": 4656001,
+            "parquet_files": 4,
+            "rows": 1061768,
+            "total_bytes": 4702303
+          }
+        }
+      },
+      "run_id": "02-left",
+      "setting_differences": {},
+      "side": "left"
+    },
+    {
+      "report": {
+        "checks": {
+          "audience_daily": {
+            "clicks": 1366056,
+            "impressions": 26557961,
+            "missing_profile_impressions": 1528526,
+            "rows": 3738362
+          },
+          "bronze_silver_row_counts_match": true,
+          "campaign_daily": {
+            "clicks": 1366056,
+            "impressions": 26557961,
+            "missing_profile_impressions": 1528526,
+            "rows": 1819995
+          },
+          "dimension_keys_unique_and_present": true,
+          "silver_totals": {
+            "clicks": 1366056,
+            "first_date": "2017-05-06",
+            "impressions": 26557961,
+            "last_date": "2017-05-13",
+            "missing_profile_impressions": 1528526
+          }
+        },
+        "environment": {
+          "delta": "4.0.0",
+          "driver_memory": "2g",
+          "git_commit": "88d7a77b9be5931512d02be8479251000a046464",
+          "git_dirty": false,
+          "java": "21.0.12.1",
+          "machine": "arm64",
+          "master": "local[4]",
+          "platform": "macOS-27.0-arm64-arm-64bit",
+          "python": "3.11.15",
+          "spark": "4.0.1",
+          "spark_sql_settings": {
+            "spark.sql.adaptive.enabled": "true",
+            "spark.sql.ansi.enabled": "true",
+            "spark.sql.autoBroadcastJoinThreshold": "10485760b",
+            "spark.sql.files.maxPartitionBytes": "134217728b",
+            "spark.sql.parquet.compression.codec": "zstd",
+            "spark.sql.session.timeZone": "Asia/Shanghai",
+            "spark.sql.shuffle.partitions": "200"
+          }
+        },
+        "finished_at": "2026-09-28T16:21:05.121683+00:00",
+        "run_id": "03-left",
+        "seconds": {
+          "bronze.ads": 1.273,
+          "bronze.impressions": 13.254,
+          "bronze.user_profiles": 1.295,
+          "gold.audience_daily": 3.853,
+          "gold.campaign_daily": 2.924,
+          "pipeline_writes": 33.899,
+          "silver.ads": 1.122,
+          "silver.impressions": 8.979,
+          "silver.user_profiles": 1.199,
+          "source_fingerprints": 0.527,
+          "spark_shutdown": 0.297,
+          "spark_startup": 2.335,
+          "total": 43.175,
+          "validate.audience_daily": 0.493,
+          "validate.campaign_daily": 0.493,
+          "validate.silver": 5.048,
+          "validation": 6.034
+        },
+        "sources": {
+          "ad_feature.csv": {
+            "bytes": 31286431,
+            "sha256": "358a298178a6286196b82fe151024c63f4b081cf7685f1ebf8ff4da776e3c745"
+          },
+          "raw_sample.csv": {
+            "bytes": 1088060964,
+            "sha256": "aad792d63b81b5b7788f91e35364975b83ce3fdb923009fdfb6f798545d2b93d"
+          },
+          "user_profile.csv": {
+            "bytes": 24056588,
+            "sha256": "63355e02e302768d79db658e0f25498f368b4b5e037318bc67973835380a0532"
+          }
+        },
+        "spark_tasks": {
+          "by_operation": {
+            "bronze.ads": {
+              "disk_spill_bytes": 0,
+              "executor_cpu_ns": 2909539000,
+              "executor_run_ms": 3202,
+              "failed_task_attempts": 0,
+              "input_bytes": 31615178,
+              "input_records": 846818,
+              "memory_spill_bytes": 0,
+              "peak_task_execution_memory_bytes": 16842736,
+              "shuffle_read_bytes": 2551,
+              "shuffle_write_bytes": 2551,
+              "task_attempts": 55
+            },
+            "bronze.impressions": {
+              "disk_spill_bytes": 0,
+              "executor_cpu_ns": 39149437000,
+              "executor_run_ms": 43369,
+              "failed_task_attempts": 0,
+              "input_bytes": 1088592619,
+              "input_records": 26557973,
+              "memory_spill_bytes": 0,
+              "peak_task_execution_memory_bytes": 16842736,
+              "shuffle_read_bytes": 4104,
+              "shuffle_write_bytes": 4104,
+              "task_attempts": 60
+            },
+            "bronze.user_profiles": {
+              "disk_spill_bytes": 0,
+              "executor_cpu_ns": 3084047000,
+              "executor_run_ms": 3332,
+              "failed_task_attempts": 0,
+              "input_bytes": 24304026,
+              "input_records": 1061775,
+              "memory_spill_bytes": 0,
+              "peak_task_execution_memory_bytes": 16842736,
+              "shuffle_read_bytes": 2878,
+              "shuffle_write_bytes": 2878,
+              "task_attempts": 55
+            },
+            "gold.audience_daily": {
+              "disk_spill_bytes": 0,
+              "executor_cpu_ns": 10710750000,
+              "executor_run_ms": 11298,
+              "failed_task_attempts": 0,
+              "input_bytes": 110121103,
+              "input_records": 28466577,
+              "memory_spill_bytes": 0,
+              "peak_task_execution_memory_bytes": 317898080,
+              "shuffle_read_bytes": 91612358,
+              "shuffle_write_bytes": 91612358,
+              "task_attempts": 368
+            },
+            "gold.campaign_daily": {
+              "disk_spill_bytes": 0,
+              "executor_cpu_ns": 6832007000,
+              "executor_run_ms": 7416,
+              "failed_task_attempts": 0,
+              "input_bytes": 112431801,
+              "input_records": 28466577,
+              "memory_spill_bytes": 0,
+              "peak_task_execution_memory_bytes": 250789280,
+              "shuffle_read_bytes": 47079580,
+              "shuffle_write_bytes": 47079580,
+              "task_attempts": 368
+            },
+            "silver.ads": {
+              "disk_spill_bytes": 0,
+              "executor_cpu_ns": 2140425000,
+              "executor_run_ms": 2253,
+              "failed_task_attempts": 0,
+              "input_bytes": 11310726,
+              "input_records": 846830,
+              "memory_spill_bytes": 0,
+              "peak_task_execution_memory_bytes": 16842736,
+              "shuffle_read_bytes": 6955,
+              "shuffle_write_bytes": 6955,
+              "task_attempts": 156
+            },
+            "silver.impressions": {
+              "disk_spill_bytes": 0,
+              "executor_cpu_ns": 26967565000,
+              "executor_run_ms": 32988,
+              "failed_task_attempts": 0,
+              "input_bytes": 209870350,
+              "input_records": 26557991,
+              "memory_spill_bytes": 0,
+              "peak_task_execution_memory_bytes": 16842736,
+              "shuffle_read_bytes": 8102,
+              "shuffle_write_bytes": 8102,
+              "task_attempts": 157
+            },
+            "silver.user_profiles": {
+              "disk_spill_bytes": 0,
+              "executor_cpu_ns": 2532408000,
+              "executor_run_ms": 2561,
+              "failed_task_attempts": 0,
+              "input_bytes": 6159408,
+              "input_records": 1061787,
+              "memory_spill_bytes": 0,
+              "peak_task_execution_memory_bytes": 16842736,
+              "shuffle_read_bytes": 7520,
+              "shuffle_write_bytes": 7520,
+              "task_attempts": 156
+            },
+            "validate.audience_daily": {
+              "disk_spill_bytes": 0,
+              "executor_cpu_ns": 840466000,
+              "executor_run_ms": 853,
+              "failed_task_attempts": 0,
+              "input_bytes": 4021473,
+              "input_records": 3738380,
+              "memory_spill_bytes": 0,
+              "peak_task_execution_memory_bytes": 0,
+              "shuffle_read_bytes": 4977,
+              "shuffle_write_bytes": 4977,
+              "task_attempts": 157
+            },
+            "validate.campaign_daily": {
+              "disk_spill_bytes": 0,
+              "executor_cpu_ns": 625293000,
+              "executor_run_ms": 675,
+              "failed_task_attempts": 0,
+              "input_bytes": 2705225,
+              "input_records": 1820013,
+              "memory_spill_bytes": 0,
+              "peak_task_execution_memory_bytes": 0,
+              "shuffle_read_bytes": 4947,
+              "shuffle_write_bytes": 4947,
+              "task_attempts": 157
+            },
+            "validate.silver": {
+              "disk_spill_bytes": 0,
+              "executor_cpu_ns": 9785800000,
+              "executor_run_ms": 10262,
+              "failed_task_attempts": 0,
+              "input_bytes": 298245002,
+              "input_records": 110049121,
+              "memory_spill_bytes": 0,
+              "peak_task_execution_memory_bytes": 42688264,
+              "shuffle_read_bytes": 12611982,
+              "shuffle_write_bytes": 12611982,
+              "task_attempts": 1062
+            }
+          },
+          "events_read": 6433,
+          "note": "All task attempts, including validation and retries. Input bytes are task counters, not unique physical disk reads. Peak memory is per task, not process RAM."
+        },
+        "started_at": "2026-09-28T16:20:21.945930+00:00",
+        "status": "succeeded",
+        "storage": {
+          "event_log_bytes": 19944793,
+          "source_bytes": 1143403983,
+          "table_bytes": 630854482
+        },
+        "tables": {
+          "bronze/ads": {
+            "parquet_bytes": 11186011,
+            "parquet_files": 4,
+            "rows": 846811,
+            "total_bytes": 11281208
+          },
+          "bronze/impressions": {
+            "parquet_bytes": 208286860,
+            "parquet_files": 9,
+            "rows": 26557961,
+            "total_bytes": 209928646
+          },
+          "bronze/user_profiles": {
+            "parquet_bytes": 6069239,
+            "parquet_files": 4,
+            "rows": 1061768,
+            "total_bytes": 6127125
+          },
+          "gold/audience_daily": {
+            "parquet_bytes": 19656706,
+            "parquet_files": 4,
+            "rows": 3738362,
+            "total_bytes": 19818192
+          },
+          "gold/campaign_daily": {
+            "parquet_bytes": 15627292,
+            "parquet_files": 4,
+            "rows": 1819995,
+            "total_bytes": 15757346
+          },
+          "silver/ads": {
+            "parquet_bytes": 10329136,
+            "parquet_files": 4,
+            "rows": 846811,
+            "total_bytes": 10417819
+          },
+          "silver/impressions": {
+            "parquet_bytes": 350074879,
+            "parquet_files": 5,
+            "rows": 26557961,
+            "total_bytes": 352821843
+          },
+          "silver/user_profiles": {
+            "parquet_bytes": 4656001,
+            "parquet_files": 4,
+            "rows": 1061768,
+            "total_bytes": 4702303
+          }
+        }
+      },
+      "run_id": "03-left",
+      "setting_differences": {},
+      "side": "left"
+    },
+    {
+      "report": {
+        "cache": {
+          "requested_storage_level": "MEMORY_AND_DISK_DESER",
+          "snapshots": {
+            "after_audience": {
+              "cached_partitions": 5,
+              "disk_bytes": 142723458,
+              "memory_bytes": 570528808,
+              "rdd_id": 340,
+              "registered": true,
+              "storage_info_present": true,
+              "storage_level": {
+                "deserialized": true,
+                "replication": 1,
+                "use_disk": true,
+                "use_memory": true
+              },
+              "total_partitions": 5
+            },
+            "after_campaign": {
+              "cached_partitions": 5,
+              "disk_bytes": 6860306,
+              "memory_bytes": 772217368,
+              "rdd_id": 340,
+              "registered": true,
+              "storage_info_present": true,
+              "storage_level": {
+                "deserialized": true,
+                "replication": 1,
+                "use_disk": true,
+                "use_memory": true
+              },
+              "total_partitions": 5
+            },
+            "after_release": {
+              "cached_partitions": 0,
+              "disk_bytes": 0,
+              "memory_bytes": 0,
+              "rdd_id": 340,
+              "registered": false,
+              "storage_info_present": false,
+              "storage_level": {
+                "deserialized": false,
+                "replication": 1,
+                "use_disk": false,
+                "use_memory": false
+              },
+              "total_partitions": 0
+            },
+            "before_audience": {
+              "cached_partitions": 5,
+              "disk_bytes": 6860306,
+              "memory_bytes": 772217368,
+              "rdd_id": 340,
+              "registered": true,
+              "storage_info_present": true,
+              "storage_level": {
+                "deserialized": true,
+                "replication": 1,
+                "use_disk": true,
+                "use_memory": true
+              },
+              "total_partitions": 5
+            }
+          }
+        },
+        "checks": {
+          "audience_daily": {
+            "clicks": 1366056,
+            "impressions": 26557961,
+            "missing_profile_impressions": 1528526,
+            "rows": 3738362
+          },
+          "bronze_silver_row_counts_match": true,
+          "campaign_daily": {
+            "clicks": 1366056,
+            "impressions": 26557961,
+            "missing_profile_impressions": 1528526,
+            "rows": 1819995
+          },
+          "dimension_keys_unique_and_present": true,
+          "silver_totals": {
+            "clicks": 1366056,
+            "first_date": "2017-05-06",
+            "impressions": 26557961,
+            "last_date": "2017-05-13",
+            "missing_profile_impressions": 1528526
+          }
+        },
+        "environment": {
+          "delta": "4.0.0",
+          "driver_memory": "2g",
+          "git_commit": "88d7a77b9be5931512d02be8479251000a046464",
+          "git_dirty": false,
+          "java": "21.0.12.1",
+          "machine": "arm64",
+          "master": "local[4]",
+          "platform": "macOS-27.0-arm64-arm-64bit",
+          "python": "3.11.15",
+          "spark": "4.0.1",
+          "spark_sql_settings": {
+            "spark.sql.adaptive.enabled": "true",
+            "spark.sql.ansi.enabled": "true",
+            "spark.sql.autoBroadcastJoinThreshold": "10485760b",
+            "spark.sql.files.maxPartitionBytes": "134217728b",
+            "spark.sql.parquet.compression.codec": "zstd",
+            "spark.sql.session.timeZone": "Asia/Shanghai",
+            "spark.sql.shuffle.partitions": "200"
+          }
+        },
+        "finished_at": "2026-09-28T16:21:57.376727+00:00",
+        "run_id": "03-right",
+        "seconds": {
+          "bronze.ads": 1.227,
+          "bronze.impressions": 13.259,
+          "bronze.user_profiles": 1.254,
+          "gold.audience_daily": 4.124,
+          "gold.cache_release": 0.022,
+          "gold.campaign_daily": 12.272,
+          "pipeline_writes": 43.294,
+          "silver.ads": 1.098,
+          "silver.impressions": 8.915,
+          "silver.user_profiles": 1.123,
+          "source_fingerprints": 0.519,
+          "spark_shutdown": 0.197,
+          "spark_startup": 2.098,
+          "total": 52.072,
+          "validate.audience_daily": 0.458,
+          "validate.campaign_daily": 0.462,
+          "validate.silver": 4.919,
+          "validation": 5.839
+        },
+        "sources": {
+          "ad_feature.csv": {
+            "bytes": 31286431,
+            "sha256": "358a298178a6286196b82fe151024c63f4b081cf7685f1ebf8ff4da776e3c745"
+          },
+          "raw_sample.csv": {
+            "bytes": 1088060964,
+            "sha256": "aad792d63b81b5b7788f91e35364975b83ce3fdb923009fdfb6f798545d2b93d"
+          },
+          "user_profile.csv": {
+            "bytes": 24056588,
+            "sha256": "63355e02e302768d79db658e0f25498f368b4b5e037318bc67973835380a0532"
+          }
+        },
+        "spark_tasks": {
+          "by_operation": {
+            "bronze.ads": {
+              "disk_spill_bytes": 0,
+              "executor_cpu_ns": 2908564000,
+              "executor_run_ms": 3101,
+              "failed_task_attempts": 0,
+              "input_bytes": 31615178,
+              "input_records": 846818,
+              "memory_spill_bytes": 0,
+              "peak_task_execution_memory_bytes": 16842736,
+              "shuffle_read_bytes": 2550,
+              "shuffle_write_bytes": 2550,
+              "task_attempts": 55
+            },
+            "bronze.impressions": {
+              "disk_spill_bytes": 0,
+              "executor_cpu_ns": 39079817000,
+              "executor_run_ms": 43465,
+              "failed_task_attempts": 0,
+              "input_bytes": 1088592619,
+              "input_records": 26557973,
+              "memory_spill_bytes": 0,
+              "peak_task_execution_memory_bytes": 16842736,
+              "shuffle_read_bytes": 4758,
+              "shuffle_write_bytes": 4758,
+              "task_attempts": 60
+            },
+            "bronze.user_profiles": {
+              "disk_spill_bytes": 0,
+              "executor_cpu_ns": 3108633000,
+              "executor_run_ms": 3261,
+              "failed_task_attempts": 0,
+              "input_bytes": 24304026,
+              "input_records": 1061775,
+              "memory_spill_bytes": 0,
+              "peak_task_execution_memory_bytes": 16842736,
+              "shuffle_read_bytes": 2882,
+              "shuffle_write_bytes": 2882,
+              "task_attempts": 55
+            },
+            "gold.audience_daily": {
+              "disk_spill_bytes": 72661094,
+              "executor_cpu_ns": 12222613000,
+              "executor_run_ms": 13518,
+              "failed_task_attempts": 0,
+              "input_bytes": 783375177,
+              "input_records": 2665,
+              "memory_spill_bytes": 671096002,
+              "peak_task_execution_memory_bytes": 117440432,
+              "shuffle_read_bytes": 78742810,
+              "shuffle_write_bytes": 78742810,
+              "task_attempts": 60
+            },
+            "gold.campaign_daily": {
+              "disk_spill_bytes": 16641380,
+              "executor_cpu_ns": 41088394000,
+              "executor_run_ms": 43389,
+              "failed_task_attempts": 0,
+              "input_bytes": 1145940844,
+              "input_records": 28469220,
+              "memory_spill_bytes": 147849104,
+              "peak_task_execution_memory_bytes": 150126048,
+              "shuffle_read_bytes": 44516622,
+              "shuffle_write_bytes": 44516622,
+              "task_attempts": 223
+            },
+            "silver.ads": {
+              "disk_spill_bytes": 0,
+              "executor_cpu_ns": 2142081000,
+              "executor_run_ms": 2250,
+              "failed_task_attempts": 0,
+              "input_bytes": 11310726,
+              "input_records": 846830,
+              "memory_spill_bytes": 0,
+              "peak_task_execution_memory_bytes": 16842736,
+              "shuffle_read_bytes": 7284,
+              "shuffle_write_bytes": 7284,
+              "task_attempts": 156
+            },
+            "silver.impressions": {
+              "disk_spill_bytes": 0,
+              "executor_cpu_ns": 26401368000,
+              "executor_run_ms": 32609,
+              "failed_task_attempts": 0,
+              "input_bytes": 209871920,
+              "input_records": 26557991,
+              "memory_spill_bytes": 0,
+              "peak_task_execution_memory_bytes": 16842736,
+              "shuffle_read_bytes": 8268,
+              "shuffle_write_bytes": 8268,
+              "task_attempts": 157
+            },
+            "silver.user_profiles": {
+              "disk_spill_bytes": 0,
+              "executor_cpu_ns": 2282547000,
+              "executor_run_ms": 2330,
+              "failed_task_attempts": 0,
+              "input_bytes": 6159408,
+              "input_records": 1061787,
+              "memory_spill_bytes": 0,
+              "peak_task_execution_memory_bytes": 16842736,
+              "shuffle_read_bytes": 7520,
+              "shuffle_write_bytes": 7520,
+              "task_attempts": 156
+            },
+            "validate.audience_daily": {
+              "disk_spill_bytes": 0,
+              "executor_cpu_ns": 599037000,
+              "executor_run_ms": 652,
+              "failed_task_attempts": 0,
+              "input_bytes": 4151861,
+              "input_records": 3738380,
+              "memory_spill_bytes": 0,
+              "peak_task_execution_memory_bytes": 0,
+              "shuffle_read_bytes": 4963,
+              "shuffle_write_bytes": 4963,
+              "task_attempts": 157
+            },
+            "validate.campaign_daily": {
+              "disk_spill_bytes": 0,
+              "executor_cpu_ns": 585508000,
+              "executor_run_ms": 627,
+              "failed_task_attempts": 0,
+              "input_bytes": 2704660,
+              "input_records": 1820013,
+              "memory_spill_bytes": 0,
+              "peak_task_execution_memory_bytes": 0,
+              "shuffle_read_bytes": 4947,
+              "shuffle_write_bytes": 4947,
+              "task_attempts": 157
+            },
+            "validate.silver": {
+              "disk_spill_bytes": 0,
+              "executor_cpu_ns": 9148255000,
+              "executor_run_ms": 9586,
+              "failed_task_attempts": 0,
+              "input_bytes": 298248743,
+              "input_records": 110049121,
+              "memory_spill_bytes": 0,
+              "peak_task_execution_memory_bytes": 42688264,
+              "shuffle_read_bytes": 12612031,
+              "shuffle_write_bytes": 12612031,
+              "task_attempts": 1062
+            }
+          },
+          "events_read": 5462,
+          "note": "All task attempts, including validation and retries. Input bytes are task counters, not unique physical disk reads. Peak memory is per task, not process RAM."
+        },
+        "started_at": "2026-09-28T16:21:05.304642+00:00",
+        "status": "succeeded",
+        "storage": {
+          "event_log_bytes": 18196307,
+          "source_bytes": 1143403983,
+          "table_bytes": 626073326
+        },
+        "tables": {
+          "bronze/ads": {
+            "parquet_bytes": 11186011,
+            "parquet_files": 4,
+            "rows": 846811,
+            "total_bytes": 11281208
+          },
+          "bronze/impressions": {
+            "parquet_bytes": 208286860,
+            "parquet_files": 9,
+            "rows": 26557961,
+            "total_bytes": 209928646
+          },
+          "bronze/user_profiles": {
+            "parquet_bytes": 6069239,
+            "parquet_files": 4,
+            "rows": 1061768,
+            "total_bytes": 6127125
+          },
+          "gold/audience_daily": {
+            "parquet_bytes": 15881446,
+            "parquet_files": 4,
+            "rows": 3738362,
+            "total_bytes": 16013436
+          },
+          "gold/campaign_daily": {
+            "parquet_bytes": 14658460,
+            "parquet_files": 4,
+            "rows": 1819995,
+            "total_bytes": 14780946
+          },
+          "silver/ads": {
+            "parquet_bytes": 10329136,
+            "parquet_files": 4,
+            "rows": 846811,
+            "total_bytes": 10417819
+          },
+          "silver/impressions": {
+            "parquet_bytes": 350074879,
+            "parquet_files": 5,
+            "rows": 26557961,
+            "total_bytes": 352821843
+          },
+          "silver/user_profiles": {
+            "parquet_bytes": 4656001,
+            "parquet_files": 4,
+            "rows": 1061768,
+            "total_bytes": 4702303
+          }
+        }
+      },
+      "run_id": "03-right",
+      "setting_differences": {},
+      "side": "right"
+    }
+  ],
+  "started_at": "2026-09-28T16:12:33.988250+00:00",
+  "status": "succeeded",
+  "summary": {
+    "processing.disk_spill_bytes": {
+      "left": {
+        "max": 0,
+        "median": 0,
+        "min": 0,
+        "samples": [
+          0,
+          0,
+          0
+        ],
+        "stdev": 0.0
+      },
+      "right": {
+        "max": 89421192,
+        "median": 89302474,
+        "min": 88081410,
+        "samples": [
+          88081410,
+          89421192,
+          89302474
+        ],
+        "stdev": 741631.8789381518
+      },
+      "right_vs_left_percent": null
+    },
+    "processing.executor_cpu_ns": {
+      "left": {
+        "max": 101121002000,
+        "median": 101109813000,
+        "min": 94326178000,
+        "samples": [
+          101121002000,
+          101109813000,
+          94326178000
+        ],
+        "stdev": 3919767471.800719
+      },
+      "right": {
+        "max": 131874048000,
+        "median": 131829988000,
+        "min": 129234017000,
+        "samples": [
+          131829988000,
+          131874048000,
+          129234017000
+        ],
+        "stdev": 1511664115.988403
+      },
+      "right_vs_left_percent": 30.382980730070187
+    },
+    "processing.executor_run_ms": {
+      "left": {
+        "max": 115193,
+        "median": 114705,
+        "min": 106419,
+        "samples": [
+          115193,
+          114705,
+          106419
+        ],
+        "stdev": 4930.838603456144
+      },
+      "right": {
+        "max": 148453,
+        "median": 147226,
+        "min": 143923,
+        "samples": [
+          147226,
+          148453,
+          143923
+        ],
+        "stdev": 2342.941100412044
+      },
+      "right_vs_left_percent": 28.351859116865004
+    },
+    "processing.failed_task_attempts": {
+      "left": {
+        "max": 0,
+        "median": 0,
+        "min": 0,
+        "samples": [
+          0,
+          0,
+          0
+        ],
+        "stdev": 0.0
+      },
+      "right": {
+        "max": 0,
+        "median": 0,
+        "min": 0,
+        "samples": [
+          0,
+          0,
+          0
+        ],
+        "stdev": 0.0
+      },
+      "right_vs_left_percent": null
+    },
+    "processing.input_bytes": {
+      "left": {
+        "max": 1594407823,
+        "median": 1594406097,
+        "min": 1594405211,
+        "samples": [
+          1594406097,
+          1594407823,
+          1594405211
+        ],
+        "stdev": 1328.3207443987314
+      },
+      "right": {
+        "max": 3301169898,
+        "median": 3301168670,
+        "min": 3301168537,
+        "samples": [
+          3301168537,
+          3301168670,
+          3301169898
+        ],
+        "stdev": 750.3325929212991
+      },
+      "right_vs_left_percent": 107.04691710671501
+    },
+    "processing.memory_spill_bytes": {
+      "left": {
+        "max": 0,
+        "median": 0,
+        "min": 0,
+        "samples": [
+          0,
+          0,
+          0
+        ],
+        "stdev": 0.0
+      },
+      "right": {
+        "max": 826802466,
+        "median": 818945106,
+        "min": 803226660,
+        "samples": [
+          803226660,
+          826802466,
+          818945106
+        ],
+        "stdev": 12004348.374472143
+      },
+      "right_vs_left_percent": null
+    },
+    "processing.peak_task_execution_memory_bytes": {
+      "left": {
+        "max": 317898080,
+        "median": 317898080,
+        "min": 317898080,
+        "samples": [
+          317898080,
+          317898080,
+          317898080
+        ],
+        "stdev": 0.0
+      },
+      "right": {
+        "max": 150126048,
+        "median": 150126048,
+        "min": 150126048,
+        "samples": [
+          150126048,
+          150126048,
+          150126048
+        ],
+        "stdev": 0.0
+      },
+      "right_vs_left_percent": -52.77541531549986
+    },
+    "processing.shuffle_read_bytes": {
+      "left": {
+        "max": 138725044,
+        "median": 138724566,
+        "min": 138724048,
+        "samples": [
+          138724566,
+          138725044,
+          138724048
+        ],
+        "stdev": 498.13385082057346
+      },
+      "right": {
+        "max": 123292710,
+        "median": 123292694,
+        "min": 123292509,
+        "samples": [
+          123292509,
+          123292710,
+          123292694
+        ],
+        "stdev": 111.71541224617727
+      },
+      "right_vs_left_percent": -11.124109049294125
+    },
+    "processing.shuffle_write_bytes": {
+      "left": {
+        "max": 138725044,
+        "median": 138724566,
+        "min": 138724048,
+        "samples": [
+          138724566,
+          138725044,
+          138724048
+        ],
+        "stdev": 498.13385082057346
+      },
+      "right": {
+        "max": 123292710,
+        "median": 123292694,
+        "min": 123292509,
+        "samples": [
+          123292509,
+          123292710,
+          123292694
+        ],
+        "stdev": 111.71541224617727
+      },
+      "right_vs_left_percent": -11.124109049294125
+    },
+    "processing.task_attempts": {
+      "left": {
+        "max": 1375,
+        "median": 1375,
+        "min": 1375,
+        "samples": [
+          1375,
+          1375,
+          1375
+        ],
+        "stdev": 0.0
+      },
+      "right": {
+        "max": 922,
+        "median": 922,
+        "min": 922,
+        "samples": [
+          922,
+          922,
+          922
+        ],
+        "stdev": 0.0
+      },
+      "right_vs_left_percent": -32.945454545454545
+    },
+    "seconds.bronze.ads": {
+      "left": {
+        "max": 1.411,
+        "median": 1.319,
+        "min": 1.273,
+        "samples": [
+          1.319,
+          1.411,
+          1.273
+        ],
+        "stdev": 0.0702661606559896
+      },
+      "right": {
+        "max": 1.317,
+        "median": 1.276,
+        "min": 1.227,
+        "samples": [
+          1.276,
+          1.317,
+          1.227
+        ],
+        "stdev": 0.04505922029211477
+      },
+      "right_vs_left_percent": -3.260045489006818
+    },
+    "seconds.bronze.impressions": {
+      "left": {
+        "max": 13.82,
+        "median": 13.769,
+        "min": 13.254,
+        "samples": [
+          13.82,
+          13.769,
+          13.254
+        ],
+        "stdev": 0.31309796124110034
+      },
+      "right": {
+        "max": 13.528,
+        "median": 13.259,
+        "min": 13.11,
+        "samples": [
+          13.11,
+          13.528,
+          13.259
+        ],
+        "stdev": 0.21185136298829943
+      },
+      "right_vs_left_percent": -3.703972692279757
+    },
+    "seconds.bronze.user_profiles": {
+      "left": {
+        "max": 1.426,
+        "median": 1.395,
+        "min": 1.295,
+        "samples": [
+          1.395,
+          1.426,
+          1.295
+        ],
+        "stdev": 0.06846166810705098
+      },
+      "right": {
+        "max": 1.395,
+        "median": 1.36,
+        "min": 1.254,
+        "samples": [
+          1.36,
+          1.395,
+          1.254
+        ],
+        "stdev": 0.07341888948583557
+      },
+      "right_vs_left_percent": -2.508960573476697
+    },
+    "seconds.gold.audience_daily": {
+      "left": {
+        "max": 4.201,
+        "median": 3.935,
+        "min": 3.853,
+        "samples": [
+          4.201,
+          3.935,
+          3.853
+        ],
+        "stdev": 0.1819267251761907
+      },
+      "right": {
+        "max": 5.054,
+        "median": 4.519,
+        "min": 4.124,
+        "samples": [
+          4.519,
+          5.054,
+          4.124
+        ],
+        "stdev": 0.46675296821052314
+      },
+      "right_vs_left_percent": 14.84116899618806
+    },
+    "seconds.gold.campaign_daily": {
+      "left": {
+        "max": 3.651,
+        "median": 3.455,
+        "min": 2.924,
+        "samples": [
+          3.651,
+          3.455,
+          2.924
+        ],
+        "stdev": 0.3761440326966963
+      },
+      "right": {
+        "max": 12.638,
+        "median": 12.309,
+        "min": 12.272,
+        "samples": [
+          12.638,
+          12.309,
+          12.272
+        ],
+        "stdev": 0.2014803547081783
+      },
+      "right_vs_left_percent": 256.2662807525325
+    },
+    "seconds.pipeline_writes": {
+      "left": {
+        "max": 37.325,
+        "median": 36.412,
+        "min": 33.899,
+        "samples": [
+          37.325,
+          36.412,
+          33.899
+        ],
+        "stdev": 1.7741765225967046
+      },
+      "right": {
+        "max": 44.752,
+        "median": 44.54,
+        "min": 43.294,
+        "samples": [
+          44.54,
+          44.752,
+          43.294
+        ],
+        "stdev": 0.7877419205128905
+      },
+      "right_vs_left_percent": 22.322311325936507
+    },
+    "seconds.silver.ads": {
+      "left": {
+        "max": 1.814,
+        "median": 1.254,
+        "min": 1.122,
+        "samples": [
+          1.814,
+          1.254,
+          1.122
+        ],
+        "stdev": 0.36739805842346707
+      },
+      "right": {
+        "max": 1.132,
+        "median": 1.122,
+        "min": 1.098,
+        "samples": [
+          1.132,
+          1.122,
+          1.098
+        ],
+        "stdev": 0.017473789896108132
+      },
+      "right_vs_left_percent": -10.526315789473676
+    },
+    "seconds.silver.impressions": {
+      "left": {
+        "max": 9.97,
+        "median": 9.786,
+        "min": 8.979,
+        "samples": [
+          9.786,
+          9.97,
+          8.979
+        ],
+        "stdev": 0.5271283841089701
+      },
+      "right": {
+        "max": 9.258,
+        "median": 8.915,
+        "min": 8.78,
+        "samples": [
+          9.258,
+          8.78,
+          8.915
+        ],
+        "stdev": 0.24642713595165058
+      },
+      "right_vs_left_percent": -8.900470059268347
+    },
+    "seconds.silver.user_profiles": {
+      "left": {
+        "max": 1.339,
+        "median": 1.199,
+        "min": 1.192,
+        "samples": [
+          1.339,
+          1.192,
+          1.199
+        ],
+        "stdev": 0.082923659671612
+      },
+      "right": {
+        "max": 1.226,
+        "median": 1.225,
+        "min": 1.123,
+        "samples": [
+          1.226,
+          1.225,
+          1.123
+        ],
+        "stdev": 0.05918051481132397
+      },
+      "right_vs_left_percent": 2.1684737281067576
+    },
+    "seconds.source_fingerprints": {
+      "left": {
+        "max": 0.539,
+        "median": 0.527,
+        "min": 0.499,
+        "samples": [
+          0.539,
+          0.499,
+          0.527
+        ],
+        "stdev": 0.020526405757787556
+      },
+      "right": {
+        "max": 0.522,
+        "median": 0.522,
+        "min": 0.519,
+        "samples": [
+          0.522,
+          0.522,
+          0.519
+        ],
+        "stdev": 0.001732050807568879
+      },
+      "right_vs_left_percent": -0.9487666034155606
+    },
+    "seconds.spark_shutdown": {
+      "left": {
+        "max": 0.532,
+        "median": 0.297,
+        "min": 0.284,
+        "samples": [
+          0.532,
+          0.284,
+          0.297
+        ],
+        "stdev": 0.139581517401123
+      },
+      "right": {
+        "max": 0.506,
+        "median": 0.197,
+        "min": 0.084,
+        "samples": [
+          0.084,
+          0.506,
+          0.197
+        ],
+        "stdev": 0.21845441934951404
+      },
+      "right_vs_left_percent": -33.67003367003367
+    },
+    "seconds.spark_startup": {
+      "left": {
+        "max": 2.335,
+        "median": 2.029,
+        "min": 1.984,
+        "samples": [
+          2.029,
+          1.984,
+          2.335
+        ],
+        "stdev": 0.19098952850876408
+      },
+      "right": {
+        "max": 2.127,
+        "median": 2.098,
+        "min": 2.059,
+        "samples": [
+          2.127,
+          2.059,
+          2.098
+        ],
+        "stdev": 0.03412232895529436
+      },
+      "right_vs_left_percent": 3.400689995071461
+    },
+    "seconds.total": {
+      "left": {
+        "max": 47.492,
+        "median": 45.921,
+        "min": 43.175,
+        "samples": [
+          47.492,
+          45.921,
+          43.175
+        ],
+        "stdev": 2.1849884057663407
+      },
+      "right": {
+        "max": 54.009,
+        "median": 53.56,
+        "min": 52.072,
+        "samples": [
+          53.56,
+          54.009,
+          52.072
+        ],
+        "stdev": 1.013879841664352
+      },
+      "right_vs_left_percent": 16.635090699244362
+    },
+    "seconds.validate.audience_daily": {
+      "left": {
+        "max": 0.565,
+        "median": 0.493,
+        "min": 0.439,
+        "samples": [
+          0.439,
+          0.565,
+          0.493
+        ],
+        "stdev": 0.06321392251711641
+      },
+      "right": {
+        "max": 0.458,
+        "median": 0.455,
+        "min": 0.435,
+        "samples": [
+          0.455,
+          0.435,
+          0.458
+        ],
+        "stdev": 0.012503332889007379
+      },
+      "right_vs_left_percent": -7.707910750507095
+    },
+    "seconds.validate.campaign_daily": {
+      "left": {
+        "max": 0.493,
+        "median": 0.459,
+        "min": 0.452,
+        "samples": [
+          0.459,
+          0.452,
+          0.493
+        ],
+        "stdev": 0.021931712199461297
+      },
+      "right": {
+        "max": 0.479,
+        "median": 0.462,
+        "min": 0.459,
+        "samples": [
+          0.479,
+          0.459,
+          0.462
+        ],
+        "stdev": 0.010785793124908936
+      },
+      "right_vs_left_percent": 0.6535947712418306
+    },
+    "seconds.validate.silver": {
+      "left": {
+        "max": 6.058,
+        "median": 5.626,
+        "min": 5.048,
+        "samples": [
+          6.058,
+          5.626,
+          5.048
+        ],
+        "stdev": 0.5067556939328193
+      },
+      "right": {
+        "max": 5.269,
+        "median": 5.159,
+        "min": 4.919,
+        "samples": [
+          5.269,
+          5.159,
+          4.919
+        ],
+        "stdev": 0.17897858344878423
+      },
+      "right_vs_left_percent": -8.30074653394953
+    },
+    "seconds.validation": {
+      "left": {
+        "max": 6.956,
+        "median": 6.643,
+        "min": 6.034,
+        "samples": [
+          6.956,
+          6.643,
+          6.034
+        ],
+        "stdev": 0.46885214442650636
+      },
+      "right": {
+        "max": 6.203,
+        "median": 6.053,
+        "min": 5.839,
+        "samples": [
+          6.203,
+          6.053,
+          5.839
+        ],
+        "stdev": 0.18293532554794686
+      },
+      "right_vs_left_percent": -8.881529429474632
+    },
+    "storage.parquet_files": {
+      "left": {
+        "max": 38,
+        "median": 38,
+        "min": 38,
+        "samples": [
+          38,
+          38,
+          38
+        ],
+        "stdev": 0.0
+      },
+      "right": {
+        "max": 38,
+        "median": 38,
+        "min": 38,
+        "samples": [
+          38,
+          38,
+          38
+        ],
+        "stdev": 0.0
+      },
+      "right_vs_left_percent": 0.0
+    },
+    "storage.table_bytes": {
+      "left": {
+        "max": 630854482,
+        "median": 630854482,
+        "min": 630854482,
+        "samples": [
+          630854482,
+          630854482,
+          630854482
+        ],
+        "stdev": 0.0
+      },
+      "right": {
+        "max": 626073326,
+        "median": 626073326,
+        "min": 626073326,
+        "samples": [
+          626073326,
+          626073326,
+          626073326
+        ],
+        "stdev": 0.0
+      },
+      "right_vs_left_percent": -0.7578857147598105
+    }
+  },
+  "tests_passed": true,
+  "verification_seconds": 693.897,
+  "workload": "Full three-source Bronze/Silver/Gold rebuild"
+}

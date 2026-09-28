@@ -159,3 +159,7 @@ Gold median**, with mixed whole-pipeline timing. AQE produced **five reader task
 from 32 initial partitions**, versus four from 200. All 40 exact table comparisons
 passed. This is a modest observed local benefit, not a universal partition-count
 recommendation. Tag: `iteration-06-shuffle-partitions`.
+
+Iteration 7 verifies cache reuse but is slower for this two-report workload.
+See [the caching results](results/07_cached_enrichment/README.md); iteration 2
+remains the preferred reference for independent experiments.

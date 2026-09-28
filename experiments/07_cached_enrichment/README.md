@@ -28,4 +28,6 @@ sufficient. Missing or contradictory evidence fails verification.
 
 Fixed resources: local[4], 2 GiB heap, 200 initial shuffle partitions, AQE enabled,
 ZSTD, unpartitioned tables. Runs that fail remain recorded; resources are not
-silently increased. Findings will appear in the central results index.
+silently increased. All six full-data runs passed, but caching increased Gold time by 132.45% and
+processing time by 22.32% (medians). Keep iteration 2 as the working reference.
+See [the documented findings](../../results/07_cached_enrichment/README.md).

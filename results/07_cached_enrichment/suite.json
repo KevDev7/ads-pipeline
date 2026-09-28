@@ -1,0 +1,22 @@
+{
+  "comparison_id": "cache-07-20260928",
+  "finished_at": "2026-09-28T16:33:36.779791+00:00",
+  "iteration": "7",
+  "repeats": 3,
+  "started_at": "2026-09-28T16:12:33.904432+00:00",
+  "status": "succeeded",
+  "steps": {
+    "cache": {
+      "log": "cache-07-20260928-suite-logs/cache.log",
+      "status": "succeeded"
+    },
+    "codecs": {
+      "log": "cache-07-20260928-suite-logs/codecs.log",
+      "status": "succeeded"
+    },
+    "pipeline": {
+      "log": "cache-07-20260928-suite-logs/pipeline.log",
+      "status": "succeeded"
+    }
+  }
+}

@@ -1,0 +1,1203 @@
+{
+  "combined_gold_seconds": {
+    "left": {
+      "max": 7.852,
+      "median": 7.39,
+      "min": 6.777,
+      "samples": [
+        7.852,
+        7.39,
+        6.777
+      ],
+      "stdev": 0.5392646227348252
+    },
+    "right": {
+      "max": 17.385,
+      "median": 17.178,
+      "min": 16.418,
+      "samples": [
+        17.178,
+        17.385,
+        16.418
+      ],
+      "stdev": 0.5091722040069887
+    }
+  },
+  "method": "Live storage snapshots plus successful SQL executions and stage-scoped task accumulator updates. Cached lineage alone is not proof of reuse. Snapshot bytes are not peak process memory.",
+  "runs": {
+    "01-left": {
+      "combined_gold_seconds": 7.852,
+      "executions": {
+        "gold.audience_daily": {
+          "execution_id": "98",
+          "joins": [
+            {
+              "description": "BroadcastHashJoin [user_id#5063L], [user_id#5079L], LeftOuter, BuildRight, false",
+              "key": "user_id",
+              "operator": "BroadcastHashJoin"
+            },
+            {
+              "description": "BroadcastHashJoin [adgroup_id#5065L], [adgroup_id#5072L], LeftOuter, BuildRight, false",
+              "key": "adgroup_id",
+              "operator": "BroadcastHashJoin"
+            }
+          ],
+          "stages": [
+            {
+              "completed": true,
+              "execution": "98",
+              "expected": 4,
+              "failed": 0,
+              "group": "gold.audience_daily",
+              "rdd_ids": [
+                411,
+                406,
+                410,
+                409
+              ],
+              "stage_id": 190,
+              "tasks": 4
+            },
+            {
+              "completed": true,
+              "execution": "98",
+              "expected": 4,
+              "failed": 0,
+              "group": "gold.audience_daily",
+              "rdd_ids": [
+                413,
+                407,
+                412,
+                408
+              ],
+              "stage_id": 191,
+              "tasks": 4
+            },
+            {
+              "completed": true,
+              "execution": "98",
+              "expected": 5,
+              "failed": 0,
+              "group": "gold.audience_daily",
+              "rdd_ids": [
+                417,
+                416,
+                414,
+                415
+              ],
+              "stage_id": 192,
+              "tasks": 5
+            },
+            {
+              "completed": true,
+              "execution": "98",
+              "expected": 4,
+              "failed": 0,
+              "group": "gold.audience_daily",
+              "rdd_ids": [
+                419,
+                418
+              ],
+              "stage_id": 194,
+              "tasks": 4
+            }
+          ],
+          "task_output_rows": {
+            "cache": 0,
+            "join": 53115922,
+            "source": 28466540
+          }
+        },
+        "gold.campaign_daily": {
+          "execution_id": "81",
+          "joins": [
+            {
+              "description": "BroadcastHashJoin [user_id#5063L], [user_id#5079L], LeftOuter, BuildRight, false",
+              "key": "user_id",
+              "operator": "BroadcastHashJoin"
+            },
+            {
+              "description": "BroadcastHashJoin [adgroup_id#5065L], [adgroup_id#5072L], LeftOuter, BuildRight, false",
+              "key": "adgroup_id",
+              "operator": "BroadcastHashJoin"
+            }
+          ],
+          "stages": [
+            {
+              "completed": true,
+              "execution": "81",
+              "expected": 4,
+              "failed": 0,
+              "group": "gold.campaign_daily",
+              "rdd_ids": [
+                339,
+                334,
+                336,
+                338
+              ],
+              "stage_id": 156,
+              "tasks": 4
+            },
+            {
+              "completed": true,
+              "execution": "81",
+              "expected": 4,
+              "failed": 0,
+              "group": "gold.campaign_daily",
+              "rdd_ids": [
+                341,
+                335,
+                340,
+                337
+              ],
+              "stage_id": 157,
+              "tasks": 4
+            },
+            {
+              "completed": true,
+              "execution": "81",
+              "expected": 5,
+              "failed": 0,
+              "group": "gold.campaign_daily",
+              "rdd_ids": [
+                345,
+                342,
+                344,
+                343
+              ],
+              "stage_id": 158,
+              "tasks": 5
+            },
+            {
+              "completed": true,
+              "execution": "81",
+              "expected": 4,
+              "failed": 0,
+              "group": "gold.campaign_daily",
+              "rdd_ids": [
+                347,
+                346
+              ],
+              "stage_id": 160,
+              "tasks": 4
+            }
+          ],
+          "task_output_rows": {
+            "cache": 0,
+            "join": 53115922,
+            "source": 28466540
+          }
+        }
+      },
+      "snapshots": null
+    },
+    "01-right": {
+      "combined_gold_seconds": 17.178,
+      "executions": {
+        "gold.audience_daily": {
+          "execution_id": "92",
+          "joins": [
+            {
+              "description": "BroadcastHashJoin [user_id#5063L], [user_id#5079L], LeftOuter, BuildRight, false",
+              "key": "user_id",
+              "operator": "BroadcastHashJoin"
+            },
+            {
+              "description": "BroadcastHashJoin [adgroup_id#5065L], [adgroup_id#5072L], LeftOuter, BuildRight, false",
+              "key": "adgroup_id",
+              "operator": "BroadcastHashJoin"
+            }
+          ],
+          "stages": [
+            {
+              "completed": true,
+              "execution": "92",
+              "expected": 5,
+              "failed": 0,
+              "group": "gold.audience_daily",
+              "rdd_ids": [
+                398,
+                397,
+                395,
+                396,
+                337,
+                394,
+                339,
+                338,
+                336,
+                340
+              ],
+              "stage_id": 173,
+              "tasks": 5
+            },
+            {
+              "completed": true,
+              "execution": "92",
+              "expected": 4,
+              "failed": 0,
+              "group": "gold.audience_daily",
+              "rdd_ids": [
+                400,
+                399
+              ],
+              "stage_id": 175,
+              "tasks": 4
+            }
+          ],
+          "task_output_rows": {
+            "cache": 26557961,
+            "join": 0,
+            "source": 0
+          }
+        },
+        "gold.campaign_daily": {
+          "execution_id": "81",
+          "joins": [
+            {
+              "description": "BroadcastHashJoin [user_id#5063L], [user_id#5079L], LeftOuter, BuildRight, false",
+              "key": "user_id",
+              "operator": "BroadcastHashJoin"
+            },
+            {
+              "description": "BroadcastHashJoin [adgroup_id#5065L], [adgroup_id#5072L], LeftOuter, BuildRight, false",
+              "key": "adgroup_id",
+              "operator": "BroadcastHashJoin"
+            }
+          ],
+          "stages": [
+            {
+              "completed": true,
+              "execution": "81",
+              "expected": 4,
+              "failed": 0,
+              "group": "gold.campaign_daily",
+              "rdd_ids": [
+                333,
+                328,
+                329,
+                332
+              ],
+              "stage_id": 150,
+              "tasks": 4
+            },
+            {
+              "completed": true,
+              "execution": "81",
+              "expected": 4,
+              "failed": 0,
+              "group": "gold.campaign_daily",
+              "rdd_ids": [
+                335,
+                331,
+                334,
+                330
+              ],
+              "stage_id": 151,
+              "tasks": 4
+            },
+            {
+              "completed": true,
+              "execution": "81",
+              "expected": 5,
+              "failed": 0,
+              "group": "gold.campaign_daily",
+              "rdd_ids": [
+                340,
+                337,
+                339,
+                338,
+                336
+              ],
+              "stage_id": 152,
+              "tasks": 5
+            },
+            {
+              "completed": true,
+              "execution": "81",
+              "expected": 5,
+              "failed": 0,
+              "group": "gold.campaign_daily",
+              "rdd_ids": [
+                345,
+                343,
+                337,
+                344,
+                341,
+                339,
+                342,
+                338,
+                336,
+                340
+              ],
+              "stage_id": 153,
+              "tasks": 5
+            },
+            {
+              "completed": true,
+              "execution": "81",
+              "expected": 4,
+              "failed": 0,
+              "group": "gold.campaign_daily",
+              "rdd_ids": [
+                347,
+                346
+              ],
+              "stage_id": 155,
+              "tasks": 4
+            }
+          ],
+          "task_output_rows": {
+            "cache": 26557961,
+            "join": 53115922,
+            "source": 28466540
+          }
+        }
+      },
+      "snapshots": {
+        "after_audience": {
+          "cached_partitions": 5,
+          "disk_bytes": 142723458,
+          "memory_bytes": 570528808,
+          "rdd_id": 340,
+          "registered": true,
+          "storage_info_present": true,
+          "storage_level": {
+            "deserialized": true,
+            "replication": 1,
+            "use_disk": true,
+            "use_memory": true
+          },
+          "total_partitions": 5
+        },
+        "after_campaign": {
+          "cached_partitions": 5,
+          "disk_bytes": 6860306,
+          "memory_bytes": 772217368,
+          "rdd_id": 340,
+          "registered": true,
+          "storage_info_present": true,
+          "storage_level": {
+            "deserialized": true,
+            "replication": 1,
+            "use_disk": true,
+            "use_memory": true
+          },
+          "total_partitions": 5
+        },
+        "after_release": {
+          "cached_partitions": 0,
+          "disk_bytes": 0,
+          "memory_bytes": 0,
+          "rdd_id": 340,
+          "registered": false,
+          "storage_info_present": false,
+          "storage_level": {
+            "deserialized": false,
+            "replication": 1,
+            "use_disk": false,
+            "use_memory": false
+          },
+          "total_partitions": 0
+        },
+        "before_audience": {
+          "cached_partitions": 5,
+          "disk_bytes": 6860306,
+          "memory_bytes": 772217368,
+          "rdd_id": 340,
+          "registered": true,
+          "storage_info_present": true,
+          "storage_level": {
+            "deserialized": true,
+            "replication": 1,
+            "use_disk": true,
+            "use_memory": true
+          },
+          "total_partitions": 5
+        }
+      }
+    },
+    "02-left": {
+      "combined_gold_seconds": 7.39,
+      "executions": {
+        "gold.audience_daily": {
+          "execution_id": "98",
+          "joins": [
+            {
+              "description": "BroadcastHashJoin [user_id#5063L], [user_id#5079L], LeftOuter, BuildRight, false",
+              "key": "user_id",
+              "operator": "BroadcastHashJoin"
+            },
+            {
+              "description": "BroadcastHashJoin [adgroup_id#5065L], [adgroup_id#5072L], LeftOuter, BuildRight, false",
+              "key": "adgroup_id",
+              "operator": "BroadcastHashJoin"
+            }
+          ],
+          "stages": [
+            {
+              "completed": true,
+              "execution": "98",
+              "expected": 4,
+              "failed": 0,
+              "group": "gold.audience_daily",
+              "rdd_ids": [
+                412,
+                406,
+                408,
+                410
+              ],
+              "stage_id": 190,
+              "tasks": 4
+            },
+            {
+              "completed": true,
+              "execution": "98",
+              "expected": 4,
+              "failed": 0,
+              "group": "gold.audience_daily",
+              "rdd_ids": [
+                413,
+                409,
+                411,
+                407
+              ],
+              "stage_id": 191,
+              "tasks": 4
+            },
+            {
+              "completed": true,
+              "execution": "98",
+              "expected": 5,
+              "failed": 0,
+              "group": "gold.audience_daily",
+              "rdd_ids": [
+                417,
+                416,
+                414,
+                415
+              ],
+              "stage_id": 192,
+              "tasks": 5
+            },
+            {
+              "completed": true,
+              "execution": "98",
+              "expected": 4,
+              "failed": 0,
+              "group": "gold.audience_daily",
+              "rdd_ids": [
+                419,
+                418
+              ],
+              "stage_id": 194,
+              "tasks": 4
+            }
+          ],
+          "task_output_rows": {
+            "cache": 0,
+            "join": 53115922,
+            "source": 28466540
+          }
+        },
+        "gold.campaign_daily": {
+          "execution_id": "81",
+          "joins": [
+            {
+              "description": "BroadcastHashJoin [user_id#5063L], [user_id#5079L], LeftOuter, BuildRight, false",
+              "key": "user_id",
+              "operator": "BroadcastHashJoin"
+            },
+            {
+              "description": "BroadcastHashJoin [adgroup_id#5065L], [adgroup_id#5072L], LeftOuter, BuildRight, false",
+              "key": "adgroup_id",
+              "operator": "BroadcastHashJoin"
+            }
+          ],
+          "stages": [
+            {
+              "completed": true,
+              "execution": "81",
+              "expected": 4,
+              "failed": 0,
+              "group": "gold.campaign_daily",
+              "rdd_ids": [
+                340,
+                336,
+                339,
+                334
+              ],
+              "stage_id": 156,
+              "tasks": 4
+            },
+            {
+              "completed": true,
+              "execution": "81",
+              "expected": 4,
+              "failed": 0,
+              "group": "gold.campaign_daily",
+              "rdd_ids": [
+                341,
+                338,
+                337,
+                335
+              ],
+              "stage_id": 157,
+              "tasks": 4
+            },
+            {
+              "completed": true,
+              "execution": "81",
+              "expected": 5,
+              "failed": 0,
+              "group": "gold.campaign_daily",
+              "rdd_ids": [
+                345,
+                344,
+                343,
+                342
+              ],
+              "stage_id": 158,
+              "tasks": 5
+            },
+            {
+              "completed": true,
+              "execution": "81",
+              "expected": 4,
+              "failed": 0,
+              "group": "gold.campaign_daily",
+              "rdd_ids": [
+                347,
+                346
+              ],
+              "stage_id": 160,
+              "tasks": 4
+            }
+          ],
+          "task_output_rows": {
+            "cache": 0,
+            "join": 53115922,
+            "source": 28466540
+          }
+        }
+      },
+      "snapshots": null
+    },
+    "02-right": {
+      "combined_gold_seconds": 17.385,
+      "executions": {
+        "gold.audience_daily": {
+          "execution_id": "92",
+          "joins": [
+            {
+              "description": "BroadcastHashJoin [user_id#5063L], [user_id#5079L], LeftOuter, BuildRight, false",
+              "key": "user_id",
+              "operator": "BroadcastHashJoin"
+            },
+            {
+              "description": "BroadcastHashJoin [adgroup_id#5065L], [adgroup_id#5072L], LeftOuter, BuildRight, false",
+              "key": "adgroup_id",
+              "operator": "BroadcastHashJoin"
+            }
+          ],
+          "stages": [
+            {
+              "completed": true,
+              "execution": "92",
+              "expected": 5,
+              "failed": 0,
+              "group": "gold.audience_daily",
+              "rdd_ids": [
+                398,
+                397,
+                340,
+                394,
+                396,
+                336,
+                395,
+                337,
+                338,
+                339
+              ],
+              "stage_id": 173,
+              "tasks": 5
+            },
+            {
+              "completed": true,
+              "execution": "92",
+              "expected": 4,
+              "failed": 0,
+              "group": "gold.audience_daily",
+              "rdd_ids": [
+                400,
+                399
+              ],
+              "stage_id": 175,
+              "tasks": 4
+            }
+          ],
+          "task_output_rows": {
+            "cache": 26557961,
+            "join": 0,
+            "source": 0
+          }
+        },
+        "gold.campaign_daily": {
+          "execution_id": "81",
+          "joins": [
+            {
+              "description": "BroadcastHashJoin [user_id#5063L], [user_id#5079L], LeftOuter, BuildRight, false",
+              "key": "user_id",
+              "operator": "BroadcastHashJoin"
+            },
+            {
+              "description": "BroadcastHashJoin [adgroup_id#5065L], [adgroup_id#5072L], LeftOuter, BuildRight, false",
+              "key": "adgroup_id",
+              "operator": "BroadcastHashJoin"
+            }
+          ],
+          "stages": [
+            {
+              "completed": true,
+              "execution": "81",
+              "expected": 4,
+              "failed": 0,
+              "group": "gold.campaign_daily",
+              "rdd_ids": [
+                333,
+                328,
+                332,
+                329
+              ],
+              "stage_id": 150,
+              "tasks": 4
+            },
+            {
+              "completed": true,
+              "execution": "81",
+              "expected": 4,
+              "failed": 0,
+              "group": "gold.campaign_daily",
+              "rdd_ids": [
+                335,
+                334,
+                331,
+                330
+              ],
+              "stage_id": 151,
+              "tasks": 4
+            },
+            {
+              "completed": true,
+              "execution": "81",
+              "expected": 5,
+              "failed": 0,
+              "group": "gold.campaign_daily",
+              "rdd_ids": [
+                340,
+                336,
+                337,
+                338,
+                339
+              ],
+              "stage_id": 152,
+              "tasks": 5
+            },
+            {
+              "completed": true,
+              "execution": "81",
+              "expected": 5,
+              "failed": 0,
+              "group": "gold.campaign_daily",
+              "rdd_ids": [
+                345,
+                342,
+                343,
+                340,
+                336,
+                341,
+                337,
+                338,
+                344,
+                339
+              ],
+              "stage_id": 153,
+              "tasks": 5
+            },
+            {
+              "completed": true,
+              "execution": "81",
+              "expected": 4,
+              "failed": 0,
+              "group": "gold.campaign_daily",
+              "rdd_ids": [
+                347,
+                346
+              ],
+              "stage_id": 155,
+              "tasks": 4
+            }
+          ],
+          "task_output_rows": {
+            "cache": 26557961,
+            "join": 53115922,
+            "source": 28466540
+          }
+        }
+      },
+      "snapshots": {
+        "after_audience": {
+          "cached_partitions": 5,
+          "disk_bytes": 142723458,
+          "memory_bytes": 570528808,
+          "rdd_id": 340,
+          "registered": true,
+          "storage_info_present": true,
+          "storage_level": {
+            "deserialized": true,
+            "replication": 1,
+            "use_disk": true,
+            "use_memory": true
+          },
+          "total_partitions": 5
+        },
+        "after_campaign": {
+          "cached_partitions": 5,
+          "disk_bytes": 6860306,
+          "memory_bytes": 772217368,
+          "rdd_id": 340,
+          "registered": true,
+          "storage_info_present": true,
+          "storage_level": {
+            "deserialized": true,
+            "replication": 1,
+            "use_disk": true,
+            "use_memory": true
+          },
+          "total_partitions": 5
+        },
+        "after_release": {
+          "cached_partitions": 0,
+          "disk_bytes": 0,
+          "memory_bytes": 0,
+          "rdd_id": 340,
+          "registered": false,
+          "storage_info_present": false,
+          "storage_level": {
+            "deserialized": false,
+            "replication": 1,
+            "use_disk": false,
+            "use_memory": false
+          },
+          "total_partitions": 0
+        },
+        "before_audience": {
+          "cached_partitions": 5,
+          "disk_bytes": 6860306,
+          "memory_bytes": 772217368,
+          "rdd_id": 340,
+          "registered": true,
+          "storage_info_present": true,
+          "storage_level": {
+            "deserialized": true,
+            "replication": 1,
+            "use_disk": true,
+            "use_memory": true
+          },
+          "total_partitions": 5
+        }
+      }
+    },
+    "03-left": {
+      "combined_gold_seconds": 6.777,
+      "executions": {
+        "gold.audience_daily": {
+          "execution_id": "98",
+          "joins": [
+            {
+              "description": "BroadcastHashJoin [user_id#5063L], [user_id#5079L], LeftOuter, BuildRight, false",
+              "key": "user_id",
+              "operator": "BroadcastHashJoin"
+            },
+            {
+              "description": "BroadcastHashJoin [adgroup_id#5065L], [adgroup_id#5072L], LeftOuter, BuildRight, false",
+              "key": "adgroup_id",
+              "operator": "BroadcastHashJoin"
+            }
+          ],
+          "stages": [
+            {
+              "completed": true,
+              "execution": "98",
+              "expected": 4,
+              "failed": 0,
+              "group": "gold.audience_daily",
+              "rdd_ids": [
+                411,
+                410,
+                408,
+                406
+              ],
+              "stage_id": 190,
+              "tasks": 4
+            },
+            {
+              "completed": true,
+              "execution": "98",
+              "expected": 4,
+              "failed": 0,
+              "group": "gold.audience_daily",
+              "rdd_ids": [
+                413,
+                407,
+                409,
+                412
+              ],
+              "stage_id": 191,
+              "tasks": 4
+            },
+            {
+              "completed": true,
+              "execution": "98",
+              "expected": 5,
+              "failed": 0,
+              "group": "gold.audience_daily",
+              "rdd_ids": [
+                417,
+                414,
+                415,
+                416
+              ],
+              "stage_id": 192,
+              "tasks": 5
+            },
+            {
+              "completed": true,
+              "execution": "98",
+              "expected": 4,
+              "failed": 0,
+              "group": "gold.audience_daily",
+              "rdd_ids": [
+                419,
+                418
+              ],
+              "stage_id": 194,
+              "tasks": 4
+            }
+          ],
+          "task_output_rows": {
+            "cache": 0,
+            "join": 53115922,
+            "source": 28466540
+          }
+        },
+        "gold.campaign_daily": {
+          "execution_id": "81",
+          "joins": [
+            {
+              "description": "BroadcastHashJoin [user_id#5063L], [user_id#5079L], LeftOuter, BuildRight, false",
+              "key": "user_id",
+              "operator": "BroadcastHashJoin"
+            },
+            {
+              "description": "BroadcastHashJoin [adgroup_id#5065L], [adgroup_id#5072L], LeftOuter, BuildRight, false",
+              "key": "adgroup_id",
+              "operator": "BroadcastHashJoin"
+            }
+          ],
+          "stages": [
+            {
+              "completed": true,
+              "execution": "81",
+              "expected": 4,
+              "failed": 0,
+              "group": "gold.campaign_daily",
+              "rdd_ids": [
+                340,
+                337,
+                335,
+                338
+              ],
+              "stage_id": 156,
+              "tasks": 4
+            },
+            {
+              "completed": true,
+              "execution": "81",
+              "expected": 4,
+              "failed": 0,
+              "group": "gold.campaign_daily",
+              "rdd_ids": [
+                341,
+                334,
+                339,
+                336
+              ],
+              "stage_id": 157,
+              "tasks": 4
+            },
+            {
+              "completed": true,
+              "execution": "81",
+              "expected": 5,
+              "failed": 0,
+              "group": "gold.campaign_daily",
+              "rdd_ids": [
+                345,
+                343,
+                344,
+                342
+              ],
+              "stage_id": 158,
+              "tasks": 5
+            },
+            {
+              "completed": true,
+              "execution": "81",
+              "expected": 4,
+              "failed": 0,
+              "group": "gold.campaign_daily",
+              "rdd_ids": [
+                347,
+                346
+              ],
+              "stage_id": 160,
+              "tasks": 4
+            }
+          ],
+          "task_output_rows": {
+            "cache": 0,
+            "join": 53115922,
+            "source": 28466540
+          }
+        }
+      },
+      "snapshots": null
+    },
+    "03-right": {
+      "combined_gold_seconds": 16.418,
+      "executions": {
+        "gold.audience_daily": {
+          "execution_id": "92",
+          "joins": [
+            {
+              "description": "BroadcastHashJoin [user_id#5063L], [user_id#5079L], LeftOuter, BuildRight, false",
+              "key": "user_id",
+              "operator": "BroadcastHashJoin"
+            },
+            {
+              "description": "BroadcastHashJoin [adgroup_id#5065L], [adgroup_id#5072L], LeftOuter, BuildRight, false",
+              "key": "adgroup_id",
+              "operator": "BroadcastHashJoin"
+            }
+          ],
+          "stages": [
+            {
+              "completed": true,
+              "execution": "92",
+              "expected": 5,
+              "failed": 0,
+              "group": "gold.audience_daily",
+              "rdd_ids": [
+                398,
+                340,
+                339,
+                397,
+                337,
+                338,
+                395,
+                396,
+                394,
+                336
+              ],
+              "stage_id": 173,
+              "tasks": 5
+            },
+            {
+              "completed": true,
+              "execution": "92",
+              "expected": 4,
+              "failed": 0,
+              "group": "gold.audience_daily",
+              "rdd_ids": [
+                400,
+                399
+              ],
+              "stage_id": 175,
+              "tasks": 4
+            }
+          ],
+          "task_output_rows": {
+            "cache": 26557961,
+            "join": 0,
+            "source": 0
+          }
+        },
+        "gold.campaign_daily": {
+          "execution_id": "81",
+          "joins": [
+            {
+              "description": "BroadcastHashJoin [user_id#5063L], [user_id#5079L], LeftOuter, BuildRight, false",
+              "key": "user_id",
+              "operator": "BroadcastHashJoin"
+            },
+            {
+              "description": "BroadcastHashJoin [adgroup_id#5065L], [adgroup_id#5072L], LeftOuter, BuildRight, false",
+              "key": "adgroup_id",
+              "operator": "BroadcastHashJoin"
+            }
+          ],
+          "stages": [
+            {
+              "completed": true,
+              "execution": "81",
+              "expected": 4,
+              "failed": 0,
+              "group": "gold.campaign_daily",
+              "rdd_ids": [
+                334,
+                332,
+                329,
+                331
+              ],
+              "stage_id": 150,
+              "tasks": 4
+            },
+            {
+              "completed": true,
+              "execution": "81",
+              "expected": 4,
+              "failed": 0,
+              "group": "gold.campaign_daily",
+              "rdd_ids": [
+                335,
+                330,
+                333,
+                328
+              ],
+              "stage_id": 151,
+              "tasks": 4
+            },
+            {
+              "completed": true,
+              "execution": "81",
+              "expected": 5,
+              "failed": 0,
+              "group": "gold.campaign_daily",
+              "rdd_ids": [
+                340,
+                339,
+                337,
+                338,
+                336
+              ],
+              "stage_id": 152,
+              "tasks": 5
+            },
+            {
+              "completed": true,
+              "execution": "81",
+              "expected": 5,
+              "failed": 0,
+              "group": "gold.campaign_daily",
+              "rdd_ids": [
+                345,
+                340,
+                339,
+                342,
+                337,
+                338,
+                343,
+                336,
+                341,
+                344
+              ],
+              "stage_id": 153,
+              "tasks": 5
+            },
+            {
+              "completed": true,
+              "execution": "81",
+              "expected": 4,
+              "failed": 0,
+              "group": "gold.campaign_daily",
+              "rdd_ids": [
+                347,
+                346
+              ],
+              "stage_id": 155,
+              "tasks": 4
+            }
+          ],
+          "task_output_rows": {
+            "cache": 26557961,
+            "join": 53115922,
+            "source": 28466540
+          }
+        }
+      },
+      "snapshots": {
+        "after_audience": {
+          "cached_partitions": 5,
+          "disk_bytes": 142723458,
+          "memory_bytes": 570528808,
+          "rdd_id": 340,
+          "registered": true,
+          "storage_info_present": true,
+          "storage_level": {
+            "deserialized": true,
+            "replication": 1,
+            "use_disk": true,
+            "use_memory": true
+          },
+          "total_partitions": 5
+        },
+        "after_campaign": {
+          "cached_partitions": 5,
+          "disk_bytes": 6860306,
+          "memory_bytes": 772217368,
+          "rdd_id": 340,
+          "registered": true,
+          "storage_info_present": true,
+          "storage_level": {
+            "deserialized": true,
+            "replication": 1,
+            "use_disk": true,
+            "use_memory": true
+          },
+          "total_partitions": 5
+        },
+        "after_release": {
+          "cached_partitions": 0,
+          "disk_bytes": 0,
+          "memory_bytes": 0,
+          "rdd_id": 340,
+          "registered": false,
+          "storage_info_present": false,
+          "storage_level": {
+            "deserialized": false,
+            "replication": 1,
+            "use_disk": false,
+            "use_memory": false
+          },
+          "total_partitions": 0
+        },
+        "before_audience": {
+          "cached_partitions": 5,
+          "disk_bytes": 6860306,
+          "memory_bytes": 772217368,
+          "rdd_id": 340,
+          "registered": true,
+          "storage_info_present": true,
+          "storage_level": {
+            "deserialized": true,
+            "replication": 1,
+            "use_disk": true,
+            "use_memory": true
+          },
+          "total_partitions": 5
+        }
+      }
+    }
+  },
+  "status": "succeeded"
+}
