@@ -11,6 +11,7 @@ no measurable difference.
 | Comparison runner control | Baseline versus itself, no optimization | Passed: 15 tests, four full-data runs, 24 exact table comparisons | [Control results](comparison_control/README.md) |
 | 01 — CSV versus Parquet | Compare file formats with matching records and work | Planned; not implemented or measured | [Experiment](../experiments/01_csv_vs_parquet/README.md) |
 | 02 — Compression | Snappy versus ZSTD; same full pipeline and logical model | Complete: 31.85% smaller tables; no clear runtime gain; 16 tests and 40 exact comparisons passed | [Results](02_compression/README.md) |
+| 03 — Date partitioning | Partition Silver impressions by date; keep ZSTD; rebuild and filtered/full reads | In progress | [Experiment](../experiments/03_date_partitioning/README.md) |
 
 ## How to read comparisons
 
