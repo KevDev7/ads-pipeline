@@ -5,6 +5,52 @@ each version as a separate Python process. It runs our test suite first and stop
 on test failures, failed pipeline runs, incompatible inputs/settings, or unequal
 outputs. It does not change the implementation being measured.
 
+## One command per implemented iteration
+
+```bash
+# Compression: iteration 0 versus iteration 2
+bash scripts/test_iteration.sh 2
+
+# Date partitioning: iteration 2 versus iteration 3
+bash scripts/test_iteration.sh 3
+```
+
+Each command uses a fresh timestamped comparison ID and three runs per side.
+It runs the automated test suite, all full rebuilds, exact table comparisons,
+then date-query benchmarks for iteration 3, and actual file-codec checks. Steps
+run sequentially; codec inspection follows timed queries. Pipeline/query timing
+methods and implementations are unchanged.
+
+Open `outputs/comparisons/<id>/RESULTS.md` after completion. It links the pipeline
+report, raw samples, query measurements/plans where applicable, and codec checks.
+`suite.json` records overall and per-step status. Suite logs live beside that
+folder in `<id>-suite-logs/`; detailed comparison logs remain inside it. Failures
+stop subsequent steps and leave a clearly marked incomplete report. An existing
+ID is never overwritten; rerun with a fresh ID. There is no automatic resume.
+
+Optional arguments:
+
+```bash
+bash scripts/test_iteration.sh 3 --comparison-id my-partition-check \
+  --source-dir data/raw/taobao --repeats 3
+```
+
+For a lightweight smoke check, provide a tiny valid three-file source fixture
+and `--repeats 1`. For iteration 3, include dates in its fixed May 8–10 query
+window. This tests the workflow but does not establish performance.
+Full-data commands retain multiple complete outputs and can take several GB;
+`--output-dir` can direct them to another local drive. No data is downloaded or
+removed, and nothing is committed or published automatically.
+
+Iteration 1 is not implemented, so it is not a selectable preset. Adding a future
+experiment means declaring its reference, change, and applicable checks. The
+lower-level commands below remain available for custom investigations.
+
+**What remains manual:** deciding whether tradeoffs suit the workload, explaining
+unexpected behavior, and deeper inspection such as the historical layout and
+Gold join-plan analyses. The command collects reproducible evidence; it does not
+claim to detect every difference or automatically choose a winning version.
+
 ## Run a control comparison
 
 ```bash

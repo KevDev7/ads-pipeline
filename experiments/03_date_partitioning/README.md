@@ -45,6 +45,16 @@ with three observations per side, not a cold-storage or cluster benchmark.
 
 ## Run
 
+Run all applicable checks with one command:
+
+```bash
+bash scripts/test_iteration.sh 3
+```
+
+Open the generated `RESULTS.md` for pipeline, query (when applicable), and codec
+evidence. See [the comparison procedure](../../docs/comparisons.md). The individual
+commands below remain available.
+
 ```bash
 bash scripts/run_partitioning.sh
 bash scripts/compare.sh --left experiments/02_compression/run.py \

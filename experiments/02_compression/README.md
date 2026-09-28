@@ -29,6 +29,16 @@ requested codec was actually used. File-footer checks happen outside timed runs.
 
 ## Run
 
+Run all applicable checks with one command:
+
+```bash
+bash scripts/test_iteration.sh 2
+```
+
+Open the generated `RESULTS.md` for pipeline, query (when applicable), and codec
+evidence. See [the comparison procedure](../../docs/comparisons.md). The individual
+commands below remain available.
+
 ```bash
 bash scripts/run_compression.sh
 bash scripts/compare.sh --right experiments/02_compression/run.py \

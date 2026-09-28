@@ -104,3 +104,15 @@ impressions by date while keeping ZSTD. Its [results](results/03_date_partitioni
 show faster measured date-filtered reads, **7.99% slower rebuilds**, and **14.86%
 smaller output tables** relative to iteration 2. All 40 exact table comparisons
 and 18 query executions matched. It is preserved as `iteration-03-date-partitioning`.
+
+## Repeat an experiment with one command
+
+```bash
+bash scripts/test_iteration.sh 2  # Compression
+bash scripts/test_iteration.sh 3  # Date partitioning, including query tests
+```
+
+These run the test suite, repeated rebuilds, exact equality checks, applicable
+query workloads, and actual compression checks. Open the generated `RESULTS.md`
+under `outputs/comparisons/<id>/` for all evidence. Each run gets a fresh ID;
+large outputs remain local. See [options and limitations](docs/comparisons.md#one-command-per-implemented-iteration).
