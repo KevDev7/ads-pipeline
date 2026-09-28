@@ -69,3 +69,12 @@ bash scripts/compare.sh --comparison-id another-baseline-control --repeats 2 \
 See the [comparison procedure](../../docs/comparisons.md) for the experiment
 interface and measurement limits. This control does not implement CSV-versus-Parquet
 or any other optimization iteration.
+
+## Local output retention update
+
+With user approval, the generated Bronze/Silver/Gold tables for the four control
+runs were removed to make room for iteration 6 (3,702,874,996 bytes). Their
+reports, plans, and event/process logs remain, as do the original baseline run,
+source files, and all project versions. The local `table-cleanup.json` records
+the removed paths. Rerun the command above to regenerate control tables; the
+historical evidence in this directory is unchanged.

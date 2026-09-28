@@ -9,6 +9,15 @@ import sys
 REPO = Path(__file__).resolve().parents[1]
 EXPERIMENTS = {
     '1': {'name': 'CSV versus uncompressed Parquet'},
+    '6': {
+        'name': 'Initial shuffle partitions: 200 versus 32',
+        'left': 'experiments/02_compression/run.py',
+        'right': 'experiments/06_shuffle_partitions/run.py',
+        'change': 'Set spark.sql.shuffle.partitions from 200 to 32; keep AQE, automatic joins and ZSTD unchanged',
+        'changed_settings': ['spark.sql.shuffle.partitions'],
+        'queries': False,
+        'shuffle_evidence': True,
+    },
     '5': {
         'name': 'Profile broadcast versus sort-merge join',
         'left': 'experiments/02_compression/run.py',
@@ -66,6 +75,8 @@ def commands(iteration, source, output, comparison_id, repeats):
     if 'join_target' in spec:
         steps.append(('joins', [sys.executable, '-m', 'benchmarks.join_strategies', str(root),
                                 '--target', spec['join_target']]))
+    if spec.get('shuffle_evidence'):
+        steps.append(('shuffle', [sys.executable, '-m', 'benchmarks.shuffle_partitions', str(root)]))
     # Codec inspection is deliberately after the timed query workloads.
     steps.append(('codecs', [sys.executable, '-m', 'benchmarks.storage_codecs', str(root)]))
     return steps
@@ -96,6 +107,7 @@ def report(root, state):
         ('query-comparison.json', 'Every query result, timing, executed scan metric, and task counter'),
         ('join-strategies.json', 'Executed ads and user-profile join strategies'),
         ('codecs.json', 'Actual Parquet file compression checks'),
+        ('shuffle-partitions.json', 'Initial shuffle partitions, AQE plans, actual stages/tasks and unchanged joins'),
     ]:
         if (root / filename).exists():
             lines.append(f'- [{label}]({filename})')
@@ -154,7 +166,7 @@ def run(iteration, source, output, comparison_id, repeats):
             print(f'Running {name}; log: {logs / (name + ".log")}', flush=True)
             with (logs / f'{name}.log').open('w') as log:
                 subprocess.run(command, cwd=REPO, stdout=log, stderr=subprocess.STDOUT, check=True)
-            artifact = {'formats': 'format-comparison.json', 'pipeline': 'comparison.json', 'joins': 'join-strategies.json', 'queries': 'query-comparison.json', 'codecs': 'codecs.json'}[name]
+            artifact = {'formats': 'format-comparison.json', 'pipeline': 'comparison.json', 'joins': 'join-strategies.json', 'shuffle': 'shuffle-partitions.json', 'queries': 'query-comparison.json', 'codecs': 'codecs.json'}[name]
             evidence = json.loads((root / artifact).read_text())
             if name != 'codecs' and evidence.get('status') != 'succeeded':
                 raise ValueError(f'{name} did not report success')
@@ -177,7 +189,7 @@ def run(iteration, source, output, comparison_id, repeats):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('iteration', choices=EXPERIMENTS, help='Implemented experiment: 1, 2, 3, 4, or 5')
+    parser.add_argument('iteration', choices=EXPERIMENTS, help='Implemented experiment: 1, 2, 3, 4, 5, or 6')
     parser.add_argument('--source-dir', type=Path, default=REPO / 'data/raw/taobao')
     parser.add_argument('--output-dir', type=Path, default=REPO / 'outputs/comparisons')
     parser.add_argument('--comparison-id', default=datetime.now(timezone.utc).strftime('suite-%Y%m%dT%H%M%S%fZ'))

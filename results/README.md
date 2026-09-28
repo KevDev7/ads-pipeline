@@ -14,6 +14,7 @@ no measurable difference.
 | 03 — Date partitioning | Partition Silver impressions by date; keep ZSTD; rebuild and filtered/full reads | Complete: faster measured date-filtered reads; 7.99% slower rebuild; 14.86% smaller tables | [Results](03_date_partitioning/README.md) |
 | 04 — Ads join | Iteration 2 versus ads sort-merge join; profile join unchanged | Complete: Gold median 7.947 → 14.871 s, 5.02× shuffle writes; 24 exact comparisons passed; two repeats per side | [Results](04_ads_shuffle_join/README.md) |
 | 05 — Profile join | Iteration 2 versus profile sort-merge join; ads join unchanged | Complete with failure history: Gold median 6.591 → 17.302 s; processing +33.05%; one earlier memory failure; fresh series passed 40 exact comparisons | [Results](05_profile_shuffle_join/README.md) |
+| 06 — Shuffle partitions | Iteration 2 versus 32 initial SQL shuffle partitions; AQE unchanged | Implementation and tests in progress | [Experiment](../experiments/06_shuffle_partitions/README.md) |
 
 ## Reproduce an experiment
 
@@ -21,7 +22,8 @@ Run `bash scripts/test_iteration.sh 1` for CSV versus Parquet,
 `bash scripts/test_iteration.sh 2` for compression, or
 `bash scripts/test_iteration.sh 3` for date partitioning, or
 `bash scripts/test_iteration.sh 4` for the ads join, or
-`bash scripts/test_iteration.sh 5` for the profile join. Each creates a fresh
+`bash scripts/test_iteration.sh 5` for the profile join, or
+`bash scripts/test_iteration.sh 6` for initial shuffle partitions. Each creates a fresh
 comparison and a `RESULTS.md` linking all applicable automated checks. See
 [the command options and manual interpretation boundary](../docs/comparisons.md#one-command-per-implemented-iteration).
 

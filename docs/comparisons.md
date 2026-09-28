@@ -22,10 +22,13 @@ bash scripts/test_iteration.sh 4
 
 # Profile join: iteration 2 versus iteration 5
 bash scripts/test_iteration.sh 5
+
+# Initial shuffle partitions: iteration 2 versus iteration 6
+bash scripts/test_iteration.sh 6
 ```
 
 Each command uses a fresh timestamped comparison ID and three runs per side.
-All commands run the automated test suite first. Iterations 2–5 run full
+All commands run the automated test suite first. Iterations 2–6 run full
 rebuilds and exact table comparisons, followed by date-query benchmarks for
 iteration 3, executed join-strategy checks for iterations 4 and 5, and actual file-codec checks. Iteration 1 instead prepares one
 Parquet copy and compares repeated reads with CSV, then verifies records/codecs. Steps
@@ -173,3 +176,13 @@ profiles; iteration 5 must use broadcast for ads and sort-merge for profiles.
 The suite passes the explicit `--target ads` or `--target profiles` to the check. Missing evidence or an unintended join change fails
 the suite. This is stronger than inspecting the hint or an initial `explain()`.
 The result is `join-strategies.json`, plus sanitized runtime plans.
+
+## Shuffle partition evidence
+
+Iteration 6 automatically runs `benchmarks.shuffle_partitions` after exact
+equality. It verifies the initial Gold hash partition counts (200 versus 32),
+unchanged broadcast left outer joins, and successful SQL/stage completion.
+It reports actual reader task counts and AQE coalescing without assuming they
+equal the configured value. Stage SQL execution IDs exclude unrelated Delta
+metadata work from this Gold aggregation evidence. The output is
+`shuffle-partitions.json` plus sanitized plans under `shuffle-plans/`.

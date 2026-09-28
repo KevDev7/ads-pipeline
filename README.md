@@ -114,11 +114,12 @@ bash scripts/test_iteration.sh 2  # Compression
 bash scripts/test_iteration.sh 3  # Date partitioning
 bash scripts/test_iteration.sh 4  # Ads broadcast versus sort-merge join, including executed-plan checks
 bash scripts/test_iteration.sh 5  # Profile broadcast versus sort-merge join, ads unchanged
+bash scripts/test_iteration.sh 6  # Initial shuffle partitions: 200 versus 32, AQE unchanged
 ```
 
 These run the test suite, the iteration’s repeated workloads, exact equality
 checks, and actual compression checks. Iteration 1 measures format conversion
-and reads; iterations 2–5 also compare full rebuilds. Open the generated `RESULTS.md`
+and reads; iterations 2–6 also compare full rebuilds. Open the generated `RESULTS.md`
 under `outputs/comparisons/<id>/` for all evidence. Each run gets a fresh ID;
 large outputs remain local. See [options and limitations](docs/comparisons.md#one-command-per-implemented-iteration).
 
@@ -148,3 +149,8 @@ comparison. An earlier attempt failed with a Spark memory-allocation error under
 the same 2 GiB heap; that failure is preserved alongside the successful results.
 All 40 exact comparisons in the fresh series passed. Automatic broadcasting
 remains the preferred reference. Tag: `iteration-05-profile-shuffle-join`.
+
+[Iteration 6](experiments/06_shuffle_partitions/README.md) changes only
+`spark.sql.shuffle.partitions` from 200 to 32, starting from iteration 2. Its
+checks distinguish initial partitions from actual reading tasks after AQE and
+verify that both joins remain broadcast.
