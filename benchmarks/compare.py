@@ -52,7 +52,7 @@ def verify_outputs(root: Path, runs: list, result: dict):
 
 def run_comparison(left: Path, right: Path, source: Path, output: Path,
                    comparison_id: str, repeats: int, change: str, workload: str,
-                   changed_settings=()) -> dict:
+                   changed_settings=(), observe_coalescing=False) -> dict:
     if repeats < 1:
         raise ValueError('repeats must be positive')
     if Path(comparison_id).name != comparison_id or comparison_id in ('', '.', '..'):
@@ -85,7 +85,9 @@ def run_comparison(left: Path, right: Path, source: Path, output: Path,
                 entry = left if side == 'left' else right
                 run_id = f'{repetition:02d}-{side}'
                 print(f'Running {run_id}: {entry.name}', flush=True)
-                command([sys.executable, str(entry), '--source-dir', str(source),
+                launcher = ([sys.executable, '-m', 'benchmarks.observed_run', '--entry', str(entry)]
+                            if observe_coalescing else [sys.executable, str(entry)])
+                command(launcher + ['--source-dir', str(source),
                          '--output-dir', str(root / 'runs'), '--run-id', run_id],
                         root / 'logs' / f'{run_id}.log')
                 report = json.loads((root / 'runs' / run_id / 'report.json').read_text())
@@ -128,9 +130,10 @@ def main():
     parser.add_argument('--change', required=True, help='Describe the one deliberate change (or the A/A control)')
     parser.add_argument('--workload', default='Full three-source Bronze/Silver/Gold rebuild')
     parser.add_argument('--changed-setting', action='append', default=[], help='A Spark SQL setting intentionally varied by this experiment')
+    parser.add_argument('--observe-coalescing', action='store_true', help='Read effective AQE settings without modifying the experiment')
     args = parser.parse_args()
     run_comparison(args.left, args.right, args.source_dir, args.output_dir,
-                   args.comparison_id, args.repeats, args.change, args.workload, args.changed_setting)
+                   args.comparison_id, args.repeats, args.change, args.workload, args.changed_setting, args.observe_coalescing)
 
 
 if __name__ == '__main__':

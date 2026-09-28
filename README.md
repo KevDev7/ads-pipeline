@@ -4,7 +4,7 @@ A learning project for Apache Spark using Python (PySpark), SQL, and the Taobao 
 
 The project includes a preserved **untuned baseline**, **iteration 2: ZSTD
 compression**, **iteration 3: date partitioning**, **iteration 4: ads joins**,
-**iteration 5: profile joins**, **iteration 6: shuffle partitions**, and **iteration 7: cached enrichment**. Each runs full batch
+**iteration 5: profile joins**, **iteration 6: shuffle partitions**, **iteration 7: cached enrichment**, and **iteration 8: shuffle coalescing**. Each runs full batch
 rebuilds with correctness checks and runtime/storage measurements, locally
 without cloud services. Iteration 1 provides a separate CSV-versus-Parquet read-workload experiment.
 

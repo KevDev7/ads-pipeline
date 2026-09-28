@@ -196,3 +196,18 @@ live storage snapshots and SQL/stage task metrics. See
 [the runnable version](../experiments/07_cached_enrichment/README.md).
 Compare combined Gold time **including `gold.cache_release`**. Cache snapshot
 memory/disk bytes are separate from shuffle spill, stored tables, and peak RAM.
+
+### Iteration 8: automatic shuffle-partition coalescing
+
+`bash scripts/test_iteration.sh 8` compares iteration 2 against iteration 8,
+disabling only `spark.sql.adaptive.coalescePartitions.enabled`. Both processes
+use `benchmarks.observed_run` to read additional effective SQL settings without
+modifying the preserved earlier pipeline. Standalone iteration 8 records the
+same settings. The comparison declares exactly that one permitted difference.
+
+`coalescing-evidence.json` links successful Gold SQL plans to actual stage/task
+execution, observes join strategies and reader counts, and records per-table
+file-size distributions. Other Gold stages are reported separately from joined
+report SQL. The session-wide switch may also affect validation/metadata work;
+these costs must not be attributed solely to the Gold aggregation readers.
+Maintain at least 7 GiB free before starting the full-data benchmark.

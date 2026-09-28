@@ -1,0 +1,22 @@
+{
+  "comparison_id": "fixture-smoke",
+  "finished_at": "2026-09-28T17:39:17.047400+00:00",
+  "iteration": "8",
+  "repeats": 1,
+  "started_at": "2026-09-28T17:33:04.243049+00:00",
+  "status": "succeeded",
+  "steps": {
+    "coalescing": {
+      "log": "fixture-smoke-suite-logs/coalescing.log",
+      "status": "succeeded"
+    },
+    "codecs": {
+      "log": "fixture-smoke-suite-logs/codecs.log",
+      "status": "succeeded"
+    },
+    "pipeline": {
+      "log": "fixture-smoke-suite-logs/pipeline.log",
+      "status": "succeeded"
+    }
+  }
+}

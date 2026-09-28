@@ -1,0 +1,11 @@
+{
+  "candidate_directories": 18,
+  "candidate_generated_table_bytes": 3503948949,
+  "checked_at": "2026-09-28T17:40:26.021260+00:00",
+  "cleanup_approval": "pending",
+  "cleanup_candidate": "outputs/comparisons/partitioning-03-20260927",
+  "deleted_directories": [],
+  "free_bytes": 4136960000,
+  "full_benchmark_status": "not_started_insufficient_space",
+  "minimum_free_bytes": 7516192768
+}

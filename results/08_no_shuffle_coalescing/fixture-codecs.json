@@ -1,0 +1,192 @@
+{
+  "comparison_id": "fixture-smoke",
+  "method": "Read every Parquet data-file footer and every column chunk; no pipeline timing included.",
+  "runs": {
+    "01-left": {
+      "expected_codec": "zstd",
+      "tables": {
+        "bronze/ads": {
+          "bytes": 2274,
+          "codecs": [
+            "ZSTD"
+          ],
+          "column_chunks": 7,
+          "files": 1,
+          "matches_expected": true,
+          "row_groups": 1,
+          "rows": 2
+        },
+        "bronze/impressions": {
+          "bytes": 2436,
+          "codecs": [
+            "ZSTD"
+          ],
+          "column_chunks": 7,
+          "files": 1,
+          "matches_expected": true,
+          "row_groups": 1,
+          "rows": 5
+        },
+        "bronze/user_profiles": {
+          "bytes": 3221,
+          "codecs": [
+            "ZSTD"
+          ],
+          "column_chunks": 10,
+          "files": 1,
+          "matches_expected": true,
+          "row_groups": 1,
+          "rows": 2
+        },
+        "gold/audience_daily": {
+          "bytes": 2629,
+          "codecs": [
+            "ZSTD"
+          ],
+          "column_chunks": 7,
+          "files": 1,
+          "matches_expected": true,
+          "row_groups": 1,
+          "rows": 4
+        },
+        "gold/campaign_daily": {
+          "bytes": 2665,
+          "codecs": [
+            "ZSTD"
+          ],
+          "column_chunks": 7,
+          "files": 1,
+          "matches_expected": true,
+          "row_groups": 1,
+          "rows": 3
+        },
+        "silver/ads": {
+          "bytes": 2485,
+          "codecs": [
+            "ZSTD"
+          ],
+          "column_chunks": 7,
+          "files": 1,
+          "matches_expected": true,
+          "row_groups": 1,
+          "rows": 2
+        },
+        "silver/impressions": {
+          "bytes": 3251,
+          "codecs": [
+            "ZSTD"
+          ],
+          "column_chunks": 9,
+          "files": 1,
+          "matches_expected": true,
+          "row_groups": 1,
+          "rows": 5
+        },
+        "silver/user_profiles": {
+          "bytes": 3331,
+          "codecs": [
+            "ZSTD"
+          ],
+          "column_chunks": 10,
+          "files": 1,
+          "matches_expected": true,
+          "row_groups": 1,
+          "rows": 2
+        }
+      }
+    },
+    "01-right": {
+      "expected_codec": "zstd",
+      "tables": {
+        "bronze/ads": {
+          "bytes": 2274,
+          "codecs": [
+            "ZSTD"
+          ],
+          "column_chunks": 7,
+          "files": 1,
+          "matches_expected": true,
+          "row_groups": 1,
+          "rows": 2
+        },
+        "bronze/impressions": {
+          "bytes": 2436,
+          "codecs": [
+            "ZSTD"
+          ],
+          "column_chunks": 7,
+          "files": 1,
+          "matches_expected": true,
+          "row_groups": 1,
+          "rows": 5
+        },
+        "bronze/user_profiles": {
+          "bytes": 3221,
+          "codecs": [
+            "ZSTD"
+          ],
+          "column_chunks": 10,
+          "files": 1,
+          "matches_expected": true,
+          "row_groups": 1,
+          "rows": 2
+        },
+        "gold/audience_daily": {
+          "bytes": 9934,
+          "codecs": [
+            "ZSTD"
+          ],
+          "column_chunks": 28,
+          "files": 5,
+          "matches_expected": true,
+          "row_groups": 4,
+          "rows": 4
+        },
+        "gold/campaign_daily": {
+          "bytes": 7788,
+          "codecs": [
+            "ZSTD"
+          ],
+          "column_chunks": 21,
+          "files": 4,
+          "matches_expected": true,
+          "row_groups": 3,
+          "rows": 3
+        },
+        "silver/ads": {
+          "bytes": 2485,
+          "codecs": [
+            "ZSTD"
+          ],
+          "column_chunks": 7,
+          "files": 1,
+          "matches_expected": true,
+          "row_groups": 1,
+          "rows": 2
+        },
+        "silver/impressions": {
+          "bytes": 3251,
+          "codecs": [
+            "ZSTD"
+          ],
+          "column_chunks": 9,
+          "files": 1,
+          "matches_expected": true,
+          "row_groups": 1,
+          "rows": 5
+        },
+        "silver/user_profiles": {
+          "bytes": 3331,
+          "codecs": [
+            "ZSTD"
+          ],
+          "column_chunks": 10,
+          "files": 1,
+          "matches_expected": true,
+          "row_groups": 1,
+          "rows": 2
+        }
+      }
+    }
+  }
+}

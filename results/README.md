@@ -18,6 +18,8 @@ no measurable difference.
 
 | 07 — Cached enrichment | Iteration 2 versus persisting full enrichment for both reports | Complete: reuse verified, Gold +132.45%, processing +22.32%; keep iteration 2; 40 exact comparisons passed | [Results](07_cached_enrichment/README.md) |
 
+| 08 — Shuffle coalescing | Iteration 2 versus disabling automatic shuffle-partition combining | Implementation verified: 32 tests and fixture workflow passed; full-data benchmark paused for storage | [Status and fixture evidence](08_no_shuffle_coalescing/README.md) |
+
 ## Reproduce an experiment
 
 Run `bash scripts/test_iteration.sh 1` for CSV versus Parquet,
@@ -26,7 +28,8 @@ Run `bash scripts/test_iteration.sh 1` for CSV versus Parquet,
 `bash scripts/test_iteration.sh 4` for the ads join, or
 `bash scripts/test_iteration.sh 5` for the profile join, or
 `bash scripts/test_iteration.sh 6` for initial shuffle partitions, or
-`bash scripts/test_iteration.sh 7` for cached enrichment. Each creates a fresh
+`bash scripts/test_iteration.sh 7` for cached enrichment, or
+`bash scripts/test_iteration.sh 8` for shuffle coalescing. Each creates a fresh
 comparison and a `RESULTS.md` linking all applicable automated checks. See
 [the command options and manual interpretation boundary](../docs/comparisons.md#one-command-per-implemented-iteration).
 
