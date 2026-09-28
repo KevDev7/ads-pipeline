@@ -11,6 +11,9 @@ from benchmarks.experiment import commands, run
 
 class ExperimentRunnerTests(unittest.TestCase):
     def test_presets_choose_reference_and_only_applicable_checks(self):
+        formats = commands('1', Path('data'), Path('out'), 'test', 3)
+        self.assertEqual([name for name, _ in formats], ['formats'])
+        self.assertIn('--repeats', formats[0][1])
         compression = commands('2', Path('data'), Path('out'), 'test', 3)
         partitioning = commands('3', Path('data'), Path('out'), 'test', 3)
         self.assertEqual([name for name, _ in compression], ['pipeline', 'codecs'])

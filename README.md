@@ -5,7 +5,7 @@ A learning project for Apache Spark using Python (PySpark), SQL, and the Taobao 
 The project includes a preserved **untuned baseline**, **iteration 2: ZSTD
 compression**, and **iteration 3: date partitioning**. Each runs full batch
 rebuilds with correctness checks and runtime/storage measurements, locally
-without cloud services. Iteration 1 (CSV versus Parquet) is planned.
+without cloud services. Iteration 1 provides a separate CSV-versus-Parquet read-workload experiment.
 
 ```text
 Three CSV files → Bronze Delta → Silver Delta → Gold Delta reports
@@ -96,8 +96,8 @@ tests Snappy versus ZSTD compression. Its [completed results](results/02_compres
 show **31.85% smaller tables**, with no clear processing-speed improvement across
 three runs per version. All 40 exact table comparisons passed. The snapshot and
 results are tagged `iteration-02-compression`. [Iteration 1: CSV versus Parquet](experiments/01_csv_vs_parquet/README.md)
-is planned and has not yet been implemented. The numbering follows the learning
-sequence; compression was completed first.
+compares the same typed impressions and read queries in uncompressed formats.
+The numbering follows the learning sequence; compression was completed first.
 
 [Iteration 3](experiments/03_date_partitioning/README.md) partitions Silver
 impressions by date while keeping ZSTD. Its [results](results/03_date_partitioning/README.md)
@@ -108,11 +108,13 @@ and 18 query executions matched. It is preserved as `iteration-03-date-partition
 ## Repeat an experiment with one command
 
 ```bash
+bash scripts/test_iteration.sh 1  # CSV versus Parquet
 bash scripts/test_iteration.sh 2  # Compression
 bash scripts/test_iteration.sh 3  # Date partitioning, including query tests
 ```
 
-These run the test suite, repeated rebuilds, exact equality checks, applicable
-query workloads, and actual compression checks. Open the generated `RESULTS.md`
+These run the test suite, the iteration’s repeated workloads, exact equality
+checks, and actual compression checks. Iteration 1 measures format conversion
+and reads; iterations 2 and 3 also compare full rebuilds. Open the generated `RESULTS.md`
 under `outputs/comparisons/<id>/` for all evidence. Each run gets a fresh ID;
 large outputs remain local. See [options and limitations](docs/comparisons.md#one-command-per-implemented-iteration).

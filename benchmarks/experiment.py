@@ -8,6 +8,7 @@ import sys
 
 REPO = Path(__file__).resolve().parents[1]
 EXPERIMENTS = {
+    '1': {'name': 'CSV versus uncompressed Parquet'},
     '2': {
         'name': 'Snappy versus ZSTD compression',
         'left': 'experiments/00_baseline/run.py',
@@ -30,6 +31,9 @@ EXPERIMENTS = {
 def commands(iteration, source, output, comparison_id, repeats):
     spec = EXPERIMENTS[iteration]
     root = output / comparison_id
+    if iteration == '1':
+        return [('formats', [sys.executable, str(REPO / 'experiments/01_csv_vs_parquet/run.py'),
+                             '--source-dir', str(source), '--root', str(root), '--repeats', str(repeats)])]
     pipeline = [sys.executable, '-m', 'benchmarks.compare',
                 '--left', spec['left'], '--right', spec['right'],
                 '--source-dir', str(source), '--output-dir', str(output),
@@ -64,7 +68,9 @@ def report(root, state):
                   'This suite is incomplete; do not treat it as a successful experiment.']
     lines += ['', '## Evidence', '']
     for filename, label in [
-        ('README.md', 'Pipeline times, storage, shuffle/spill, and equality summary'),
+        ('README.md', 'Format conversion, read timings, and correctness summary' if state['iteration'] == '1'
+         else 'Pipeline times, storage, shuffle/spill, and equality summary'),
+        ('format-comparison.json', 'CSV/Parquet preparation, every query sample, and exact record verification'),
         ('comparison.json', 'Every pipeline sample and exact table comparison'),
         ('query-comparison.json', 'Every query result, timing, executed scan metric, and task counter'),
         ('codecs.json', 'Actual Parquet file compression checks'),
@@ -126,7 +132,7 @@ def run(iteration, source, output, comparison_id, repeats):
             print(f'Running {name}; log: {logs / (name + ".log")}', flush=True)
             with (logs / f'{name}.log').open('w') as log:
                 subprocess.run(command, cwd=REPO, stdout=log, stderr=subprocess.STDOUT, check=True)
-            artifact = {'pipeline': 'comparison.json', 'queries': 'query-comparison.json', 'codecs': 'codecs.json'}[name]
+            artifact = {'formats': 'format-comparison.json', 'pipeline': 'comparison.json', 'queries': 'query-comparison.json', 'codecs': 'codecs.json'}[name]
             evidence = json.loads((root / artifact).read_text())
             if name != 'codecs' and evidence.get('status') != 'succeeded':
                 raise ValueError(f'{name} did not report success')
@@ -149,7 +155,7 @@ def run(iteration, source, output, comparison_id, repeats):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('iteration', choices=EXPERIMENTS, help='Implemented experiment: 2 or 3')
+    parser.add_argument('iteration', choices=EXPERIMENTS, help='Implemented experiment: 1, 2, or 3')
     parser.add_argument('--source-dir', type=Path, default=REPO / 'data/raw/taobao')
     parser.add_argument('--output-dir', type=Path, default=REPO / 'outputs/comparisons')
     parser.add_argument('--comparison-id', default=datetime.now(timezone.utc).strftime('suite-%Y%m%dT%H%M%S%fZ'))

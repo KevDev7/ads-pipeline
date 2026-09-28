@@ -8,6 +8,9 @@ outputs. It does not change the implementation being measured.
 ## One command per implemented iteration
 
 ```bash
+# Same typed impressions: CSV versus uncompressed Parquet
+bash scripts/test_iteration.sh 1
+
 # Compression: iteration 0 versus iteration 2
 bash scripts/test_iteration.sh 2
 
@@ -16,8 +19,10 @@ bash scripts/test_iteration.sh 3
 ```
 
 Each command uses a fresh timestamped comparison ID and three runs per side.
-It runs the automated test suite, all full rebuilds, exact table comparisons,
-then date-query benchmarks for iteration 3, and actual file-codec checks. Steps
+All commands run the automated test suite first. Iterations 2 and 3 run full
+rebuilds and exact table comparisons, followed by date-query benchmarks for
+iteration 3 and actual file-codec checks. Iteration 1 instead prepares one
+Parquet copy and compares repeated reads with CSV, then verifies records/codecs. Steps
 run sequentially; codec inspection follows timed queries. Pipeline/query timing
 methods and implementations are unchanged.
 
@@ -42,7 +47,9 @@ Full-data commands retain multiple complete outputs and can take several GB;
 `--output-dir` can direct them to another local drive. No data is downloaded or
 removed, and nothing is committed or published automatically.
 
-Iteration 1 is not implemented, so it is not a selectable preset. Adding a future
+Iteration 1 uses a dedicated format comparison rather than full rebuilds: one
+conversion, repeated matching queries, complete record equality, and codec checks.
+It writes `format-comparison.json` and its own generated `README.md`. Adding a future
 experiment means declaring its reference, change, and applicable checks. The
 lower-level commands below remain available for custom investigations.
 
@@ -120,12 +127,11 @@ statistics, storage, and Spark task metrics are required. Writes must be complet
 before returning success. Extra timing phases are preserved in the raw reports;
 only metrics present in every run are summarized together.
 
-For a future CSV-versus-Parquet query lab, both adapters must execute the same
-queries and materialize their small query results in this common Delta comparison
-format **outside** the timed query action. They should report `seconds.workload`
-for query time and separate preparation/conversion/result-writing phases. Query
-task groups use the `workload.` prefix. That lab has not been implemented yet;
-this runner does not compare a CSV read query against a full lakehouse rebuild.
+Iteration 1 has a dedicated adapter for CSV/Parquet read workloads instead of the
+full-pipeline contract above. It stores the small query results in JSON outside
+timed actions, checks every result and the complete underlying typed records,
+and reports preparation separately. No CSV read is compared with a lakehouse
+rebuild. See [its explicit method](../experiments/01_csv_vs_parquet/README.md).
 
 ## Documentation and Git
 
