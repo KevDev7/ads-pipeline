@@ -73,3 +73,14 @@ time. Each pipeline's validation is measured separately and included in full-run
 time. All samples are retained; OS caches are not flushed. Local seconds/bytes
 are not cloud costs. The reference is rerun; historical measurements are used
 only to motivate the candidate, not as the performance denominator.
+
+## Recorded result
+
+[The completed comparison](../../results/06_shuffle_partitions/README.md) used
+three full-data runs per side. Gold median time decreased 6.71%, but overall
+pipeline timings overlap and the first pair favors the control. AQE changed the
+actual Gold reader count from four to five, despite fewer initial partitions.
+All 40 exact table comparisons and actual shuffle/join/codec checks passed.
+Keep iteration 2 as the general reference; iteration 6 is a modestly promising
+local setting rather than a demonstrated overall replacement.
+Tag: `iteration-06-shuffle-partitions`.

@@ -1,0 +1,1278 @@
+{
+  "method": "Latest runtime plan for each successful joined Gold SQL execution; stages matched by SQL execution ID, excluding Delta metadata SQL. Initial hash-partition counts are checked; actual reader tasks and AQE coalescing are observed, not prescribed. Both joins must remain broadcast left outer. Task counters are not unique physical disk reads.",
+  "runs": {
+    "01-left": {
+      "gold.audience_daily": {
+        "aqe_shuffle_reads": [
+          "AQEShuffleRead coalesced"
+        ],
+        "exchanges": [
+          {
+            "description": "Exchange hashpartitioning(reporting_date#5071, advertiser_id#5075L, age_level#5083, 200), ENSURE_REQUIREMENTS, [plan_id=3324]",
+            "initial_partitions": 200
+          }
+        ],
+        "execution_id": "98",
+        "joins": [
+          {
+            "description": "BroadcastHashJoin [user_id#5063L], [user_id#5079L], LeftOuter, BuildRight, false",
+            "key": "user_id",
+            "operator": "BroadcastHashJoin"
+          },
+          {
+            "description": "BroadcastHashJoin [adgroup_id#5065L], [adgroup_id#5072L], LeftOuter, BuildRight, false",
+            "key": "adgroup_id",
+            "operator": "BroadcastHashJoin"
+          }
+        ],
+        "matches_expected": true,
+        "shuffle_reader_stages": [
+          {
+            "attempt_id": 0,
+            "completed": true,
+            "disk_spill_bytes": 0,
+            "execution_id": "98",
+            "executor_cpu_ns": 3162339000,
+            "failed_task_attempts": 0,
+            "failure_reason": null,
+            "group": "gold.audience_daily",
+            "scheduled_tasks": 4,
+            "shuffle_read_bytes": 91609785,
+            "shuffle_write_bytes": 0,
+            "stage_id": 194,
+            "task_attempts": 4
+          }
+        ],
+        "sql_succeeded": true,
+        "stages": [
+          {
+            "attempt_id": 0,
+            "completed": true,
+            "disk_spill_bytes": 0,
+            "execution_id": "98",
+            "executor_cpu_ns": 576513000,
+            "failed_task_attempts": 0,
+            "failure_reason": null,
+            "group": "gold.audience_daily",
+            "scheduled_tasks": 4,
+            "shuffle_read_bytes": 0,
+            "shuffle_write_bytes": 0,
+            "stage_id": 190,
+            "task_attempts": 4
+          },
+          {
+            "attempt_id": 0,
+            "completed": true,
+            "disk_spill_bytes": 0,
+            "execution_id": "98",
+            "executor_cpu_ns": 334648000,
+            "failed_task_attempts": 0,
+            "failure_reason": null,
+            "group": "gold.audience_daily",
+            "scheduled_tasks": 4,
+            "shuffle_read_bytes": 0,
+            "shuffle_write_bytes": 0,
+            "stage_id": 191,
+            "task_attempts": 4
+          },
+          {
+            "attempt_id": 0,
+            "completed": true,
+            "disk_spill_bytes": 0,
+            "execution_id": "98",
+            "executor_cpu_ns": 7294951000,
+            "failed_task_attempts": 0,
+            "failure_reason": null,
+            "group": "gold.audience_daily",
+            "scheduled_tasks": 5,
+            "shuffle_read_bytes": 0,
+            "shuffle_write_bytes": 91609785,
+            "stage_id": 192,
+            "task_attempts": 5
+          },
+          {
+            "attempt_id": 0,
+            "completed": true,
+            "disk_spill_bytes": 0,
+            "execution_id": "98",
+            "executor_cpu_ns": 3162339000,
+            "failed_task_attempts": 0,
+            "failure_reason": null,
+            "group": "gold.audience_daily",
+            "scheduled_tasks": 4,
+            "shuffle_read_bytes": 91609785,
+            "shuffle_write_bytes": 0,
+            "stage_id": 194,
+            "task_attempts": 4
+          }
+        ]
+      },
+      "gold.campaign_daily": {
+        "aqe_shuffle_reads": [
+          "AQEShuffleRead coalesced"
+        ],
+        "exchanges": [
+          {
+            "description": "Exchange hashpartitioning(reporting_date#5071, campaign_id#5074L, advertiser_id#5075L, 200), ENSURE_REQUIREMENTS, [plan_id=2646]",
+            "initial_partitions": 200
+          }
+        ],
+        "execution_id": "81",
+        "joins": [
+          {
+            "description": "BroadcastHashJoin [user_id#5063L], [user_id#5079L], LeftOuter, BuildRight, false",
+            "key": "user_id",
+            "operator": "BroadcastHashJoin"
+          },
+          {
+            "description": "BroadcastHashJoin [adgroup_id#5065L], [adgroup_id#5072L], LeftOuter, BuildRight, false",
+            "key": "adgroup_id",
+            "operator": "BroadcastHashJoin"
+          }
+        ],
+        "matches_expected": true,
+        "shuffle_reader_stages": [
+          {
+            "attempt_id": 0,
+            "completed": true,
+            "disk_spill_bytes": 0,
+            "execution_id": "81",
+            "executor_cpu_ns": 2131017000,
+            "failed_task_attempts": 0,
+            "failure_reason": null,
+            "group": "gold.campaign_daily",
+            "scheduled_tasks": 4,
+            "shuffle_read_bytes": 47077324,
+            "shuffle_write_bytes": 0,
+            "stage_id": 160,
+            "task_attempts": 4
+          }
+        ],
+        "sql_succeeded": true,
+        "stages": [
+          {
+            "attempt_id": 0,
+            "completed": true,
+            "disk_spill_bytes": 0,
+            "execution_id": "81",
+            "executor_cpu_ns": 354964000,
+            "failed_task_attempts": 0,
+            "failure_reason": null,
+            "group": "gold.campaign_daily",
+            "scheduled_tasks": 4,
+            "shuffle_read_bytes": 0,
+            "shuffle_write_bytes": 0,
+            "stage_id": 156,
+            "task_attempts": 4
+          },
+          {
+            "attempt_id": 0,
+            "completed": true,
+            "disk_spill_bytes": 0,
+            "execution_id": "81",
+            "executor_cpu_ns": 136448000,
+            "failed_task_attempts": 0,
+            "failure_reason": null,
+            "group": "gold.campaign_daily",
+            "scheduled_tasks": 4,
+            "shuffle_read_bytes": 0,
+            "shuffle_write_bytes": 0,
+            "stage_id": 157,
+            "task_attempts": 4
+          },
+          {
+            "attempt_id": 0,
+            "completed": true,
+            "disk_spill_bytes": 0,
+            "execution_id": "81",
+            "executor_cpu_ns": 4302400000,
+            "failed_task_attempts": 0,
+            "failure_reason": null,
+            "group": "gold.campaign_daily",
+            "scheduled_tasks": 5,
+            "shuffle_read_bytes": 0,
+            "shuffle_write_bytes": 47077324,
+            "stage_id": 158,
+            "task_attempts": 5
+          },
+          {
+            "attempt_id": 0,
+            "completed": true,
+            "disk_spill_bytes": 0,
+            "execution_id": "81",
+            "executor_cpu_ns": 2131017000,
+            "failed_task_attempts": 0,
+            "failure_reason": null,
+            "group": "gold.campaign_daily",
+            "scheduled_tasks": 4,
+            "shuffle_read_bytes": 47077324,
+            "shuffle_write_bytes": 0,
+            "stage_id": 160,
+            "task_attempts": 4
+          }
+        ]
+      }
+    },
+    "01-right": {
+      "gold.audience_daily": {
+        "aqe_shuffle_reads": [
+          "AQEShuffleRead coalesced"
+        ],
+        "exchanges": [
+          {
+            "description": "Exchange hashpartitioning(reporting_date#5071, advertiser_id#5075L, age_level#5083, 32), ENSURE_REQUIREMENTS, [plan_id=3324]",
+            "initial_partitions": 32
+          }
+        ],
+        "execution_id": "98",
+        "joins": [
+          {
+            "description": "BroadcastHashJoin [user_id#5063L], [user_id#5079L], LeftOuter, BuildRight, false",
+            "key": "user_id",
+            "operator": "BroadcastHashJoin"
+          },
+          {
+            "description": "BroadcastHashJoin [adgroup_id#5065L], [adgroup_id#5072L], LeftOuter, BuildRight, false",
+            "key": "adgroup_id",
+            "operator": "BroadcastHashJoin"
+          }
+        ],
+        "matches_expected": true,
+        "shuffle_reader_stages": [
+          {
+            "attempt_id": 0,
+            "completed": true,
+            "disk_spill_bytes": 0,
+            "execution_id": "98",
+            "executor_cpu_ns": 3213012000,
+            "failed_task_attempts": 0,
+            "failure_reason": null,
+            "group": "gold.audience_daily",
+            "scheduled_tasks": 5,
+            "shuffle_read_bytes": 89125105,
+            "shuffle_write_bytes": 0,
+            "stage_id": 194,
+            "task_attempts": 5
+          }
+        ],
+        "sql_succeeded": true,
+        "stages": [
+          {
+            "attempt_id": 0,
+            "completed": true,
+            "disk_spill_bytes": 0,
+            "execution_id": "98",
+            "executor_cpu_ns": 137673000,
+            "failed_task_attempts": 0,
+            "failure_reason": null,
+            "group": "gold.audience_daily",
+            "scheduled_tasks": 4,
+            "shuffle_read_bytes": 0,
+            "shuffle_write_bytes": 0,
+            "stage_id": 190,
+            "task_attempts": 4
+          },
+          {
+            "attempt_id": 0,
+            "completed": true,
+            "disk_spill_bytes": 0,
+            "execution_id": "98",
+            "executor_cpu_ns": 114046000,
+            "failed_task_attempts": 0,
+            "failure_reason": null,
+            "group": "gold.audience_daily",
+            "scheduled_tasks": 4,
+            "shuffle_read_bytes": 0,
+            "shuffle_write_bytes": 0,
+            "stage_id": 191,
+            "task_attempts": 4
+          },
+          {
+            "attempt_id": 0,
+            "completed": true,
+            "disk_spill_bytes": 0,
+            "execution_id": "98",
+            "executor_cpu_ns": 8334015000,
+            "failed_task_attempts": 0,
+            "failure_reason": null,
+            "group": "gold.audience_daily",
+            "scheduled_tasks": 5,
+            "shuffle_read_bytes": 0,
+            "shuffle_write_bytes": 89125105,
+            "stage_id": 192,
+            "task_attempts": 5
+          },
+          {
+            "attempt_id": 0,
+            "completed": true,
+            "disk_spill_bytes": 0,
+            "execution_id": "98",
+            "executor_cpu_ns": 3213012000,
+            "failed_task_attempts": 0,
+            "failure_reason": null,
+            "group": "gold.audience_daily",
+            "scheduled_tasks": 5,
+            "shuffle_read_bytes": 89125105,
+            "shuffle_write_bytes": 0,
+            "stage_id": 194,
+            "task_attempts": 5
+          }
+        ]
+      },
+      "gold.campaign_daily": {
+        "aqe_shuffle_reads": [
+          "AQEShuffleRead coalesced"
+        ],
+        "exchanges": [
+          {
+            "description": "Exchange hashpartitioning(reporting_date#5071, campaign_id#5074L, advertiser_id#5075L, 32), ENSURE_REQUIREMENTS, [plan_id=2646]",
+            "initial_partitions": 32
+          }
+        ],
+        "execution_id": "81",
+        "joins": [
+          {
+            "description": "BroadcastHashJoin [user_id#5063L], [user_id#5079L], LeftOuter, BuildRight, false",
+            "key": "user_id",
+            "operator": "BroadcastHashJoin"
+          },
+          {
+            "description": "BroadcastHashJoin [adgroup_id#5065L], [adgroup_id#5072L], LeftOuter, BuildRight, false",
+            "key": "adgroup_id",
+            "operator": "BroadcastHashJoin"
+          }
+        ],
+        "matches_expected": true,
+        "shuffle_reader_stages": [
+          {
+            "attempt_id": 0,
+            "completed": true,
+            "disk_spill_bytes": 0,
+            "execution_id": "81",
+            "executor_cpu_ns": 2095121000,
+            "failed_task_attempts": 0,
+            "failure_reason": null,
+            "group": "gold.campaign_daily",
+            "scheduled_tasks": 5,
+            "shuffle_read_bytes": 46059734,
+            "shuffle_write_bytes": 0,
+            "stage_id": 160,
+            "task_attempts": 5
+          }
+        ],
+        "sql_succeeded": true,
+        "stages": [
+          {
+            "attempt_id": 0,
+            "completed": true,
+            "disk_spill_bytes": 0,
+            "execution_id": "81",
+            "executor_cpu_ns": 160120000,
+            "failed_task_attempts": 0,
+            "failure_reason": null,
+            "group": "gold.campaign_daily",
+            "scheduled_tasks": 4,
+            "shuffle_read_bytes": 0,
+            "shuffle_write_bytes": 0,
+            "stage_id": 156,
+            "task_attempts": 4
+          },
+          {
+            "attempt_id": 0,
+            "completed": true,
+            "disk_spill_bytes": 0,
+            "execution_id": "81",
+            "executor_cpu_ns": 145895000,
+            "failed_task_attempts": 0,
+            "failure_reason": null,
+            "group": "gold.campaign_daily",
+            "scheduled_tasks": 4,
+            "shuffle_read_bytes": 0,
+            "shuffle_write_bytes": 0,
+            "stage_id": 157,
+            "task_attempts": 4
+          },
+          {
+            "attempt_id": 0,
+            "completed": true,
+            "disk_spill_bytes": 0,
+            "execution_id": "81",
+            "executor_cpu_ns": 4143856000,
+            "failed_task_attempts": 0,
+            "failure_reason": null,
+            "group": "gold.campaign_daily",
+            "scheduled_tasks": 5,
+            "shuffle_read_bytes": 0,
+            "shuffle_write_bytes": 46059734,
+            "stage_id": 158,
+            "task_attempts": 5
+          },
+          {
+            "attempt_id": 0,
+            "completed": true,
+            "disk_spill_bytes": 0,
+            "execution_id": "81",
+            "executor_cpu_ns": 2095121000,
+            "failed_task_attempts": 0,
+            "failure_reason": null,
+            "group": "gold.campaign_daily",
+            "scheduled_tasks": 5,
+            "shuffle_read_bytes": 46059734,
+            "shuffle_write_bytes": 0,
+            "stage_id": 160,
+            "task_attempts": 5
+          }
+        ]
+      }
+    },
+    "02-left": {
+      "gold.audience_daily": {
+        "aqe_shuffle_reads": [
+          "AQEShuffleRead coalesced"
+        ],
+        "exchanges": [
+          {
+            "description": "Exchange hashpartitioning(reporting_date#5071, advertiser_id#5075L, age_level#5083, 200), ENSURE_REQUIREMENTS, [plan_id=3324]",
+            "initial_partitions": 200
+          }
+        ],
+        "execution_id": "98",
+        "joins": [
+          {
+            "description": "BroadcastHashJoin [user_id#5063L], [user_id#5079L], LeftOuter, BuildRight, false",
+            "key": "user_id",
+            "operator": "BroadcastHashJoin"
+          },
+          {
+            "description": "BroadcastHashJoin [adgroup_id#5065L], [adgroup_id#5072L], LeftOuter, BuildRight, false",
+            "key": "adgroup_id",
+            "operator": "BroadcastHashJoin"
+          }
+        ],
+        "matches_expected": true,
+        "shuffle_reader_stages": [
+          {
+            "attempt_id": 0,
+            "completed": true,
+            "disk_spill_bytes": 0,
+            "execution_id": "98",
+            "executor_cpu_ns": 3286336000,
+            "failed_task_attempts": 0,
+            "failure_reason": null,
+            "group": "gold.audience_daily",
+            "scheduled_tasks": 4,
+            "shuffle_read_bytes": 91609785,
+            "shuffle_write_bytes": 0,
+            "stage_id": 194,
+            "task_attempts": 4
+          }
+        ],
+        "sql_succeeded": true,
+        "stages": [
+          {
+            "attempt_id": 0,
+            "completed": true,
+            "disk_spill_bytes": 0,
+            "execution_id": "98",
+            "executor_cpu_ns": 141936000,
+            "failed_task_attempts": 0,
+            "failure_reason": null,
+            "group": "gold.audience_daily",
+            "scheduled_tasks": 4,
+            "shuffle_read_bytes": 0,
+            "shuffle_write_bytes": 0,
+            "stage_id": 190,
+            "task_attempts": 4
+          },
+          {
+            "attempt_id": 0,
+            "completed": true,
+            "disk_spill_bytes": 0,
+            "execution_id": "98",
+            "executor_cpu_ns": 143210000,
+            "failed_task_attempts": 0,
+            "failure_reason": null,
+            "group": "gold.audience_daily",
+            "scheduled_tasks": 4,
+            "shuffle_read_bytes": 0,
+            "shuffle_write_bytes": 0,
+            "stage_id": 191,
+            "task_attempts": 4
+          },
+          {
+            "attempt_id": 0,
+            "completed": true,
+            "disk_spill_bytes": 0,
+            "execution_id": "98",
+            "executor_cpu_ns": 7852682000,
+            "failed_task_attempts": 0,
+            "failure_reason": null,
+            "group": "gold.audience_daily",
+            "scheduled_tasks": 5,
+            "shuffle_read_bytes": 0,
+            "shuffle_write_bytes": 91609785,
+            "stage_id": 192,
+            "task_attempts": 5
+          },
+          {
+            "attempt_id": 0,
+            "completed": true,
+            "disk_spill_bytes": 0,
+            "execution_id": "98",
+            "executor_cpu_ns": 3286336000,
+            "failed_task_attempts": 0,
+            "failure_reason": null,
+            "group": "gold.audience_daily",
+            "scheduled_tasks": 4,
+            "shuffle_read_bytes": 91609785,
+            "shuffle_write_bytes": 0,
+            "stage_id": 194,
+            "task_attempts": 4
+          }
+        ]
+      },
+      "gold.campaign_daily": {
+        "aqe_shuffle_reads": [
+          "AQEShuffleRead coalesced"
+        ],
+        "exchanges": [
+          {
+            "description": "Exchange hashpartitioning(reporting_date#5071, campaign_id#5074L, advertiser_id#5075L, 200), ENSURE_REQUIREMENTS, [plan_id=2646]",
+            "initial_partitions": 200
+          }
+        ],
+        "execution_id": "81",
+        "joins": [
+          {
+            "description": "BroadcastHashJoin [user_id#5063L], [user_id#5079L], LeftOuter, BuildRight, false",
+            "key": "user_id",
+            "operator": "BroadcastHashJoin"
+          },
+          {
+            "description": "BroadcastHashJoin [adgroup_id#5065L], [adgroup_id#5072L], LeftOuter, BuildRight, false",
+            "key": "adgroup_id",
+            "operator": "BroadcastHashJoin"
+          }
+        ],
+        "matches_expected": true,
+        "shuffle_reader_stages": [
+          {
+            "attempt_id": 0,
+            "completed": true,
+            "disk_spill_bytes": 0,
+            "execution_id": "81",
+            "executor_cpu_ns": 2265406000,
+            "failed_task_attempts": 0,
+            "failure_reason": null,
+            "group": "gold.campaign_daily",
+            "scheduled_tasks": 4,
+            "shuffle_read_bytes": 47077324,
+            "shuffle_write_bytes": 0,
+            "stage_id": 160,
+            "task_attempts": 4
+          }
+        ],
+        "sql_succeeded": true,
+        "stages": [
+          {
+            "attempt_id": 0,
+            "completed": true,
+            "disk_spill_bytes": 0,
+            "execution_id": "81",
+            "executor_cpu_ns": 191564000,
+            "failed_task_attempts": 0,
+            "failure_reason": null,
+            "group": "gold.campaign_daily",
+            "scheduled_tasks": 4,
+            "shuffle_read_bytes": 0,
+            "shuffle_write_bytes": 0,
+            "stage_id": 156,
+            "task_attempts": 4
+          },
+          {
+            "attempt_id": 0,
+            "completed": true,
+            "disk_spill_bytes": 0,
+            "execution_id": "81",
+            "executor_cpu_ns": 185192000,
+            "failed_task_attempts": 0,
+            "failure_reason": null,
+            "group": "gold.campaign_daily",
+            "scheduled_tasks": 4,
+            "shuffle_read_bytes": 0,
+            "shuffle_write_bytes": 0,
+            "stage_id": 157,
+            "task_attempts": 4
+          },
+          {
+            "attempt_id": 0,
+            "completed": true,
+            "disk_spill_bytes": 0,
+            "execution_id": "81",
+            "executor_cpu_ns": 4597343000,
+            "failed_task_attempts": 0,
+            "failure_reason": null,
+            "group": "gold.campaign_daily",
+            "scheduled_tasks": 5,
+            "shuffle_read_bytes": 0,
+            "shuffle_write_bytes": 47077324,
+            "stage_id": 158,
+            "task_attempts": 5
+          },
+          {
+            "attempt_id": 0,
+            "completed": true,
+            "disk_spill_bytes": 0,
+            "execution_id": "81",
+            "executor_cpu_ns": 2265406000,
+            "failed_task_attempts": 0,
+            "failure_reason": null,
+            "group": "gold.campaign_daily",
+            "scheduled_tasks": 4,
+            "shuffle_read_bytes": 47077324,
+            "shuffle_write_bytes": 0,
+            "stage_id": 160,
+            "task_attempts": 4
+          }
+        ]
+      }
+    },
+    "02-right": {
+      "gold.audience_daily": {
+        "aqe_shuffle_reads": [
+          "AQEShuffleRead coalesced"
+        ],
+        "exchanges": [
+          {
+            "description": "Exchange hashpartitioning(reporting_date#5071, advertiser_id#5075L, age_level#5083, 32), ENSURE_REQUIREMENTS, [plan_id=3324]",
+            "initial_partitions": 32
+          }
+        ],
+        "execution_id": "98",
+        "joins": [
+          {
+            "description": "BroadcastHashJoin [user_id#5063L], [user_id#5079L], LeftOuter, BuildRight, false",
+            "key": "user_id",
+            "operator": "BroadcastHashJoin"
+          },
+          {
+            "description": "BroadcastHashJoin [adgroup_id#5065L], [adgroup_id#5072L], LeftOuter, BuildRight, false",
+            "key": "adgroup_id",
+            "operator": "BroadcastHashJoin"
+          }
+        ],
+        "matches_expected": true,
+        "shuffle_reader_stages": [
+          {
+            "attempt_id": 0,
+            "completed": true,
+            "disk_spill_bytes": 0,
+            "execution_id": "98",
+            "executor_cpu_ns": 3005030000,
+            "failed_task_attempts": 0,
+            "failure_reason": null,
+            "group": "gold.audience_daily",
+            "scheduled_tasks": 5,
+            "shuffle_read_bytes": 89125105,
+            "shuffle_write_bytes": 0,
+            "stage_id": 194,
+            "task_attempts": 5
+          }
+        ],
+        "sql_succeeded": true,
+        "stages": [
+          {
+            "attempt_id": 0,
+            "completed": true,
+            "disk_spill_bytes": 0,
+            "execution_id": "98",
+            "executor_cpu_ns": 446976000,
+            "failed_task_attempts": 0,
+            "failure_reason": null,
+            "group": "gold.audience_daily",
+            "scheduled_tasks": 4,
+            "shuffle_read_bytes": 0,
+            "shuffle_write_bytes": 0,
+            "stage_id": 190,
+            "task_attempts": 4
+          },
+          {
+            "attempt_id": 0,
+            "completed": true,
+            "disk_spill_bytes": 0,
+            "execution_id": "98",
+            "executor_cpu_ns": 120856000,
+            "failed_task_attempts": 0,
+            "failure_reason": null,
+            "group": "gold.audience_daily",
+            "scheduled_tasks": 4,
+            "shuffle_read_bytes": 0,
+            "shuffle_write_bytes": 0,
+            "stage_id": 191,
+            "task_attempts": 4
+          },
+          {
+            "attempt_id": 0,
+            "completed": true,
+            "disk_spill_bytes": 0,
+            "execution_id": "98",
+            "executor_cpu_ns": 7111600000,
+            "failed_task_attempts": 0,
+            "failure_reason": null,
+            "group": "gold.audience_daily",
+            "scheduled_tasks": 5,
+            "shuffle_read_bytes": 0,
+            "shuffle_write_bytes": 89125105,
+            "stage_id": 192,
+            "task_attempts": 5
+          },
+          {
+            "attempt_id": 0,
+            "completed": true,
+            "disk_spill_bytes": 0,
+            "execution_id": "98",
+            "executor_cpu_ns": 3005030000,
+            "failed_task_attempts": 0,
+            "failure_reason": null,
+            "group": "gold.audience_daily",
+            "scheduled_tasks": 5,
+            "shuffle_read_bytes": 89125105,
+            "shuffle_write_bytes": 0,
+            "stage_id": 194,
+            "task_attempts": 5
+          }
+        ]
+      },
+      "gold.campaign_daily": {
+        "aqe_shuffle_reads": [
+          "AQEShuffleRead coalesced"
+        ],
+        "exchanges": [
+          {
+            "description": "Exchange hashpartitioning(reporting_date#5071, campaign_id#5074L, advertiser_id#5075L, 32), ENSURE_REQUIREMENTS, [plan_id=2646]",
+            "initial_partitions": 32
+          }
+        ],
+        "execution_id": "81",
+        "joins": [
+          {
+            "description": "BroadcastHashJoin [user_id#5063L], [user_id#5079L], LeftOuter, BuildRight, false",
+            "key": "user_id",
+            "operator": "BroadcastHashJoin"
+          },
+          {
+            "description": "BroadcastHashJoin [adgroup_id#5065L], [adgroup_id#5072L], LeftOuter, BuildRight, false",
+            "key": "adgroup_id",
+            "operator": "BroadcastHashJoin"
+          }
+        ],
+        "matches_expected": true,
+        "shuffle_reader_stages": [
+          {
+            "attempt_id": 0,
+            "completed": true,
+            "disk_spill_bytes": 0,
+            "execution_id": "81",
+            "executor_cpu_ns": 2046184000,
+            "failed_task_attempts": 0,
+            "failure_reason": null,
+            "group": "gold.campaign_daily",
+            "scheduled_tasks": 5,
+            "shuffle_read_bytes": 46059734,
+            "shuffle_write_bytes": 0,
+            "stage_id": 160,
+            "task_attempts": 5
+          }
+        ],
+        "sql_succeeded": true,
+        "stages": [
+          {
+            "attempt_id": 0,
+            "completed": true,
+            "disk_spill_bytes": 0,
+            "execution_id": "81",
+            "executor_cpu_ns": 106570000,
+            "failed_task_attempts": 0,
+            "failure_reason": null,
+            "group": "gold.campaign_daily",
+            "scheduled_tasks": 4,
+            "shuffle_read_bytes": 0,
+            "shuffle_write_bytes": 0,
+            "stage_id": 156,
+            "task_attempts": 4
+          },
+          {
+            "attempt_id": 0,
+            "completed": true,
+            "disk_spill_bytes": 0,
+            "execution_id": "81",
+            "executor_cpu_ns": 135170000,
+            "failed_task_attempts": 0,
+            "failure_reason": null,
+            "group": "gold.campaign_daily",
+            "scheduled_tasks": 4,
+            "shuffle_read_bytes": 0,
+            "shuffle_write_bytes": 0,
+            "stage_id": 157,
+            "task_attempts": 4
+          },
+          {
+            "attempt_id": 0,
+            "completed": true,
+            "disk_spill_bytes": 0,
+            "execution_id": "81",
+            "executor_cpu_ns": 3833303000,
+            "failed_task_attempts": 0,
+            "failure_reason": null,
+            "group": "gold.campaign_daily",
+            "scheduled_tasks": 5,
+            "shuffle_read_bytes": 0,
+            "shuffle_write_bytes": 46059734,
+            "stage_id": 158,
+            "task_attempts": 5
+          },
+          {
+            "attempt_id": 0,
+            "completed": true,
+            "disk_spill_bytes": 0,
+            "execution_id": "81",
+            "executor_cpu_ns": 2046184000,
+            "failed_task_attempts": 0,
+            "failure_reason": null,
+            "group": "gold.campaign_daily",
+            "scheduled_tasks": 5,
+            "shuffle_read_bytes": 46059734,
+            "shuffle_write_bytes": 0,
+            "stage_id": 160,
+            "task_attempts": 5
+          }
+        ]
+      }
+    },
+    "03-left": {
+      "gold.audience_daily": {
+        "aqe_shuffle_reads": [
+          "AQEShuffleRead coalesced"
+        ],
+        "exchanges": [
+          {
+            "description": "Exchange hashpartitioning(reporting_date#5071, advertiser_id#5075L, age_level#5083, 200), ENSURE_REQUIREMENTS, [plan_id=3324]",
+            "initial_partitions": 200
+          }
+        ],
+        "execution_id": "98",
+        "joins": [
+          {
+            "description": "BroadcastHashJoin [user_id#5063L], [user_id#5079L], LeftOuter, BuildRight, false",
+            "key": "user_id",
+            "operator": "BroadcastHashJoin"
+          },
+          {
+            "description": "BroadcastHashJoin [adgroup_id#5065L], [adgroup_id#5072L], LeftOuter, BuildRight, false",
+            "key": "adgroup_id",
+            "operator": "BroadcastHashJoin"
+          }
+        ],
+        "matches_expected": true,
+        "shuffle_reader_stages": [
+          {
+            "attempt_id": 0,
+            "completed": true,
+            "disk_spill_bytes": 0,
+            "execution_id": "98",
+            "executor_cpu_ns": 3453732000,
+            "failed_task_attempts": 0,
+            "failure_reason": null,
+            "group": "gold.audience_daily",
+            "scheduled_tasks": 4,
+            "shuffle_read_bytes": 91609785,
+            "shuffle_write_bytes": 0,
+            "stage_id": 194,
+            "task_attempts": 4
+          }
+        ],
+        "sql_succeeded": true,
+        "stages": [
+          {
+            "attempt_id": 0,
+            "completed": true,
+            "disk_spill_bytes": 0,
+            "execution_id": "98",
+            "executor_cpu_ns": 250052000,
+            "failed_task_attempts": 0,
+            "failure_reason": null,
+            "group": "gold.audience_daily",
+            "scheduled_tasks": 4,
+            "shuffle_read_bytes": 0,
+            "shuffle_write_bytes": 0,
+            "stage_id": 190,
+            "task_attempts": 4
+          },
+          {
+            "attempt_id": 0,
+            "completed": true,
+            "disk_spill_bytes": 0,
+            "execution_id": "98",
+            "executor_cpu_ns": 125108000,
+            "failed_task_attempts": 0,
+            "failure_reason": null,
+            "group": "gold.audience_daily",
+            "scheduled_tasks": 4,
+            "shuffle_read_bytes": 0,
+            "shuffle_write_bytes": 0,
+            "stage_id": 191,
+            "task_attempts": 4
+          },
+          {
+            "attempt_id": 0,
+            "completed": true,
+            "disk_spill_bytes": 0,
+            "execution_id": "98",
+            "executor_cpu_ns": 8138157000,
+            "failed_task_attempts": 0,
+            "failure_reason": null,
+            "group": "gold.audience_daily",
+            "scheduled_tasks": 5,
+            "shuffle_read_bytes": 0,
+            "shuffle_write_bytes": 91609785,
+            "stage_id": 192,
+            "task_attempts": 5
+          },
+          {
+            "attempt_id": 0,
+            "completed": true,
+            "disk_spill_bytes": 0,
+            "execution_id": "98",
+            "executor_cpu_ns": 3453732000,
+            "failed_task_attempts": 0,
+            "failure_reason": null,
+            "group": "gold.audience_daily",
+            "scheduled_tasks": 4,
+            "shuffle_read_bytes": 91609785,
+            "shuffle_write_bytes": 0,
+            "stage_id": 194,
+            "task_attempts": 4
+          }
+        ]
+      },
+      "gold.campaign_daily": {
+        "aqe_shuffle_reads": [
+          "AQEShuffleRead coalesced"
+        ],
+        "exchanges": [
+          {
+            "description": "Exchange hashpartitioning(reporting_date#5071, campaign_id#5074L, advertiser_id#5075L, 200), ENSURE_REQUIREMENTS, [plan_id=2646]",
+            "initial_partitions": 200
+          }
+        ],
+        "execution_id": "81",
+        "joins": [
+          {
+            "description": "BroadcastHashJoin [user_id#5063L], [user_id#5079L], LeftOuter, BuildRight, false",
+            "key": "user_id",
+            "operator": "BroadcastHashJoin"
+          },
+          {
+            "description": "BroadcastHashJoin [adgroup_id#5065L], [adgroup_id#5072L], LeftOuter, BuildRight, false",
+            "key": "adgroup_id",
+            "operator": "BroadcastHashJoin"
+          }
+        ],
+        "matches_expected": true,
+        "shuffle_reader_stages": [
+          {
+            "attempt_id": 0,
+            "completed": true,
+            "disk_spill_bytes": 0,
+            "execution_id": "81",
+            "executor_cpu_ns": 2557544000,
+            "failed_task_attempts": 0,
+            "failure_reason": null,
+            "group": "gold.campaign_daily",
+            "scheduled_tasks": 4,
+            "shuffle_read_bytes": 47077324,
+            "shuffle_write_bytes": 0,
+            "stage_id": 160,
+            "task_attempts": 4
+          }
+        ],
+        "sql_succeeded": true,
+        "stages": [
+          {
+            "attempt_id": 0,
+            "completed": true,
+            "disk_spill_bytes": 0,
+            "execution_id": "81",
+            "executor_cpu_ns": 180097000,
+            "failed_task_attempts": 0,
+            "failure_reason": null,
+            "group": "gold.campaign_daily",
+            "scheduled_tasks": 4,
+            "shuffle_read_bytes": 0,
+            "shuffle_write_bytes": 0,
+            "stage_id": 156,
+            "task_attempts": 4
+          },
+          {
+            "attempt_id": 0,
+            "completed": true,
+            "disk_spill_bytes": 0,
+            "execution_id": "81",
+            "executor_cpu_ns": 129890000,
+            "failed_task_attempts": 0,
+            "failure_reason": null,
+            "group": "gold.campaign_daily",
+            "scheduled_tasks": 4,
+            "shuffle_read_bytes": 0,
+            "shuffle_write_bytes": 0,
+            "stage_id": 157,
+            "task_attempts": 4
+          },
+          {
+            "attempt_id": 0,
+            "completed": true,
+            "disk_spill_bytes": 0,
+            "execution_id": "81",
+            "executor_cpu_ns": 4789997000,
+            "failed_task_attempts": 0,
+            "failure_reason": null,
+            "group": "gold.campaign_daily",
+            "scheduled_tasks": 5,
+            "shuffle_read_bytes": 0,
+            "shuffle_write_bytes": 47077324,
+            "stage_id": 158,
+            "task_attempts": 5
+          },
+          {
+            "attempt_id": 0,
+            "completed": true,
+            "disk_spill_bytes": 0,
+            "execution_id": "81",
+            "executor_cpu_ns": 2557544000,
+            "failed_task_attempts": 0,
+            "failure_reason": null,
+            "group": "gold.campaign_daily",
+            "scheduled_tasks": 4,
+            "shuffle_read_bytes": 47077324,
+            "shuffle_write_bytes": 0,
+            "stage_id": 160,
+            "task_attempts": 4
+          }
+        ]
+      }
+    },
+    "03-right": {
+      "gold.audience_daily": {
+        "aqe_shuffle_reads": [
+          "AQEShuffleRead coalesced"
+        ],
+        "exchanges": [
+          {
+            "description": "Exchange hashpartitioning(reporting_date#5071, advertiser_id#5075L, age_level#5083, 32), ENSURE_REQUIREMENTS, [plan_id=3324]",
+            "initial_partitions": 32
+          }
+        ],
+        "execution_id": "98",
+        "joins": [
+          {
+            "description": "BroadcastHashJoin [user_id#5063L], [user_id#5079L], LeftOuter, BuildRight, false",
+            "key": "user_id",
+            "operator": "BroadcastHashJoin"
+          },
+          {
+            "description": "BroadcastHashJoin [adgroup_id#5065L], [adgroup_id#5072L], LeftOuter, BuildRight, false",
+            "key": "adgroup_id",
+            "operator": "BroadcastHashJoin"
+          }
+        ],
+        "matches_expected": true,
+        "shuffle_reader_stages": [
+          {
+            "attempt_id": 0,
+            "completed": true,
+            "disk_spill_bytes": 0,
+            "execution_id": "98",
+            "executor_cpu_ns": 3369437000,
+            "failed_task_attempts": 0,
+            "failure_reason": null,
+            "group": "gold.audience_daily",
+            "scheduled_tasks": 5,
+            "shuffle_read_bytes": 89125105,
+            "shuffle_write_bytes": 0,
+            "stage_id": 194,
+            "task_attempts": 5
+          }
+        ],
+        "sql_succeeded": true,
+        "stages": [
+          {
+            "attempt_id": 0,
+            "completed": true,
+            "disk_spill_bytes": 0,
+            "execution_id": "98",
+            "executor_cpu_ns": 179903000,
+            "failed_task_attempts": 0,
+            "failure_reason": null,
+            "group": "gold.audience_daily",
+            "scheduled_tasks": 4,
+            "shuffle_read_bytes": 0,
+            "shuffle_write_bytes": 0,
+            "stage_id": 190,
+            "task_attempts": 4
+          },
+          {
+            "attempt_id": 0,
+            "completed": true,
+            "disk_spill_bytes": 0,
+            "execution_id": "98",
+            "executor_cpu_ns": 142638000,
+            "failed_task_attempts": 0,
+            "failure_reason": null,
+            "group": "gold.audience_daily",
+            "scheduled_tasks": 4,
+            "shuffle_read_bytes": 0,
+            "shuffle_write_bytes": 0,
+            "stage_id": 191,
+            "task_attempts": 4
+          },
+          {
+            "attempt_id": 0,
+            "completed": true,
+            "disk_spill_bytes": 0,
+            "execution_id": "98",
+            "executor_cpu_ns": 7360375000,
+            "failed_task_attempts": 0,
+            "failure_reason": null,
+            "group": "gold.audience_daily",
+            "scheduled_tasks": 5,
+            "shuffle_read_bytes": 0,
+            "shuffle_write_bytes": 89125105,
+            "stage_id": 192,
+            "task_attempts": 5
+          },
+          {
+            "attempt_id": 0,
+            "completed": true,
+            "disk_spill_bytes": 0,
+            "execution_id": "98",
+            "executor_cpu_ns": 3369437000,
+            "failed_task_attempts": 0,
+            "failure_reason": null,
+            "group": "gold.audience_daily",
+            "scheduled_tasks": 5,
+            "shuffle_read_bytes": 89125105,
+            "shuffle_write_bytes": 0,
+            "stage_id": 194,
+            "task_attempts": 5
+          }
+        ]
+      },
+      "gold.campaign_daily": {
+        "aqe_shuffle_reads": [
+          "AQEShuffleRead coalesced"
+        ],
+        "exchanges": [
+          {
+            "description": "Exchange hashpartitioning(reporting_date#5071, campaign_id#5074L, advertiser_id#5075L, 32), ENSURE_REQUIREMENTS, [plan_id=2646]",
+            "initial_partitions": 32
+          }
+        ],
+        "execution_id": "81",
+        "joins": [
+          {
+            "description": "BroadcastHashJoin [user_id#5063L], [user_id#5079L], LeftOuter, BuildRight, false",
+            "key": "user_id",
+            "operator": "BroadcastHashJoin"
+          },
+          {
+            "description": "BroadcastHashJoin [adgroup_id#5065L], [adgroup_id#5072L], LeftOuter, BuildRight, false",
+            "key": "adgroup_id",
+            "operator": "BroadcastHashJoin"
+          }
+        ],
+        "matches_expected": true,
+        "shuffle_reader_stages": [
+          {
+            "attempt_id": 0,
+            "completed": true,
+            "disk_spill_bytes": 0,
+            "execution_id": "81",
+            "executor_cpu_ns": 1793636000,
+            "failed_task_attempts": 0,
+            "failure_reason": null,
+            "group": "gold.campaign_daily",
+            "scheduled_tasks": 5,
+            "shuffle_read_bytes": 46059734,
+            "shuffle_write_bytes": 0,
+            "stage_id": 160,
+            "task_attempts": 5
+          }
+        ],
+        "sql_succeeded": true,
+        "stages": [
+          {
+            "attempt_id": 0,
+            "completed": true,
+            "disk_spill_bytes": 0,
+            "execution_id": "81",
+            "executor_cpu_ns": 125767000,
+            "failed_task_attempts": 0,
+            "failure_reason": null,
+            "group": "gold.campaign_daily",
+            "scheduled_tasks": 4,
+            "shuffle_read_bytes": 0,
+            "shuffle_write_bytes": 0,
+            "stage_id": 156,
+            "task_attempts": 4
+          },
+          {
+            "attempt_id": 0,
+            "completed": true,
+            "disk_spill_bytes": 0,
+            "execution_id": "81",
+            "executor_cpu_ns": 120009000,
+            "failed_task_attempts": 0,
+            "failure_reason": null,
+            "group": "gold.campaign_daily",
+            "scheduled_tasks": 4,
+            "shuffle_read_bytes": 0,
+            "shuffle_write_bytes": 0,
+            "stage_id": 157,
+            "task_attempts": 4
+          },
+          {
+            "attempt_id": 0,
+            "completed": true,
+            "disk_spill_bytes": 0,
+            "execution_id": "81",
+            "executor_cpu_ns": 3997456000,
+            "failed_task_attempts": 0,
+            "failure_reason": null,
+            "group": "gold.campaign_daily",
+            "scheduled_tasks": 5,
+            "shuffle_read_bytes": 0,
+            "shuffle_write_bytes": 46059734,
+            "stage_id": 158,
+            "task_attempts": 5
+          },
+          {
+            "attempt_id": 0,
+            "completed": true,
+            "disk_spill_bytes": 0,
+            "execution_id": "81",
+            "executor_cpu_ns": 1793636000,
+            "failed_task_attempts": 0,
+            "failure_reason": null,
+            "group": "gold.campaign_daily",
+            "scheduled_tasks": 5,
+            "shuffle_read_bytes": 46059734,
+            "shuffle_write_bytes": 0,
+            "stage_id": 160,
+            "task_attempts": 5
+          }
+        ]
+      }
+    }
+  },
+  "status": "succeeded"
+}

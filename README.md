@@ -4,7 +4,7 @@ A learning project for Apache Spark using Python (PySpark), SQL, and the Taobao 
 
 The project includes a preserved **untuned baseline**, **iteration 2: ZSTD
 compression**, **iteration 3: date partitioning**, **iteration 4: ads joins**,
-and **iteration 5: profile joins**. Each runs full batch
+**iteration 5: profile joins**, and **iteration 6: shuffle partitions**. Each runs full batch
 rebuilds with correctness checks and runtime/storage measurements, locally
 without cloud services. Iteration 1 provides a separate CSV-versus-Parquet read-workload experiment.
 
@@ -153,4 +153,9 @@ remains the preferred reference. Tag: `iteration-05-profile-shuffle-join`.
 [Iteration 6](experiments/06_shuffle_partitions/README.md) changes only
 `spark.sql.shuffle.partitions` from 200 to 32, starting from iteration 2. Its
 checks distinguish initial partitions from actual reading tasks after AQE and
-verify that both joins remain broadcast.
+verify that both joins remain broadcast. The
+[completed results](results/06_shuffle_partitions/README.md) show a **6.71% lower
+Gold median**, with mixed whole-pipeline timing. AQE produced **five reader tasks
+from 32 initial partitions**, versus four from 200. All 40 exact table comparisons
+passed. This is a modest observed local benefit, not a universal partition-count
+recommendation. Tag: `iteration-06-shuffle-partitions`.

@@ -1,0 +1,237 @@
+{
+  "gold": {
+    "gold.audience_daily": {
+      "aqe_shuffle_reads": [
+        "AQEShuffleRead coalesced"
+      ],
+      "exchanges": [
+        {
+          "description": "Exchange hashpartitioning(reporting_date#5071, advertiser_id#5075L, age_level#5083, 200), ENSURE_REQUIREMENTS, [plan_id=3324]",
+          "initial_partitions": 200
+        }
+      ],
+      "execution_id": "98",
+      "joins": [
+        {
+          "description": "BroadcastHashJoin [user_id#5063L], [user_id#5079L], LeftOuter, BuildRight, false",
+          "key": "user_id",
+          "operator": "BroadcastHashJoin"
+        },
+        {
+          "description": "BroadcastHashJoin [adgroup_id#5065L], [adgroup_id#5072L], LeftOuter, BuildRight, false",
+          "key": "adgroup_id",
+          "operator": "BroadcastHashJoin"
+        }
+      ],
+      "matches_expected": true,
+      "shuffle_reader_stages": [
+        {
+          "attempt_id": 0,
+          "completed": true,
+          "disk_spill_bytes": 0,
+          "execution_id": "98",
+          "executor_cpu_ns": 3001058000,
+          "failed_task_attempts": 0,
+          "failure_reason": null,
+          "group": "gold.audience_daily",
+          "scheduled_tasks": 4,
+          "shuffle_read_bytes": 91609785,
+          "shuffle_write_bytes": 0,
+          "stage_id": 194,
+          "task_attempts": 4
+        }
+      ],
+      "sql_succeeded": true,
+      "stages": [
+        {
+          "attempt_id": 0,
+          "completed": true,
+          "disk_spill_bytes": 0,
+          "execution_id": "98",
+          "executor_cpu_ns": 132126000,
+          "failed_task_attempts": 0,
+          "failure_reason": null,
+          "group": "gold.audience_daily",
+          "scheduled_tasks": 4,
+          "shuffle_read_bytes": 0,
+          "shuffle_write_bytes": 0,
+          "stage_id": 190,
+          "task_attempts": 4
+        },
+        {
+          "attempt_id": 0,
+          "completed": true,
+          "disk_spill_bytes": 0,
+          "execution_id": "98",
+          "executor_cpu_ns": 196328000,
+          "failed_task_attempts": 0,
+          "failure_reason": null,
+          "group": "gold.audience_daily",
+          "scheduled_tasks": 4,
+          "shuffle_read_bytes": 0,
+          "shuffle_write_bytes": 0,
+          "stage_id": 191,
+          "task_attempts": 4
+        },
+        {
+          "attempt_id": 0,
+          "completed": true,
+          "disk_spill_bytes": 0,
+          "execution_id": "98",
+          "executor_cpu_ns": 6609169000,
+          "failed_task_attempts": 0,
+          "failure_reason": null,
+          "group": "gold.audience_daily",
+          "scheduled_tasks": 5,
+          "shuffle_read_bytes": 0,
+          "shuffle_write_bytes": 91609785,
+          "stage_id": 192,
+          "task_attempts": 5
+        },
+        {
+          "attempt_id": 0,
+          "completed": true,
+          "disk_spill_bytes": 0,
+          "execution_id": "98",
+          "executor_cpu_ns": 3001058000,
+          "failed_task_attempts": 0,
+          "failure_reason": null,
+          "group": "gold.audience_daily",
+          "scheduled_tasks": 4,
+          "shuffle_read_bytes": 91609785,
+          "shuffle_write_bytes": 0,
+          "stage_id": 194,
+          "task_attempts": 4
+        }
+      ]
+    },
+    "gold.campaign_daily": {
+      "aqe_shuffle_reads": [
+        "AQEShuffleRead coalesced"
+      ],
+      "exchanges": [
+        {
+          "description": "Exchange hashpartitioning(reporting_date#5071, campaign_id#5074L, advertiser_id#5075L, 200), ENSURE_REQUIREMENTS, [plan_id=2646]",
+          "initial_partitions": 200
+        }
+      ],
+      "execution_id": "81",
+      "joins": [
+        {
+          "description": "BroadcastHashJoin [user_id#5063L], [user_id#5079L], LeftOuter, BuildRight, false",
+          "key": "user_id",
+          "operator": "BroadcastHashJoin"
+        },
+        {
+          "description": "BroadcastHashJoin [adgroup_id#5065L], [adgroup_id#5072L], LeftOuter, BuildRight, false",
+          "key": "adgroup_id",
+          "operator": "BroadcastHashJoin"
+        }
+      ],
+      "matches_expected": true,
+      "shuffle_reader_stages": [
+        {
+          "attempt_id": 0,
+          "completed": true,
+          "disk_spill_bytes": 0,
+          "execution_id": "81",
+          "executor_cpu_ns": 1853914000,
+          "failed_task_attempts": 0,
+          "failure_reason": null,
+          "group": "gold.campaign_daily",
+          "scheduled_tasks": 4,
+          "shuffle_read_bytes": 47077324,
+          "shuffle_write_bytes": 0,
+          "stage_id": 160,
+          "task_attempts": 4
+        }
+      ],
+      "sql_succeeded": true,
+      "stages": [
+        {
+          "attempt_id": 0,
+          "completed": true,
+          "disk_spill_bytes": 0,
+          "execution_id": "81",
+          "executor_cpu_ns": 172820000,
+          "failed_task_attempts": 0,
+          "failure_reason": null,
+          "group": "gold.campaign_daily",
+          "scheduled_tasks": 4,
+          "shuffle_read_bytes": 0,
+          "shuffle_write_bytes": 0,
+          "stage_id": 156,
+          "task_attempts": 4
+        },
+        {
+          "attempt_id": 0,
+          "completed": true,
+          "disk_spill_bytes": 0,
+          "execution_id": "81",
+          "executor_cpu_ns": 419350000,
+          "failed_task_attempts": 0,
+          "failure_reason": null,
+          "group": "gold.campaign_daily",
+          "scheduled_tasks": 4,
+          "shuffle_read_bytes": 0,
+          "shuffle_write_bytes": 0,
+          "stage_id": 157,
+          "task_attempts": 4
+        },
+        {
+          "attempt_id": 0,
+          "completed": true,
+          "disk_spill_bytes": 0,
+          "execution_id": "81",
+          "executor_cpu_ns": 3871753000,
+          "failed_task_attempts": 0,
+          "failure_reason": null,
+          "group": "gold.campaign_daily",
+          "scheduled_tasks": 5,
+          "shuffle_read_bytes": 0,
+          "shuffle_write_bytes": 47077324,
+          "stage_id": 158,
+          "task_attempts": 5
+        },
+        {
+          "attempt_id": 0,
+          "completed": true,
+          "disk_spill_bytes": 0,
+          "execution_id": "81",
+          "executor_cpu_ns": 1853914000,
+          "failed_task_attempts": 0,
+          "failure_reason": null,
+          "group": "gold.campaign_daily",
+          "scheduled_tasks": 4,
+          "shuffle_read_bytes": 47077324,
+          "shuffle_write_bytes": 0,
+          "stage_id": 160,
+          "task_attempts": 4
+        }
+      ]
+    }
+  },
+  "inspected_run": "outputs/comparisons/profile-join-05-retry-20260927/runs/01-left",
+  "purpose": "Pre-measurement rationale, not the timed control for iteration 6. Choose one alternative: 32 initial partitions. AQE already coalesces 200 to four readers in this recorded reference.",
+  "recorded_environment": {
+    "delta": "4.0.0",
+    "driver_memory": "2g",
+    "git_commit": "71ca428e42978ff4597fd5156bd5f72ba9dff32c",
+    "git_dirty": false,
+    "java": "21.0.12.1",
+    "machine": "arm64",
+    "master": "local[4]",
+    "platform": "macOS-27.0-arm64-arm-64bit",
+    "python": "3.11.15",
+    "spark": "4.0.1",
+    "spark_sql_settings": {
+      "spark.sql.adaptive.enabled": "true",
+      "spark.sql.ansi.enabled": "true",
+      "spark.sql.autoBroadcastJoinThreshold": "10485760b",
+      "spark.sql.files.maxPartitionBytes": "134217728b",
+      "spark.sql.parquet.compression.codec": "zstd",
+      "spark.sql.session.timeZone": "Asia/Shanghai",
+      "spark.sql.shuffle.partitions": "200"
+    }
+  }
+}

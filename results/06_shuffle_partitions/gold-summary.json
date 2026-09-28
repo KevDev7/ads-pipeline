@@ -1,0 +1,278 @@
+{
+  "comparison_id": "shuffle-06-20260927",
+  "method": "For each run, sum seconds and task counters for gold.campaign_daily and gold.audience_daily, then summarize by side. These full job-group metrics include report processing and Delta metadata SQL. They differ from the narrower joined-SQL stages in shuffle-partitions.json. Task CPU is cumulative, not wall time.",
+  "runs": {
+    "left": [
+      {
+        "disk_spill_bytes": 0,
+        "executor_cpu_ns": 19183554000,
+        "failed_task_attempts": 0,
+        "memory_spill_bytes": 0,
+        "run_id": "01-left",
+        "seconds": 7.309,
+        "shuffle_read_bytes": 138692128,
+        "shuffle_write_bytes": 138692128,
+        "task_attempts": 736
+      },
+      {
+        "disk_spill_bytes": 0,
+        "executor_cpu_ns": 19570786000,
+        "failed_task_attempts": 0,
+        "memory_spill_bytes": 0,
+        "run_id": "02-left",
+        "seconds": 7.516,
+        "shuffle_read_bytes": 138692258,
+        "shuffle_write_bytes": 138692258,
+        "task_attempts": 736
+      },
+      {
+        "disk_spill_bytes": 0,
+        "executor_cpu_ns": 20546108000,
+        "failed_task_attempts": 0,
+        "memory_spill_bytes": 0,
+        "run_id": "03-left",
+        "seconds": 7.917,
+        "shuffle_read_bytes": 138692256,
+        "shuffle_write_bytes": 138692256,
+        "task_attempts": 736
+      }
+    ],
+    "right": [
+      {
+        "disk_spill_bytes": 0,
+        "executor_cpu_ns": 19238110000,
+        "failed_task_attempts": 0,
+        "memory_spill_bytes": 0,
+        "run_id": "01-right",
+        "seconds": 7.253,
+        "shuffle_read_bytes": 135190861,
+        "shuffle_write_bytes": 135190861,
+        "task_attempts": 738
+      },
+      {
+        "disk_spill_bytes": 0,
+        "executor_cpu_ns": 17683762000,
+        "failed_task_attempts": 0,
+        "memory_spill_bytes": 0,
+        "run_id": "02-right",
+        "seconds": 6.774,
+        "shuffle_read_bytes": 135190861,
+        "shuffle_write_bytes": 135190861,
+        "task_attempts": 738
+      },
+      {
+        "disk_spill_bytes": 0,
+        "executor_cpu_ns": 18095717000,
+        "failed_task_attempts": 0,
+        "memory_spill_bytes": 0,
+        "run_id": "03-right",
+        "seconds": 7.012,
+        "shuffle_read_bytes": 135190862,
+        "shuffle_write_bytes": 135190862,
+        "task_attempts": 738
+      }
+    ]
+  },
+  "summary": {
+    "disk_spill_bytes": {
+      "left": {
+        "max": 0,
+        "median": 0,
+        "min": 0,
+        "samples": [
+          0,
+          0,
+          0
+        ],
+        "stdev": 0.0
+      },
+      "right": {
+        "max": 0,
+        "median": 0,
+        "min": 0,
+        "samples": [
+          0,
+          0,
+          0
+        ],
+        "stdev": 0.0
+      },
+      "right_vs_left_percent": null
+    },
+    "executor_cpu_ns": {
+      "left": {
+        "max": 20546108000,
+        "median": 19570786000,
+        "min": 19183554000,
+        "samples": [
+          19183554000,
+          19570786000,
+          20546108000
+        ],
+        "stdev": 702110512.2443333
+      },
+      "right": {
+        "max": 19238110000,
+        "median": 18095717000,
+        "min": 17683762000,
+        "samples": [
+          19238110000,
+          17683762000,
+          18095717000
+        ],
+        "stdev": 805270802.6473662
+      },
+      "right_vs_left_percent": -7.5370963639375566
+    },
+    "failed_task_attempts": {
+      "left": {
+        "max": 0,
+        "median": 0,
+        "min": 0,
+        "samples": [
+          0,
+          0,
+          0
+        ],
+        "stdev": 0.0
+      },
+      "right": {
+        "max": 0,
+        "median": 0,
+        "min": 0,
+        "samples": [
+          0,
+          0,
+          0
+        ],
+        "stdev": 0.0
+      },
+      "right_vs_left_percent": null
+    },
+    "memory_spill_bytes": {
+      "left": {
+        "max": 0,
+        "median": 0,
+        "min": 0,
+        "samples": [
+          0,
+          0,
+          0
+        ],
+        "stdev": 0.0
+      },
+      "right": {
+        "max": 0,
+        "median": 0,
+        "min": 0,
+        "samples": [
+          0,
+          0,
+          0
+        ],
+        "stdev": 0.0
+      },
+      "right_vs_left_percent": null
+    },
+    "seconds": {
+      "left": {
+        "max": 7.917,
+        "median": 7.516,
+        "min": 7.309,
+        "samples": [
+          7.309,
+          7.516,
+          7.917
+        ],
+        "stdev": 0.30911540455521336
+      },
+      "right": {
+        "max": 7.253,
+        "median": 7.012,
+        "min": 6.774,
+        "samples": [
+          7.253,
+          6.774,
+          7.012
+        ],
+        "stdev": 0.23950156575688608
+      },
+      "right_vs_left_percent": -6.705694518360838
+    },
+    "shuffle_read_bytes": {
+      "left": {
+        "max": 138692258,
+        "median": 138692256,
+        "min": 138692128,
+        "samples": [
+          138692128,
+          138692258,
+          138692256
+        ],
+        "stdev": 74.48489779814429
+      },
+      "right": {
+        "max": 135190862,
+        "median": 135190861,
+        "min": 135190861,
+        "samples": [
+          135190861,
+          135190861,
+          135190862
+        ],
+        "stdev": 0.5773502691896257
+      },
+      "right_vs_left_percent": -2.5245785893049377
+    },
+    "shuffle_write_bytes": {
+      "left": {
+        "max": 138692258,
+        "median": 138692256,
+        "min": 138692128,
+        "samples": [
+          138692128,
+          138692258,
+          138692256
+        ],
+        "stdev": 74.48489779814429
+      },
+      "right": {
+        "max": 135190862,
+        "median": 135190861,
+        "min": 135190861,
+        "samples": [
+          135190861,
+          135190861,
+          135190862
+        ],
+        "stdev": 0.5773502691896257
+      },
+      "right_vs_left_percent": -2.5245785893049377
+    },
+    "task_attempts": {
+      "left": {
+        "max": 736,
+        "median": 736,
+        "min": 736,
+        "samples": [
+          736,
+          736,
+          736
+        ],
+        "stdev": 0.0
+      },
+      "right": {
+        "max": 738,
+        "median": 738,
+        "min": 738,
+        "samples": [
+          738,
+          738,
+          738
+        ],
+        "stdev": 0.0
+      },
+      "right_vs_left_percent": 0.27173913043478937
+    }
+  }
+}
