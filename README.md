@@ -3,7 +3,7 @@
 A learning project for Apache Spark using Python (PySpark), SQL, and the Taobao advertising dataset.
 
 The project includes a preserved **untuned baseline**, **iteration 2: ZSTD
-compression**, and **iteration 3: date partitioning**. Each runs full batch
+compression**, **iteration 3: date partitioning**, and **iteration 4: ads joins**. Each runs full batch
 rebuilds with correctness checks and runtime/storage measurements, locally
 without cloud services. Iteration 1 provides a separate CSV-versus-Parquet read-workload experiment.
 
@@ -111,7 +111,7 @@ and 18 query executions matched. It is preserved as `iteration-03-date-partition
 bash scripts/test_iteration.sh 1  # CSV versus Parquet
 bash scripts/test_iteration.sh 2  # Compression
 bash scripts/test_iteration.sh 3  # Date partitioning
-bash scripts/test_iteration.sh 4  # Ads broadcast versus sort-merge join, including query tests
+bash scripts/test_iteration.sh 4  # Ads broadcast versus sort-merge join, including executed-plan checks
 ```
 
 These run the test suite, the iteration’s repeated workloads, exact equality
@@ -129,4 +129,10 @@ and query results matched. Tag: `iteration-01-csv-vs-parquet`.
 
 [Iteration 4](experiments/04_ads_shuffle_join/README.md) changes only the ads join
 to sort-merge from the unpartitioned ZSTD reference. Its automated checks verify
-the actual ads and profile join strategies from runtime event logs.
+the actual ads and profile join strategies from runtime event logs. Its
+[completed results](results/04_ads_shuffle_join/README.md) show Gold processing
+medians of **7.947 → 14.871 seconds** and about **five times the shuffle writes**
+when forcing sort-merge. All 24 full-data table comparisons passed. Two repeats
+per side were used due to local disk capacity; overall pipeline timing was more
+variable. Automatic broadcasting remains the better fit for this workload.
+Tag: `iteration-04-ads-shuffle-join`.

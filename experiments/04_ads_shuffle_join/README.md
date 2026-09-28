@@ -59,10 +59,19 @@ logical rows remain identical. Any such changes are consequences to document,
 not additional tuning.
 
 Each measured run starts a fresh process with the same source hashes and runtime.
-OS caches are not flushed; three samples describe observed variation. Tests,
+OS caches are not flushed; repeated samples describe observed variation. Tests,
 exact cross-run verification, and plan/codec inspection occur outside pipeline
 processing timing. Ordinary pipeline validation is included in full-run totals
 and reported separately. No cloud-dollar cost is measured.
 
 Earlier iterations remain runnable. Iteration 5, if pursued later, will separately
 change the profile join starting from iteration 2; it is not included here.
+
+## Recorded result
+
+[The completed full-data comparison](../../results/04_ads_shuffle_join/README.md)
+used two repeats per side because local free disk space was limited. Gold jobs
+were slower with the forced sort-merge ads join, with about five times the shuffle
+writes and new disk spill. All table contents matched. The default command uses
+three repeats; `--repeats 2` reproduces the recorded sample count. The implementation
+and evidence are preserved as `iteration-04-ads-shuffle-join`.

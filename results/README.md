@@ -12,7 +12,7 @@ no measurable difference.
 | 01 — CSV versus Parquet | Identical typed impressions; uncompressed formats; three read workloads | Complete: 58.18% fewer data bytes; 3.89–8.44× faster median reads in tested workloads | [Results](01_csv_vs_parquet/README.md) |
 | 02 — Compression | Snappy versus ZSTD; same full pipeline and logical model | Complete: 31.85% smaller tables; no clear runtime gain; 16 tests and 40 exact comparisons passed | [Results](02_compression/README.md) |
 | 03 — Date partitioning | Partition Silver impressions by date; keep ZSTD; rebuild and filtered/full reads | Complete: faster measured date-filtered reads; 7.99% slower rebuild; 14.86% smaller tables | [Results](03_date_partitioning/README.md) |
-| 04 — Ads join | Iteration 2 versus ads sort-merge join; profile join unchanged | Implementation and tests in progress | [Experiment](../experiments/04_ads_shuffle_join/README.md) |
+| 04 — Ads join | Iteration 2 versus ads sort-merge join; profile join unchanged | Complete: Gold median 7.947 → 14.871 s, 5.02× shuffle writes; 24 exact comparisons passed; two repeats per side | [Results](04_ads_shuffle_join/README.md) |
 
 ## Reproduce an experiment
 

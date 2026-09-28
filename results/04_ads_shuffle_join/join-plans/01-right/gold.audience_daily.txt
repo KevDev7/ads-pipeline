@@ -1,0 +1,268 @@
+== Physical Plan ==
+AdaptiveSparkPlan (47)
++- == Current Plan ==
+   ResultQueryStage (30)
+   +- * Project (29)
+      +- * HashAggregate (28)
+         +- AQEShuffleRead (27)
+            +- ShuffleQueryStage (26), Statistics(sizeInBytes=282.7 MiB, rowCount=5.29E+6)
+               +- Exchange (25)
+                  +- * HashAggregate (24)
+                     +- * Project (23)
+                        +- * BroadcastHashJoin LeftOuter BuildRight (22)
+                           :- * Project (15)
+                           :  +- * SortMergeJoin LeftOuter (14)
+                           :     :- * Sort (6)
+                           :     :  +- AQEShuffleRead (5)
+                           :     :     +- ShuffleQueryStage (4), Statistics(sizeInBytes=1013.1 MiB, rowCount=2.66E+7)
+                           :     :        +- Exchange (3)
+                           :     :           +- * ColumnarToRow (2)
+                           :     :              +- Scan parquet  (1)
+                           :     +- * Sort (13)
+                           :        +- AQEShuffleRead (12)
+                           :           +- ShuffleQueryStage (11), Statistics(sizeInBytes=19.4 MiB, rowCount=8.47E+5)
+                           :              +- Exchange (10)
+                           :                 +- * Filter (9)
+                           :                    +- * ColumnarToRow (8)
+                           :                       +- Scan parquet  (7)
+                           +- BroadcastQueryStage (21), Statistics(sizeInBytes=72.7 MiB, rowCount=1.06E+6)
+                              +- BroadcastExchange (20)
+                                 +- * Project (19)
+                                    +- * Filter (18)
+                                       +- * ColumnarToRow (17)
+                                          +- Scan parquet  (16)
++- == Initial Plan ==
+   Project (46)
+   +- HashAggregate (45)
+      +- Exchange (44)
+         +- HashAggregate (43)
+            +- Project (42)
+               +- BroadcastHashJoin LeftOuter BuildRight (41)
+                  :- Project (37)
+                  :  +- SortMergeJoin LeftOuter (36)
+                  :     :- Sort (32)
+                  :     :  +- Exchange (31)
+                  :     :     +- Scan parquet  (1)
+                  :     +- Sort (35)
+                  :        +- Exchange (34)
+                  :           +- Filter (33)
+                  :              +- Scan parquet  (7)
+                  +- BroadcastExchange (40)
+                     +- Project (39)
+                        +- Filter (38)
+                           +- Scan parquet  (16)
+
+
+(1) Scan parquet 
+Output [4]: [user_id#5063L, adgroup_id#5065L, clicked#5068, reporting_date#5071]
+Batched: true
+Location: PreparedDeltaFileIndex [file:<repo>/outputs/comparisons/ads-join-04-20260927/runs/01-right/silver/impressions]
+ReadSchema: struct<user_id:bigint,adgroup_id:bigint,clicked:int,reporting_date:date>
+
+(2) ColumnarToRow [codegen id : 1]
+Input [4]: [user_id#5063L, adgroup_id#5065L, clicked#5068, reporting_date#5071]
+
+(3) Exchange
+Input [4]: [user_id#5063L, adgroup_id#5065L, clicked#5068, reporting_date#5071]
+Arguments: hashpartitioning(adgroup_id#5065L, 200), ENSURE_REQUIREMENTS, [plan_id=3319]
+
+(4) ShuffleQueryStage
+Output [4]: [user_id#5063L, adgroup_id#5065L, clicked#5068, reporting_date#5071]
+Arguments: 0
+
+(5) AQEShuffleRead
+Input [4]: [user_id#5063L, adgroup_id#5065L, clicked#5068, reporting_date#5071]
+Arguments: coalesced
+
+(6) Sort [codegen id : 4]
+Input [4]: [user_id#5063L, adgroup_id#5065L, clicked#5068, reporting_date#5071]
+Arguments: [adgroup_id#5065L ASC NULLS FIRST], false, 0
+
+(7) Scan parquet 
+Output [2]: [adgroup_id#5072L, advertiser_id#5075L]
+Batched: true
+Location: PreparedDeltaFileIndex [file:<repo>/outputs/comparisons/ads-join-04-20260927/runs/01-right/silver/ads]
+PushedFilters: [IsNotNull(adgroup_id)]
+ReadSchema: struct<adgroup_id:bigint,advertiser_id:bigint>
+
+(8) ColumnarToRow [codegen id : 2]
+Input [2]: [adgroup_id#5072L, advertiser_id#5075L]
+
+(9) Filter [codegen id : 2]
+Input [2]: [adgroup_id#5072L, advertiser_id#5075L]
+Condition : isnotnull(adgroup_id#5072L)
+
+(10) Exchange
+Input [2]: [adgroup_id#5072L, advertiser_id#5075L]
+Arguments: hashpartitioning(adgroup_id#5072L, 200), ENSURE_REQUIREMENTS, [plan_id=3334]
+
+(11) ShuffleQueryStage
+Output [2]: [adgroup_id#5072L, advertiser_id#5075L]
+Arguments: 1
+
+(12) AQEShuffleRead
+Input [2]: [adgroup_id#5072L, advertiser_id#5075L]
+Arguments: coalesced
+
+(13) Sort [codegen id : 5]
+Input [2]: [adgroup_id#5072L, advertiser_id#5075L]
+Arguments: [adgroup_id#5072L ASC NULLS FIRST], false, 0
+
+(14) SortMergeJoin [codegen id : 6]
+Left keys [1]: [adgroup_id#5065L]
+Right keys [1]: [adgroup_id#5072L]
+Join type: LeftOuter
+Join condition: None
+
+(15) Project [codegen id : 6]
+Output [4]: [user_id#5063L, clicked#5068, reporting_date#5071, advertiser_id#5075L]
+Input [6]: [user_id#5063L, adgroup_id#5065L, clicked#5068, reporting_date#5071, adgroup_id#5072L, advertiser_id#5075L]
+
+(16) Scan parquet 
+Output [2]: [user_id#5079L, age_level#5083]
+Batched: true
+Location: PreparedDeltaFileIndex [file:<repo>/outputs/comparisons/ads-join-04-20260927/runs/01-right/silver/user_profiles]
+PushedFilters: [IsNotNull(user_id)]
+ReadSchema: struct<user_id:bigint,age_level:int>
+
+(17) ColumnarToRow [codegen id : 3]
+Input [2]: [user_id#5079L, age_level#5083]
+
+(18) Filter [codegen id : 3]
+Input [2]: [user_id#5079L, age_level#5083]
+Condition : isnotnull(user_id#5079L)
+
+(19) Project [codegen id : 3]
+Output [3]: [user_id#5079L, age_level#5083, true AS profile_found#9712]
+Input [2]: [user_id#5079L, age_level#5083]
+
+(20) BroadcastExchange
+Input [3]: [user_id#5079L, age_level#5083, profile_found#9712]
+Arguments: HashedRelationBroadcastMode(List(input[0, bigint, true]),false), [plan_id=3355]
+
+(21) BroadcastQueryStage
+Output [3]: [user_id#5079L, age_level#5083, profile_found#9712]
+Arguments: 2
+
+(22) BroadcastHashJoin [codegen id : 6]
+Left keys [1]: [user_id#5063L]
+Right keys [1]: [user_id#5079L]
+Join type: LeftOuter
+Join condition: None
+
+(23) Project [codegen id : 6]
+Output [5]: [clicked#5068, reporting_date#5071, advertiser_id#5075L, age_level#5083, cast(isnull(profile_found#9712) as bigint) AS missing_profile#9713L]
+Input [7]: [user_id#5063L, clicked#5068, reporting_date#5071, advertiser_id#5075L, user_id#5079L, age_level#5083, profile_found#9712]
+
+(24) HashAggregate [codegen id : 6]
+Input [5]: [clicked#5068, reporting_date#5071, advertiser_id#5075L, age_level#5083, missing_profile#9713L]
+Keys [3]: [reporting_date#5071, advertiser_id#5075L, age_level#5083]
+Functions [3]: [partial_count(1), partial_sum(clicked#5068), partial_sum(missing_profile#9713L)]
+Aggregate Attributes [3]: [count#9935L, sum#9936L, sum#9937L]
+Results [6]: [reporting_date#5071, advertiser_id#5075L, age_level#5083, count#9938L, sum#9939L, sum#9940L]
+
+(25) Exchange
+Input [6]: [reporting_date#5071, advertiser_id#5075L, age_level#5083, count#9938L, sum#9939L, sum#9940L]
+Arguments: hashpartitioning(reporting_date#5071, advertiser_id#5075L, age_level#5083, 200), ENSURE_REQUIREMENTS, [plan_id=3523]
+
+(26) ShuffleQueryStage
+Output [6]: [reporting_date#5071, advertiser_id#5075L, age_level#5083, count#9938L, sum#9939L, sum#9940L]
+Arguments: 3
+
+(27) AQEShuffleRead
+Input [6]: [reporting_date#5071, advertiser_id#5075L, age_level#5083, count#9938L, sum#9939L, sum#9940L]
+Arguments: coalesced
+
+(28) HashAggregate [codegen id : 7]
+Input [6]: [reporting_date#5071, advertiser_id#5075L, age_level#5083, count#9938L, sum#9939L, sum#9940L]
+Keys [3]: [reporting_date#5071, advertiser_id#5075L, age_level#5083]
+Functions [3]: [count(1), sum(clicked#5068), sum(missing_profile#9713L)]
+Aggregate Attributes [3]: [count(1)#9731L, sum(clicked#5068)#9732L, sum(missing_profile#9713L)#9733L]
+Results [6]: [reporting_date#5071, advertiser_id#5075L, age_level#5083, count(1)#9731L AS impressions#9714L, sum(clicked#5068)#9732L AS clicks#9715L, sum(missing_profile#9713L)#9733L AS missing_profile_impressions#9716L]
+
+(29) Project [codegen id : 7]
+Output [7]: [reporting_date#5071, advertiser_id#5075L, age_level#5083, impressions#9714L, clicks#9715L, missing_profile_impressions#9716L, (cast(clicks#9715L as double) / cast(impressions#9714L as double)) AS ctr#9734]
+Input [6]: [reporting_date#5071, advertiser_id#5075L, age_level#5083, impressions#9714L, clicks#9715L, missing_profile_impressions#9716L]
+
+(30) ResultQueryStage
+Output [7]: [reporting_date#5071, advertiser_id#5075L, age_level#5083, impressions#9714L, clicks#9715L, missing_profile_impressions#9716L, ctr#9734]
+Arguments: 5
+
+(31) Exchange
+Input [4]: [user_id#5063L, adgroup_id#5065L, clicked#5068, reporting_date#5071]
+Arguments: hashpartitioning(adgroup_id#5065L, 200), ENSURE_REQUIREMENTS, [plan_id=3268]
+
+(32) Sort
+Input [4]: [user_id#5063L, adgroup_id#5065L, clicked#5068, reporting_date#5071]
+Arguments: [adgroup_id#5065L ASC NULLS FIRST], false, 0
+
+(33) Filter
+Input [2]: [adgroup_id#5072L, advertiser_id#5075L]
+Condition : isnotnull(adgroup_id#5072L)
+
+(34) Exchange
+Input [2]: [adgroup_id#5072L, advertiser_id#5075L]
+Arguments: hashpartitioning(adgroup_id#5072L, 200), ENSURE_REQUIREMENTS, [plan_id=3269]
+
+(35) Sort
+Input [2]: [adgroup_id#5072L, advertiser_id#5075L]
+Arguments: [adgroup_id#5072L ASC NULLS FIRST], false, 0
+
+(36) SortMergeJoin
+Left keys [1]: [adgroup_id#5065L]
+Right keys [1]: [adgroup_id#5072L]
+Join type: LeftOuter
+Join condition: None
+
+(37) Project
+Output [4]: [user_id#5063L, clicked#5068, reporting_date#5071, advertiser_id#5075L]
+Input [6]: [user_id#5063L, adgroup_id#5065L, clicked#5068, reporting_date#5071, adgroup_id#5072L, advertiser_id#5075L]
+
+(38) Filter
+Input [2]: [user_id#5079L, age_level#5083]
+Condition : isnotnull(user_id#5079L)
+
+(39) Project
+Output [3]: [user_id#5079L, age_level#5083, true AS profile_found#9712]
+Input [2]: [user_id#5079L, age_level#5083]
+
+(40) BroadcastExchange
+Input [3]: [user_id#5079L, age_level#5083, profile_found#9712]
+Arguments: HashedRelationBroadcastMode(List(input[0, bigint, true]),false), [plan_id=3275]
+
+(41) BroadcastHashJoin
+Left keys [1]: [user_id#5063L]
+Right keys [1]: [user_id#5079L]
+Join type: LeftOuter
+Join condition: None
+
+(42) Project
+Output [5]: [clicked#5068, reporting_date#5071, advertiser_id#5075L, age_level#5083, cast(isnull(profile_found#9712) as bigint) AS missing_profile#9713L]
+Input [7]: [user_id#5063L, clicked#5068, reporting_date#5071, advertiser_id#5075L, user_id#5079L, age_level#5083, profile_found#9712]
+
+(43) HashAggregate
+Input [5]: [clicked#5068, reporting_date#5071, advertiser_id#5075L, age_level#5083, missing_profile#9713L]
+Keys [3]: [reporting_date#5071, advertiser_id#5075L, age_level#5083]
+Functions [3]: [partial_count(1), partial_sum(clicked#5068), partial_sum(missing_profile#9713L)]
+Aggregate Attributes [3]: [count#9935L, sum#9936L, sum#9937L]
+Results [6]: [reporting_date#5071, advertiser_id#5075L, age_level#5083, count#9938L, sum#9939L, sum#9940L]
+
+(44) Exchange
+Input [6]: [reporting_date#5071, advertiser_id#5075L, age_level#5083, count#9938L, sum#9939L, sum#9940L]
+Arguments: hashpartitioning(reporting_date#5071, advertiser_id#5075L, age_level#5083, 200), ENSURE_REQUIREMENTS, [plan_id=3280]
+
+(45) HashAggregate
+Input [6]: [reporting_date#5071, advertiser_id#5075L, age_level#5083, count#9938L, sum#9939L, sum#9940L]
+Keys [3]: [reporting_date#5071, advertiser_id#5075L, age_level#5083]
+Functions [3]: [count(1), sum(clicked#5068), sum(missing_profile#9713L)]
+Aggregate Attributes [3]: [count(1)#9731L, sum(clicked#5068)#9732L, sum(missing_profile#9713L)#9733L]
+Results [6]: [reporting_date#5071, advertiser_id#5075L, age_level#5083, count(1)#9731L AS impressions#9714L, sum(clicked#5068)#9732L AS clicks#9715L, sum(missing_profile#9713L)#9733L AS missing_profile_impressions#9716L]
+
+(46) Project
+Output [7]: [reporting_date#5071, advertiser_id#5075L, age_level#5083, impressions#9714L, clicks#9715L, missing_profile_impressions#9716L, (cast(clicks#9715L as double) / cast(impressions#9714L as double)) AS ctr#9734]
+Input [6]: [reporting_date#5071, advertiser_id#5075L, age_level#5083, impressions#9714L, clicks#9715L, missing_profile_impressions#9716L]
+
+(47) AdaptiveSparkPlan
+Output [7]: [reporting_date#5071, advertiser_id#5075L, age_level#5083, impressions#9714L, clicks#9715L, missing_profile_impressions#9716L, ctr#9734]
+Arguments: isFinalPlan=false
+

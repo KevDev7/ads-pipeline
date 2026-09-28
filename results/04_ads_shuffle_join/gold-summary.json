@@ -1,0 +1,213 @@
+{
+  "comparison_id": "ads-join-04-20260927",
+  "method": "Derived from comparison.json. For each run, sum seconds and task counters for gold.campaign_daily and gold.audience_daily, then calculate distributions by side. These jobs include joins, aggregation and Delta writes; they are not isolated join-operator timings. Task CPU ns is cumulative across tasks, not wall time; memory spill is not peak RAM.",
+  "runs": {
+    "left": [
+      {
+        "disk_spill_bytes": 0,
+        "executor_cpu_ns": 18881907000,
+        "failed_task_attempts": 0,
+        "memory_spill_bytes": 0,
+        "run_id": "01-left",
+        "seconds": 7.112,
+        "shuffle_read_bytes": 138692255,
+        "shuffle_write_bytes": 138692255
+      },
+      {
+        "disk_spill_bytes": 0,
+        "executor_cpu_ns": 22722132000,
+        "failed_task_attempts": 0,
+        "memory_spill_bytes": 0,
+        "run_id": "02-left",
+        "seconds": 8.782,
+        "shuffle_read_bytes": 138692257,
+        "shuffle_write_bytes": 138692257
+      }
+    ],
+    "right": [
+      {
+        "disk_spill_bytes": 440180476,
+        "executor_cpu_ns": 41873719000,
+        "failed_task_attempts": 0,
+        "memory_spill_bytes": 2281699520,
+        "run_id": "01-right",
+        "seconds": 15.262,
+        "shuffle_read_bytes": 695630261,
+        "shuffle_write_bytes": 695630261
+      },
+      {
+        "disk_spill_bytes": 440180476,
+        "executor_cpu_ns": 40427010000,
+        "failed_task_attempts": 0,
+        "memory_spill_bytes": 2281699520,
+        "run_id": "02-right",
+        "seconds": 14.48,
+        "shuffle_read_bytes": 695629935,
+        "shuffle_write_bytes": 695629935
+      }
+    ]
+  },
+  "summary": {
+    "disk_spill_bytes": {
+      "left": {
+        "max": 0,
+        "median": 0.0,
+        "min": 0,
+        "samples": [
+          0,
+          0
+        ],
+        "stdev": 0.0
+      },
+      "right": {
+        "max": 440180476,
+        "median": 440180476.0,
+        "min": 440180476,
+        "samples": [
+          440180476,
+          440180476
+        ],
+        "stdev": 0.0
+      },
+      "right_vs_left_percent": null
+    },
+    "executor_cpu_ns": {
+      "left": {
+        "max": 22722132000,
+        "median": 20802019500.0,
+        "min": 18881907000,
+        "samples": [
+          18881907000,
+          22722132000
+        ],
+        "stdev": 2715449138.7821093
+      },
+      "right": {
+        "max": 41873719000,
+        "median": 41150364500.0,
+        "min": 40427010000,
+        "samples": [
+          41873719000,
+          40427010000
+        ],
+        "stdev": 1022977744.303609
+      },
+      "right_vs_left_percent": 97.81908434419071
+    },
+    "failed_task_attempts": {
+      "left": {
+        "max": 0,
+        "median": 0.0,
+        "min": 0,
+        "samples": [
+          0,
+          0
+        ],
+        "stdev": 0.0
+      },
+      "right": {
+        "max": 0,
+        "median": 0.0,
+        "min": 0,
+        "samples": [
+          0,
+          0
+        ],
+        "stdev": 0.0
+      },
+      "right_vs_left_percent": null
+    },
+    "memory_spill_bytes": {
+      "left": {
+        "max": 0,
+        "median": 0.0,
+        "min": 0,
+        "samples": [
+          0,
+          0
+        ],
+        "stdev": 0.0
+      },
+      "right": {
+        "max": 2281699520,
+        "median": 2281699520.0,
+        "min": 2281699520,
+        "samples": [
+          2281699520,
+          2281699520
+        ],
+        "stdev": 0.0
+      },
+      "right_vs_left_percent": null
+    },
+    "seconds": {
+      "left": {
+        "max": 8.782,
+        "median": 7.947,
+        "min": 7.112,
+        "samples": [
+          7.112,
+          8.782
+        ],
+        "stdev": 1.1808683245815343
+      },
+      "right": {
+        "max": 15.262,
+        "median": 14.871,
+        "min": 14.48,
+        "samples": [
+          15.262,
+          14.48
+        ],
+        "stdev": 0.5529575028878801
+      },
+      "right_vs_left_percent": 87.12721781804456
+    },
+    "shuffle_read_bytes": {
+      "left": {
+        "max": 138692257,
+        "median": 138692256.0,
+        "min": 138692255,
+        "samples": [
+          138692255,
+          138692257
+        ],
+        "stdev": 1.4142135623730951
+      },
+      "right": {
+        "max": 695630261,
+        "median": 695630098.0,
+        "min": 695629935,
+        "samples": [
+          695630261,
+          695629935
+        ],
+        "stdev": 230.5168106668145
+      },
+      "right_vs_left_percent": 401.5637628679138
+    },
+    "shuffle_write_bytes": {
+      "left": {
+        "max": 138692257,
+        "median": 138692256.0,
+        "min": 138692255,
+        "samples": [
+          138692255,
+          138692257
+        ],
+        "stdev": 1.4142135623730951
+      },
+      "right": {
+        "max": 695630261,
+        "median": 695630098.0,
+        "min": 695629935,
+        "samples": [
+          695630261,
+          695629935
+        ],
+        "stdev": 230.5168106668145
+      },
+      "right_vs_left_percent": 401.5637628679138
+    }
+  }
+}
