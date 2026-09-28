@@ -1,0 +1,15 @@
+AdaptiveSparkPlan isFinalPlan=true
++- == Final Plan ==
+   ResultQueryStage 1
+   +- *(2) HashAggregate(keys=[pid#3], functions=[count(1), sum(user#0L), sum(time_stamp#1L), sum(adgroup_id#2L), sum(nonclk#4), sum(clk#5)], output=[pid#3, impressions#6L, sum_user#7L, sum_time_stamp#8L, sum_adgroup_id#9L, sum_nonclk#10L, sum_clk#11L])
+      +- AQEShuffleRead coalesced
+         +- ShuffleQueryStage 0
+            +- Exchange hashpartitioning(pid#3, 200), ENSURE_REQUIREMENTS, [plan_id=25]
+               +- *(1) HashAggregate(keys=[pid#3], functions=[partial_count(1), partial_sum(user#0L), partial_sum(time_stamp#1L), partial_sum(adgroup_id#2L), partial_sum(nonclk#4), partial_sum(clk#5)], output=[pid#3, count#31L, sum#32L, sum#33L, sum#34L, sum#35L, sum#36L])
+                  +- *(1) ColumnarToRow
+                     +- FileScan parquet [user#0L,time_stamp#1L,adgroup_id#2L,pid#3,nonclk#4,clk#5] Batched: true, DataFilters: [], Format: Parquet, Location: InMemoryFileIndex(1 paths)[file:<repo>/outputs/compariso..., PartitionFilters: [], PushedFilters: [], ReadSchema: struct<user:bigint,time_stamp:bigint,adgroup_id:bigint,pid:string,nonclk:int,clk:int>
++- == Initial Plan ==
+   HashAggregate(keys=[pid#3], functions=[count(1), sum(user#0L), sum(time_stamp#1L), sum(adgroup_id#2L), sum(nonclk#4), sum(clk#5)], output=[pid#3, impressions#6L, sum_user#7L, sum_time_stamp#8L, sum_adgroup_id#9L, sum_nonclk#10L, sum_clk#11L])
+   +- Exchange hashpartitioning(pid#3, 200), ENSURE_REQUIREMENTS, [plan_id=11]
+      +- HashAggregate(keys=[pid#3], functions=[partial_count(1), partial_sum(user#0L), partial_sum(time_stamp#1L), partial_sum(adgroup_id#2L), partial_sum(nonclk#4), partial_sum(clk#5)], output=[pid#3, count#31L, sum#32L, sum#33L, sum#34L, sum#35L, sum#36L])
+         +- FileScan parquet [user#0L,time_stamp#1L,adgroup_id#2L,pid#3,nonclk#4,clk#5] Batched: true, DataFilters: [], Format: Parquet, Location: InMemoryFileIndex(1 paths)[file:<repo>/outputs/compariso..., PartitionFilters: [], PushedFilters: [], ReadSchema: struct<user:bigint,time_stamp:bigint,adgroup_id:bigint,pid:string,nonclk:int,clk:int>

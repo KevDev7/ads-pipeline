@@ -1,0 +1,18 @@
+AdaptiveSparkPlan isFinalPlan=true
++- == Final Plan ==
+   ResultQueryStage 1
+   +- *(2) HashAggregate(keys=[pid#3], functions=[count(1), sum(clk#5)], output=[pid#3, impressions#66L, clicks#67L])
+      +- AQEShuffleRead coalesced
+         +- ShuffleQueryStage 0
+            +- Exchange hashpartitioning(pid#3, 200), ENSURE_REQUIREMENTS, [plan_id=105]
+               +- *(1) HashAggregate(keys=[pid#3], functions=[partial_count(1), partial_sum(clk#5)], output=[pid#3, count#78L, sum#79L])
+                  +- *(1) Project [pid#3, clk#5]
+                     +- *(1) Filter ((isnotnull(time_stamp#1L) AND (time_stamp#1L >= 1494172800)) AND (time_stamp#1L < 1494259200))
+                        +- FileScan csv [time_stamp#1L,pid#3,clk#5] Batched: false, DataFilters: [isnotnull(time_stamp#1L), (time_stamp#1L >= 1494172800), (time_stamp#1L < 1494259200)], Format: CSV, Location: InMemoryFileIndex(1 paths)[file:<repo>/data/raw/taobao/r..., PartitionFilters: [], PushedFilters: [IsNotNull(time_stamp), GreaterThanOrEqual(time_stamp,1494172800), LessThan(time_stamp,1494259200)], ReadSchema: struct<time_stamp:bigint,pid:string,clk:int>
++- == Initial Plan ==
+   HashAggregate(keys=[pid#3], functions=[count(1), sum(clk#5)], output=[pid#3, impressions#66L, clicks#67L])
+   +- Exchange hashpartitioning(pid#3, 200), ENSURE_REQUIREMENTS, [plan_id=89]
+      +- HashAggregate(keys=[pid#3], functions=[partial_count(1), partial_sum(clk#5)], output=[pid#3, count#78L, sum#79L])
+         +- Project [pid#3, clk#5]
+            +- Filter ((isnotnull(time_stamp#1L) AND (time_stamp#1L >= 1494172800)) AND (time_stamp#1L < 1494259200))
+               +- FileScan csv [time_stamp#1L,pid#3,clk#5] Batched: false, DataFilters: [isnotnull(time_stamp#1L), (time_stamp#1L >= 1494172800), (time_stamp#1L < 1494259200)], Format: CSV, Location: InMemoryFileIndex(1 paths)[file:<repo>/data/raw/taobao/r..., PartitionFilters: [], PushedFilters: [IsNotNull(time_stamp), GreaterThanOrEqual(time_stamp,1494172800), LessThan(time_stamp,1494259200)], ReadSchema: struct<time_stamp:bigint,pid:string,clk:int>

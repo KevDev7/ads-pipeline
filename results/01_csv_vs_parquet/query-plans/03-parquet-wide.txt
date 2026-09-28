@@ -1,0 +1,15 @@
+AdaptiveSparkPlan isFinalPlan=true
++- == Final Plan ==
+   ResultQueryStage 1
+   +- *(2) HashAggregate(keys=[pid#3], functions=[count(1), sum(user#0L), sum(time_stamp#1L), sum(adgroup_id#2L), sum(nonclk#4), sum(clk#5)], output=[pid#3, impressions#39L, sum_user#40L, sum_time_stamp#41L, sum_adgroup_id#42L, sum_nonclk#43L, sum_clk#44L])
+      +- AQEShuffleRead coalesced
+         +- ShuffleQueryStage 0
+            +- Exchange hashpartitioning(pid#3, 200), ENSURE_REQUIREMENTS, [plan_id=125]
+               +- *(1) HashAggregate(keys=[pid#3], functions=[partial_count(1), partial_sum(user#0L), partial_sum(time_stamp#1L), partial_sum(adgroup_id#2L), partial_sum(nonclk#4), partial_sum(clk#5)], output=[pid#3, count#63L, sum#64L, sum#65L, sum#66L, sum#67L, sum#68L])
+                  +- *(1) ColumnarToRow
+                     +- FileScan parquet [user#0L,time_stamp#1L,adgroup_id#2L,pid#3,nonclk#4,clk#5] Batched: true, DataFilters: [], Format: Parquet, Location: InMemoryFileIndex(1 paths)[file:<repo>/outputs/compariso..., PartitionFilters: [], PushedFilters: [], ReadSchema: struct<user:bigint,time_stamp:bigint,adgroup_id:bigint,pid:string,nonclk:int,clk:int>
++- == Initial Plan ==
+   HashAggregate(keys=[pid#3], functions=[count(1), sum(user#0L), sum(time_stamp#1L), sum(adgroup_id#2L), sum(nonclk#4), sum(clk#5)], output=[pid#3, impressions#39L, sum_user#40L, sum_time_stamp#41L, sum_adgroup_id#42L, sum_nonclk#43L, sum_clk#44L])
+   +- Exchange hashpartitioning(pid#3, 200), ENSURE_REQUIREMENTS, [plan_id=111]
+      +- HashAggregate(keys=[pid#3], functions=[partial_count(1), partial_sum(user#0L), partial_sum(time_stamp#1L), partial_sum(adgroup_id#2L), partial_sum(nonclk#4), partial_sum(clk#5)], output=[pid#3, count#63L, sum#64L, sum#65L, sum#66L, sum#67L, sum#68L])
+         +- FileScan parquet [user#0L,time_stamp#1L,adgroup_id#2L,pid#3,nonclk#4,clk#5] Batched: true, DataFilters: [], Format: Parquet, Location: InMemoryFileIndex(1 paths)[file:<repo>/outputs/compariso..., PartitionFilters: [], PushedFilters: [], ReadSchema: struct<user:bigint,time_stamp:bigint,adgroup_id:bigint,pid:string,nonclk:int,clk:int>

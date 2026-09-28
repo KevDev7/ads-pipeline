@@ -4,6 +4,10 @@ A runnable format experiment on the full `raw_sample.csv` impressions source.
 The original lakehouse baseline already uses Parquet; this experiment supplies
 the missing CSV comparison without rewriting that preserved baseline.
 
+**Completed:** [results and evidence](../../results/01_csv_vs_parquet/README.md)
+show 58.18% fewer data bytes and faster reads in all three workloads, with exact
+record equality. Tag: `iteration-01-csv-vs-parquet`.
+
 ## One deliberate format change
 
 Read the same six typed fields from the original **uncompressed CSV** and an

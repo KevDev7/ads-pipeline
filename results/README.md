@@ -9,7 +9,7 @@ no measurable difference.
 | --- | --- | --- | --- |
 | 00 — Baseline | Full three-file Bronze/Silver/Gold rebuild, default SQL settings | Complete: one recorded reference run; 33.769 s processing, 925.72 MB tables | [Baseline report](00_baseline/README.md) |
 | Comparison runner control | Baseline versus itself, no optimization | Passed: 15 tests, four full-data runs, 24 exact table comparisons | [Control results](comparison_control/README.md) |
-| 01 — CSV versus Parquet | Identical typed impressions; uncompressed formats; three read workloads | Implemented; full-data measurement pending | [Experiment](../experiments/01_csv_vs_parquet/README.md) |
+| 01 — CSV versus Parquet | Identical typed impressions; uncompressed formats; three read workloads | Complete: 58.18% fewer data bytes; 3.89–8.44× faster median reads in tested workloads | [Results](01_csv_vs_parquet/README.md) |
 | 02 — Compression | Snappy versus ZSTD; same full pipeline and logical model | Complete: 31.85% smaller tables; no clear runtime gain; 16 tests and 40 exact comparisons passed | [Results](02_compression/README.md) |
 | 03 — Date partitioning | Partition Silver impressions by date; keep ZSTD; rebuild and filtered/full reads | Complete: faster measured date-filtered reads; 7.99% slower rebuild; 14.86% smaller tables | [Results](03_date_partitioning/README.md) |
 

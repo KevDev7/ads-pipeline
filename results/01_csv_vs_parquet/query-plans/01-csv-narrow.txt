@@ -1,0 +1,14 @@
+AdaptiveSparkPlan isFinalPlan=true
++- == Final Plan ==
+   ResultQueryStage 1
+   +- *(2) HashAggregate(keys=[pid#3], functions=[count(1), sum(clk#5)], output=[pid#3, impressions#6L, clicks#7L])
+      +- AQEShuffleRead coalesced
+         +- ShuffleQueryStage 0
+            +- Exchange hashpartitioning(pid#3, 200), ENSURE_REQUIREMENTS, [plan_id=21]
+               +- *(1) HashAggregate(keys=[pid#3], functions=[partial_count(1), partial_sum(clk#5)], output=[pid#3, count#19L, sum#20L])
+                  +- FileScan csv [pid#3,clk#5] Batched: false, DataFilters: [], Format: CSV, Location: InMemoryFileIndex(1 paths)[file:<repo>/data/raw/taobao/r..., PartitionFilters: [], PushedFilters: [], ReadSchema: struct<pid:string,clk:int>
++- == Initial Plan ==
+   HashAggregate(keys=[pid#3], functions=[count(1), sum(clk#5)], output=[pid#3, impressions#6L, clicks#7L])
+   +- Exchange hashpartitioning(pid#3, 200), ENSURE_REQUIREMENTS, [plan_id=11]
+      +- HashAggregate(keys=[pid#3], functions=[partial_count(1), partial_sum(clk#5)], output=[pid#3, count#19L, sum#20L])
+         +- FileScan csv [pid#3,clk#5] Batched: false, DataFilters: [], Format: CSV, Location: InMemoryFileIndex(1 paths)[file:<repo>/data/raw/taobao/r..., PartitionFilters: [], PushedFilters: [], ReadSchema: struct<pid:string,clk:int>

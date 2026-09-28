@@ -54,7 +54,7 @@ all large output tables and logs stay local. See the [central index](../../resul
 ## Learning note
 
 CSV-versus-Parquet is [iteration 1](../01_csv_vs_parquet/README.md), explaining a
-format choice already present in iteration 0. It is planned, not yet implemented.
+format choice already present in iteration 0. That comparison is now complete.
 Compression was completed first and later renumbered to iteration 2.
 
 [Spark's codec configuration](https://spark.apache.org/docs/4.0.1/sql-data-sources-parquet.html#configuration)

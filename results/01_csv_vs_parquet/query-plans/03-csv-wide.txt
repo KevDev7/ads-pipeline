@@ -1,0 +1,14 @@
+AdaptiveSparkPlan isFinalPlan=true
++- == Final Plan ==
+   ResultQueryStage 1
+   +- *(2) HashAggregate(keys=[pid#3], functions=[count(1), sum(user#0L), sum(time_stamp#1L), sum(adgroup_id#2L), sum(nonclk#4), sum(clk#5)], output=[pid#3, impressions#44L, sum_user#45L, sum_time_stamp#46L, sum_adgroup_id#47L, sum_nonclk#48L, sum_clk#49L])
+      +- AQEShuffleRead coalesced
+         +- ShuffleQueryStage 0
+            +- Exchange hashpartitioning(pid#3, 200), ENSURE_REQUIREMENTS, [plan_id=109]
+               +- *(1) HashAggregate(keys=[pid#3], functions=[partial_count(1), partial_sum(user#0L), partial_sum(time_stamp#1L), partial_sum(adgroup_id#2L), partial_sum(nonclk#4), partial_sum(clk#5)], output=[pid#3, count#68L, sum#69L, sum#70L, sum#71L, sum#72L, sum#73L])
+                  +- FileScan csv [user#0L,time_stamp#1L,adgroup_id#2L,pid#3,nonclk#4,clk#5] Batched: false, DataFilters: [], Format: CSV, Location: InMemoryFileIndex(1 paths)[file:<repo>/data/raw/taobao/r..., PartitionFilters: [], PushedFilters: [], ReadSchema: struct<user:bigint,time_stamp:bigint,adgroup_id:bigint,pid:string,nonclk:int,clk:int>
++- == Initial Plan ==
+   HashAggregate(keys=[pid#3], functions=[count(1), sum(user#0L), sum(time_stamp#1L), sum(adgroup_id#2L), sum(nonclk#4), sum(clk#5)], output=[pid#3, impressions#44L, sum_user#45L, sum_time_stamp#46L, sum_adgroup_id#47L, sum_nonclk#48L, sum_clk#49L])
+   +- Exchange hashpartitioning(pid#3, 200), ENSURE_REQUIREMENTS, [plan_id=99]
+      +- HashAggregate(keys=[pid#3], functions=[partial_count(1), partial_sum(user#0L), partial_sum(time_stamp#1L), partial_sum(adgroup_id#2L), partial_sum(nonclk#4), partial_sum(clk#5)], output=[pid#3, count#68L, sum#69L, sum#70L, sum#71L, sum#72L, sum#73L])
+         +- FileScan csv [user#0L,time_stamp#1L,adgroup_id#2L,pid#3,nonclk#4,clk#5] Batched: false, DataFilters: [], Format: CSV, Location: InMemoryFileIndex(1 paths)[file:<repo>/data/raw/taobao/r..., PartitionFilters: [], PushedFilters: [], ReadSchema: struct<user:bigint,time_stamp:bigint,adgroup_id:bigint,pid:string,nonclk:int,clk:int>

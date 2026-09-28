@@ -1,0 +1,53 @@
+{
+  "conversion_seconds": 7.335188333061524,
+  "environment": {
+    "delta": "4.0.0",
+    "driver_memory": "2g",
+    "git_commit": "535df77c5482d060cd96c64c4c675bb97d187300",
+    "git_dirty": false,
+    "java": "21.0.12.1",
+    "machine": "arm64",
+    "master": "local[4]",
+    "platform": "macOS-27.0-arm64-arm-64bit",
+    "python": "3.11.15",
+    "spark": "4.0.1",
+    "spark_sql_settings": {
+      "spark.sql.adaptive.enabled": "true",
+      "spark.sql.ansi.enabled": "true",
+      "spark.sql.autoBroadcastJoinThreshold": "10485760b",
+      "spark.sql.files.maxPartitionBytes": "134217728b",
+      "spark.sql.parquet.compression.codec": "snappy",
+      "spark.sql.session.timeZone": "Asia/Shanghai",
+      "spark.sql.shuffle.partitions": "200"
+    }
+  },
+  "parquet_storage": {
+    "parquet_bytes": 455068985,
+    "parquet_files": 9,
+    "total_bytes": 458624309
+  },
+  "source": {
+    "bytes": 1088060964,
+    "sha256": "aad792d63b81b5b7788f91e35364975b83ce3fdb923009fdfb6f798545d2b93d"
+  },
+  "spark_tasks": {
+    "by_operation": {
+      "prepare.parquet": {
+        "disk_spill_bytes": 0,
+        "executor_cpu_ns": 22882837000,
+        "executor_run_ms": 26409,
+        "failed_task_attempts": 0,
+        "input_bytes": 1088585252,
+        "input_records": 26557961,
+        "memory_spill_bytes": 0,
+        "peak_task_execution_memory_bytes": 0,
+        "shuffle_read_bytes": 0,
+        "shuffle_write_bytes": 0,
+        "task_attempts": 9
+      }
+    },
+    "events_read": 33,
+    "note": "All task attempts, including validation and retries. Input bytes are task counters, not unique physical disk reads. Peak memory is per task, not process RAM."
+  },
+  "status": "succeeded"
+}

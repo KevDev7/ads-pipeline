@@ -71,5 +71,5 @@ bash scripts/compare_partition_queries.sh \
 ```
 
 Use fresh IDs. Large outputs stay local. See the [results index](../../results/README.md).
-Iteration 1 (CSV versus Parquet) is still planned; this experiment proceeds from
-the completed iteration 2 as requested.
+This experiment proceeds from iteration 2. The separately completed
+[iteration 1](../01_csv_vs_parquet/README.md) explains CSV versus Parquet.

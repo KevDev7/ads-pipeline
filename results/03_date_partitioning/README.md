@@ -203,4 +203,5 @@ remain local under the ignored `outputs/comparisons/` directory. The published
 query plans replace the workspace's absolute path with `<repo>`; raw local event
 logs retain it. The completed implementation and evidence are preserved with tag
 `iteration-03-date-partitioning`. Earlier implementations/tags remain unchanged.
-CSV versus Parquet (iteration 1) remains planned and was not implemented here.
+CSV versus Parquet was not part of this experiment; its separately completed
+[iteration 1 results](../01_csv_vs_parquet/README.md) are now available.

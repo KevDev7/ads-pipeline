@@ -1,0 +1,21 @@
+{
+  "equality": {
+    "equal": true,
+    "left_has_unmatched_rows": false,
+    "method": "bidirectional EXCEPT ALL; exact values/types; unordered rows; duplicates retained",
+    "right_has_unmatched_rows": false
+  },
+  "parquet_footer": {
+    "bytes": 455068985,
+    "codecs": [
+      "UNCOMPRESSED"
+    ],
+    "column_chunks": 54,
+    "files": 9,
+    "matches_expected": true,
+    "row_groups": 9,
+    "rows": 26557961
+  },
+  "rows": 26557961,
+  "status": "succeeded"
+}

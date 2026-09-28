@@ -118,3 +118,10 @@ checks, and actual compression checks. Iteration 1 measures format conversion
 and reads; iterations 2 and 3 also compare full rebuilds. Open the generated `RESULTS.md`
 under `outputs/comparisons/<id>/` for all evidence. Each run gets a fresh ID;
 large outputs remain local. See [options and limitations](docs/comparisons.md#one-command-per-implemented-iteration).
+
+[Iteration 1's completed format results](results/01_csv_vs_parquet/README.md)
+compare uncompressed CSV and Parquet for the same 26.6 million impressions.
+Parquet used **58.18% fewer data bytes**, with **3.89–8.44× faster median reads**
+across three measured workloads; conversion cost was measured separately. This
+is a read-workload comparison, not a full-pipeline speedup claim. All records
+and query results matched. Tag: `iteration-01-csv-vs-parquet`.

@@ -158,7 +158,7 @@ The published comparison ID is `compression-01-20260927`. Its tables, full event
 logs, and test logs remain locally under the ignored `outputs/comparisons/`
 directory. Only small result summaries are in Git. The completed experiment and
 report are preserved with tag `iteration-02-compression`; the original baseline
-remains `baseline-v0.1`. CSV-versus-Parquet is now planned as iteration 1 and has not yet been implemented.
+remains `baseline-v0.1`. CSV-versus-Parquet is iteration 1; its [separate results](../01_csv_vs_parquet/README.md) are now available.
 
 ## Renumbering note
 
