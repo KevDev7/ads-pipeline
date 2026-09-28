@@ -1,0 +1,19 @@
+AdaptiveSparkPlan isFinalPlan=true
++- == Final Plan ==
+   ResultQueryStage 1
+   +- *(2) HashAggregate(keys=[placement_id#782], functions=[count(1), sum(clicked#784)], output=[placement_id#782, impressions#789L, clicks#790L])
+      +- AQEShuffleRead coalesced
+         +- ShuffleQueryStage 0
+            +- Exchange hashpartitioning(placement_id#782, 200), ENSURE_REQUIREMENTS, [plan_id=189]
+               +- *(1) HashAggregate(keys=[placement_id#782], functions=[partial_count(1), partial_sum(clicked#784)], output=[placement_id#782, count#930L, sum#931L])
+                  +- *(1) Project [placement_id#782, clicked#784]
+                     +- *(1) Filter (isnotnull(reporting_date#787) AND (reporting_date#787 = 2017-05-08))
+                        +- *(1) ColumnarToRow
+                           +- FileScan parquet [placement_id#782,clicked#784,reporting_date#787] Batched: true, DataFilters: [isnotnull(reporting_date#787), (reporting_date#787 = 2017-05-08)], Format: Parquet, Location: PreparedDeltaFileIndex(1 paths)[file:<repo>/outputs/comp..., PartitionFilters: [], PushedFilters: [IsNotNull(reporting_date), EqualTo(reporting_date,2017-05-08)], ReadSchema: struct<placement_id:string,clicked:int,reporting_date:date>
++- == Initial Plan ==
+   HashAggregate(keys=[placement_id#782], functions=[count(1), sum(clicked#784)], output=[placement_id#782, impressions#789L, clicks#790L])
+   +- Exchange hashpartitioning(placement_id#782, 200), ENSURE_REQUIREMENTS, [plan_id=167]
+      +- HashAggregate(keys=[placement_id#782], functions=[partial_count(1), partial_sum(clicked#784)], output=[placement_id#782, count#930L, sum#931L])
+         +- Project [placement_id#782, clicked#784]
+            +- Filter (isnotnull(reporting_date#787) AND (reporting_date#787 = 2017-05-08))
+               +- FileScan parquet [placement_id#782,clicked#784,reporting_date#787] Batched: true, DataFilters: [isnotnull(reporting_date#787), (reporting_date#787 = 2017-05-08)], Format: Parquet, Location: PreparedDeltaFileIndex(1 paths)[file:<repo>/outputs/comp..., PartitionFilters: [], PushedFilters: [IsNotNull(reporting_date), EqualTo(reporting_date,2017-05-08)], ReadSchema: struct<placement_id:string,clicked:int,reporting_date:date>

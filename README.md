@@ -2,9 +2,10 @@
 
 A learning project for Apache Spark using Python (PySpark), SQL, and the Taobao advertising dataset.
 
-The project includes a preserved **untuned baseline** and **iteration 2: ZSTD
-compression**. Both run full batch rebuilds with correctness checks and
-runtime/storage measurements, locally without cloud services.
+The project includes a preserved **untuned baseline**, **iteration 2: ZSTD
+compression**, and **iteration 3: date partitioning**. Each runs full batch
+rebuilds with correctness checks and runtime/storage measurements, locally
+without cloud services. Iteration 1 (CSV versus Parquet) is planned.
 
 ```text
 Three CSV files → Bronze Delta → Silver Delta → Gold Delta reports
@@ -97,3 +98,9 @@ three runs per version. All 40 exact table comparisons passed. The snapshot and
 results are tagged `iteration-02-compression`. [Iteration 1: CSV versus Parquet](experiments/01_csv_vs_parquet/README.md)
 is planned and has not yet been implemented. The numbering follows the learning
 sequence; compression was completed first.
+
+[Iteration 3](experiments/03_date_partitioning/README.md) partitions Silver
+impressions by date while keeping ZSTD. Its [results](results/03_date_partitioning/README.md)
+show faster measured date-filtered reads, **7.99% slower rebuilds**, and **14.86%
+smaller output tables** relative to iteration 2. All 40 exact table comparisons
+and 18 query executions matched. It is preserved as `iteration-03-date-partitioning`.

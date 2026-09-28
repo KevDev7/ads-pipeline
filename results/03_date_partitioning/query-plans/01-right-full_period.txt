@@ -1,0 +1,17 @@
+AdaptiveSparkPlan isFinalPlan=true
++- == Final Plan ==
+   ResultQueryStage 1
+   +- *(2) HashAggregate(keys=[placement_id#782], functions=[count(1), sum(clicked#784)], output=[placement_id#782, impressions#979L, clicks#980L])
+      +- AQEShuffleRead coalesced
+         +- ShuffleQueryStage 0
+            +- Exchange hashpartitioning(placement_id#782, 200), ENSURE_REQUIREMENTS, [plan_id=294]
+               +- *(1) HashAggregate(keys=[placement_id#782], functions=[partial_count(1), partial_sum(clicked#784)], output=[placement_id#782, count#1062L, sum#1063L])
+                  +- *(1) Project [placement_id#782, clicked#784]
+                     +- *(1) ColumnarToRow
+                        +- FileScan parquet [placement_id#782,clicked#784,reporting_date#787] Batched: true, DataFilters: [], Format: Parquet, Location: PreparedDeltaFileIndex(1 paths)[file:<repo>/outputs/comp..., PartitionFilters: [], PushedFilters: [], ReadSchema: struct<placement_id:string,clicked:int>
++- == Initial Plan ==
+   HashAggregate(keys=[placement_id#782], functions=[count(1), sum(clicked#784)], output=[placement_id#782, impressions#979L, clicks#980L])
+   +- Exchange hashpartitioning(placement_id#782, 200), ENSURE_REQUIREMENTS, [plan_id=276]
+      +- HashAggregate(keys=[placement_id#782], functions=[partial_count(1), partial_sum(clicked#784)], output=[placement_id#782, count#1062L, sum#1063L])
+         +- Project [placement_id#782, clicked#784]
+            +- FileScan parquet [placement_id#782,clicked#784,reporting_date#787] Batched: true, DataFilters: [], Format: Parquet, Location: PreparedDeltaFileIndex(1 paths)[file:<repo>/outputs/comp..., PartitionFilters: [], PushedFilters: [], ReadSchema: struct<placement_id:string,clicked:int>

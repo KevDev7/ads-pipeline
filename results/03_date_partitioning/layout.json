@@ -1,0 +1,2027 @@
+{
+  "method": "Inspect version-0 Delta add actions and partition metadata for immutable fresh outputs. Sizes are Parquet bytes, not allocated disk blocks. Date min/max are file statistics, not a claim about actual selected files.",
+  "runs": {
+    "01-left": {
+      "bronze/ads": {
+        "file_bytes_max": 3157255,
+        "file_bytes_median": 3143656.0,
+        "file_bytes_min": 1741444,
+        "files": 4,
+        "parquet_bytes": 11186011,
+        "partition_columns": [],
+        "partitions": [
+          {
+            "bytes": 11186011,
+            "files": 4,
+            "partition_values": {},
+            "rows": 846811
+          }
+        ]
+      },
+      "bronze/impressions": {
+        "file_bytes_max": 26063310,
+        "file_bytes_median": 25618620,
+        "file_bytes_min": 2724365,
+        "files": 9,
+        "parquet_bytes": 208286860,
+        "partition_columns": [],
+        "partitions": [
+          {
+            "bytes": 208286860,
+            "files": 9,
+            "partition_values": {},
+            "rows": 26557961
+          }
+        ]
+      },
+      "bronze/user_profiles": {
+        "file_bytes_max": 1797461,
+        "file_bytes_median": 1769535.0,
+        "file_bytes_min": 732708,
+        "files": 4,
+        "parquet_bytes": 6069239,
+        "partition_columns": [],
+        "partitions": [
+          {
+            "bytes": 6069239,
+            "files": 4,
+            "partition_values": {},
+            "rows": 1061768
+          }
+        ]
+      },
+      "gold/audience_daily": {
+        "file_bytes_max": 4998955,
+        "file_bytes_median": 4913725.5,
+        "file_bytes_min": 4830300,
+        "files": 4,
+        "parquet_bytes": 19656706,
+        "partition_columns": [],
+        "partitions": [
+          {
+            "bytes": 19656706,
+            "files": 4,
+            "partition_values": {},
+            "rows": 3738362
+          }
+        ]
+      },
+      "gold/campaign_daily": {
+        "file_bytes_max": 3992142,
+        "file_bytes_median": 3906785.0,
+        "file_bytes_min": 3821580,
+        "files": 4,
+        "parquet_bytes": 15627292,
+        "partition_columns": [],
+        "partitions": [
+          {
+            "bytes": 15627292,
+            "files": 4,
+            "partition_values": {},
+            "rows": 1819995
+          }
+        ]
+      },
+      "silver/ads": {
+        "file_bytes_max": 2925230,
+        "file_bytes_median": 2908379.5,
+        "file_bytes_min": 1587147,
+        "files": 4,
+        "parquet_bytes": 10329136,
+        "partition_columns": [],
+        "partitions": [
+          {
+            "bytes": 10329136,
+            "files": 4,
+            "partition_values": {},
+            "rows": 846811
+          }
+        ]
+      },
+      "silver/impressions": {
+        "file_bytes_max": 86571307,
+        "file_bytes_median": 86194153,
+        "file_bytes_min": 4627694,
+        "files": 5,
+        "files_with_date_metadata": [
+          {
+            "bytes": 86571307,
+            "maximum_date": "2017-05-13",
+            "minimum_date": "2017-05-06",
+            "partition_values": {}
+          },
+          {
+            "bytes": 86517508,
+            "maximum_date": "2017-05-13",
+            "minimum_date": "2017-05-06",
+            "partition_values": {}
+          },
+          {
+            "bytes": 86194153,
+            "maximum_date": "2017-05-13",
+            "minimum_date": "2017-05-06",
+            "partition_values": {}
+          },
+          {
+            "bytes": 86164217,
+            "maximum_date": "2017-05-13",
+            "minimum_date": "2017-05-06",
+            "partition_values": {}
+          },
+          {
+            "bytes": 4627694,
+            "maximum_date": "2017-05-13",
+            "minimum_date": "2017-05-06",
+            "partition_values": {}
+          }
+        ],
+        "parquet_bytes": 350074879,
+        "partition_columns": [],
+        "partitions": [
+          {
+            "bytes": 350074879,
+            "files": 5,
+            "partition_values": {},
+            "rows": 26557961
+          }
+        ]
+      },
+      "silver/user_profiles": {
+        "file_bytes_max": 1382944,
+        "file_bytes_median": 1354579.0,
+        "file_bytes_min": 563899,
+        "files": 4,
+        "parquet_bytes": 4656001,
+        "partition_columns": [],
+        "partitions": [
+          {
+            "bytes": 4656001,
+            "files": 4,
+            "partition_values": {},
+            "rows": 1061768
+          }
+        ]
+      }
+    },
+    "01-right": {
+      "bronze/ads": {
+        "file_bytes_max": 3157255,
+        "file_bytes_median": 3143656.0,
+        "file_bytes_min": 1741444,
+        "files": 4,
+        "parquet_bytes": 11186011,
+        "partition_columns": [],
+        "partitions": [
+          {
+            "bytes": 11186011,
+            "files": 4,
+            "partition_values": {},
+            "rows": 846811
+          }
+        ]
+      },
+      "bronze/impressions": {
+        "file_bytes_max": 26063310,
+        "file_bytes_median": 25618620,
+        "file_bytes_min": 2724365,
+        "files": 9,
+        "parquet_bytes": 208286860,
+        "partition_columns": [],
+        "partitions": [
+          {
+            "bytes": 208286860,
+            "files": 9,
+            "partition_values": {},
+            "rows": 26557961
+          }
+        ]
+      },
+      "bronze/user_profiles": {
+        "file_bytes_max": 1797461,
+        "file_bytes_median": 1769535.0,
+        "file_bytes_min": 732708,
+        "files": 4,
+        "parquet_bytes": 6069239,
+        "partition_columns": [],
+        "partitions": [
+          {
+            "bytes": 6069239,
+            "files": 4,
+            "partition_values": {},
+            "rows": 1061768
+          }
+        ]
+      },
+      "gold/audience_daily": {
+        "file_bytes_max": 4669396,
+        "file_bytes_median": 4592783,
+        "file_bytes_min": 285942,
+        "files": 5,
+        "parquet_bytes": 18724886,
+        "partition_columns": [],
+        "partitions": [
+          {
+            "bytes": 18724886,
+            "files": 5,
+            "partition_values": {},
+            "rows": 3738362
+          }
+        ]
+      },
+      "gold/campaign_daily": {
+        "file_bytes_max": 3836008,
+        "file_bytes_median": 3791908.0,
+        "file_bytes_min": 3696666,
+        "files": 4,
+        "parquet_bytes": 15116490,
+        "partition_columns": [],
+        "partitions": [
+          {
+            "bytes": 15116490,
+            "files": 4,
+            "partition_values": {},
+            "rows": 1819995
+          }
+        ]
+      },
+      "silver/ads": {
+        "file_bytes_max": 2925230,
+        "file_bytes_median": 2908379.5,
+        "file_bytes_min": 1587147,
+        "files": 4,
+        "parquet_bytes": 10329136,
+        "partition_columns": [],
+        "partitions": [
+          {
+            "bytes": 10329136,
+            "files": 4,
+            "partition_values": {},
+            "rows": 846811
+          }
+        ]
+      },
+      "silver/impressions": {
+        "file_bytes_max": 8520227,
+        "file_bytes_median": 7834244.5,
+        "file_bytes_min": 97811,
+        "files": 40,
+        "files_with_date_metadata": [
+          {
+            "bytes": 7548287,
+            "maximum_date": null,
+            "minimum_date": null,
+            "partition_values": {
+              "reporting_date": "2017-05-06"
+            }
+          },
+          {
+            "bytes": 8173832,
+            "maximum_date": null,
+            "minimum_date": null,
+            "partition_values": {
+              "reporting_date": "2017-05-07"
+            }
+          },
+          {
+            "bytes": 8011555,
+            "maximum_date": null,
+            "minimum_date": null,
+            "partition_values": {
+              "reporting_date": "2017-05-08"
+            }
+          },
+          {
+            "bytes": 7898930,
+            "maximum_date": null,
+            "minimum_date": null,
+            "partition_values": {
+              "reporting_date": "2017-05-09"
+            }
+          },
+          {
+            "bytes": 8273195,
+            "maximum_date": null,
+            "minimum_date": null,
+            "partition_values": {
+              "reporting_date": "2017-05-10"
+            }
+          },
+          {
+            "bytes": 8458022,
+            "maximum_date": null,
+            "minimum_date": null,
+            "partition_values": {
+              "reporting_date": "2017-05-11"
+            }
+          },
+          {
+            "bytes": 8231866,
+            "maximum_date": null,
+            "minimum_date": null,
+            "partition_values": {
+              "reporting_date": "2017-05-12"
+            }
+          },
+          {
+            "bytes": 8443767,
+            "maximum_date": null,
+            "minimum_date": null,
+            "partition_values": {
+              "reporting_date": "2017-05-13"
+            }
+          },
+          {
+            "bytes": 7654771,
+            "maximum_date": null,
+            "minimum_date": null,
+            "partition_values": {
+              "reporting_date": "2017-05-06"
+            }
+          },
+          {
+            "bytes": 8311705,
+            "maximum_date": null,
+            "minimum_date": null,
+            "partition_values": {
+              "reporting_date": "2017-05-07"
+            }
+          },
+          {
+            "bytes": 8131582,
+            "maximum_date": null,
+            "minimum_date": null,
+            "partition_values": {
+              "reporting_date": "2017-05-08"
+            }
+          },
+          {
+            "bytes": 7906152,
+            "maximum_date": null,
+            "minimum_date": null,
+            "partition_values": {
+              "reporting_date": "2017-05-09"
+            }
+          },
+          {
+            "bytes": 8312825,
+            "maximum_date": null,
+            "minimum_date": null,
+            "partition_values": {
+              "reporting_date": "2017-05-10"
+            }
+          },
+          {
+            "bytes": 8351025,
+            "maximum_date": null,
+            "minimum_date": null,
+            "partition_values": {
+              "reporting_date": "2017-05-11"
+            }
+          },
+          {
+            "bytes": 8103377,
+            "maximum_date": null,
+            "minimum_date": null,
+            "partition_values": {
+              "reporting_date": "2017-05-12"
+            }
+          },
+          {
+            "bytes": 8385949,
+            "maximum_date": null,
+            "minimum_date": null,
+            "partition_values": {
+              "reporting_date": "2017-05-13"
+            }
+          },
+          {
+            "bytes": 7787614,
+            "maximum_date": null,
+            "minimum_date": null,
+            "partition_values": {
+              "reporting_date": "2017-05-06"
+            }
+          },
+          {
+            "bytes": 8381421,
+            "maximum_date": null,
+            "minimum_date": null,
+            "partition_values": {
+              "reporting_date": "2017-05-07"
+            }
+          },
+          {
+            "bytes": 8209913,
+            "maximum_date": null,
+            "minimum_date": null,
+            "partition_values": {
+              "reporting_date": "2017-05-08"
+            }
+          },
+          {
+            "bytes": 7584141,
+            "maximum_date": null,
+            "minimum_date": null,
+            "partition_values": {
+              "reporting_date": "2017-05-09"
+            }
+          },
+          {
+            "bytes": 7789856,
+            "maximum_date": null,
+            "minimum_date": null,
+            "partition_values": {
+              "reporting_date": "2017-05-10"
+            }
+          },
+          {
+            "bytes": 7878633,
+            "maximum_date": null,
+            "minimum_date": null,
+            "partition_values": {
+              "reporting_date": "2017-05-11"
+            }
+          },
+          {
+            "bytes": 7213530,
+            "maximum_date": null,
+            "minimum_date": null,
+            "partition_values": {
+              "reporting_date": "2017-05-12"
+            }
+          },
+          {
+            "bytes": 7363660,
+            "maximum_date": null,
+            "minimum_date": null,
+            "partition_values": {
+              "reporting_date": "2017-05-13"
+            }
+          },
+          {
+            "bytes": 8237402,
+            "maximum_date": null,
+            "minimum_date": null,
+            "partition_values": {
+              "reporting_date": "2017-05-06"
+            }
+          },
+          {
+            "bytes": 8520227,
+            "maximum_date": null,
+            "minimum_date": null,
+            "partition_values": {
+              "reporting_date": "2017-05-07"
+            }
+          },
+          {
+            "bytes": 8187404,
+            "maximum_date": null,
+            "minimum_date": null,
+            "partition_values": {
+              "reporting_date": "2017-05-08"
+            }
+          },
+          {
+            "bytes": 7430999,
+            "maximum_date": null,
+            "minimum_date": null,
+            "partition_values": {
+              "reporting_date": "2017-05-09"
+            }
+          },
+          {
+            "bytes": 7612678,
+            "maximum_date": null,
+            "minimum_date": null,
+            "partition_values": {
+              "reporting_date": "2017-05-10"
+            }
+          },
+          {
+            "bytes": 7769251,
+            "maximum_date": null,
+            "minimum_date": null,
+            "partition_values": {
+              "reporting_date": "2017-05-11"
+            }
+          },
+          {
+            "bytes": 6876805,
+            "maximum_date": null,
+            "minimum_date": null,
+            "partition_values": {
+              "reporting_date": "2017-05-12"
+            }
+          },
+          {
+            "bytes": 7104861,
+            "maximum_date": null,
+            "minimum_date": null,
+            "partition_values": {
+              "reporting_date": "2017-05-13"
+            }
+          },
+          {
+            "bytes": 97811,
+            "maximum_date": null,
+            "minimum_date": null,
+            "partition_values": {
+              "reporting_date": "2017-05-06"
+            }
+          },
+          {
+            "bytes": 231029,
+            "maximum_date": null,
+            "minimum_date": null,
+            "partition_values": {
+              "reporting_date": "2017-05-07"
+            }
+          },
+          {
+            "bytes": 331002,
+            "maximum_date": null,
+            "minimum_date": null,
+            "partition_values": {
+              "reporting_date": "2017-05-08"
+            }
+          },
+          {
+            "bytes": 420205,
+            "maximum_date": null,
+            "minimum_date": null,
+            "partition_values": {
+              "reporting_date": "2017-05-09"
+            }
+          },
+          {
+            "bytes": 609003,
+            "maximum_date": null,
+            "minimum_date": null,
+            "partition_values": {
+              "reporting_date": "2017-05-10"
+            }
+          },
+          {
+            "bytes": 669256,
+            "maximum_date": null,
+            "minimum_date": null,
+            "partition_values": {
+              "reporting_date": "2017-05-11"
+            }
+          },
+          {
+            "bytes": 897851,
+            "maximum_date": null,
+            "minimum_date": null,
+            "partition_values": {
+              "reporting_date": "2017-05-12"
+            }
+          },
+          {
+            "bytes": 1052792,
+            "maximum_date": null,
+            "minimum_date": null,
+            "partition_values": {
+              "reporting_date": "2017-05-13"
+            }
+          }
+        ],
+        "parquet_bytes": 258454184,
+        "partition_columns": [
+          "reporting_date"
+        ],
+        "partitions": [
+          {
+            "bytes": 31325885,
+            "files": 5,
+            "partition_values": {
+              "reporting_date": "2017-05-06"
+            },
+            "rows": 3270348
+          },
+          {
+            "bytes": 33618214,
+            "files": 5,
+            "partition_values": {
+              "reporting_date": "2017-05-07"
+            },
+            "rows": 3430002
+          },
+          {
+            "bytes": 32871456,
+            "files": 5,
+            "partition_values": {
+              "reporting_date": "2017-05-08"
+            },
+            "rows": 3354523
+          },
+          {
+            "bytes": 31240427,
+            "files": 5,
+            "partition_values": {
+              "reporting_date": "2017-05-09"
+            },
+            "rows": 3248016
+          },
+          {
+            "bytes": 32597557,
+            "files": 5,
+            "partition_values": {
+              "reporting_date": "2017-05-10"
+            },
+            "rows": 3333752
+          },
+          {
+            "bytes": 33126187,
+            "files": 5,
+            "partition_values": {
+              "reporting_date": "2017-05-11"
+            },
+            "rows": 3378604
+          },
+          {
+            "bytes": 31323429,
+            "files": 5,
+            "partition_values": {
+              "reporting_date": "2017-05-12"
+            },
+            "rows": 3234051
+          },
+          {
+            "bytes": 32351029,
+            "files": 5,
+            "partition_values": {
+              "reporting_date": "2017-05-13"
+            },
+            "rows": 3308665
+          }
+        ]
+      },
+      "silver/user_profiles": {
+        "file_bytes_max": 1382944,
+        "file_bytes_median": 1354579.0,
+        "file_bytes_min": 563899,
+        "files": 4,
+        "parquet_bytes": 4656001,
+        "partition_columns": [],
+        "partitions": [
+          {
+            "bytes": 4656001,
+            "files": 4,
+            "partition_values": {},
+            "rows": 1061768
+          }
+        ]
+      }
+    },
+    "02-left": {
+      "bronze/ads": {
+        "file_bytes_max": 3157255,
+        "file_bytes_median": 3143656.0,
+        "file_bytes_min": 1741444,
+        "files": 4,
+        "parquet_bytes": 11186011,
+        "partition_columns": [],
+        "partitions": [
+          {
+            "bytes": 11186011,
+            "files": 4,
+            "partition_values": {},
+            "rows": 846811
+          }
+        ]
+      },
+      "bronze/impressions": {
+        "file_bytes_max": 26063310,
+        "file_bytes_median": 25618620,
+        "file_bytes_min": 2724365,
+        "files": 9,
+        "parquet_bytes": 208286860,
+        "partition_columns": [],
+        "partitions": [
+          {
+            "bytes": 208286860,
+            "files": 9,
+            "partition_values": {},
+            "rows": 26557961
+          }
+        ]
+      },
+      "bronze/user_profiles": {
+        "file_bytes_max": 1797461,
+        "file_bytes_median": 1769535.0,
+        "file_bytes_min": 732708,
+        "files": 4,
+        "parquet_bytes": 6069239,
+        "partition_columns": [],
+        "partitions": [
+          {
+            "bytes": 6069239,
+            "files": 4,
+            "partition_values": {},
+            "rows": 1061768
+          }
+        ]
+      },
+      "gold/audience_daily": {
+        "file_bytes_max": 4998955,
+        "file_bytes_median": 4913725.5,
+        "file_bytes_min": 4830300,
+        "files": 4,
+        "parquet_bytes": 19656706,
+        "partition_columns": [],
+        "partitions": [
+          {
+            "bytes": 19656706,
+            "files": 4,
+            "partition_values": {},
+            "rows": 3738362
+          }
+        ]
+      },
+      "gold/campaign_daily": {
+        "file_bytes_max": 3992142,
+        "file_bytes_median": 3906785.0,
+        "file_bytes_min": 3821580,
+        "files": 4,
+        "parquet_bytes": 15627292,
+        "partition_columns": [],
+        "partitions": [
+          {
+            "bytes": 15627292,
+            "files": 4,
+            "partition_values": {},
+            "rows": 1819995
+          }
+        ]
+      },
+      "silver/ads": {
+        "file_bytes_max": 2925230,
+        "file_bytes_median": 2908379.5,
+        "file_bytes_min": 1587147,
+        "files": 4,
+        "parquet_bytes": 10329136,
+        "partition_columns": [],
+        "partitions": [
+          {
+            "bytes": 10329136,
+            "files": 4,
+            "partition_values": {},
+            "rows": 846811
+          }
+        ]
+      },
+      "silver/impressions": {
+        "file_bytes_max": 86571307,
+        "file_bytes_median": 86194153,
+        "file_bytes_min": 4627694,
+        "files": 5,
+        "files_with_date_metadata": [
+          {
+            "bytes": 86571307,
+            "maximum_date": "2017-05-13",
+            "minimum_date": "2017-05-06",
+            "partition_values": {}
+          },
+          {
+            "bytes": 86517508,
+            "maximum_date": "2017-05-13",
+            "minimum_date": "2017-05-06",
+            "partition_values": {}
+          },
+          {
+            "bytes": 86194153,
+            "maximum_date": "2017-05-13",
+            "minimum_date": "2017-05-06",
+            "partition_values": {}
+          },
+          {
+            "bytes": 86164217,
+            "maximum_date": "2017-05-13",
+            "minimum_date": "2017-05-06",
+            "partition_values": {}
+          },
+          {
+            "bytes": 4627694,
+            "maximum_date": "2017-05-13",
+            "minimum_date": "2017-05-06",
+            "partition_values": {}
+          }
+        ],
+        "parquet_bytes": 350074879,
+        "partition_columns": [],
+        "partitions": [
+          {
+            "bytes": 350074879,
+            "files": 5,
+            "partition_values": {},
+            "rows": 26557961
+          }
+        ]
+      },
+      "silver/user_profiles": {
+        "file_bytes_max": 1382944,
+        "file_bytes_median": 1354579.0,
+        "file_bytes_min": 563899,
+        "files": 4,
+        "parquet_bytes": 4656001,
+        "partition_columns": [],
+        "partitions": [
+          {
+            "bytes": 4656001,
+            "files": 4,
+            "partition_values": {},
+            "rows": 1061768
+          }
+        ]
+      }
+    },
+    "02-right": {
+      "bronze/ads": {
+        "file_bytes_max": 3157255,
+        "file_bytes_median": 3143656.0,
+        "file_bytes_min": 1741444,
+        "files": 4,
+        "parquet_bytes": 11186011,
+        "partition_columns": [],
+        "partitions": [
+          {
+            "bytes": 11186011,
+            "files": 4,
+            "partition_values": {},
+            "rows": 846811
+          }
+        ]
+      },
+      "bronze/impressions": {
+        "file_bytes_max": 26063310,
+        "file_bytes_median": 25618620,
+        "file_bytes_min": 2724365,
+        "files": 9,
+        "parquet_bytes": 208286860,
+        "partition_columns": [],
+        "partitions": [
+          {
+            "bytes": 208286860,
+            "files": 9,
+            "partition_values": {},
+            "rows": 26557961
+          }
+        ]
+      },
+      "bronze/user_profiles": {
+        "file_bytes_max": 1797461,
+        "file_bytes_median": 1769535.0,
+        "file_bytes_min": 732708,
+        "files": 4,
+        "parquet_bytes": 6069239,
+        "partition_columns": [],
+        "partitions": [
+          {
+            "bytes": 6069239,
+            "files": 4,
+            "partition_values": {},
+            "rows": 1061768
+          }
+        ]
+      },
+      "gold/audience_daily": {
+        "file_bytes_max": 4669396,
+        "file_bytes_median": 4592783,
+        "file_bytes_min": 285942,
+        "files": 5,
+        "parquet_bytes": 18724886,
+        "partition_columns": [],
+        "partitions": [
+          {
+            "bytes": 18724886,
+            "files": 5,
+            "partition_values": {},
+            "rows": 3738362
+          }
+        ]
+      },
+      "gold/campaign_daily": {
+        "file_bytes_max": 3836008,
+        "file_bytes_median": 3791908.0,
+        "file_bytes_min": 3696666,
+        "files": 4,
+        "parquet_bytes": 15116490,
+        "partition_columns": [],
+        "partitions": [
+          {
+            "bytes": 15116490,
+            "files": 4,
+            "partition_values": {},
+            "rows": 1819995
+          }
+        ]
+      },
+      "silver/ads": {
+        "file_bytes_max": 2925230,
+        "file_bytes_median": 2908379.5,
+        "file_bytes_min": 1587147,
+        "files": 4,
+        "parquet_bytes": 10329136,
+        "partition_columns": [],
+        "partitions": [
+          {
+            "bytes": 10329136,
+            "files": 4,
+            "partition_values": {},
+            "rows": 846811
+          }
+        ]
+      },
+      "silver/impressions": {
+        "file_bytes_max": 8520227,
+        "file_bytes_median": 7834244.5,
+        "file_bytes_min": 97811,
+        "files": 40,
+        "files_with_date_metadata": [
+          {
+            "bytes": 7548287,
+            "maximum_date": null,
+            "minimum_date": null,
+            "partition_values": {
+              "reporting_date": "2017-05-06"
+            }
+          },
+          {
+            "bytes": 8173832,
+            "maximum_date": null,
+            "minimum_date": null,
+            "partition_values": {
+              "reporting_date": "2017-05-07"
+            }
+          },
+          {
+            "bytes": 8011555,
+            "maximum_date": null,
+            "minimum_date": null,
+            "partition_values": {
+              "reporting_date": "2017-05-08"
+            }
+          },
+          {
+            "bytes": 7898930,
+            "maximum_date": null,
+            "minimum_date": null,
+            "partition_values": {
+              "reporting_date": "2017-05-09"
+            }
+          },
+          {
+            "bytes": 8273195,
+            "maximum_date": null,
+            "minimum_date": null,
+            "partition_values": {
+              "reporting_date": "2017-05-10"
+            }
+          },
+          {
+            "bytes": 8458022,
+            "maximum_date": null,
+            "minimum_date": null,
+            "partition_values": {
+              "reporting_date": "2017-05-11"
+            }
+          },
+          {
+            "bytes": 8231866,
+            "maximum_date": null,
+            "minimum_date": null,
+            "partition_values": {
+              "reporting_date": "2017-05-12"
+            }
+          },
+          {
+            "bytes": 8443767,
+            "maximum_date": null,
+            "minimum_date": null,
+            "partition_values": {
+              "reporting_date": "2017-05-13"
+            }
+          },
+          {
+            "bytes": 7654771,
+            "maximum_date": null,
+            "minimum_date": null,
+            "partition_values": {
+              "reporting_date": "2017-05-06"
+            }
+          },
+          {
+            "bytes": 8311705,
+            "maximum_date": null,
+            "minimum_date": null,
+            "partition_values": {
+              "reporting_date": "2017-05-07"
+            }
+          },
+          {
+            "bytes": 8131582,
+            "maximum_date": null,
+            "minimum_date": null,
+            "partition_values": {
+              "reporting_date": "2017-05-08"
+            }
+          },
+          {
+            "bytes": 7906152,
+            "maximum_date": null,
+            "minimum_date": null,
+            "partition_values": {
+              "reporting_date": "2017-05-09"
+            }
+          },
+          {
+            "bytes": 8312825,
+            "maximum_date": null,
+            "minimum_date": null,
+            "partition_values": {
+              "reporting_date": "2017-05-10"
+            }
+          },
+          {
+            "bytes": 8351025,
+            "maximum_date": null,
+            "minimum_date": null,
+            "partition_values": {
+              "reporting_date": "2017-05-11"
+            }
+          },
+          {
+            "bytes": 8103377,
+            "maximum_date": null,
+            "minimum_date": null,
+            "partition_values": {
+              "reporting_date": "2017-05-12"
+            }
+          },
+          {
+            "bytes": 8385949,
+            "maximum_date": null,
+            "minimum_date": null,
+            "partition_values": {
+              "reporting_date": "2017-05-13"
+            }
+          },
+          {
+            "bytes": 7787614,
+            "maximum_date": null,
+            "minimum_date": null,
+            "partition_values": {
+              "reporting_date": "2017-05-06"
+            }
+          },
+          {
+            "bytes": 8381421,
+            "maximum_date": null,
+            "minimum_date": null,
+            "partition_values": {
+              "reporting_date": "2017-05-07"
+            }
+          },
+          {
+            "bytes": 8209913,
+            "maximum_date": null,
+            "minimum_date": null,
+            "partition_values": {
+              "reporting_date": "2017-05-08"
+            }
+          },
+          {
+            "bytes": 7584141,
+            "maximum_date": null,
+            "minimum_date": null,
+            "partition_values": {
+              "reporting_date": "2017-05-09"
+            }
+          },
+          {
+            "bytes": 7789856,
+            "maximum_date": null,
+            "minimum_date": null,
+            "partition_values": {
+              "reporting_date": "2017-05-10"
+            }
+          },
+          {
+            "bytes": 7878633,
+            "maximum_date": null,
+            "minimum_date": null,
+            "partition_values": {
+              "reporting_date": "2017-05-11"
+            }
+          },
+          {
+            "bytes": 7213530,
+            "maximum_date": null,
+            "minimum_date": null,
+            "partition_values": {
+              "reporting_date": "2017-05-12"
+            }
+          },
+          {
+            "bytes": 7363660,
+            "maximum_date": null,
+            "minimum_date": null,
+            "partition_values": {
+              "reporting_date": "2017-05-13"
+            }
+          },
+          {
+            "bytes": 8237402,
+            "maximum_date": null,
+            "minimum_date": null,
+            "partition_values": {
+              "reporting_date": "2017-05-06"
+            }
+          },
+          {
+            "bytes": 8520227,
+            "maximum_date": null,
+            "minimum_date": null,
+            "partition_values": {
+              "reporting_date": "2017-05-07"
+            }
+          },
+          {
+            "bytes": 8187404,
+            "maximum_date": null,
+            "minimum_date": null,
+            "partition_values": {
+              "reporting_date": "2017-05-08"
+            }
+          },
+          {
+            "bytes": 7430999,
+            "maximum_date": null,
+            "minimum_date": null,
+            "partition_values": {
+              "reporting_date": "2017-05-09"
+            }
+          },
+          {
+            "bytes": 7612678,
+            "maximum_date": null,
+            "minimum_date": null,
+            "partition_values": {
+              "reporting_date": "2017-05-10"
+            }
+          },
+          {
+            "bytes": 7769251,
+            "maximum_date": null,
+            "minimum_date": null,
+            "partition_values": {
+              "reporting_date": "2017-05-11"
+            }
+          },
+          {
+            "bytes": 6876805,
+            "maximum_date": null,
+            "minimum_date": null,
+            "partition_values": {
+              "reporting_date": "2017-05-12"
+            }
+          },
+          {
+            "bytes": 7104861,
+            "maximum_date": null,
+            "minimum_date": null,
+            "partition_values": {
+              "reporting_date": "2017-05-13"
+            }
+          },
+          {
+            "bytes": 97811,
+            "maximum_date": null,
+            "minimum_date": null,
+            "partition_values": {
+              "reporting_date": "2017-05-06"
+            }
+          },
+          {
+            "bytes": 231029,
+            "maximum_date": null,
+            "minimum_date": null,
+            "partition_values": {
+              "reporting_date": "2017-05-07"
+            }
+          },
+          {
+            "bytes": 331002,
+            "maximum_date": null,
+            "minimum_date": null,
+            "partition_values": {
+              "reporting_date": "2017-05-08"
+            }
+          },
+          {
+            "bytes": 420205,
+            "maximum_date": null,
+            "minimum_date": null,
+            "partition_values": {
+              "reporting_date": "2017-05-09"
+            }
+          },
+          {
+            "bytes": 609003,
+            "maximum_date": null,
+            "minimum_date": null,
+            "partition_values": {
+              "reporting_date": "2017-05-10"
+            }
+          },
+          {
+            "bytes": 669256,
+            "maximum_date": null,
+            "minimum_date": null,
+            "partition_values": {
+              "reporting_date": "2017-05-11"
+            }
+          },
+          {
+            "bytes": 897851,
+            "maximum_date": null,
+            "minimum_date": null,
+            "partition_values": {
+              "reporting_date": "2017-05-12"
+            }
+          },
+          {
+            "bytes": 1052792,
+            "maximum_date": null,
+            "minimum_date": null,
+            "partition_values": {
+              "reporting_date": "2017-05-13"
+            }
+          }
+        ],
+        "parquet_bytes": 258454184,
+        "partition_columns": [
+          "reporting_date"
+        ],
+        "partitions": [
+          {
+            "bytes": 31325885,
+            "files": 5,
+            "partition_values": {
+              "reporting_date": "2017-05-06"
+            },
+            "rows": 3270348
+          },
+          {
+            "bytes": 33618214,
+            "files": 5,
+            "partition_values": {
+              "reporting_date": "2017-05-07"
+            },
+            "rows": 3430002
+          },
+          {
+            "bytes": 32871456,
+            "files": 5,
+            "partition_values": {
+              "reporting_date": "2017-05-08"
+            },
+            "rows": 3354523
+          },
+          {
+            "bytes": 31240427,
+            "files": 5,
+            "partition_values": {
+              "reporting_date": "2017-05-09"
+            },
+            "rows": 3248016
+          },
+          {
+            "bytes": 32597557,
+            "files": 5,
+            "partition_values": {
+              "reporting_date": "2017-05-10"
+            },
+            "rows": 3333752
+          },
+          {
+            "bytes": 33126187,
+            "files": 5,
+            "partition_values": {
+              "reporting_date": "2017-05-11"
+            },
+            "rows": 3378604
+          },
+          {
+            "bytes": 31323429,
+            "files": 5,
+            "partition_values": {
+              "reporting_date": "2017-05-12"
+            },
+            "rows": 3234051
+          },
+          {
+            "bytes": 32351029,
+            "files": 5,
+            "partition_values": {
+              "reporting_date": "2017-05-13"
+            },
+            "rows": 3308665
+          }
+        ]
+      },
+      "silver/user_profiles": {
+        "file_bytes_max": 1382944,
+        "file_bytes_median": 1354579.0,
+        "file_bytes_min": 563899,
+        "files": 4,
+        "parquet_bytes": 4656001,
+        "partition_columns": [],
+        "partitions": [
+          {
+            "bytes": 4656001,
+            "files": 4,
+            "partition_values": {},
+            "rows": 1061768
+          }
+        ]
+      }
+    },
+    "03-left": {
+      "bronze/ads": {
+        "file_bytes_max": 3157255,
+        "file_bytes_median": 3143656.0,
+        "file_bytes_min": 1741444,
+        "files": 4,
+        "parquet_bytes": 11186011,
+        "partition_columns": [],
+        "partitions": [
+          {
+            "bytes": 11186011,
+            "files": 4,
+            "partition_values": {},
+            "rows": 846811
+          }
+        ]
+      },
+      "bronze/impressions": {
+        "file_bytes_max": 26063310,
+        "file_bytes_median": 25618620,
+        "file_bytes_min": 2724365,
+        "files": 9,
+        "parquet_bytes": 208286860,
+        "partition_columns": [],
+        "partitions": [
+          {
+            "bytes": 208286860,
+            "files": 9,
+            "partition_values": {},
+            "rows": 26557961
+          }
+        ]
+      },
+      "bronze/user_profiles": {
+        "file_bytes_max": 1797461,
+        "file_bytes_median": 1769535.0,
+        "file_bytes_min": 732708,
+        "files": 4,
+        "parquet_bytes": 6069239,
+        "partition_columns": [],
+        "partitions": [
+          {
+            "bytes": 6069239,
+            "files": 4,
+            "partition_values": {},
+            "rows": 1061768
+          }
+        ]
+      },
+      "gold/audience_daily": {
+        "file_bytes_max": 4998955,
+        "file_bytes_median": 4913725.5,
+        "file_bytes_min": 4830300,
+        "files": 4,
+        "parquet_bytes": 19656706,
+        "partition_columns": [],
+        "partitions": [
+          {
+            "bytes": 19656706,
+            "files": 4,
+            "partition_values": {},
+            "rows": 3738362
+          }
+        ]
+      },
+      "gold/campaign_daily": {
+        "file_bytes_max": 3992142,
+        "file_bytes_median": 3906785.0,
+        "file_bytes_min": 3821580,
+        "files": 4,
+        "parquet_bytes": 15627292,
+        "partition_columns": [],
+        "partitions": [
+          {
+            "bytes": 15627292,
+            "files": 4,
+            "partition_values": {},
+            "rows": 1819995
+          }
+        ]
+      },
+      "silver/ads": {
+        "file_bytes_max": 2925230,
+        "file_bytes_median": 2908379.5,
+        "file_bytes_min": 1587147,
+        "files": 4,
+        "parquet_bytes": 10329136,
+        "partition_columns": [],
+        "partitions": [
+          {
+            "bytes": 10329136,
+            "files": 4,
+            "partition_values": {},
+            "rows": 846811
+          }
+        ]
+      },
+      "silver/impressions": {
+        "file_bytes_max": 86571307,
+        "file_bytes_median": 86194153,
+        "file_bytes_min": 4627694,
+        "files": 5,
+        "files_with_date_metadata": [
+          {
+            "bytes": 86571307,
+            "maximum_date": "2017-05-13",
+            "minimum_date": "2017-05-06",
+            "partition_values": {}
+          },
+          {
+            "bytes": 86517508,
+            "maximum_date": "2017-05-13",
+            "minimum_date": "2017-05-06",
+            "partition_values": {}
+          },
+          {
+            "bytes": 86194153,
+            "maximum_date": "2017-05-13",
+            "minimum_date": "2017-05-06",
+            "partition_values": {}
+          },
+          {
+            "bytes": 86164217,
+            "maximum_date": "2017-05-13",
+            "minimum_date": "2017-05-06",
+            "partition_values": {}
+          },
+          {
+            "bytes": 4627694,
+            "maximum_date": "2017-05-13",
+            "minimum_date": "2017-05-06",
+            "partition_values": {}
+          }
+        ],
+        "parquet_bytes": 350074879,
+        "partition_columns": [],
+        "partitions": [
+          {
+            "bytes": 350074879,
+            "files": 5,
+            "partition_values": {},
+            "rows": 26557961
+          }
+        ]
+      },
+      "silver/user_profiles": {
+        "file_bytes_max": 1382944,
+        "file_bytes_median": 1354579.0,
+        "file_bytes_min": 563899,
+        "files": 4,
+        "parquet_bytes": 4656001,
+        "partition_columns": [],
+        "partitions": [
+          {
+            "bytes": 4656001,
+            "files": 4,
+            "partition_values": {},
+            "rows": 1061768
+          }
+        ]
+      }
+    },
+    "03-right": {
+      "bronze/ads": {
+        "file_bytes_max": 3157255,
+        "file_bytes_median": 3143656.0,
+        "file_bytes_min": 1741444,
+        "files": 4,
+        "parquet_bytes": 11186011,
+        "partition_columns": [],
+        "partitions": [
+          {
+            "bytes": 11186011,
+            "files": 4,
+            "partition_values": {},
+            "rows": 846811
+          }
+        ]
+      },
+      "bronze/impressions": {
+        "file_bytes_max": 26063310,
+        "file_bytes_median": 25618620,
+        "file_bytes_min": 2724365,
+        "files": 9,
+        "parquet_bytes": 208286860,
+        "partition_columns": [],
+        "partitions": [
+          {
+            "bytes": 208286860,
+            "files": 9,
+            "partition_values": {},
+            "rows": 26557961
+          }
+        ]
+      },
+      "bronze/user_profiles": {
+        "file_bytes_max": 1797461,
+        "file_bytes_median": 1769535.0,
+        "file_bytes_min": 732708,
+        "files": 4,
+        "parquet_bytes": 6069239,
+        "partition_columns": [],
+        "partitions": [
+          {
+            "bytes": 6069239,
+            "files": 4,
+            "partition_values": {},
+            "rows": 1061768
+          }
+        ]
+      },
+      "gold/audience_daily": {
+        "file_bytes_max": 4669396,
+        "file_bytes_median": 4592783,
+        "file_bytes_min": 285942,
+        "files": 5,
+        "parquet_bytes": 18724886,
+        "partition_columns": [],
+        "partitions": [
+          {
+            "bytes": 18724886,
+            "files": 5,
+            "partition_values": {},
+            "rows": 3738362
+          }
+        ]
+      },
+      "gold/campaign_daily": {
+        "file_bytes_max": 3836008,
+        "file_bytes_median": 3791908.0,
+        "file_bytes_min": 3696666,
+        "files": 4,
+        "parquet_bytes": 15116490,
+        "partition_columns": [],
+        "partitions": [
+          {
+            "bytes": 15116490,
+            "files": 4,
+            "partition_values": {},
+            "rows": 1819995
+          }
+        ]
+      },
+      "silver/ads": {
+        "file_bytes_max": 2925230,
+        "file_bytes_median": 2908379.5,
+        "file_bytes_min": 1587147,
+        "files": 4,
+        "parquet_bytes": 10329136,
+        "partition_columns": [],
+        "partitions": [
+          {
+            "bytes": 10329136,
+            "files": 4,
+            "partition_values": {},
+            "rows": 846811
+          }
+        ]
+      },
+      "silver/impressions": {
+        "file_bytes_max": 8520227,
+        "file_bytes_median": 7834244.5,
+        "file_bytes_min": 97811,
+        "files": 40,
+        "files_with_date_metadata": [
+          {
+            "bytes": 7548287,
+            "maximum_date": null,
+            "minimum_date": null,
+            "partition_values": {
+              "reporting_date": "2017-05-06"
+            }
+          },
+          {
+            "bytes": 8173832,
+            "maximum_date": null,
+            "minimum_date": null,
+            "partition_values": {
+              "reporting_date": "2017-05-07"
+            }
+          },
+          {
+            "bytes": 8011555,
+            "maximum_date": null,
+            "minimum_date": null,
+            "partition_values": {
+              "reporting_date": "2017-05-08"
+            }
+          },
+          {
+            "bytes": 7898930,
+            "maximum_date": null,
+            "minimum_date": null,
+            "partition_values": {
+              "reporting_date": "2017-05-09"
+            }
+          },
+          {
+            "bytes": 8273195,
+            "maximum_date": null,
+            "minimum_date": null,
+            "partition_values": {
+              "reporting_date": "2017-05-10"
+            }
+          },
+          {
+            "bytes": 8458022,
+            "maximum_date": null,
+            "minimum_date": null,
+            "partition_values": {
+              "reporting_date": "2017-05-11"
+            }
+          },
+          {
+            "bytes": 8231866,
+            "maximum_date": null,
+            "minimum_date": null,
+            "partition_values": {
+              "reporting_date": "2017-05-12"
+            }
+          },
+          {
+            "bytes": 8443767,
+            "maximum_date": null,
+            "minimum_date": null,
+            "partition_values": {
+              "reporting_date": "2017-05-13"
+            }
+          },
+          {
+            "bytes": 7654771,
+            "maximum_date": null,
+            "minimum_date": null,
+            "partition_values": {
+              "reporting_date": "2017-05-06"
+            }
+          },
+          {
+            "bytes": 8311705,
+            "maximum_date": null,
+            "minimum_date": null,
+            "partition_values": {
+              "reporting_date": "2017-05-07"
+            }
+          },
+          {
+            "bytes": 8131582,
+            "maximum_date": null,
+            "minimum_date": null,
+            "partition_values": {
+              "reporting_date": "2017-05-08"
+            }
+          },
+          {
+            "bytes": 7906152,
+            "maximum_date": null,
+            "minimum_date": null,
+            "partition_values": {
+              "reporting_date": "2017-05-09"
+            }
+          },
+          {
+            "bytes": 8312825,
+            "maximum_date": null,
+            "minimum_date": null,
+            "partition_values": {
+              "reporting_date": "2017-05-10"
+            }
+          },
+          {
+            "bytes": 8351025,
+            "maximum_date": null,
+            "minimum_date": null,
+            "partition_values": {
+              "reporting_date": "2017-05-11"
+            }
+          },
+          {
+            "bytes": 8103377,
+            "maximum_date": null,
+            "minimum_date": null,
+            "partition_values": {
+              "reporting_date": "2017-05-12"
+            }
+          },
+          {
+            "bytes": 8385949,
+            "maximum_date": null,
+            "minimum_date": null,
+            "partition_values": {
+              "reporting_date": "2017-05-13"
+            }
+          },
+          {
+            "bytes": 7787614,
+            "maximum_date": null,
+            "minimum_date": null,
+            "partition_values": {
+              "reporting_date": "2017-05-06"
+            }
+          },
+          {
+            "bytes": 8381421,
+            "maximum_date": null,
+            "minimum_date": null,
+            "partition_values": {
+              "reporting_date": "2017-05-07"
+            }
+          },
+          {
+            "bytes": 8209913,
+            "maximum_date": null,
+            "minimum_date": null,
+            "partition_values": {
+              "reporting_date": "2017-05-08"
+            }
+          },
+          {
+            "bytes": 7584141,
+            "maximum_date": null,
+            "minimum_date": null,
+            "partition_values": {
+              "reporting_date": "2017-05-09"
+            }
+          },
+          {
+            "bytes": 7789856,
+            "maximum_date": null,
+            "minimum_date": null,
+            "partition_values": {
+              "reporting_date": "2017-05-10"
+            }
+          },
+          {
+            "bytes": 7878633,
+            "maximum_date": null,
+            "minimum_date": null,
+            "partition_values": {
+              "reporting_date": "2017-05-11"
+            }
+          },
+          {
+            "bytes": 7213530,
+            "maximum_date": null,
+            "minimum_date": null,
+            "partition_values": {
+              "reporting_date": "2017-05-12"
+            }
+          },
+          {
+            "bytes": 7363660,
+            "maximum_date": null,
+            "minimum_date": null,
+            "partition_values": {
+              "reporting_date": "2017-05-13"
+            }
+          },
+          {
+            "bytes": 8237402,
+            "maximum_date": null,
+            "minimum_date": null,
+            "partition_values": {
+              "reporting_date": "2017-05-06"
+            }
+          },
+          {
+            "bytes": 8520227,
+            "maximum_date": null,
+            "minimum_date": null,
+            "partition_values": {
+              "reporting_date": "2017-05-07"
+            }
+          },
+          {
+            "bytes": 8187404,
+            "maximum_date": null,
+            "minimum_date": null,
+            "partition_values": {
+              "reporting_date": "2017-05-08"
+            }
+          },
+          {
+            "bytes": 7430999,
+            "maximum_date": null,
+            "minimum_date": null,
+            "partition_values": {
+              "reporting_date": "2017-05-09"
+            }
+          },
+          {
+            "bytes": 7612678,
+            "maximum_date": null,
+            "minimum_date": null,
+            "partition_values": {
+              "reporting_date": "2017-05-10"
+            }
+          },
+          {
+            "bytes": 7769251,
+            "maximum_date": null,
+            "minimum_date": null,
+            "partition_values": {
+              "reporting_date": "2017-05-11"
+            }
+          },
+          {
+            "bytes": 6876805,
+            "maximum_date": null,
+            "minimum_date": null,
+            "partition_values": {
+              "reporting_date": "2017-05-12"
+            }
+          },
+          {
+            "bytes": 7104861,
+            "maximum_date": null,
+            "minimum_date": null,
+            "partition_values": {
+              "reporting_date": "2017-05-13"
+            }
+          },
+          {
+            "bytes": 97811,
+            "maximum_date": null,
+            "minimum_date": null,
+            "partition_values": {
+              "reporting_date": "2017-05-06"
+            }
+          },
+          {
+            "bytes": 231029,
+            "maximum_date": null,
+            "minimum_date": null,
+            "partition_values": {
+              "reporting_date": "2017-05-07"
+            }
+          },
+          {
+            "bytes": 331002,
+            "maximum_date": null,
+            "minimum_date": null,
+            "partition_values": {
+              "reporting_date": "2017-05-08"
+            }
+          },
+          {
+            "bytes": 420205,
+            "maximum_date": null,
+            "minimum_date": null,
+            "partition_values": {
+              "reporting_date": "2017-05-09"
+            }
+          },
+          {
+            "bytes": 609003,
+            "maximum_date": null,
+            "minimum_date": null,
+            "partition_values": {
+              "reporting_date": "2017-05-10"
+            }
+          },
+          {
+            "bytes": 669256,
+            "maximum_date": null,
+            "minimum_date": null,
+            "partition_values": {
+              "reporting_date": "2017-05-11"
+            }
+          },
+          {
+            "bytes": 897851,
+            "maximum_date": null,
+            "minimum_date": null,
+            "partition_values": {
+              "reporting_date": "2017-05-12"
+            }
+          },
+          {
+            "bytes": 1052792,
+            "maximum_date": null,
+            "minimum_date": null,
+            "partition_values": {
+              "reporting_date": "2017-05-13"
+            }
+          }
+        ],
+        "parquet_bytes": 258454184,
+        "partition_columns": [
+          "reporting_date"
+        ],
+        "partitions": [
+          {
+            "bytes": 31325885,
+            "files": 5,
+            "partition_values": {
+              "reporting_date": "2017-05-06"
+            },
+            "rows": 3270348
+          },
+          {
+            "bytes": 33618214,
+            "files": 5,
+            "partition_values": {
+              "reporting_date": "2017-05-07"
+            },
+            "rows": 3430002
+          },
+          {
+            "bytes": 32871456,
+            "files": 5,
+            "partition_values": {
+              "reporting_date": "2017-05-08"
+            },
+            "rows": 3354523
+          },
+          {
+            "bytes": 31240427,
+            "files": 5,
+            "partition_values": {
+              "reporting_date": "2017-05-09"
+            },
+            "rows": 3248016
+          },
+          {
+            "bytes": 32597557,
+            "files": 5,
+            "partition_values": {
+              "reporting_date": "2017-05-10"
+            },
+            "rows": 3333752
+          },
+          {
+            "bytes": 33126187,
+            "files": 5,
+            "partition_values": {
+              "reporting_date": "2017-05-11"
+            },
+            "rows": 3378604
+          },
+          {
+            "bytes": 31323429,
+            "files": 5,
+            "partition_values": {
+              "reporting_date": "2017-05-12"
+            },
+            "rows": 3234051
+          },
+          {
+            "bytes": 32351029,
+            "files": 5,
+            "partition_values": {
+              "reporting_date": "2017-05-13"
+            },
+            "rows": 3308665
+          }
+        ]
+      },
+      "silver/user_profiles": {
+        "file_bytes_max": 1382944,
+        "file_bytes_median": 1354579.0,
+        "file_bytes_min": 563899,
+        "files": 4,
+        "parquet_bytes": 4656001,
+        "partition_columns": [],
+        "partitions": [
+          {
+            "bytes": 4656001,
+            "files": 4,
+            "partition_values": {},
+            "rows": 1061768
+          }
+        ]
+      }
+    }
+  }
+}

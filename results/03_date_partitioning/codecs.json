@@ -1,0 +1,564 @@
+{
+  "comparison_id": "partitioning-03-20260927",
+  "method": "Read every Parquet data-file footer and every column chunk; no pipeline timing included.",
+  "runs": {
+    "01-left": {
+      "expected_codec": "zstd",
+      "tables": {
+        "bronze/ads": {
+          "bytes": 11186011,
+          "codecs": [
+            "ZSTD"
+          ],
+          "column_chunks": 28,
+          "files": 4,
+          "matches_expected": true,
+          "row_groups": 4,
+          "rows": 846811
+        },
+        "bronze/impressions": {
+          "bytes": 208286860,
+          "codecs": [
+            "ZSTD"
+          ],
+          "column_chunks": 63,
+          "files": 9,
+          "matches_expected": true,
+          "row_groups": 9,
+          "rows": 26557961
+        },
+        "bronze/user_profiles": {
+          "bytes": 6069239,
+          "codecs": [
+            "ZSTD"
+          ],
+          "column_chunks": 40,
+          "files": 4,
+          "matches_expected": true,
+          "row_groups": 4,
+          "rows": 1061768
+        },
+        "gold/audience_daily": {
+          "bytes": 19656706,
+          "codecs": [
+            "ZSTD"
+          ],
+          "column_chunks": 28,
+          "files": 4,
+          "matches_expected": true,
+          "row_groups": 4,
+          "rows": 3738362
+        },
+        "gold/campaign_daily": {
+          "bytes": 15627292,
+          "codecs": [
+            "ZSTD"
+          ],
+          "column_chunks": 28,
+          "files": 4,
+          "matches_expected": true,
+          "row_groups": 4,
+          "rows": 1819995
+        },
+        "silver/ads": {
+          "bytes": 10329136,
+          "codecs": [
+            "ZSTD"
+          ],
+          "column_chunks": 28,
+          "files": 4,
+          "matches_expected": true,
+          "row_groups": 4,
+          "rows": 846811
+        },
+        "silver/impressions": {
+          "bytes": 350074879,
+          "codecs": [
+            "ZSTD"
+          ],
+          "column_chunks": 45,
+          "files": 5,
+          "matches_expected": true,
+          "row_groups": 5,
+          "rows": 26557961
+        },
+        "silver/user_profiles": {
+          "bytes": 4656001,
+          "codecs": [
+            "ZSTD"
+          ],
+          "column_chunks": 40,
+          "files": 4,
+          "matches_expected": true,
+          "row_groups": 4,
+          "rows": 1061768
+        }
+      }
+    },
+    "01-right": {
+      "expected_codec": "zstd",
+      "tables": {
+        "bronze/ads": {
+          "bytes": 11186011,
+          "codecs": [
+            "ZSTD"
+          ],
+          "column_chunks": 28,
+          "files": 4,
+          "matches_expected": true,
+          "row_groups": 4,
+          "rows": 846811
+        },
+        "bronze/impressions": {
+          "bytes": 208286860,
+          "codecs": [
+            "ZSTD"
+          ],
+          "column_chunks": 63,
+          "files": 9,
+          "matches_expected": true,
+          "row_groups": 9,
+          "rows": 26557961
+        },
+        "bronze/user_profiles": {
+          "bytes": 6069239,
+          "codecs": [
+            "ZSTD"
+          ],
+          "column_chunks": 40,
+          "files": 4,
+          "matches_expected": true,
+          "row_groups": 4,
+          "rows": 1061768
+        },
+        "gold/audience_daily": {
+          "bytes": 18724886,
+          "codecs": [
+            "ZSTD"
+          ],
+          "column_chunks": 35,
+          "files": 5,
+          "matches_expected": true,
+          "row_groups": 5,
+          "rows": 3738362
+        },
+        "gold/campaign_daily": {
+          "bytes": 15116490,
+          "codecs": [
+            "ZSTD"
+          ],
+          "column_chunks": 28,
+          "files": 4,
+          "matches_expected": true,
+          "row_groups": 4,
+          "rows": 1819995
+        },
+        "silver/ads": {
+          "bytes": 10329136,
+          "codecs": [
+            "ZSTD"
+          ],
+          "column_chunks": 28,
+          "files": 4,
+          "matches_expected": true,
+          "row_groups": 4,
+          "rows": 846811
+        },
+        "silver/impressions": {
+          "bytes": 258454184,
+          "codecs": [
+            "ZSTD"
+          ],
+          "column_chunks": 320,
+          "files": 40,
+          "matches_expected": true,
+          "row_groups": 40,
+          "rows": 26557961
+        },
+        "silver/user_profiles": {
+          "bytes": 4656001,
+          "codecs": [
+            "ZSTD"
+          ],
+          "column_chunks": 40,
+          "files": 4,
+          "matches_expected": true,
+          "row_groups": 4,
+          "rows": 1061768
+        }
+      }
+    },
+    "02-left": {
+      "expected_codec": "zstd",
+      "tables": {
+        "bronze/ads": {
+          "bytes": 11186011,
+          "codecs": [
+            "ZSTD"
+          ],
+          "column_chunks": 28,
+          "files": 4,
+          "matches_expected": true,
+          "row_groups": 4,
+          "rows": 846811
+        },
+        "bronze/impressions": {
+          "bytes": 208286860,
+          "codecs": [
+            "ZSTD"
+          ],
+          "column_chunks": 63,
+          "files": 9,
+          "matches_expected": true,
+          "row_groups": 9,
+          "rows": 26557961
+        },
+        "bronze/user_profiles": {
+          "bytes": 6069239,
+          "codecs": [
+            "ZSTD"
+          ],
+          "column_chunks": 40,
+          "files": 4,
+          "matches_expected": true,
+          "row_groups": 4,
+          "rows": 1061768
+        },
+        "gold/audience_daily": {
+          "bytes": 19656706,
+          "codecs": [
+            "ZSTD"
+          ],
+          "column_chunks": 28,
+          "files": 4,
+          "matches_expected": true,
+          "row_groups": 4,
+          "rows": 3738362
+        },
+        "gold/campaign_daily": {
+          "bytes": 15627292,
+          "codecs": [
+            "ZSTD"
+          ],
+          "column_chunks": 28,
+          "files": 4,
+          "matches_expected": true,
+          "row_groups": 4,
+          "rows": 1819995
+        },
+        "silver/ads": {
+          "bytes": 10329136,
+          "codecs": [
+            "ZSTD"
+          ],
+          "column_chunks": 28,
+          "files": 4,
+          "matches_expected": true,
+          "row_groups": 4,
+          "rows": 846811
+        },
+        "silver/impressions": {
+          "bytes": 350074879,
+          "codecs": [
+            "ZSTD"
+          ],
+          "column_chunks": 45,
+          "files": 5,
+          "matches_expected": true,
+          "row_groups": 5,
+          "rows": 26557961
+        },
+        "silver/user_profiles": {
+          "bytes": 4656001,
+          "codecs": [
+            "ZSTD"
+          ],
+          "column_chunks": 40,
+          "files": 4,
+          "matches_expected": true,
+          "row_groups": 4,
+          "rows": 1061768
+        }
+      }
+    },
+    "02-right": {
+      "expected_codec": "zstd",
+      "tables": {
+        "bronze/ads": {
+          "bytes": 11186011,
+          "codecs": [
+            "ZSTD"
+          ],
+          "column_chunks": 28,
+          "files": 4,
+          "matches_expected": true,
+          "row_groups": 4,
+          "rows": 846811
+        },
+        "bronze/impressions": {
+          "bytes": 208286860,
+          "codecs": [
+            "ZSTD"
+          ],
+          "column_chunks": 63,
+          "files": 9,
+          "matches_expected": true,
+          "row_groups": 9,
+          "rows": 26557961
+        },
+        "bronze/user_profiles": {
+          "bytes": 6069239,
+          "codecs": [
+            "ZSTD"
+          ],
+          "column_chunks": 40,
+          "files": 4,
+          "matches_expected": true,
+          "row_groups": 4,
+          "rows": 1061768
+        },
+        "gold/audience_daily": {
+          "bytes": 18724886,
+          "codecs": [
+            "ZSTD"
+          ],
+          "column_chunks": 35,
+          "files": 5,
+          "matches_expected": true,
+          "row_groups": 5,
+          "rows": 3738362
+        },
+        "gold/campaign_daily": {
+          "bytes": 15116490,
+          "codecs": [
+            "ZSTD"
+          ],
+          "column_chunks": 28,
+          "files": 4,
+          "matches_expected": true,
+          "row_groups": 4,
+          "rows": 1819995
+        },
+        "silver/ads": {
+          "bytes": 10329136,
+          "codecs": [
+            "ZSTD"
+          ],
+          "column_chunks": 28,
+          "files": 4,
+          "matches_expected": true,
+          "row_groups": 4,
+          "rows": 846811
+        },
+        "silver/impressions": {
+          "bytes": 258454184,
+          "codecs": [
+            "ZSTD"
+          ],
+          "column_chunks": 320,
+          "files": 40,
+          "matches_expected": true,
+          "row_groups": 40,
+          "rows": 26557961
+        },
+        "silver/user_profiles": {
+          "bytes": 4656001,
+          "codecs": [
+            "ZSTD"
+          ],
+          "column_chunks": 40,
+          "files": 4,
+          "matches_expected": true,
+          "row_groups": 4,
+          "rows": 1061768
+        }
+      }
+    },
+    "03-left": {
+      "expected_codec": "zstd",
+      "tables": {
+        "bronze/ads": {
+          "bytes": 11186011,
+          "codecs": [
+            "ZSTD"
+          ],
+          "column_chunks": 28,
+          "files": 4,
+          "matches_expected": true,
+          "row_groups": 4,
+          "rows": 846811
+        },
+        "bronze/impressions": {
+          "bytes": 208286860,
+          "codecs": [
+            "ZSTD"
+          ],
+          "column_chunks": 63,
+          "files": 9,
+          "matches_expected": true,
+          "row_groups": 9,
+          "rows": 26557961
+        },
+        "bronze/user_profiles": {
+          "bytes": 6069239,
+          "codecs": [
+            "ZSTD"
+          ],
+          "column_chunks": 40,
+          "files": 4,
+          "matches_expected": true,
+          "row_groups": 4,
+          "rows": 1061768
+        },
+        "gold/audience_daily": {
+          "bytes": 19656706,
+          "codecs": [
+            "ZSTD"
+          ],
+          "column_chunks": 28,
+          "files": 4,
+          "matches_expected": true,
+          "row_groups": 4,
+          "rows": 3738362
+        },
+        "gold/campaign_daily": {
+          "bytes": 15627292,
+          "codecs": [
+            "ZSTD"
+          ],
+          "column_chunks": 28,
+          "files": 4,
+          "matches_expected": true,
+          "row_groups": 4,
+          "rows": 1819995
+        },
+        "silver/ads": {
+          "bytes": 10329136,
+          "codecs": [
+            "ZSTD"
+          ],
+          "column_chunks": 28,
+          "files": 4,
+          "matches_expected": true,
+          "row_groups": 4,
+          "rows": 846811
+        },
+        "silver/impressions": {
+          "bytes": 350074879,
+          "codecs": [
+            "ZSTD"
+          ],
+          "column_chunks": 45,
+          "files": 5,
+          "matches_expected": true,
+          "row_groups": 5,
+          "rows": 26557961
+        },
+        "silver/user_profiles": {
+          "bytes": 4656001,
+          "codecs": [
+            "ZSTD"
+          ],
+          "column_chunks": 40,
+          "files": 4,
+          "matches_expected": true,
+          "row_groups": 4,
+          "rows": 1061768
+        }
+      }
+    },
+    "03-right": {
+      "expected_codec": "zstd",
+      "tables": {
+        "bronze/ads": {
+          "bytes": 11186011,
+          "codecs": [
+            "ZSTD"
+          ],
+          "column_chunks": 28,
+          "files": 4,
+          "matches_expected": true,
+          "row_groups": 4,
+          "rows": 846811
+        },
+        "bronze/impressions": {
+          "bytes": 208286860,
+          "codecs": [
+            "ZSTD"
+          ],
+          "column_chunks": 63,
+          "files": 9,
+          "matches_expected": true,
+          "row_groups": 9,
+          "rows": 26557961
+        },
+        "bronze/user_profiles": {
+          "bytes": 6069239,
+          "codecs": [
+            "ZSTD"
+          ],
+          "column_chunks": 40,
+          "files": 4,
+          "matches_expected": true,
+          "row_groups": 4,
+          "rows": 1061768
+        },
+        "gold/audience_daily": {
+          "bytes": 18724886,
+          "codecs": [
+            "ZSTD"
+          ],
+          "column_chunks": 35,
+          "files": 5,
+          "matches_expected": true,
+          "row_groups": 5,
+          "rows": 3738362
+        },
+        "gold/campaign_daily": {
+          "bytes": 15116490,
+          "codecs": [
+            "ZSTD"
+          ],
+          "column_chunks": 28,
+          "files": 4,
+          "matches_expected": true,
+          "row_groups": 4,
+          "rows": 1819995
+        },
+        "silver/ads": {
+          "bytes": 10329136,
+          "codecs": [
+            "ZSTD"
+          ],
+          "column_chunks": 28,
+          "files": 4,
+          "matches_expected": true,
+          "row_groups": 4,
+          "rows": 846811
+        },
+        "silver/impressions": {
+          "bytes": 258454184,
+          "codecs": [
+            "ZSTD"
+          ],
+          "column_chunks": 320,
+          "files": 40,
+          "matches_expected": true,
+          "row_groups": 40,
+          "rows": 26557961
+        },
+        "silver/user_profiles": {
+          "bytes": 4656001,
+          "codecs": [
+            "ZSTD"
+          ],
+          "column_chunks": 40,
+          "files": 4,
+          "matches_expected": true,
+          "row_groups": 4,
+          "rows": 1061768
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,1364 @@
+{
+  "method": "Fresh process per pipeline output; metadata warmed; no data warm-up or cache; workload order rotates by repetition. Timings include planning and collect, exclude Spark startup, metadata warm-up, and plan/metric inspection.",
+  "runs": [
+    {
+      "report": {
+        "environment": {
+          "delta": "4.0.0",
+          "driver_memory": "2g",
+          "git_commit": "dc9bebf20e35e6ac58be34f78cae9db7d6f49154",
+          "git_dirty": false,
+          "java": "21.0.12.1",
+          "machine": "arm64",
+          "master": "local[4]",
+          "platform": "macOS-27.0-arm64-arm-64bit",
+          "python": "3.11.15",
+          "spark": "4.0.1",
+          "spark_sql_settings": {
+            "spark.sql.adaptive.enabled": "true",
+            "spark.sql.ansi.enabled": "true",
+            "spark.sql.autoBroadcastJoinThreshold": "10485760b",
+            "spark.sql.files.maxPartitionBytes": "134217728b",
+            "spark.sql.parquet.compression.codec": "zstd",
+            "spark.sql.session.timeZone": "Asia/Shanghai",
+            "spark.sql.shuffle.partitions": "200"
+          }
+        },
+        "order": [
+          "one_day",
+          "three_days",
+          "full_period"
+        ],
+        "queries": {
+          "full_period": {
+            "rows": [
+              {
+                "clicks": 540342,
+                "impressions": 10085063,
+                "placement_id": "430539_1007"
+              },
+              {
+                "clicks": 825714,
+                "impressions": 16472898,
+                "placement_id": "430548_1007"
+              }
+            ],
+            "scans": [
+              {
+                "metrics": {
+                  "filesSize": 350074879,
+                  "metadataTime": 0,
+                  "numFiles": 5,
+                  "numOutputRows": 26557961,
+                  "scanTime": 26
+                },
+                "node": "Scan parquet "
+              }
+            ],
+            "seconds": 0.4622686250368133
+          },
+          "one_day": {
+            "rows": [
+              {
+                "clicks": 104801,
+                "impressions": 2067023,
+                "placement_id": "430548_1007"
+              },
+              {
+                "clicks": 69593,
+                "impressions": 1287500,
+                "placement_id": "430539_1007"
+              }
+            ],
+            "scans": [
+              {
+                "metrics": {
+                  "filesSize": 350074879,
+                  "metadataTime": 1,
+                  "numFiles": 5,
+                  "numOutputRows": 26437961,
+                  "scanTime": 1287
+                },
+                "node": "Scan parquet "
+              }
+            ],
+            "seconds": 0.9577271250309423
+          },
+          "three_days": {
+            "rows": [
+              {
+                "clicks": 205044,
+                "impressions": 3805897,
+                "placement_id": "430539_1007"
+              },
+              {
+                "clicks": 311146,
+                "impressions": 6130394,
+                "placement_id": "430548_1007"
+              }
+            ],
+            "scans": [
+              {
+                "metrics": {
+                  "filesSize": 350074879,
+                  "metadataTime": 0,
+                  "numFiles": 5,
+                  "numOutputRows": 26557961,
+                  "scanTime": 54
+                },
+                "node": "Scan parquet "
+              }
+            ],
+            "seconds": 0.47540154203306884
+          }
+        },
+        "spark_tasks": {
+          "by_operation": {
+            "internal": {
+              "disk_spill_bytes": 0,
+              "executor_cpu_ns": 1494537000,
+              "executor_run_ms": 2119,
+              "failed_task_attempts": 0,
+              "input_bytes": 6100,
+              "input_records": 8,
+              "memory_spill_bytes": 0,
+              "peak_task_execution_memory_bytes": 16842736,
+              "shuffle_read_bytes": 8306,
+              "shuffle_write_bytes": 8306,
+              "task_attempts": 53
+            },
+            "workload.full_period": {
+              "disk_spill_bytes": 0,
+              "executor_cpu_ns": 1099128000,
+              "executor_run_ms": 1198,
+              "failed_task_attempts": 0,
+              "input_bytes": 5815204,
+              "input_records": 26557968,
+              "memory_spill_bytes": 0,
+              "peak_task_execution_memory_bytes": 17039344,
+              "shuffle_read_bytes": 880,
+              "shuffle_write_bytes": 880,
+              "task_attempts": 56
+            },
+            "workload.one_day": {
+              "disk_spill_bytes": 0,
+              "executor_cpu_ns": 1229314000,
+              "executor_run_ms": 2287,
+              "failed_task_attempts": 0,
+              "input_bytes": 16672748,
+              "input_records": 26437968,
+              "memory_spill_bytes": 0,
+              "peak_task_execution_memory_bytes": 17039344,
+              "shuffle_read_bytes": 874,
+              "shuffle_write_bytes": 874,
+              "task_attempts": 56
+            },
+            "workload.three_days": {
+              "disk_spill_bytes": 0,
+              "executor_cpu_ns": 1084229000,
+              "executor_run_ms": 1148,
+              "failed_task_attempts": 0,
+              "input_bytes": 16671107,
+              "input_records": 26557966,
+              "memory_spill_bytes": 0,
+              "peak_task_execution_memory_bytes": 17039344,
+              "shuffle_read_bytes": 878,
+              "shuffle_write_bytes": 878,
+              "task_attempts": 56
+            }
+          },
+          "events_read": 550,
+          "note": "All task attempts, including validation and retries. Input bytes are task counters, not unique physical disk reads. Peak memory is per task, not process RAM."
+        },
+        "status": "succeeded",
+        "table": {
+          "numFiles": 5,
+          "partitionColumns": [],
+          "sizeInBytes": 350074879
+        }
+      },
+      "run_id": "01-left",
+      "side": "left"
+    },
+    {
+      "report": {
+        "environment": {
+          "delta": "4.0.0",
+          "driver_memory": "2g",
+          "git_commit": "dc9bebf20e35e6ac58be34f78cae9db7d6f49154",
+          "git_dirty": false,
+          "java": "21.0.12.1",
+          "machine": "arm64",
+          "master": "local[4]",
+          "platform": "macOS-27.0-arm64-arm-64bit",
+          "python": "3.11.15",
+          "spark": "4.0.1",
+          "spark_sql_settings": {
+            "spark.sql.adaptive.enabled": "true",
+            "spark.sql.ansi.enabled": "true",
+            "spark.sql.autoBroadcastJoinThreshold": "10485760b",
+            "spark.sql.files.maxPartitionBytes": "134217728b",
+            "spark.sql.parquet.compression.codec": "zstd",
+            "spark.sql.session.timeZone": "Asia/Shanghai",
+            "spark.sql.shuffle.partitions": "200"
+          }
+        },
+        "order": [
+          "one_day",
+          "three_days",
+          "full_period"
+        ],
+        "queries": {
+          "full_period": {
+            "rows": [
+              {
+                "clicks": 540342,
+                "impressions": 10085063,
+                "placement_id": "430539_1007"
+              },
+              {
+                "clicks": 825714,
+                "impressions": 16472898,
+                "placement_id": "430548_1007"
+              }
+            ],
+            "scans": [
+              {
+                "metrics": {
+                  "filesSize": 258454184,
+                  "metadataTime": 0,
+                  "numFiles": 40,
+                  "numOutputRows": 26557961,
+                  "numPartitions": 8,
+                  "pruningTime": 0,
+                  "scanTime": 107
+                },
+                "node": "Scan parquet "
+              }
+            ],
+            "seconds": 0.45458637503907084
+          },
+          "one_day": {
+            "rows": [
+              {
+                "clicks": 104801,
+                "impressions": 2067023,
+                "placement_id": "430548_1007"
+              },
+              {
+                "clicks": 69593,
+                "impressions": 1287500,
+                "placement_id": "430539_1007"
+              }
+            ],
+            "scans": [
+              {
+                "metrics": {
+                  "filesSize": 32871456,
+                  "metadataTime": 1,
+                  "numFiles": 5,
+                  "numOutputRows": 3354523,
+                  "numPartitions": 1,
+                  "pruningTime": 0,
+                  "scanTime": 910
+                },
+                "node": "Scan parquet "
+              }
+            ],
+            "seconds": 0.6408988750772551
+          },
+          "three_days": {
+            "rows": [
+              {
+                "clicks": 205044,
+                "impressions": 3805897,
+                "placement_id": "430539_1007"
+              },
+              {
+                "clicks": 311146,
+                "impressions": 6130394,
+                "placement_id": "430548_1007"
+              }
+            ],
+            "scans": [
+              {
+                "metrics": {
+                  "filesSize": 96709440,
+                  "metadataTime": 0,
+                  "numFiles": 15,
+                  "numOutputRows": 9936291,
+                  "numPartitions": 3,
+                  "pruningTime": 0,
+                  "scanTime": 69
+                },
+                "node": "Scan parquet "
+              }
+            ],
+            "seconds": 0.34839050006121397
+          }
+        },
+        "spark_tasks": {
+          "by_operation": {
+            "internal": {
+              "disk_spill_bytes": 0,
+              "executor_cpu_ns": 1555149000,
+              "executor_run_ms": 2181,
+              "failed_task_attempts": 0,
+              "input_bytes": 37558,
+              "input_records": 43,
+              "memory_spill_bytes": 0,
+              "peak_task_execution_memory_bytes": 16842736,
+              "shuffle_read_bytes": 24737,
+              "shuffle_write_bytes": 24737,
+              "task_attempts": 53
+            },
+            "workload.full_period": {
+              "disk_spill_bytes": 0,
+              "executor_cpu_ns": 1041679000,
+              "executor_run_ms": 1132,
+              "failed_task_attempts": 0,
+              "input_bytes": 7444112,
+              "input_records": 26558003,
+              "memory_spill_bytes": 0,
+              "peak_task_execution_memory_bytes": 17039344,
+              "shuffle_read_bytes": 878,
+              "shuffle_write_bytes": 878,
+              "task_attempts": 56
+            },
+            "workload.one_day": {
+              "disk_spill_bytes": 0,
+              "executor_cpu_ns": 584596000,
+              "executor_run_ms": 1379,
+              "failed_task_attempts": 0,
+              "input_bytes": 942445,
+              "input_records": 3354565,
+              "memory_spill_bytes": 0,
+              "peak_task_execution_memory_bytes": 17039344,
+              "shuffle_read_bytes": 704,
+              "shuffle_write_bytes": 704,
+              "task_attempts": 55
+            },
+            "workload.three_days": {
+              "disk_spill_bytes": 0,
+              "executor_cpu_ns": 630189000,
+              "executor_run_ms": 700,
+              "failed_task_attempts": 0,
+              "input_bytes": 2786381,
+              "input_records": 9936333,
+              "memory_spill_bytes": 0,
+              "peak_task_execution_memory_bytes": 17039344,
+              "shuffle_read_bytes": 876,
+              "shuffle_write_bytes": 876,
+              "task_attempts": 56
+            }
+          },
+          "events_read": 546,
+          "note": "All task attempts, including validation and retries. Input bytes are task counters, not unique physical disk reads. Peak memory is per task, not process RAM."
+        },
+        "status": "succeeded",
+        "table": {
+          "numFiles": 40,
+          "partitionColumns": [
+            "reporting_date"
+          ],
+          "sizeInBytes": 258454184
+        }
+      },
+      "run_id": "01-right",
+      "side": "right"
+    },
+    {
+      "report": {
+        "environment": {
+          "delta": "4.0.0",
+          "driver_memory": "2g",
+          "git_commit": "dc9bebf20e35e6ac58be34f78cae9db7d6f49154",
+          "git_dirty": false,
+          "java": "21.0.12.1",
+          "machine": "arm64",
+          "master": "local[4]",
+          "platform": "macOS-27.0-arm64-arm-64bit",
+          "python": "3.11.15",
+          "spark": "4.0.1",
+          "spark_sql_settings": {
+            "spark.sql.adaptive.enabled": "true",
+            "spark.sql.ansi.enabled": "true",
+            "spark.sql.autoBroadcastJoinThreshold": "10485760b",
+            "spark.sql.files.maxPartitionBytes": "134217728b",
+            "spark.sql.parquet.compression.codec": "zstd",
+            "spark.sql.session.timeZone": "Asia/Shanghai",
+            "spark.sql.shuffle.partitions": "200"
+          }
+        },
+        "order": [
+          "three_days",
+          "full_period",
+          "one_day"
+        ],
+        "queries": {
+          "full_period": {
+            "rows": [
+              {
+                "clicks": 540342,
+                "impressions": 10085063,
+                "placement_id": "430539_1007"
+              },
+              {
+                "clicks": 825714,
+                "impressions": 16472898,
+                "placement_id": "430548_1007"
+              }
+            ],
+            "scans": [
+              {
+                "metrics": {
+                  "filesSize": 258454184,
+                  "metadataTime": 0,
+                  "numFiles": 40,
+                  "numOutputRows": 26557961,
+                  "numPartitions": 8,
+                  "pruningTime": 0,
+                  "scanTime": 162
+                },
+                "node": "Scan parquet "
+              }
+            ],
+            "seconds": 0.4845086670247838
+          },
+          "one_day": {
+            "rows": [
+              {
+                "clicks": 104801,
+                "impressions": 2067023,
+                "placement_id": "430548_1007"
+              },
+              {
+                "clicks": 69593,
+                "impressions": 1287500,
+                "placement_id": "430539_1007"
+              }
+            ],
+            "scans": [
+              {
+                "metrics": {
+                  "filesSize": 32871456,
+                  "metadataTime": 0,
+                  "numFiles": 5,
+                  "numOutputRows": 3354523,
+                  "numPartitions": 1,
+                  "pruningTime": 0,
+                  "scanTime": 8
+                },
+                "node": "Scan parquet "
+              }
+            ],
+            "seconds": 0.21376470802351832
+          },
+          "three_days": {
+            "rows": [
+              {
+                "clicks": 205044,
+                "impressions": 3805897,
+                "placement_id": "430539_1007"
+              },
+              {
+                "clicks": 311146,
+                "impressions": 6130394,
+                "placement_id": "430548_1007"
+              }
+            ],
+            "scans": [
+              {
+                "metrics": {
+                  "filesSize": 96709440,
+                  "metadataTime": 1,
+                  "numFiles": 15,
+                  "numOutputRows": 9936291,
+                  "numPartitions": 3,
+                  "pruningTime": 0,
+                  "scanTime": 1007
+                },
+                "node": "Scan parquet "
+              }
+            ],
+            "seconds": 0.7766954170074314
+          }
+        },
+        "spark_tasks": {
+          "by_operation": {
+            "internal": {
+              "disk_spill_bytes": 0,
+              "executor_cpu_ns": 1566565000,
+              "executor_run_ms": 2204,
+              "failed_task_attempts": 0,
+              "input_bytes": 37558,
+              "input_records": 43,
+              "memory_spill_bytes": 0,
+              "peak_task_execution_memory_bytes": 16842736,
+              "shuffle_read_bytes": 22322,
+              "shuffle_write_bytes": 22322,
+              "task_attempts": 53
+            },
+            "workload.full_period": {
+              "disk_spill_bytes": 0,
+              "executor_cpu_ns": 1077530000,
+              "executor_run_ms": 1262,
+              "failed_task_attempts": 0,
+              "input_bytes": 7441436,
+              "input_records": 26558003,
+              "memory_spill_bytes": 0,
+              "peak_task_execution_memory_bytes": 17039344,
+              "shuffle_read_bytes": 878,
+              "shuffle_write_bytes": 878,
+              "task_attempts": 56
+            },
+            "workload.one_day": {
+              "disk_spill_bytes": 0,
+              "executor_cpu_ns": 182341000,
+              "executor_run_ms": 212,
+              "failed_task_attempts": 0,
+              "input_bytes": 939769,
+              "input_records": 3354565,
+              "memory_spill_bytes": 0,
+              "peak_task_execution_memory_bytes": 17039344,
+              "shuffle_read_bytes": 704,
+              "shuffle_write_bytes": 704,
+              "task_attempts": 55
+            },
+            "workload.three_days": {
+              "disk_spill_bytes": 0,
+              "executor_cpu_ns": 925899000,
+              "executor_run_ms": 1807,
+              "failed_task_attempts": 0,
+              "input_bytes": 2783705,
+              "input_records": 9936333,
+              "memory_spill_bytes": 0,
+              "peak_task_execution_memory_bytes": 17039344,
+              "shuffle_read_bytes": 876,
+              "shuffle_write_bytes": 876,
+              "task_attempts": 56
+            }
+          },
+          "events_read": 546,
+          "note": "All task attempts, including validation and retries. Input bytes are task counters, not unique physical disk reads. Peak memory is per task, not process RAM."
+        },
+        "status": "succeeded",
+        "table": {
+          "numFiles": 40,
+          "partitionColumns": [
+            "reporting_date"
+          ],
+          "sizeInBytes": 258454184
+        }
+      },
+      "run_id": "02-right",
+      "side": "right"
+    },
+    {
+      "report": {
+        "environment": {
+          "delta": "4.0.0",
+          "driver_memory": "2g",
+          "git_commit": "dc9bebf20e35e6ac58be34f78cae9db7d6f49154",
+          "git_dirty": false,
+          "java": "21.0.12.1",
+          "machine": "arm64",
+          "master": "local[4]",
+          "platform": "macOS-27.0-arm64-arm-64bit",
+          "python": "3.11.15",
+          "spark": "4.0.1",
+          "spark_sql_settings": {
+            "spark.sql.adaptive.enabled": "true",
+            "spark.sql.ansi.enabled": "true",
+            "spark.sql.autoBroadcastJoinThreshold": "10485760b",
+            "spark.sql.files.maxPartitionBytes": "134217728b",
+            "spark.sql.parquet.compression.codec": "zstd",
+            "spark.sql.session.timeZone": "Asia/Shanghai",
+            "spark.sql.shuffle.partitions": "200"
+          }
+        },
+        "order": [
+          "three_days",
+          "full_period",
+          "one_day"
+        ],
+        "queries": {
+          "full_period": {
+            "rows": [
+              {
+                "clicks": 540342,
+                "impressions": 10085063,
+                "placement_id": "430539_1007"
+              },
+              {
+                "clicks": 825714,
+                "impressions": 16472898,
+                "placement_id": "430548_1007"
+              }
+            ],
+            "scans": [
+              {
+                "metrics": {
+                  "filesSize": 350074879,
+                  "metadataTime": 0,
+                  "numFiles": 5,
+                  "numOutputRows": 26557961,
+                  "scanTime": 33
+                },
+                "node": "Scan parquet "
+              }
+            ],
+            "seconds": 0.5326922499807552
+          },
+          "one_day": {
+            "rows": [
+              {
+                "clicks": 104801,
+                "impressions": 2067023,
+                "placement_id": "430548_1007"
+              },
+              {
+                "clicks": 69593,
+                "impressions": 1287500,
+                "placement_id": "430539_1007"
+              }
+            ],
+            "scans": [
+              {
+                "metrics": {
+                  "filesSize": 350074879,
+                  "metadataTime": 0,
+                  "numFiles": 5,
+                  "numOutputRows": 26437961,
+                  "scanTime": 145
+                },
+                "node": "Scan parquet "
+              }
+            ],
+            "seconds": 0.33089820796158165
+          },
+          "three_days": {
+            "rows": [
+              {
+                "clicks": 205044,
+                "impressions": 3805897,
+                "placement_id": "430539_1007"
+              },
+              {
+                "clicks": 311146,
+                "impressions": 6130394,
+                "placement_id": "430548_1007"
+              }
+            ],
+            "scans": [
+              {
+                "metrics": {
+                  "filesSize": 350074879,
+                  "metadataTime": 1,
+                  "numFiles": 5,
+                  "numOutputRows": 26557961,
+                  "scanTime": 1385
+                },
+                "node": "Scan parquet "
+              }
+            ],
+            "seconds": 1.052830541972071
+          }
+        },
+        "spark_tasks": {
+          "by_operation": {
+            "internal": {
+              "disk_spill_bytes": 0,
+              "executor_cpu_ns": 1509981000,
+              "executor_run_ms": 2095,
+              "failed_task_attempts": 0,
+              "input_bytes": 6100,
+              "input_records": 8,
+              "memory_spill_bytes": 0,
+              "peak_task_execution_memory_bytes": 16842736,
+              "shuffle_read_bytes": 8304,
+              "shuffle_write_bytes": 8304,
+              "task_attempts": 53
+            },
+            "workload.full_period": {
+              "disk_spill_bytes": 0,
+              "executor_cpu_ns": 1279073000,
+              "executor_run_ms": 1420,
+              "failed_task_attempts": 0,
+              "input_bytes": 5815204,
+              "input_records": 26557968,
+              "memory_spill_bytes": 0,
+              "peak_task_execution_memory_bytes": 17039344,
+              "shuffle_read_bytes": 880,
+              "shuffle_write_bytes": 880,
+              "task_attempts": 56
+            },
+            "workload.one_day": {
+              "disk_spill_bytes": 0,
+              "executor_cpu_ns": 594118000,
+              "executor_run_ms": 637,
+              "failed_task_attempts": 0,
+              "input_bytes": 16671107,
+              "input_records": 26437966,
+              "memory_spill_bytes": 0,
+              "peak_task_execution_memory_bytes": 17039344,
+              "shuffle_read_bytes": 874,
+              "shuffle_write_bytes": 874,
+              "task_attempts": 56
+            },
+            "workload.three_days": {
+              "disk_spill_bytes": 0,
+              "executor_cpu_ns": 1414960000,
+              "executor_run_ms": 2631,
+              "failed_task_attempts": 0,
+              "input_bytes": 16672748,
+              "input_records": 26557968,
+              "memory_spill_bytes": 0,
+              "peak_task_execution_memory_bytes": 17039344,
+              "shuffle_read_bytes": 878,
+              "shuffle_write_bytes": 878,
+              "task_attempts": 56
+            }
+          },
+          "events_read": 550,
+          "note": "All task attempts, including validation and retries. Input bytes are task counters, not unique physical disk reads. Peak memory is per task, not process RAM."
+        },
+        "status": "succeeded",
+        "table": {
+          "numFiles": 5,
+          "partitionColumns": [],
+          "sizeInBytes": 350074879
+        }
+      },
+      "run_id": "02-left",
+      "side": "left"
+    },
+    {
+      "report": {
+        "environment": {
+          "delta": "4.0.0",
+          "driver_memory": "2g",
+          "git_commit": "dc9bebf20e35e6ac58be34f78cae9db7d6f49154",
+          "git_dirty": false,
+          "java": "21.0.12.1",
+          "machine": "arm64",
+          "master": "local[4]",
+          "platform": "macOS-27.0-arm64-arm-64bit",
+          "python": "3.11.15",
+          "spark": "4.0.1",
+          "spark_sql_settings": {
+            "spark.sql.adaptive.enabled": "true",
+            "spark.sql.ansi.enabled": "true",
+            "spark.sql.autoBroadcastJoinThreshold": "10485760b",
+            "spark.sql.files.maxPartitionBytes": "134217728b",
+            "spark.sql.parquet.compression.codec": "zstd",
+            "spark.sql.session.timeZone": "Asia/Shanghai",
+            "spark.sql.shuffle.partitions": "200"
+          }
+        },
+        "order": [
+          "full_period",
+          "one_day",
+          "three_days"
+        ],
+        "queries": {
+          "full_period": {
+            "rows": [
+              {
+                "clicks": 540342,
+                "impressions": 10085063,
+                "placement_id": "430539_1007"
+              },
+              {
+                "clicks": 825714,
+                "impressions": 16472898,
+                "placement_id": "430548_1007"
+              }
+            ],
+            "scans": [
+              {
+                "metrics": {
+                  "filesSize": 350074879,
+                  "metadataTime": 1,
+                  "numFiles": 5,
+                  "numOutputRows": 26557961,
+                  "scanTime": 1085
+                },
+                "node": "Scan parquet "
+              }
+            ],
+            "seconds": 0.8984988749725744
+          },
+          "one_day": {
+            "rows": [
+              {
+                "clicks": 104801,
+                "impressions": 2067023,
+                "placement_id": "430548_1007"
+              },
+              {
+                "clicks": 69593,
+                "impressions": 1287500,
+                "placement_id": "430539_1007"
+              }
+            ],
+            "scans": [
+              {
+                "metrics": {
+                  "filesSize": 350074879,
+                  "metadataTime": 0,
+                  "numFiles": 5,
+                  "numOutputRows": 26437961,
+                  "scanTime": 336
+                },
+                "node": "Scan parquet "
+              }
+            ],
+            "seconds": 0.5648915829369798
+          },
+          "three_days": {
+            "rows": [
+              {
+                "clicks": 205044,
+                "impressions": 3805897,
+                "placement_id": "430539_1007"
+              },
+              {
+                "clicks": 311146,
+                "impressions": 6130394,
+                "placement_id": "430548_1007"
+              }
+            ],
+            "scans": [
+              {
+                "metrics": {
+                  "filesSize": 350074879,
+                  "metadataTime": 0,
+                  "numFiles": 5,
+                  "numOutputRows": 26557961,
+                  "scanTime": 56
+                },
+                "node": "Scan parquet "
+              }
+            ],
+            "seconds": 0.41310683300253004
+          }
+        },
+        "spark_tasks": {
+          "by_operation": {
+            "internal": {
+              "disk_spill_bytes": 0,
+              "executor_cpu_ns": 1527836000,
+              "executor_run_ms": 2106,
+              "failed_task_attempts": 0,
+              "input_bytes": 6100,
+              "input_records": 8,
+              "memory_spill_bytes": 0,
+              "peak_task_execution_memory_bytes": 16842736,
+              "shuffle_read_bytes": 8304,
+              "shuffle_write_bytes": 8304,
+              "task_attempts": 53
+            },
+            "workload.full_period": {
+              "disk_spill_bytes": 0,
+              "executor_cpu_ns": 1375403000,
+              "executor_run_ms": 2365,
+              "failed_task_attempts": 0,
+              "input_bytes": 5815204,
+              "input_records": 26557968,
+              "memory_spill_bytes": 0,
+              "peak_task_execution_memory_bytes": 17039344,
+              "shuffle_read_bytes": 880,
+              "shuffle_write_bytes": 880,
+              "task_attempts": 56
+            },
+            "workload.one_day": {
+              "disk_spill_bytes": 0,
+              "executor_cpu_ns": 898374000,
+              "executor_run_ms": 1159,
+              "failed_task_attempts": 0,
+              "input_bytes": 16672748,
+              "input_records": 26437968,
+              "memory_spill_bytes": 0,
+              "peak_task_execution_memory_bytes": 17039344,
+              "shuffle_read_bytes": 874,
+              "shuffle_write_bytes": 874,
+              "task_attempts": 56
+            },
+            "workload.three_days": {
+              "disk_spill_bytes": 0,
+              "executor_cpu_ns": 859968000,
+              "executor_run_ms": 923,
+              "failed_task_attempts": 0,
+              "input_bytes": 16671107,
+              "input_records": 26557966,
+              "memory_spill_bytes": 0,
+              "peak_task_execution_memory_bytes": 17039344,
+              "shuffle_read_bytes": 878,
+              "shuffle_write_bytes": 878,
+              "task_attempts": 56
+            }
+          },
+          "events_read": 550,
+          "note": "All task attempts, including validation and retries. Input bytes are task counters, not unique physical disk reads. Peak memory is per task, not process RAM."
+        },
+        "status": "succeeded",
+        "table": {
+          "numFiles": 5,
+          "partitionColumns": [],
+          "sizeInBytes": 350074879
+        }
+      },
+      "run_id": "03-left",
+      "side": "left"
+    },
+    {
+      "report": {
+        "environment": {
+          "delta": "4.0.0",
+          "driver_memory": "2g",
+          "git_commit": "dc9bebf20e35e6ac58be34f78cae9db7d6f49154",
+          "git_dirty": false,
+          "java": "21.0.12.1",
+          "machine": "arm64",
+          "master": "local[4]",
+          "platform": "macOS-27.0-arm64-arm-64bit",
+          "python": "3.11.15",
+          "spark": "4.0.1",
+          "spark_sql_settings": {
+            "spark.sql.adaptive.enabled": "true",
+            "spark.sql.ansi.enabled": "true",
+            "spark.sql.autoBroadcastJoinThreshold": "10485760b",
+            "spark.sql.files.maxPartitionBytes": "134217728b",
+            "spark.sql.parquet.compression.codec": "zstd",
+            "spark.sql.session.timeZone": "Asia/Shanghai",
+            "spark.sql.shuffle.partitions": "200"
+          }
+        },
+        "order": [
+          "full_period",
+          "one_day",
+          "three_days"
+        ],
+        "queries": {
+          "full_period": {
+            "rows": [
+              {
+                "clicks": 540342,
+                "impressions": 10085063,
+                "placement_id": "430539_1007"
+              },
+              {
+                "clicks": 825714,
+                "impressions": 16472898,
+                "placement_id": "430548_1007"
+              }
+            ],
+            "scans": [
+              {
+                "metrics": {
+                  "filesSize": 258454184,
+                  "metadataTime": 1,
+                  "numFiles": 40,
+                  "numOutputRows": 26557961,
+                  "numPartitions": 8,
+                  "pruningTime": 0,
+                  "scanTime": 1050
+                },
+                "node": "Scan parquet "
+              }
+            ],
+            "seconds": 1.1135009590070695
+          },
+          "one_day": {
+            "rows": [
+              {
+                "clicks": 104801,
+                "impressions": 2067023,
+                "placement_id": "430548_1007"
+              },
+              {
+                "clicks": 69593,
+                "impressions": 1287500,
+                "placement_id": "430539_1007"
+              }
+            ],
+            "scans": [
+              {
+                "metrics": {
+                  "filesSize": 32871456,
+                  "metadataTime": 0,
+                  "numFiles": 5,
+                  "numOutputRows": 3354523,
+                  "numPartitions": 1,
+                  "pruningTime": 0,
+                  "scanTime": 9
+                },
+                "node": "Scan parquet "
+              }
+            ],
+            "seconds": 0.2613083329051733
+          },
+          "three_days": {
+            "rows": [
+              {
+                "clicks": 205044,
+                "impressions": 3805897,
+                "placement_id": "430539_1007"
+              },
+              {
+                "clicks": 311146,
+                "impressions": 6130394,
+                "placement_id": "430548_1007"
+              }
+            ],
+            "scans": [
+              {
+                "metrics": {
+                  "filesSize": 96709440,
+                  "metadataTime": 0,
+                  "numFiles": 15,
+                  "numOutputRows": 9936291,
+                  "numPartitions": 3,
+                  "pruningTime": 0,
+                  "scanTime": 26
+                },
+                "node": "Scan parquet "
+              }
+            ],
+            "seconds": 0.3302934169769287
+          }
+        },
+        "spark_tasks": {
+          "by_operation": {
+            "internal": {
+              "disk_spill_bytes": 0,
+              "executor_cpu_ns": 1522214000,
+              "executor_run_ms": 2211,
+              "failed_task_attempts": 0,
+              "input_bytes": 37558,
+              "input_records": 43,
+              "memory_spill_bytes": 0,
+              "peak_task_execution_memory_bytes": 16842736,
+              "shuffle_read_bytes": 21795,
+              "shuffle_write_bytes": 21795,
+              "task_attempts": 53
+            },
+            "workload.full_period": {
+              "disk_spill_bytes": 0,
+              "executor_cpu_ns": 1960225000,
+              "executor_run_ms": 2878,
+              "failed_task_attempts": 0,
+              "input_bytes": 7440830,
+              "input_records": 26558003,
+              "memory_spill_bytes": 0,
+              "peak_task_execution_memory_bytes": 17039344,
+              "shuffle_read_bytes": 878,
+              "shuffle_write_bytes": 878,
+              "task_attempts": 56
+            },
+            "workload.one_day": {
+              "disk_spill_bytes": 0,
+              "executor_cpu_ns": 260373000,
+              "executor_run_ms": 300,
+              "failed_task_attempts": 0,
+              "input_bytes": 939163,
+              "input_records": 3354565,
+              "memory_spill_bytes": 0,
+              "peak_task_execution_memory_bytes": 17039344,
+              "shuffle_read_bytes": 704,
+              "shuffle_write_bytes": 704,
+              "task_attempts": 55
+            },
+            "workload.three_days": {
+              "disk_spill_bytes": 0,
+              "executor_cpu_ns": 524006000,
+              "executor_run_ms": 588,
+              "failed_task_attempts": 0,
+              "input_bytes": 2783099,
+              "input_records": 9936333,
+              "memory_spill_bytes": 0,
+              "peak_task_execution_memory_bytes": 17039344,
+              "shuffle_read_bytes": 876,
+              "shuffle_write_bytes": 876,
+              "task_attempts": 56
+            }
+          },
+          "events_read": 546,
+          "note": "All task attempts, including validation and retries. Input bytes are task counters, not unique physical disk reads. Peak memory is per task, not process RAM."
+        },
+        "status": "succeeded",
+        "table": {
+          "numFiles": 40,
+          "partitionColumns": [
+            "reporting_date"
+          ],
+          "sizeInBytes": 258454184
+        }
+      },
+      "run_id": "03-right",
+      "side": "right"
+    }
+  ],
+  "status": "succeeded",
+  "summary": {
+    "full_period": {
+      "left": {
+        "files_scanned": {
+          "max": 5,
+          "median": 5,
+          "min": 5,
+          "samples": [
+            5,
+            5,
+            5
+          ]
+        },
+        "seconds": {
+          "max": 0.8984988749725744,
+          "median": 0.5326922499807552,
+          "min": 0.4622686250368133,
+          "samples": [
+            0.4622686250368133,
+            0.5326922499807552,
+            0.8984988749725744
+          ]
+        },
+        "selected_file_bytes": {
+          "max": 350074879,
+          "median": 350074879,
+          "min": 350074879,
+          "samples": [
+            350074879,
+            350074879,
+            350074879
+          ]
+        },
+        "task_input_bytes": {
+          "max": 5815204,
+          "median": 5815204,
+          "min": 5815204,
+          "samples": [
+            5815204,
+            5815204,
+            5815204
+          ]
+        }
+      },
+      "right": {
+        "files_scanned": {
+          "max": 40,
+          "median": 40,
+          "min": 40,
+          "samples": [
+            40,
+            40,
+            40
+          ]
+        },
+        "seconds": {
+          "max": 1.1135009590070695,
+          "median": 0.4845086670247838,
+          "min": 0.45458637503907084,
+          "samples": [
+            0.45458637503907084,
+            0.4845086670247838,
+            1.1135009590070695
+          ]
+        },
+        "selected_file_bytes": {
+          "max": 258454184,
+          "median": 258454184,
+          "min": 258454184,
+          "samples": [
+            258454184,
+            258454184,
+            258454184
+          ]
+        },
+        "task_input_bytes": {
+          "max": 7444112,
+          "median": 7441436,
+          "min": 7440830,
+          "samples": [
+            7444112,
+            7441436,
+            7440830
+          ]
+        }
+      }
+    },
+    "one_day": {
+      "left": {
+        "files_scanned": {
+          "max": 5,
+          "median": 5,
+          "min": 5,
+          "samples": [
+            5,
+            5,
+            5
+          ]
+        },
+        "seconds": {
+          "max": 0.9577271250309423,
+          "median": 0.5648915829369798,
+          "min": 0.33089820796158165,
+          "samples": [
+            0.9577271250309423,
+            0.33089820796158165,
+            0.5648915829369798
+          ]
+        },
+        "selected_file_bytes": {
+          "max": 350074879,
+          "median": 350074879,
+          "min": 350074879,
+          "samples": [
+            350074879,
+            350074879,
+            350074879
+          ]
+        },
+        "task_input_bytes": {
+          "max": 16672748,
+          "median": 16672748,
+          "min": 16671107,
+          "samples": [
+            16672748,
+            16671107,
+            16672748
+          ]
+        }
+      },
+      "right": {
+        "files_scanned": {
+          "max": 5,
+          "median": 5,
+          "min": 5,
+          "samples": [
+            5,
+            5,
+            5
+          ]
+        },
+        "seconds": {
+          "max": 0.6408988750772551,
+          "median": 0.2613083329051733,
+          "min": 0.21376470802351832,
+          "samples": [
+            0.6408988750772551,
+            0.21376470802351832,
+            0.2613083329051733
+          ]
+        },
+        "selected_file_bytes": {
+          "max": 32871456,
+          "median": 32871456,
+          "min": 32871456,
+          "samples": [
+            32871456,
+            32871456,
+            32871456
+          ]
+        },
+        "task_input_bytes": {
+          "max": 942445,
+          "median": 939769,
+          "min": 939163,
+          "samples": [
+            942445,
+            939769,
+            939163
+          ]
+        }
+      }
+    },
+    "three_days": {
+      "left": {
+        "files_scanned": {
+          "max": 5,
+          "median": 5,
+          "min": 5,
+          "samples": [
+            5,
+            5,
+            5
+          ]
+        },
+        "seconds": {
+          "max": 1.052830541972071,
+          "median": 0.47540154203306884,
+          "min": 0.41310683300253004,
+          "samples": [
+            0.47540154203306884,
+            1.052830541972071,
+            0.41310683300253004
+          ]
+        },
+        "selected_file_bytes": {
+          "max": 350074879,
+          "median": 350074879,
+          "min": 350074879,
+          "samples": [
+            350074879,
+            350074879,
+            350074879
+          ]
+        },
+        "task_input_bytes": {
+          "max": 16672748,
+          "median": 16671107,
+          "min": 16671107,
+          "samples": [
+            16671107,
+            16672748,
+            16671107
+          ]
+        }
+      },
+      "right": {
+        "files_scanned": {
+          "max": 15,
+          "median": 15,
+          "min": 15,
+          "samples": [
+            15,
+            15,
+            15
+          ]
+        },
+        "seconds": {
+          "max": 0.7766954170074314,
+          "median": 0.34839050006121397,
+          "min": 0.3302934169769287,
+          "samples": [
+            0.34839050006121397,
+            0.7766954170074314,
+            0.3302934169769287
+          ]
+        },
+        "selected_file_bytes": {
+          "max": 96709440,
+          "median": 96709440,
+          "min": 96709440,
+          "samples": [
+            96709440,
+            96709440,
+            96709440
+          ]
+        },
+        "task_input_bytes": {
+          "max": 2786381,
+          "median": 2783705,
+          "min": 2783099,
+          "samples": [
+            2786381,
+            2783705,
+            2783099
+          ]
+        }
+      }
+    }
+  }
+}

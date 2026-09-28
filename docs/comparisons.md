@@ -92,3 +92,15 @@ Raw data, generated tables, process logs, and Spark event logs stay local.
 
 There is no automatic GitHub CI or automatic commit from the runner. We run local
 checks, review the evidence, then commit and push coherent milestones.
+
+## Date-partitioning read workloads
+
+Iteration 3 also uses `scripts/compare_partition_queries.sh --comparison-dir
+outputs/comparisons/<id>` after a successful pipeline comparison. This reads the
+existing outputs without rebuilding them. It measures one-day, three-day, and
+full-period placement reports in fresh processes, rotates workload order across
+repetitions, checks result rows, and captures executed scan metrics plus task
+input bytes. Query timing and rebuild timing remain separate. See the
+[experiment method](../experiments/03_date_partitioning/README.md) and
+[measured results](../results/03_date_partitioning/README.md) for dates, warm-up
+policy, limitations, and all timing samples.

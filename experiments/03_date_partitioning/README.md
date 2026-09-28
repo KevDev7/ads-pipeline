@@ -12,6 +12,10 @@ Delta table stores its date in partition metadata/directories; Delta readers
 reconstruct the same logical column. Writer sorting, file counts, and consequent
 automatic plan changes are effects to measure, not separately tuned changes.
 
+**Completed:** [results and evidence](../../results/03_date_partitioning/README.md)
+show faster measured date-filtered reads, but a 7.99% slower full rebuild and
+more small files. All logical results match. Tag: `iteration-03-date-partitioning`.
+
 ## Hypothesis
 
 A date filter may read fewer files and bytes, but extra files and write work may

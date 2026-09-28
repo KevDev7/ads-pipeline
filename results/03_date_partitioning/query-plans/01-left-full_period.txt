@@ -1,0 +1,15 @@
+AdaptiveSparkPlan isFinalPlan=true
++- == Final Plan ==
+   ResultQueryStage 1
+   +- *(2) HashAggregate(keys=[placement_id#782], functions=[count(1), sum(clicked#784)], output=[placement_id#782, impressions#1019L, clicks#1020L])
+      +- AQEShuffleRead coalesced
+         +- ShuffleQueryStage 0
+            +- Exchange hashpartitioning(placement_id#782, 200), ENSURE_REQUIREMENTS, [plan_id=317]
+               +- *(1) HashAggregate(keys=[placement_id#782], functions=[partial_count(1), partial_sum(clicked#784)], output=[placement_id#782, count#1102L, sum#1103L])
+                  +- *(1) ColumnarToRow
+                     +- FileScan parquet [placement_id#782,clicked#784] Batched: true, DataFilters: [], Format: Parquet, Location: PreparedDeltaFileIndex(1 paths)[file:<repo>/outputs/comp..., PartitionFilters: [], PushedFilters: [], ReadSchema: struct<placement_id:string,clicked:int>
++- == Initial Plan ==
+   HashAggregate(keys=[placement_id#782], functions=[count(1), sum(clicked#784)], output=[placement_id#782, impressions#1019L, clicks#1020L])
+   +- Exchange hashpartitioning(placement_id#782, 200), ENSURE_REQUIREMENTS, [plan_id=303]
+      +- HashAggregate(keys=[placement_id#782], functions=[partial_count(1), partial_sum(clicked#784)], output=[placement_id#782, count#1102L, sum#1103L])
+         +- FileScan parquet [placement_id#782,clicked#784] Batched: true, DataFilters: [], Format: Parquet, Location: PreparedDeltaFileIndex(1 paths)[file:<repo>/outputs/comp..., PartitionFilters: [], PushedFilters: [], ReadSchema: struct<placement_id:string,clicked:int>
