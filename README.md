@@ -3,7 +3,8 @@
 A learning project for Apache Spark using Python (PySpark), SQL, and the Taobao advertising dataset.
 
 The project includes a preserved **untuned baseline**, **iteration 2: ZSTD
-compression**, **iteration 3: date partitioning**, and **iteration 4: ads joins**. Each runs full batch
+compression**, **iteration 3: date partitioning**, **iteration 4: ads joins**,
+and **iteration 5: profile joins**. Each runs full batch
 rebuilds with correctness checks and runtime/storage measurements, locally
 without cloud services. Iteration 1 provides a separate CSV-versus-Parquet read-workload experiment.
 
@@ -140,4 +141,10 @@ Tag: `iteration-04-ads-shuffle-join`.
 
 [Iteration 5](experiments/05_profile_shuffle_join/README.md) separately changes
 only the profile join to sort-merge, starting from iteration 2. Its comparison
-checks that the ads join remains broadcast and that all output rows match.
+checks that the ads join remains broadcast and that all output rows match. The
+[results](results/05_profile_shuffle_join/README.md) show **6.591 → 17.302 seconds**
+in Gold and **33.05% longer pipeline processing** in the completed three-pair
+comparison. An earlier attempt failed with a Spark memory-allocation error under
+the same 2 GiB heap; that failure is preserved alongside the successful results.
+All 40 exact comparisons in the fresh series passed. Automatic broadcasting
+remains the preferred reference. Tag: `iteration-05-profile-shuffle-join`.

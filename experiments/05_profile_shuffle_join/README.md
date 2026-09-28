@@ -64,3 +64,13 @@ full-run time. No measured sample is discarded. OS caches are not flushed;
 background activity and startup/JIT effects remain sources of variation. The
 comparison reruns iteration 2 with matching source hashes and recorded runtime
 settings, rather than reusing a historical timing.
+
+## Recorded result
+
+[The full-data findings](../../results/05_profile_shuffle_join/README.md) include
+an initial failed comparison, one successful diagnostic repeat, and a completed
+three-pair series. The variant was slower and one attempt failed to acquire
+execution memory while sorting, under the same 2 GiB heap. The successful series
+passed all 40 exact table comparisons and actual join/codec checks. This is not
+an upgrade for the measured workload; earlier automatic broadcasting remains
+the preferred reference. Tag: `iteration-05-profile-shuffle-join`.

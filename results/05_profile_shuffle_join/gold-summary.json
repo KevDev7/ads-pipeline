@@ -1,0 +1,247 @@
+{
+  "comparison_id": "profile-join-05-retry-20260927",
+  "method": "Derived from the fresh comparison.json only. For each run sum seconds and task counters for gold.campaign_daily and gold.audience_daily, then summarize by side. Includes joins, aggregation and Delta writes, not isolated join time. Earlier failed/control/confirmation attempts are retained separately, not pooled into these medians.",
+  "runs": {
+    "left": [
+      {
+        "disk_spill_bytes": 0,
+        "executor_cpu_ns": 17147752000,
+        "failed_task_attempts": 0,
+        "memory_spill_bytes": 0,
+        "run_id": "01-left",
+        "seconds": 6.591,
+        "shuffle_read_bytes": 138692256,
+        "shuffle_write_bytes": 138692256
+      },
+      {
+        "disk_spill_bytes": 0,
+        "executor_cpu_ns": 16554372000,
+        "failed_task_attempts": 0,
+        "memory_spill_bytes": 0,
+        "run_id": "02-left",
+        "seconds": 6.417,
+        "shuffle_read_bytes": 138691932,
+        "shuffle_write_bytes": 138691932
+      },
+      {
+        "disk_spill_bytes": 0,
+        "executor_cpu_ns": 17759650000,
+        "failed_task_attempts": 0,
+        "memory_spill_bytes": 0,
+        "run_id": "03-left",
+        "seconds": 6.805,
+        "shuffle_read_bytes": 138692253,
+        "shuffle_write_bytes": 138692253
+      }
+    ],
+    "right": [
+      {
+        "disk_spill_bytes": 640147565,
+        "executor_cpu_ns": 51316670000,
+        "failed_task_attempts": 0,
+        "memory_spill_bytes": 3605468938,
+        "run_id": "01-right",
+        "seconds": 17.203,
+        "shuffle_read_bytes": 1013744687,
+        "shuffle_write_bytes": 1013744687
+      },
+      {
+        "disk_spill_bytes": 564373600,
+        "executor_cpu_ns": 48073833000,
+        "failed_task_attempts": 0,
+        "memory_spill_bytes": 2973759248,
+        "run_id": "02-right",
+        "seconds": 17.863,
+        "shuffle_read_bytes": 1021535950,
+        "shuffle_write_bytes": 1021535950
+      },
+      {
+        "disk_spill_bytes": 564373600,
+        "executor_cpu_ns": 47917545000,
+        "failed_task_attempts": 0,
+        "memory_spill_bytes": 2973759248,
+        "run_id": "03-right",
+        "seconds": 17.302,
+        "shuffle_read_bytes": 1021536082,
+        "shuffle_write_bytes": 1021536082
+      }
+    ]
+  },
+  "summary": {
+    "disk_spill_bytes": {
+      "left": {
+        "max": 0,
+        "median": 0,
+        "min": 0,
+        "samples": [
+          0,
+          0,
+          0
+        ],
+        "stdev": 0.0
+      },
+      "right": {
+        "max": 640147565,
+        "median": 564373600,
+        "min": 564373600,
+        "samples": [
+          640147565,
+          564373600,
+          564373600
+        ],
+        "stdev": 43748119.09031528
+      },
+      "right_vs_left_percent": null
+    },
+    "executor_cpu_ns": {
+      "left": {
+        "max": 17759650000,
+        "median": 17147752000,
+        "min": 16554372000,
+        "samples": [
+          17147752000,
+          16554372000,
+          17759650000
+        ],
+        "stdev": 602662708.8856032
+      },
+      "right": {
+        "max": 51316670000,
+        "median": 48073833000,
+        "min": 47917545000,
+        "samples": [
+          51316670000,
+          48073833000,
+          47917545000
+        ],
+        "stdev": 1918961025.8825824
+      },
+      "right_vs_left_percent": 180.35064304638883
+    },
+    "failed_task_attempts": {
+      "left": {
+        "max": 0,
+        "median": 0,
+        "min": 0,
+        "samples": [
+          0,
+          0,
+          0
+        ],
+        "stdev": 0.0
+      },
+      "right": {
+        "max": 0,
+        "median": 0,
+        "min": 0,
+        "samples": [
+          0,
+          0,
+          0
+        ],
+        "stdev": 0.0
+      },
+      "right_vs_left_percent": null
+    },
+    "memory_spill_bytes": {
+      "left": {
+        "max": 0,
+        "median": 0,
+        "min": 0,
+        "samples": [
+          0,
+          0,
+          0
+        ],
+        "stdev": 0.0
+      },
+      "right": {
+        "max": 3605468938,
+        "median": 2973759248,
+        "min": 2973759248,
+        "samples": [
+          3605468938,
+          2973759248,
+          2973759248
+        ],
+        "stdev": 364717759.57119507
+      },
+      "right_vs_left_percent": null
+    },
+    "seconds": {
+      "left": {
+        "max": 6.805,
+        "median": 6.591,
+        "min": 6.417,
+        "samples": [
+          6.591,
+          6.417,
+          6.805
+        ],
+        "stdev": 0.19434333879331525
+      },
+      "right": {
+        "max": 17.863,
+        "median": 17.302,
+        "min": 17.203,
+        "samples": [
+          17.203,
+          17.863,
+          17.302
+        ],
+        "stdev": 0.3559311731219956
+      },
+      "right_vs_left_percent": 162.5094826278258
+    },
+    "shuffle_read_bytes": {
+      "left": {
+        "max": 138692256,
+        "median": 138692253,
+        "min": 138691932,
+        "samples": [
+          138692256,
+          138691932,
+          138692253
+        ],
+        "stdev": 186.20150375332634
+      },
+      "right": {
+        "max": 1021536082,
+        "median": 1021535950,
+        "min": 1013744687,
+        "samples": [
+          1013744687,
+          1021535950,
+          1021536082
+        ],
+        "stdev": 4498325.895979118
+      },
+      "right_vs_left_percent": 636.548673702777
+    },
+    "shuffle_write_bytes": {
+      "left": {
+        "max": 138692256,
+        "median": 138692253,
+        "min": 138691932,
+        "samples": [
+          138692256,
+          138691932,
+          138692253
+        ],
+        "stdev": 186.20150375332634
+      },
+      "right": {
+        "max": 1021536082,
+        "median": 1021535950,
+        "min": 1013744687,
+        "samples": [
+          1013744687,
+          1021535950,
+          1021536082
+        ],
+        "stdev": 4498325.895979118
+      },
+      "right_vs_left_percent": 636.548673702777
+    }
+  }
+}

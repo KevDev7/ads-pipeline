@@ -1,0 +1,223 @@
+{
+  "method": "Latest structured runtime plan for completed Gold SQL executions. Join keys identify ads versus profiles. Control must broadcast both; variant must sort-merge profiles and broadcast the other dimension. Hints alone are not proof.",
+  "runs": {
+    "01-left": {
+      "gold.audience_daily": {
+        "execution_completed": true,
+        "execution_id": 98,
+        "joins": [
+          {
+            "description": "BroadcastHashJoin [user_id#5063L], [user_id#5079L], LeftOuter, BuildRight, false",
+            "key": "user_id",
+            "operator": "BroadcastHashJoin"
+          },
+          {
+            "description": "BroadcastHashJoin [adgroup_id#5065L], [adgroup_id#5072L], LeftOuter, BuildRight, false",
+            "key": "adgroup_id",
+            "operator": "BroadcastHashJoin"
+          }
+        ],
+        "matches_expected": true
+      },
+      "gold.campaign_daily": {
+        "execution_completed": true,
+        "execution_id": 81,
+        "joins": [
+          {
+            "description": "BroadcastHashJoin [user_id#5063L], [user_id#5079L], LeftOuter, BuildRight, false",
+            "key": "user_id",
+            "operator": "BroadcastHashJoin"
+          },
+          {
+            "description": "BroadcastHashJoin [adgroup_id#5065L], [adgroup_id#5072L], LeftOuter, BuildRight, false",
+            "key": "adgroup_id",
+            "operator": "BroadcastHashJoin"
+          }
+        ],
+        "matches_expected": true
+      }
+    },
+    "01-right": {
+      "gold.audience_daily": {
+        "execution_completed": true,
+        "execution_id": 98,
+        "joins": [
+          {
+            "description": "SortMergeJoin [user_id#5063L], [user_id#5079L], LeftOuter",
+            "key": "user_id",
+            "operator": "SortMergeJoin"
+          },
+          {
+            "description": "BroadcastHashJoin [adgroup_id#5065L], [adgroup_id#5072L], LeftOuter, BuildRight, false",
+            "key": "adgroup_id",
+            "operator": "BroadcastHashJoin"
+          }
+        ],
+        "matches_expected": true
+      },
+      "gold.campaign_daily": {
+        "execution_completed": true,
+        "execution_id": 81,
+        "joins": [
+          {
+            "description": "SortMergeJoin [user_id#5063L], [user_id#5079L], LeftOuter",
+            "key": "user_id",
+            "operator": "SortMergeJoin"
+          },
+          {
+            "description": "BroadcastHashJoin [adgroup_id#5065L], [adgroup_id#5072L], LeftOuter, BuildRight, false",
+            "key": "adgroup_id",
+            "operator": "BroadcastHashJoin"
+          }
+        ],
+        "matches_expected": true
+      }
+    },
+    "02-left": {
+      "gold.audience_daily": {
+        "execution_completed": true,
+        "execution_id": 98,
+        "joins": [
+          {
+            "description": "BroadcastHashJoin [user_id#5063L], [user_id#5079L], LeftOuter, BuildRight, false",
+            "key": "user_id",
+            "operator": "BroadcastHashJoin"
+          },
+          {
+            "description": "BroadcastHashJoin [adgroup_id#5065L], [adgroup_id#5072L], LeftOuter, BuildRight, false",
+            "key": "adgroup_id",
+            "operator": "BroadcastHashJoin"
+          }
+        ],
+        "matches_expected": true
+      },
+      "gold.campaign_daily": {
+        "execution_completed": true,
+        "execution_id": 81,
+        "joins": [
+          {
+            "description": "BroadcastHashJoin [user_id#5063L], [user_id#5079L], LeftOuter, BuildRight, false",
+            "key": "user_id",
+            "operator": "BroadcastHashJoin"
+          },
+          {
+            "description": "BroadcastHashJoin [adgroup_id#5065L], [adgroup_id#5072L], LeftOuter, BuildRight, false",
+            "key": "adgroup_id",
+            "operator": "BroadcastHashJoin"
+          }
+        ],
+        "matches_expected": true
+      }
+    },
+    "02-right": {
+      "gold.audience_daily": {
+        "execution_completed": true,
+        "execution_id": 98,
+        "joins": [
+          {
+            "description": "SortMergeJoin [user_id#5063L], [user_id#5079L], LeftOuter",
+            "key": "user_id",
+            "operator": "SortMergeJoin"
+          },
+          {
+            "description": "BroadcastHashJoin [adgroup_id#5065L], [adgroup_id#5072L], LeftOuter, BuildRight, false",
+            "key": "adgroup_id",
+            "operator": "BroadcastHashJoin"
+          }
+        ],
+        "matches_expected": true
+      },
+      "gold.campaign_daily": {
+        "execution_completed": true,
+        "execution_id": 81,
+        "joins": [
+          {
+            "description": "SortMergeJoin [user_id#5063L], [user_id#5079L], LeftOuter",
+            "key": "user_id",
+            "operator": "SortMergeJoin"
+          },
+          {
+            "description": "BroadcastHashJoin [adgroup_id#5065L], [adgroup_id#5072L], LeftOuter, BuildRight, false",
+            "key": "adgroup_id",
+            "operator": "BroadcastHashJoin"
+          }
+        ],
+        "matches_expected": true
+      }
+    },
+    "03-left": {
+      "gold.audience_daily": {
+        "execution_completed": true,
+        "execution_id": 98,
+        "joins": [
+          {
+            "description": "BroadcastHashJoin [user_id#5063L], [user_id#5079L], LeftOuter, BuildRight, false",
+            "key": "user_id",
+            "operator": "BroadcastHashJoin"
+          },
+          {
+            "description": "BroadcastHashJoin [adgroup_id#5065L], [adgroup_id#5072L], LeftOuter, BuildRight, false",
+            "key": "adgroup_id",
+            "operator": "BroadcastHashJoin"
+          }
+        ],
+        "matches_expected": true
+      },
+      "gold.campaign_daily": {
+        "execution_completed": true,
+        "execution_id": 81,
+        "joins": [
+          {
+            "description": "BroadcastHashJoin [user_id#5063L], [user_id#5079L], LeftOuter, BuildRight, false",
+            "key": "user_id",
+            "operator": "BroadcastHashJoin"
+          },
+          {
+            "description": "BroadcastHashJoin [adgroup_id#5065L], [adgroup_id#5072L], LeftOuter, BuildRight, false",
+            "key": "adgroup_id",
+            "operator": "BroadcastHashJoin"
+          }
+        ],
+        "matches_expected": true
+      }
+    },
+    "03-right": {
+      "gold.audience_daily": {
+        "execution_completed": true,
+        "execution_id": 98,
+        "joins": [
+          {
+            "description": "SortMergeJoin [user_id#5063L], [user_id#5079L], LeftOuter",
+            "key": "user_id",
+            "operator": "SortMergeJoin"
+          },
+          {
+            "description": "BroadcastHashJoin [adgroup_id#5065L], [adgroup_id#5072L], LeftOuter, BuildRight, false",
+            "key": "adgroup_id",
+            "operator": "BroadcastHashJoin"
+          }
+        ],
+        "matches_expected": true
+      },
+      "gold.campaign_daily": {
+        "execution_completed": true,
+        "execution_id": 81,
+        "joins": [
+          {
+            "description": "SortMergeJoin [user_id#5063L], [user_id#5079L], LeftOuter",
+            "key": "user_id",
+            "operator": "SortMergeJoin"
+          },
+          {
+            "description": "BroadcastHashJoin [adgroup_id#5065L], [adgroup_id#5072L], LeftOuter, BuildRight, false",
+            "key": "adgroup_id",
+            "operator": "BroadcastHashJoin"
+          }
+        ],
+        "matches_expected": true
+      }
+    }
+  },
+  "status": "succeeded",
+  "target": "profiles"
+}

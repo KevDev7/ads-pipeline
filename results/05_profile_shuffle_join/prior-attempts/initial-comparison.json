@@ -1,0 +1,311 @@
+{
+  "change": "Request MERGE only for the user-profile join; keep ads join automatic and ZSTD",
+  "comparison_id": "profile-join-05-20260927",
+  "comparisons": [],
+  "control": false,
+  "declared_setting_changes": [],
+  "error": "CalledProcessError: Command '['/Users/HungNguyen/Desktop/Projects/ads-pipeline/.venv/bin/python3', '/Users/HungNguyen/Desktop/Projects/ads-pipeline/experiments/05_profile_shuffle_join/run.py', '--source-dir', '/Users/HungNguyen/Desktop/Projects/ads-pipeline/data/raw/taobao', '--output-dir', '/Users/HungNguyen/Desktop/Projects/ads-pipeline/outputs/comparisons/profile-join-05-20260927/runs', '--run-id', '01-right']' returned non-zero exit status 1.",
+  "finished_at": "2026-09-28T03:33:25.204077+00:00",
+  "harness_seconds": 271.013,
+  "left": "experiments/02_compression/run.py",
+  "repeats_per_side": 3,
+  "right": "experiments/05_profile_shuffle_join/run.py",
+  "runs": [
+    {
+      "report": {
+        "checks": {
+          "audience_daily": {
+            "clicks": 1366056,
+            "impressions": 26557961,
+            "missing_profile_impressions": 1528526,
+            "rows": 3738362
+          },
+          "bronze_silver_row_counts_match": true,
+          "campaign_daily": {
+            "clicks": 1366056,
+            "impressions": 26557961,
+            "missing_profile_impressions": 1528526,
+            "rows": 1819995
+          },
+          "dimension_keys_unique_and_present": true,
+          "silver_totals": {
+            "clicks": 1366056,
+            "first_date": "2017-05-06",
+            "impressions": 26557961,
+            "last_date": "2017-05-13",
+            "missing_profile_impressions": 1528526
+          }
+        },
+        "environment": {
+          "delta": "4.0.0",
+          "driver_memory": "2g",
+          "git_commit": "71ca428e42978ff4597fd5156bd5f72ba9dff32c",
+          "git_dirty": false,
+          "java": "21.0.12.1",
+          "machine": "arm64",
+          "master": "local[4]",
+          "platform": "macOS-27.0-arm64-arm-64bit",
+          "python": "3.11.15",
+          "spark": "4.0.1",
+          "spark_sql_settings": {
+            "spark.sql.adaptive.enabled": "true",
+            "spark.sql.ansi.enabled": "true",
+            "spark.sql.autoBroadcastJoinThreshold": "10485760b",
+            "spark.sql.files.maxPartitionBytes": "134217728b",
+            "spark.sql.parquet.compression.codec": "zstd",
+            "spark.sql.session.timeZone": "Asia/Shanghai",
+            "spark.sql.shuffle.partitions": "200"
+          }
+        },
+        "finished_at": "2026-09-28T03:32:36.089519+00:00",
+        "run_id": "01-left",
+        "seconds": {
+          "bronze.ads": 1.388,
+          "bronze.impressions": 13.964,
+          "bronze.user_profiles": 1.398,
+          "gold.audience_daily": 4.003,
+          "gold.campaign_daily": 2.93,
+          "pipeline_writes": 35.514,
+          "silver.ads": 1.135,
+          "silver.impressions": 9.479,
+          "silver.user_profiles": 1.217,
+          "source_fingerprints": 0.548,
+          "spark_shutdown": 0.254,
+          "spark_startup": 2.196,
+          "total": 45.155,
+          "validate.audience_daily": 0.39,
+          "validate.campaign_daily": 0.492,
+          "validate.silver": 5.646,
+          "validation": 6.528
+        },
+        "sources": {
+          "ad_feature.csv": {
+            "bytes": 31286431,
+            "sha256": "358a298178a6286196b82fe151024c63f4b081cf7685f1ebf8ff4da776e3c745"
+          },
+          "raw_sample.csv": {
+            "bytes": 1088060964,
+            "sha256": "aad792d63b81b5b7788f91e35364975b83ce3fdb923009fdfb6f798545d2b93d"
+          },
+          "user_profile.csv": {
+            "bytes": 24056588,
+            "sha256": "63355e02e302768d79db658e0f25498f368b4b5e037318bc67973835380a0532"
+          }
+        },
+        "spark_tasks": {
+          "by_operation": {
+            "bronze.ads": {
+              "disk_spill_bytes": 0,
+              "executor_cpu_ns": 3350552000,
+              "executor_run_ms": 3628,
+              "failed_task_attempts": 0,
+              "input_bytes": 31615178,
+              "input_records": 846818,
+              "memory_spill_bytes": 0,
+              "peak_task_execution_memory_bytes": 16842736,
+              "shuffle_read_bytes": 2550,
+              "shuffle_write_bytes": 2550,
+              "task_attempts": 55
+            },
+            "bronze.impressions": {
+              "disk_spill_bytes": 0,
+              "executor_cpu_ns": 41714919000,
+              "executor_run_ms": 45862,
+              "failed_task_attempts": 0,
+              "input_bytes": 1088592619,
+              "input_records": 26557973,
+              "memory_spill_bytes": 0,
+              "peak_task_execution_memory_bytes": 16842736,
+              "shuffle_read_bytes": 4443,
+              "shuffle_write_bytes": 4443,
+              "task_attempts": 60
+            },
+            "bronze.user_profiles": {
+              "disk_spill_bytes": 0,
+              "executor_cpu_ns": 3396286000,
+              "executor_run_ms": 3634,
+              "failed_task_attempts": 0,
+              "input_bytes": 24304026,
+              "input_records": 1061775,
+              "memory_spill_bytes": 0,
+              "peak_task_execution_memory_bytes": 16842736,
+              "shuffle_read_bytes": 2879,
+              "shuffle_write_bytes": 2879,
+              "task_attempts": 55
+            },
+            "gold.audience_daily": {
+              "disk_spill_bytes": 0,
+              "executor_cpu_ns": 11447566000,
+              "executor_run_ms": 11965,
+              "failed_task_attempts": 0,
+              "input_bytes": 110122019,
+              "input_records": 28466577,
+              "memory_spill_bytes": 0,
+              "peak_task_execution_memory_bytes": 317898080,
+              "shuffle_read_bytes": 91612021,
+              "shuffle_write_bytes": 91612021,
+              "task_attempts": 368
+            },
+            "gold.campaign_daily": {
+              "disk_spill_bytes": 0,
+              "executor_cpu_ns": 6953323000,
+              "executor_run_ms": 7416,
+              "failed_task_attempts": 0,
+              "input_bytes": 112432717,
+              "input_records": 28466577,
+              "memory_spill_bytes": 0,
+              "peak_task_execution_memory_bytes": 250789280,
+              "shuffle_read_bytes": 47079236,
+              "shuffle_write_bytes": 47079236,
+              "task_attempts": 368
+            },
+            "silver.ads": {
+              "disk_spill_bytes": 0,
+              "executor_cpu_ns": 2168077000,
+              "executor_run_ms": 2300,
+              "failed_task_attempts": 0,
+              "input_bytes": 11310726,
+              "input_records": 846830,
+              "memory_spill_bytes": 0,
+              "peak_task_execution_memory_bytes": 16842736,
+              "shuffle_read_bytes": 7153,
+              "shuffle_write_bytes": 7153,
+              "task_attempts": 156
+            },
+            "silver.impressions": {
+              "disk_spill_bytes": 0,
+              "executor_cpu_ns": 29497442000,
+              "executor_run_ms": 34093,
+              "failed_task_attempts": 0,
+              "input_bytes": 209871154,
+              "input_records": 26557991,
+              "memory_spill_bytes": 0,
+              "peak_task_execution_memory_bytes": 16842736,
+              "shuffle_read_bytes": 8257,
+              "shuffle_write_bytes": 8257,
+              "task_attempts": 157
+            },
+            "silver.user_profiles": {
+              "disk_spill_bytes": 0,
+              "executor_cpu_ns": 2503134000,
+              "executor_run_ms": 2551,
+              "failed_task_attempts": 0,
+              "input_bytes": 6159408,
+              "input_records": 1061787,
+              "memory_spill_bytes": 0,
+              "peak_task_execution_memory_bytes": 16842736,
+              "shuffle_read_bytes": 7520,
+              "shuffle_write_bytes": 7520,
+              "task_attempts": 156
+            },
+            "validate.audience_daily": {
+              "disk_spill_bytes": 0,
+              "executor_cpu_ns": 520189000,
+              "executor_run_ms": 517,
+              "failed_task_attempts": 0,
+              "input_bytes": 4020285,
+              "input_records": 3738380,
+              "memory_spill_bytes": 0,
+              "peak_task_execution_memory_bytes": 0,
+              "shuffle_read_bytes": 4963,
+              "shuffle_write_bytes": 4963,
+              "task_attempts": 157
+            },
+            "validate.campaign_daily": {
+              "disk_spill_bytes": 0,
+              "executor_cpu_ns": 598826000,
+              "executor_run_ms": 656,
+              "failed_task_attempts": 0,
+              "input_bytes": 2704031,
+              "input_records": 1820013,
+              "memory_spill_bytes": 0,
+              "peak_task_execution_memory_bytes": 0,
+              "shuffle_read_bytes": 4933,
+              "shuffle_write_bytes": 4933,
+              "task_attempts": 157
+            },
+            "validate.silver": {
+              "disk_spill_bytes": 0,
+              "executor_cpu_ns": 11337847000,
+              "executor_run_ms": 11798,
+              "failed_task_attempts": 0,
+              "input_bytes": 298247805,
+              "input_records": 110049121,
+              "memory_spill_bytes": 0,
+              "peak_task_execution_memory_bytes": 42688264,
+              "shuffle_read_bytes": 12612015,
+              "shuffle_write_bytes": 12612015,
+              "task_attempts": 1062
+            }
+          },
+          "events_read": 6433,
+          "note": "All task attempts, including validation and retries. Input bytes are task counters, not unique physical disk reads. Peak memory is per task, not process RAM."
+        },
+        "started_at": "2026-09-28T03:31:50.934776+00:00",
+        "status": "succeeded",
+        "storage": {
+          "event_log_bytes": 19973103,
+          "source_bytes": 1143403983,
+          "table_bytes": 630854482
+        },
+        "tables": {
+          "bronze/ads": {
+            "parquet_bytes": 11186011,
+            "parquet_files": 4,
+            "rows": 846811,
+            "total_bytes": 11281208
+          },
+          "bronze/impressions": {
+            "parquet_bytes": 208286860,
+            "parquet_files": 9,
+            "rows": 26557961,
+            "total_bytes": 209928646
+          },
+          "bronze/user_profiles": {
+            "parquet_bytes": 6069239,
+            "parquet_files": 4,
+            "rows": 1061768,
+            "total_bytes": 6127125
+          },
+          "gold/audience_daily": {
+            "parquet_bytes": 19656706,
+            "parquet_files": 4,
+            "rows": 3738362,
+            "total_bytes": 19818192
+          },
+          "gold/campaign_daily": {
+            "parquet_bytes": 15627292,
+            "parquet_files": 4,
+            "rows": 1819995,
+            "total_bytes": 15757346
+          },
+          "silver/ads": {
+            "parquet_bytes": 10329136,
+            "parquet_files": 4,
+            "rows": 846811,
+            "total_bytes": 10417819
+          },
+          "silver/impressions": {
+            "parquet_bytes": 350074879,
+            "parquet_files": 5,
+            "rows": 26557961,
+            "total_bytes": 352821843
+          },
+          "silver/user_profiles": {
+            "parquet_bytes": 4656001,
+            "parquet_files": 4,
+            "rows": 1061768,
+            "total_bytes": 4702303
+          }
+        }
+      },
+      "run_id": "01-left",
+      "setting_differences": {},
+      "side": "left"
+    }
+  ],
+  "started_at": "2026-09-28T03:28:54.189753+00:00",
+  "status": "failed",
+  "tests_passed": true,
+  "workload": "Full three-source Bronze/Silver/Gold rebuild"
+}

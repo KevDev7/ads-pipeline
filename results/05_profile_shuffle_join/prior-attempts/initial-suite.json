@@ -1,0 +1,23 @@
+{
+  "comparison_id": "profile-join-05-20260927",
+  "error": "CalledProcessError: Command '['/Users/HungNguyen/Desktop/Projects/ads-pipeline/.venv/bin/python3', '-m', 'benchmarks.compare', '--left', 'experiments/02_compression/run.py', '--right', 'experiments/05_profile_shuffle_join/run.py', '--source-dir', '/Users/HungNguyen/Desktop/Projects/ads-pipeline/data/raw/taobao', '--output-dir', '/Users/HungNguyen/Desktop/Projects/ads-pipeline/outputs/comparisons', '--comparison-id', 'profile-join-05-20260927', '--repeats', '3', '--change', 'Request MERGE only for the user-profile join; keep ads join automatic and ZSTD']' returned non-zero exit status 1.",
+  "finished_at": "2026-09-28T03:33:25.225777+00:00",
+  "iteration": "5",
+  "repeats": 3,
+  "started_at": "2026-09-28T03:28:54.104312+00:00",
+  "status": "failed",
+  "steps": {
+    "codecs": {
+      "log": "profile-join-05-20260927-suite-logs/codecs.log",
+      "status": "pending"
+    },
+    "joins": {
+      "log": "profile-join-05-20260927-suite-logs/joins.log",
+      "status": "pending"
+    },
+    "pipeline": {
+      "log": "profile-join-05-20260927-suite-logs/pipeline.log",
+      "status": "failed"
+    }
+  }
+}

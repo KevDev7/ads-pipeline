@@ -1,0 +1,565 @@
+{
+  "method": "Prior attempts retained separately from any later comparison. Failed-run task counters describe incomplete work. Latest plans are accompanied by SQL completion error status; a failed execution is not a successful result.",
+  "runs": {
+    "initial-control": {
+      "gold_executions": {
+        "gold.audience_daily": {
+          "ended": true,
+          "error": "",
+          "execution_id": "98",
+          "joins": [
+            {
+              "description": "BroadcastHashJoin [user_id#5063L], [user_id#5079L], LeftOuter, BuildRight, false",
+              "key": "user_id",
+              "operator": "BroadcastHashJoin"
+            },
+            {
+              "description": "BroadcastHashJoin [adgroup_id#5065L], [adgroup_id#5072L], LeftOuter, BuildRight, false",
+              "key": "adgroup_id",
+              "operator": "BroadcastHashJoin"
+            }
+          ],
+          "sql_succeeded": true
+        },
+        "gold.campaign_daily": {
+          "ended": true,
+          "error": "",
+          "execution_id": "81",
+          "joins": [
+            {
+              "description": "BroadcastHashJoin [user_id#5063L], [user_id#5079L], LeftOuter, BuildRight, false",
+              "key": "user_id",
+              "operator": "BroadcastHashJoin"
+            },
+            {
+              "description": "BroadcastHashJoin [adgroup_id#5065L], [adgroup_id#5072L], LeftOuter, BuildRight, false",
+              "key": "adgroup_id",
+              "operator": "BroadcastHashJoin"
+            }
+          ],
+          "sql_succeeded": true
+        }
+      },
+      "local_path": "outputs/comparisons/profile-join-05-20260927/runs/01-left",
+      "spark_tasks": {
+        "by_operation": {
+          "bronze.ads": {
+            "disk_spill_bytes": 0,
+            "executor_cpu_ns": 3350552000,
+            "executor_run_ms": 3628,
+            "failed_task_attempts": 0,
+            "input_bytes": 31615178,
+            "input_records": 846818,
+            "memory_spill_bytes": 0,
+            "peak_task_execution_memory_bytes": 16842736,
+            "shuffle_read_bytes": 2550,
+            "shuffle_write_bytes": 2550,
+            "task_attempts": 55
+          },
+          "bronze.impressions": {
+            "disk_spill_bytes": 0,
+            "executor_cpu_ns": 41714919000,
+            "executor_run_ms": 45862,
+            "failed_task_attempts": 0,
+            "input_bytes": 1088592619,
+            "input_records": 26557973,
+            "memory_spill_bytes": 0,
+            "peak_task_execution_memory_bytes": 16842736,
+            "shuffle_read_bytes": 4443,
+            "shuffle_write_bytes": 4443,
+            "task_attempts": 60
+          },
+          "bronze.user_profiles": {
+            "disk_spill_bytes": 0,
+            "executor_cpu_ns": 3396286000,
+            "executor_run_ms": 3634,
+            "failed_task_attempts": 0,
+            "input_bytes": 24304026,
+            "input_records": 1061775,
+            "memory_spill_bytes": 0,
+            "peak_task_execution_memory_bytes": 16842736,
+            "shuffle_read_bytes": 2879,
+            "shuffle_write_bytes": 2879,
+            "task_attempts": 55
+          },
+          "gold.audience_daily": {
+            "disk_spill_bytes": 0,
+            "executor_cpu_ns": 11447566000,
+            "executor_run_ms": 11965,
+            "failed_task_attempts": 0,
+            "input_bytes": 110122019,
+            "input_records": 28466577,
+            "memory_spill_bytes": 0,
+            "peak_task_execution_memory_bytes": 317898080,
+            "shuffle_read_bytes": 91612021,
+            "shuffle_write_bytes": 91612021,
+            "task_attempts": 368
+          },
+          "gold.campaign_daily": {
+            "disk_spill_bytes": 0,
+            "executor_cpu_ns": 6953323000,
+            "executor_run_ms": 7416,
+            "failed_task_attempts": 0,
+            "input_bytes": 112432717,
+            "input_records": 28466577,
+            "memory_spill_bytes": 0,
+            "peak_task_execution_memory_bytes": 250789280,
+            "shuffle_read_bytes": 47079236,
+            "shuffle_write_bytes": 47079236,
+            "task_attempts": 368
+          },
+          "silver.ads": {
+            "disk_spill_bytes": 0,
+            "executor_cpu_ns": 2168077000,
+            "executor_run_ms": 2300,
+            "failed_task_attempts": 0,
+            "input_bytes": 11310726,
+            "input_records": 846830,
+            "memory_spill_bytes": 0,
+            "peak_task_execution_memory_bytes": 16842736,
+            "shuffle_read_bytes": 7153,
+            "shuffle_write_bytes": 7153,
+            "task_attempts": 156
+          },
+          "silver.impressions": {
+            "disk_spill_bytes": 0,
+            "executor_cpu_ns": 29497442000,
+            "executor_run_ms": 34093,
+            "failed_task_attempts": 0,
+            "input_bytes": 209871154,
+            "input_records": 26557991,
+            "memory_spill_bytes": 0,
+            "peak_task_execution_memory_bytes": 16842736,
+            "shuffle_read_bytes": 8257,
+            "shuffle_write_bytes": 8257,
+            "task_attempts": 157
+          },
+          "silver.user_profiles": {
+            "disk_spill_bytes": 0,
+            "executor_cpu_ns": 2503134000,
+            "executor_run_ms": 2551,
+            "failed_task_attempts": 0,
+            "input_bytes": 6159408,
+            "input_records": 1061787,
+            "memory_spill_bytes": 0,
+            "peak_task_execution_memory_bytes": 16842736,
+            "shuffle_read_bytes": 7520,
+            "shuffle_write_bytes": 7520,
+            "task_attempts": 156
+          },
+          "validate.audience_daily": {
+            "disk_spill_bytes": 0,
+            "executor_cpu_ns": 520189000,
+            "executor_run_ms": 517,
+            "failed_task_attempts": 0,
+            "input_bytes": 4020285,
+            "input_records": 3738380,
+            "memory_spill_bytes": 0,
+            "peak_task_execution_memory_bytes": 0,
+            "shuffle_read_bytes": 4963,
+            "shuffle_write_bytes": 4963,
+            "task_attempts": 157
+          },
+          "validate.campaign_daily": {
+            "disk_spill_bytes": 0,
+            "executor_cpu_ns": 598826000,
+            "executor_run_ms": 656,
+            "failed_task_attempts": 0,
+            "input_bytes": 2704031,
+            "input_records": 1820013,
+            "memory_spill_bytes": 0,
+            "peak_task_execution_memory_bytes": 0,
+            "shuffle_read_bytes": 4933,
+            "shuffle_write_bytes": 4933,
+            "task_attempts": 157
+          },
+          "validate.silver": {
+            "disk_spill_bytes": 0,
+            "executor_cpu_ns": 11337847000,
+            "executor_run_ms": 11798,
+            "failed_task_attempts": 0,
+            "input_bytes": 298247805,
+            "input_records": 110049121,
+            "memory_spill_bytes": 0,
+            "peak_task_execution_memory_bytes": 42688264,
+            "shuffle_read_bytes": 12612015,
+            "shuffle_write_bytes": 12612015,
+            "task_attempts": 1062
+          }
+        },
+        "events_read": 6433,
+        "note": "All task attempts, including validation and retries. Input bytes are task counters, not unique physical disk reads. Peak memory is per task, not process RAM."
+      },
+      "status": "succeeded"
+    },
+    "initial-variant-failed": {
+      "gold_executions": {
+        "gold.audience_daily": {
+          "ended": true,
+          "error": "Job aborted due to stage failure: Task 0 in stage 200.0 failed 1 times, most recent failure: Lost task 0.0 in stage 200.0 (TID 2547) (localhost executor driver): org.apache.spark.memory.SparkOutOfMemoryError: [UNABLE_TO_ACQUIRE_MEMORY] Unable to acquire 65536 bytes of memory, got 0. SQLSTATE: 53200\n\tat org.apache.spark.errors.SparkCoreErrors$.outOfMemoryError(SparkCoreErrors.scala:469)\n\tat org.apache.spark.errors.SparkCoreErrors.outOfMemoryError(SparkCoreErrors.scala)\n\tat org.apache.spark.memory.MemoryConsumer.throwOom(MemoryConsumer.java:157)\n\tat org.apache.spark.memory.MemoryConsumer.allocateArray(MemoryConsumer.java:98)\n\tat org.apache.spark.util.collection.unsafe.sort.UnsafeExternalSorter.growPointerArrayIfNecessary(UnsafeExternalSorter.java:419)\n\tat org.apache.spark.util.collection.unsafe.sort.UnsafeExternalSorter.allocateMemoryForRecordIfNecessary(UnsafeExternalSorter.java:453)\n\tat org.apache.spark.util.collection.unsafe.sort.UnsafeExternalSorter.insertRecord(UnsafeExternalSorter.java:491)\n\tat org.apache.spark.sql.execution.UnsafeExternalRowSorter.insertRow(UnsafeExternalRowSorter.java:138)\n\tat org.apache.spark.sql.catalyst.expressions.GeneratedClass$GeneratedIteratorForCodegenStage4.sort_addToSorter_0$(Unknown Source)\n\tat org.apache.spark.sql.catalyst.expressions.GeneratedClass$GeneratedIteratorForCodegenStage4.processNext(Unknown Source)\n\tat org.apache.spark.sql.execution.BufferedRowIterator.hasNext(BufferedRowIterator.java:43)\n\tat org.apache.spark.sql.execution.WholeStageCodegenEvaluatorFactory$WholeStageCodegenPartitionEvaluator$$anon$1.hasNext(WholeStageCodegenEvaluatorFactory.scala:50)\n\tat org.apache.spark.sql.catalyst.expressions.GeneratedClass$GeneratedIteratorForCodegenStage6.hashAgg_doAggregateWithKeys_0$(Unknown Source)\n\tat org.apache.spark.sql.catalyst.expressions.GeneratedClass$GeneratedIteratorForCodegenStage6.processNext(Unknown Source)\n\tat org.apache.spark.sql.execution.BufferedRowIterator.hasNext(BufferedRowIterator.java:43)\n\tat org.apache.spark.sql.execution.WholeStageCodegenEvaluatorFactory$WholeStageCodegenPartitionEvaluator$$anon$1.hasNext(WholeStageCodegenEvaluatorFactory.scala:50)\n\tat scala.collection.Iterator$$anon$9.hasNext(Iterator.scala:583)\n\tat org.apache.spark.shuffle.sort.BypassMergeSortShuffleWriter.write(BypassMergeSortShuffleWriter.java:143)\n\tat org.apache.spark.shuffle.ShuffleWriteProcessor.write(ShuffleWriteProcessor.scala:57)\n\tat org.apache.spark.scheduler.ShuffleMapTask.runTask(ShuffleMapTask.scala:111)\n\tat org.apache.spark.scheduler.ShuffleMapTask.runTask(ShuffleMapTask.scala:54)\n\tat org.apache.spark.TaskContext.runTaskWithListeners(TaskContext.scala:171)\n\tat org.apache.spark.scheduler.Task.run(Task.scala:147)\n\tat org.apache.spark.executor.Executor$TaskRunner.$anonfun$run$5(Executor.scala:647)\n\tat org.apache.spark.util.SparkErrorUtils.tryWithSafeFinally(SparkErrorUtils.scala:80)\n\tat org.apache.spark.util.SparkErrorUtils.tryWithSafeFinally$(SparkErrorUtils.scala:77)\n\tat org.apache.spark.util.Utils$.tryWithSafeFinally(Utils.scala:99)\n\tat org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:650)\n\tat java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)\n\tat java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)\n\tat java.base/java.lang.Thread.run(Thread.java:1583)\n\nDriver stacktrace:",
+          "execution_id": "98",
+          "joins": [
+            {
+              "description": "SortMergeJoin [user_id#5063L], [user_id#5079L], LeftOuter",
+              "key": "user_id",
+              "operator": "SortMergeJoin"
+            },
+            {
+              "description": "BroadcastHashJoin [adgroup_id#5065L], [adgroup_id#5072L], LeftOuter, BuildRight, false",
+              "key": "adgroup_id",
+              "operator": "BroadcastHashJoin"
+            }
+          ],
+          "sql_succeeded": false
+        },
+        "gold.campaign_daily": {
+          "ended": true,
+          "error": "",
+          "execution_id": "81",
+          "joins": [
+            {
+              "description": "SortMergeJoin [user_id#5063L], [user_id#5079L], LeftOuter",
+              "key": "user_id",
+              "operator": "SortMergeJoin"
+            },
+            {
+              "description": "BroadcastHashJoin [adgroup_id#5065L], [adgroup_id#5072L], LeftOuter, BuildRight, false",
+              "key": "adgroup_id",
+              "operator": "BroadcastHashJoin"
+            }
+          ],
+          "sql_succeeded": true
+        }
+      },
+      "local_path": "outputs/comparisons/profile-join-05-20260927/runs/01-right",
+      "spark_tasks": {
+        "by_operation": {
+          "bronze.ads": {
+            "disk_spill_bytes": 0,
+            "executor_cpu_ns": 3467268000,
+            "executor_run_ms": 3705,
+            "failed_task_attempts": 0,
+            "input_bytes": 31615178,
+            "input_records": 846818,
+            "memory_spill_bytes": 0,
+            "peak_task_execution_memory_bytes": 16842736,
+            "shuffle_read_bytes": 2551,
+            "shuffle_write_bytes": 2551,
+            "task_attempts": 55
+          },
+          "bronze.impressions": {
+            "disk_spill_bytes": 0,
+            "executor_cpu_ns": 40904219000,
+            "executor_run_ms": 45855,
+            "failed_task_attempts": 0,
+            "input_bytes": 1088592619,
+            "input_records": 26557973,
+            "memory_spill_bytes": 0,
+            "peak_task_execution_memory_bytes": 16842736,
+            "shuffle_read_bytes": 4763,
+            "shuffle_write_bytes": 4763,
+            "task_attempts": 60
+          },
+          "bronze.user_profiles": {
+            "disk_spill_bytes": 0,
+            "executor_cpu_ns": 3626531000,
+            "executor_run_ms": 3882,
+            "failed_task_attempts": 0,
+            "input_bytes": 24304026,
+            "input_records": 1061775,
+            "memory_spill_bytes": 0,
+            "peak_task_execution_memory_bytes": 16842736,
+            "shuffle_read_bytes": 2881,
+            "shuffle_write_bytes": 2881,
+            "task_attempts": 55
+          },
+          "gold.audience_daily": {
+            "disk_spill_bytes": 82776680,
+            "executor_cpu_ns": 5745726000,
+            "executor_run_ms": 10031,
+            "failed_task_attempts": 5,
+            "input_bytes": 110116496,
+            "input_records": 28466570,
+            "memory_spill_bytes": 402652800,
+            "peak_task_execution_memory_bytes": 40328920,
+            "shuffle_read_bytes": 0,
+            "shuffle_write_bytes": 337607557,
+            "task_attempts": 318
+          },
+          "gold.campaign_daily": {
+            "disk_spill_bytes": 347600331,
+            "executor_cpu_ns": 24233159000,
+            "executor_run_ms": 30227,
+            "failed_task_attempts": 0,
+            "input_bytes": 112431960,
+            "input_records": 28466578,
+            "memory_spill_bytes": 1749023520,
+            "peak_task_execution_memory_bytes": 444595968,
+            "shuffle_read_bytes": 535080869,
+            "shuffle_write_bytes": 535080869,
+            "task_attempts": 376
+          },
+          "silver.ads": {
+            "disk_spill_bytes": 0,
+            "executor_cpu_ns": 2230143000,
+            "executor_run_ms": 2404,
+            "failed_task_attempts": 0,
+            "input_bytes": 11310726,
+            "input_records": 846830,
+            "memory_spill_bytes": 0,
+            "peak_task_execution_memory_bytes": 16842736,
+            "shuffle_read_bytes": 6989,
+            "shuffle_write_bytes": 6989,
+            "task_attempts": 156
+          },
+          "silver.impressions": {
+            "disk_spill_bytes": 0,
+            "executor_cpu_ns": 28106790000,
+            "executor_run_ms": 31534,
+            "failed_task_attempts": 0,
+            "input_bytes": 209871920,
+            "input_records": 26557991,
+            "memory_spill_bytes": 0,
+            "peak_task_execution_memory_bytes": 16842736,
+            "shuffle_read_bytes": 8124,
+            "shuffle_write_bytes": 8124,
+            "task_attempts": 157
+          },
+          "silver.user_profiles": {
+            "disk_spill_bytes": 0,
+            "executor_cpu_ns": 2443623000,
+            "executor_run_ms": 2580,
+            "failed_task_attempts": 0,
+            "input_bytes": 6159408,
+            "input_records": 1061787,
+            "memory_spill_bytes": 0,
+            "peak_task_execution_memory_bytes": 16842736,
+            "shuffle_read_bytes": 7144,
+            "shuffle_write_bytes": 7144,
+            "task_attempts": 156
+          },
+          "validate.campaign_daily": {
+            "disk_spill_bytes": 0,
+            "executor_cpu_ns": 510239000,
+            "executor_run_ms": 540,
+            "failed_task_attempts": 0,
+            "input_bytes": 2752837,
+            "input_records": 1820016,
+            "memory_spill_bytes": 0,
+            "peak_task_execution_memory_bytes": 0,
+            "shuffle_read_bytes": 4976,
+            "shuffle_write_bytes": 4976,
+            "task_attempts": 157
+          },
+          "validate.silver": {
+            "disk_spill_bytes": 0,
+            "executor_cpu_ns": 7967968000,
+            "executor_run_ms": 8483,
+            "failed_task_attempts": 0,
+            "input_bytes": 298243994,
+            "input_records": 110049121,
+            "memory_spill_bytes": 0,
+            "peak_task_execution_memory_bytes": 42688264,
+            "shuffle_read_bytes": 12611980,
+            "shuffle_write_bytes": 12611980,
+            "task_attempts": 1062
+          }
+        },
+        "events_read": 5960,
+        "note": "All task attempts, including validation and retries. Input bytes are task counters, not unique physical disk reads. Peak memory is per task, not process RAM."
+      },
+      "status": "failed"
+    },
+    "variant-confirmation": {
+      "gold_executions": {
+        "gold.audience_daily": {
+          "ended": true,
+          "error": "",
+          "execution_id": "98",
+          "joins": [
+            {
+              "description": "SortMergeJoin [user_id#5063L], [user_id#5079L], LeftOuter",
+              "key": "user_id",
+              "operator": "SortMergeJoin"
+            },
+            {
+              "description": "BroadcastHashJoin [adgroup_id#5065L], [adgroup_id#5072L], LeftOuter, BuildRight, false",
+              "key": "adgroup_id",
+              "operator": "BroadcastHashJoin"
+            }
+          ],
+          "sql_succeeded": true
+        },
+        "gold.campaign_daily": {
+          "ended": true,
+          "error": "",
+          "execution_id": "81",
+          "joins": [
+            {
+              "description": "SortMergeJoin [user_id#5063L], [user_id#5079L], LeftOuter",
+              "key": "user_id",
+              "operator": "SortMergeJoin"
+            },
+            {
+              "description": "BroadcastHashJoin [adgroup_id#5065L], [adgroup_id#5072L], LeftOuter, BuildRight, false",
+              "key": "adgroup_id",
+              "operator": "BroadcastHashJoin"
+            }
+          ],
+          "sql_succeeded": true
+        }
+      },
+      "local_path": "outputs/05_profile_shuffle_join/confirm-2g-20260927",
+      "spark_tasks": {
+        "by_operation": {
+          "bronze.ads": {
+            "disk_spill_bytes": 0,
+            "executor_cpu_ns": 3674458000,
+            "executor_run_ms": 3926,
+            "failed_task_attempts": 0,
+            "input_bytes": 31615178,
+            "input_records": 846818,
+            "memory_spill_bytes": 0,
+            "peak_task_execution_memory_bytes": 16842736,
+            "shuffle_read_bytes": 2551,
+            "shuffle_write_bytes": 2551,
+            "task_attempts": 55
+          },
+          "bronze.impressions": {
+            "disk_spill_bytes": 0,
+            "executor_cpu_ns": 38830625000,
+            "executor_run_ms": 42768,
+            "failed_task_attempts": 0,
+            "input_bytes": 1088592619,
+            "input_records": 26557973,
+            "memory_spill_bytes": 0,
+            "peak_task_execution_memory_bytes": 16842736,
+            "shuffle_read_bytes": 4339,
+            "shuffle_write_bytes": 4339,
+            "task_attempts": 60
+          },
+          "bronze.user_profiles": {
+            "disk_spill_bytes": 0,
+            "executor_cpu_ns": 3539028000,
+            "executor_run_ms": 3821,
+            "failed_task_attempts": 0,
+            "input_bytes": 24304026,
+            "input_records": 1061775,
+            "memory_spill_bytes": 0,
+            "peak_task_execution_memory_bytes": 16842736,
+            "shuffle_read_bytes": 2881,
+            "shuffle_write_bytes": 2881,
+            "task_attempts": 55
+          },
+          "gold.audience_daily": {
+            "disk_spill_bytes": 216773269,
+            "executor_cpu_ns": 24445834000,
+            "executor_run_ms": 26475,
+            "failed_task_attempts": 0,
+            "input_bytes": 110121785,
+            "input_records": 28466578,
+            "memory_spill_bytes": 1224735728,
+            "peak_task_execution_memory_bytes": 562036400,
+            "shuffle_read_bytes": 486455213,
+            "shuffle_write_bytes": 486455213,
+            "task_attempts": 375
+          },
+          "gold.campaign_daily": {
+            "disk_spill_bytes": 347600331,
+            "executor_cpu_ns": 24869300000,
+            "executor_run_ms": 27588,
+            "failed_task_attempts": 0,
+            "input_bytes": 112432490,
+            "input_records": 28466578,
+            "memory_spill_bytes": 1749023520,
+            "peak_task_execution_memory_bytes": 444595968,
+            "shuffle_read_bytes": 535080868,
+            "shuffle_write_bytes": 535080868,
+            "task_attempts": 376
+          },
+          "silver.ads": {
+            "disk_spill_bytes": 0,
+            "executor_cpu_ns": 2180801000,
+            "executor_run_ms": 2346,
+            "failed_task_attempts": 0,
+            "input_bytes": 11310726,
+            "input_records": 846830,
+            "memory_spill_bytes": 0,
+            "peak_task_execution_memory_bytes": 16842736,
+            "shuffle_read_bytes": 7288,
+            "shuffle_write_bytes": 7288,
+            "task_attempts": 156
+          },
+          "silver.impressions": {
+            "disk_spill_bytes": 0,
+            "executor_cpu_ns": 26194729000,
+            "executor_run_ms": 30351,
+            "failed_task_attempts": 0,
+            "input_bytes": 209870838,
+            "input_records": 26557991,
+            "memory_spill_bytes": 0,
+            "peak_task_execution_memory_bytes": 16842736,
+            "shuffle_read_bytes": 7854,
+            "shuffle_write_bytes": 7854,
+            "task_attempts": 157
+          },
+          "silver.user_profiles": {
+            "disk_spill_bytes": 0,
+            "executor_cpu_ns": 2371478000,
+            "executor_run_ms": 2454,
+            "failed_task_attempts": 0,
+            "input_bytes": 6159408,
+            "input_records": 1061787,
+            "memory_spill_bytes": 0,
+            "peak_task_execution_memory_bytes": 16842736,
+            "shuffle_read_bytes": 7520,
+            "shuffle_write_bytes": 7520,
+            "task_attempts": 156
+          },
+          "validate.audience_daily": {
+            "disk_spill_bytes": 0,
+            "executor_cpu_ns": 552271000,
+            "executor_run_ms": 582,
+            "failed_task_attempts": 0,
+            "input_bytes": 3956682,
+            "input_records": 3738383,
+            "memory_spill_bytes": 0,
+            "peak_task_execution_memory_bytes": 0,
+            "shuffle_read_bytes": 4991,
+            "shuffle_write_bytes": 4991,
+            "task_attempts": 157
+          },
+          "validate.campaign_daily": {
+            "disk_spill_bytes": 0,
+            "executor_cpu_ns": 541562000,
+            "executor_run_ms": 568,
+            "failed_task_attempts": 0,
+            "input_bytes": 2752837,
+            "input_records": 1820016,
+            "memory_spill_bytes": 0,
+            "peak_task_execution_memory_bytes": 0,
+            "shuffle_read_bytes": 4976,
+            "shuffle_write_bytes": 4976,
+            "task_attempts": 157
+          },
+          "validate.silver": {
+            "disk_spill_bytes": 0,
+            "executor_cpu_ns": 8523444000,
+            "executor_run_ms": 9037,
+            "failed_task_attempts": 0,
+            "input_bytes": 298245588,
+            "input_records": 110049121,
+            "memory_spill_bytes": 0,
+            "peak_task_execution_memory_bytes": 42688264,
+            "shuffle_read_bytes": 12611997,
+            "shuffle_write_bytes": 12611997,
+            "task_attempts": 1062
+          }
+        },
+        "events_read": 6471,
+        "note": "All task attempts, including validation and retries. Input bytes are task counters, not unique physical disk reads. Peak memory is per task, not process RAM."
+      },
+      "status": "succeeded"
+    }
+  }
+}
