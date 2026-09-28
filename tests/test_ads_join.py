@@ -14,13 +14,15 @@ from test_baseline import write_fixture, create_spark
 ROOT = Path(__file__).resolve().parents[1]
 
 
-class AdsJoinTests(unittest.TestCase):
-    def test_real_entrypoints_preserve_rows_and_change_only_ads_strategy(self):
+class JoinStrategyTests(unittest.TestCase):
+    def test_real_entrypoints_preserve_rows_and_change_only_target_strategy(self):
         with tempfile.TemporaryDirectory() as folder:
             root = Path(folder); write_fixture(root)
             reports = {}
-            for name, expected in [('02_compression', 'BroadcastHashJoin'),
-                                   ('04_ads_shuffle_join', 'SortMergeJoin')]:
+            for name, ads, profiles in [
+                ('02_compression', 'BroadcastHashJoin', 'BroadcastHashJoin'),
+                ('04_ads_shuffle_join', 'SortMergeJoin', 'BroadcastHashJoin'),
+                ('05_profile_shuffle_join', 'BroadcastHashJoin', 'SortMergeJoin')]:
                 with (root / f'{name}.log').open('w') as log:
                     result = subprocess.run([sys.executable, str(ROOT / 'experiments' / name / 'run.py'),
                         '--source-dir', str(root), '--output-dir', str(root / 'runs'), '--run-id', name],
@@ -28,19 +30,23 @@ class AdsJoinTests(unittest.TestCase):
                 self.assertEqual(result.returncode, 0, (root / f'{name}.log').read_text()[-8000:])
                 run = root / 'runs' / name
                 reports[name] = json.loads((run / 'report.json').read_text())
-                proof = inspect_run(run / 'events', expected)
+                proof = inspect_run(run / 'events', ads, profile_operator=profiles)
                 self.assertEqual(len(proof), 2)
                 self.assertTrue(all(p['matches_expected'] for p in proof.values()))
-            self.assertEqual(validate_reports(reports['02_compression'], reports['04_ads_shuffle_join']), {})
+            for name in ('04_ads_shuffle_join', '05_profile_shuffle_join'):
+                self.assertEqual(validate_reports(reports['02_compression'], reports[name]), {})
             with self.assertRaisesRegex(ValueError, 'expected'):
                 inspect_run(root / 'runs/04_ads_shuffle_join/events', 'BroadcastHashJoin')
+            with self.assertRaisesRegex(ValueError, 'expected'):
+                inspect_run(root / 'runs/05_profile_shuffle_join/events', 'SortMergeJoin', profile_operator='SortMergeJoin')
             spark = create_spark(root / 'verification-events')
             try:
                 for table in reports['02_compression']['tables']:
                     with self.subTest(table=table):
                         a = spark.read.format('delta').load(str(root / 'runs/02_compression' / table))
-                        b = spark.read.format('delta').load(str(root / 'runs/04_ads_shuffle_join' / table))
-                        self.assertTrue(compare_frames(a, b)['equal'])
+                        for name in ('04_ads_shuffle_join', '05_profile_shuffle_join'):
+                            b = spark.read.format('delta').load(str(root / 'runs' / name / table))
+                            self.assertTrue(compare_frames(a, b)['equal'])
             finally:
                 spark.stop()
 

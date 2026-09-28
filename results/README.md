@@ -13,13 +13,15 @@ no measurable difference.
 | 02 — Compression | Snappy versus ZSTD; same full pipeline and logical model | Complete: 31.85% smaller tables; no clear runtime gain; 16 tests and 40 exact comparisons passed | [Results](02_compression/README.md) |
 | 03 — Date partitioning | Partition Silver impressions by date; keep ZSTD; rebuild and filtered/full reads | Complete: faster measured date-filtered reads; 7.99% slower rebuild; 14.86% smaller tables | [Results](03_date_partitioning/README.md) |
 | 04 — Ads join | Iteration 2 versus ads sort-merge join; profile join unchanged | Complete: Gold median 7.947 → 14.871 s, 5.02× shuffle writes; 24 exact comparisons passed; two repeats per side | [Results](04_ads_shuffle_join/README.md) |
+| 05 — Profile join | Iteration 2 versus profile sort-merge join; ads join unchanged | Implementation and tests in progress | [Experiment](../experiments/05_profile_shuffle_join/README.md) |
 
 ## Reproduce an experiment
 
 Run `bash scripts/test_iteration.sh 1` for CSV versus Parquet,
 `bash scripts/test_iteration.sh 2` for compression, or
 `bash scripts/test_iteration.sh 3` for date partitioning, or
-`bash scripts/test_iteration.sh 4` for the ads join. Each creates a fresh
+`bash scripts/test_iteration.sh 4` for the ads join, or
+`bash scripts/test_iteration.sh 5` for the profile join. Each creates a fresh
 comparison and a `RESULTS.md` linking all applicable automated checks. See
 [the command options and manual interpretation boundary](../docs/comparisons.md#one-command-per-implemented-iteration).
 

@@ -9,8 +9,18 @@ import sys
 REPO = Path(__file__).resolve().parents[1]
 EXPERIMENTS = {
     '1': {'name': 'CSV versus uncompressed Parquet'},
+    '5': {
+        'name': 'Profile broadcast versus sort-merge join',
+        'left': 'experiments/02_compression/run.py',
+        'right': 'experiments/05_profile_shuffle_join/run.py',
+        'change': 'Request MERGE only for the user-profile join; keep ads join automatic and ZSTD',
+        'changed_settings': [],
+        'queries': False,
+        'join_target': 'profiles',
+    },
     '4': {
         'name': 'Ads broadcast versus sort-merge join',
+        'join_target': 'ads',
         'left': 'experiments/02_compression/run.py',
         'right': 'experiments/04_ads_shuffle_join/run.py',
         'change': 'Request MERGE only for the ads join; keep user-profile join automatic and ZSTD',
@@ -53,8 +63,9 @@ def commands(iteration, source, output, comparison_id, repeats):
     if spec['queries']:
         steps.append(('queries', [sys.executable, '-m', 'benchmarks.partition_queries',
                                   '--comparison-dir', str(root)]))
-    if iteration == '4':
-        steps.append(('joins', [sys.executable, '-m', 'benchmarks.join_strategies', str(root)]))
+    if 'join_target' in spec:
+        steps.append(('joins', [sys.executable, '-m', 'benchmarks.join_strategies', str(root),
+                                '--target', spec['join_target']]))
     # Codec inspection is deliberately after the timed query workloads.
     steps.append(('codecs', [sys.executable, '-m', 'benchmarks.storage_codecs', str(root)]))
     return steps
@@ -166,7 +177,7 @@ def run(iteration, source, output, comparison_id, repeats):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('iteration', choices=EXPERIMENTS, help='Implemented experiment: 1, 2, 3, or 4')
+    parser.add_argument('iteration', choices=EXPERIMENTS, help='Implemented experiment: 1, 2, 3, 4, or 5')
     parser.add_argument('--source-dir', type=Path, default=REPO / 'data/raw/taobao')
     parser.add_argument('--output-dir', type=Path, default=REPO / 'outputs/comparisons')
     parser.add_argument('--comparison-id', default=datetime.now(timezone.utc).strftime('suite-%Y%m%dT%H%M%S%fZ'))

@@ -19,12 +19,15 @@ bash scripts/test_iteration.sh 3
 
 # Ads join: iteration 2 versus iteration 4
 bash scripts/test_iteration.sh 4
+
+# Profile join: iteration 2 versus iteration 5
+bash scripts/test_iteration.sh 5
 ```
 
 Each command uses a fresh timestamped comparison ID and three runs per side.
-All commands run the automated test suite first. Iterations 2, 3, and 4 run full
+All commands run the automated test suite first. Iterations 2–5 run full
 rebuilds and exact table comparisons, followed by date-query benchmarks for
-iteration 3, executed join-strategy checks for iteration 4, and actual file-codec checks. Iteration 1 instead prepares one
+iteration 3, executed join-strategy checks for iterations 4 and 5, and actual file-codec checks. Iteration 1 instead prepares one
 Parquet copy and compares repeated reads with CSV, then verifies records/codecs. Steps
 run sequentially; codec inspection follows timed queries. Pipeline/query timing
 methods and implementations are unchanged.
@@ -162,10 +165,11 @@ policy, limitations, and all timing samples.
 
 ## Executed join evidence
 
-Iteration 4 automatically runs `benchmarks.join_strategies` after exact equality
+Iterations 4 and 5 automatically run `benchmarks.join_strategies` after exact equality
 checks. It reads the latest structured runtime plan for completed Gold SQL
 executions from event logs and identifies joins by key. Both controls must use
-broadcast hash joins; the variant must use sort-merge for ads while retaining
-broadcast hash for profiles. Missing evidence or an unintended join change fails
+broadcast hash joins. Iteration 4 must use sort-merge for ads and broadcast for
+profiles; iteration 5 must use broadcast for ads and sort-merge for profiles.
+The suite passes the explicit `--target ads` or `--target profiles` to the check. Missing evidence or an unintended join change fails
 the suite. This is stronger than inspecting the hint or an initial `explain()`.
 The result is `join-strategies.json`, plus sanitized runtime plans.

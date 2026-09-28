@@ -23,7 +23,7 @@ def join_nodes(plan):
     return result
 
 
-def inspect_run(event_dir, ads_operator, plans_dir=None):
+def inspect_run(event_dir, ads_operator, plans_dir=None, profile_operator='BroadcastHashJoin'):
     plans, groups, ended = {}, {}, set()
     for path in sorted(event_dir.rglob('*')):
         if not path.is_file() or path.name.startswith(('.', 'appstatus')):
@@ -53,7 +53,7 @@ def inspect_run(event_dir, ads_operator, plans_dir=None):
             raise ValueError(f'Ambiguous joined executions for {group}')
         if execution not in ended:
             raise ValueError(f'Joined SQL execution has not completed: {group}')
-        expected = {'adgroup_id': ads_operator, 'user_id': 'BroadcastHashJoin'}
+        expected = {'adgroup_id': ads_operator, 'user_id': profile_operator}
         actual = {node['key']: node['operator'] for node in joins}
         if len(joins) != 2 or actual != expected:
             raise ValueError(f'{group}: expected {expected}, found {joins}')
@@ -70,18 +70,21 @@ def inspect_run(event_dir, ads_operator, plans_dir=None):
     return result
 
 
-def inspect_comparison(root):
+def inspect_comparison(root, target='ads'):
+    if target not in ('ads', 'profiles'):
+        raise ValueError(f'Unknown join target: {target}')
     comparison = json.loads((root / 'comparison.json').read_text())
     if comparison['status'] != 'succeeded':
         raise ValueError('A successful pipeline comparison is required')
-    result = {'status': 'running', 'runs': {},
-              'method': 'Latest structured runtime plan for completed Gold SQL executions. Join keys identify ads versus profiles. Control must broadcast both; variant must sort-merge ads and broadcast profiles. Hints alone are not proof.'}
+    result = {'status': 'running', 'runs': {}, 'target': target,
+              'method': f'Latest structured runtime plan for completed Gold SQL executions. Join keys identify ads versus profiles. Control must broadcast both; variant must sort-merge {target} and broadcast the other dimension. Hints alone are not proof.'}
     try:
         for run in comparison['runs']:
-            expected = 'SortMergeJoin' if run['side'] == 'right' else 'BroadcastHashJoin'
+            ads = 'SortMergeJoin' if run['side'] == 'right' and target == 'ads' else 'BroadcastHashJoin'
+            profiles = 'SortMergeJoin' if run['side'] == 'right' and target == 'profiles' else 'BroadcastHashJoin'
             result['runs'][run['run_id']] = inspect_run(
-                root / 'runs' / run['run_id'] / 'events', expected,
-                root / 'join-plans' / run['run_id'])
+                root / 'runs' / run['run_id'] / 'events', ads,
+                root / 'join-plans' / run['run_id'], profile_operator=profiles)
         result['status'] = 'succeeded'
     except BaseException as error:
         result['status'] = 'failed'; result['error'] = str(error)
@@ -95,5 +98,6 @@ def inspect_comparison(root):
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('comparison_dir', type=Path)
+    parser.add_argument('--target', choices=('ads', 'profiles'), default='ads')
     args = parser.parse_args()
-    inspect_comparison(args.comparison_dir.resolve())
+    inspect_comparison(args.comparison_dir.resolve(), args.target)

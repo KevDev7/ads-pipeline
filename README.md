@@ -112,11 +112,12 @@ bash scripts/test_iteration.sh 1  # CSV versus Parquet
 bash scripts/test_iteration.sh 2  # Compression
 bash scripts/test_iteration.sh 3  # Date partitioning
 bash scripts/test_iteration.sh 4  # Ads broadcast versus sort-merge join, including executed-plan checks
+bash scripts/test_iteration.sh 5  # Profile broadcast versus sort-merge join, ads unchanged
 ```
 
 These run the test suite, the iteration’s repeated workloads, exact equality
 checks, and actual compression checks. Iteration 1 measures format conversion
-and reads; iterations 2–4 also compare full rebuilds. Open the generated `RESULTS.md`
+and reads; iterations 2–5 also compare full rebuilds. Open the generated `RESULTS.md`
 under `outputs/comparisons/<id>/` for all evidence. Each run gets a fresh ID;
 large outputs remain local. See [options and limitations](docs/comparisons.md#one-command-per-implemented-iteration).
 
@@ -136,3 +137,7 @@ when forcing sort-merge. All 24 full-data table comparisons passed. Two repeats
 per side were used due to local disk capacity; overall pipeline timing was more
 variable. Automatic broadcasting remains the better fit for this workload.
 Tag: `iteration-04-ads-shuffle-join`.
+
+[Iteration 5](experiments/05_profile_shuffle_join/README.md) separately changes
+only the profile join to sort-merge, starting from iteration 2. Its comparison
+checks that the ads join remains broadcast and that all output rows match.
