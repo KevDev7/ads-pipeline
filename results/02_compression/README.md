@@ -1,4 +1,4 @@
-# Iteration 1 results: Snappy versus ZSTD
+# Iteration 2 results: Snappy versus ZSTD
 
 **ZSTD made the output tables 31.85% smaller. These runs do not demonstrate a
 processing-speed improvement.** All reporting results stayed identical.
@@ -16,7 +16,7 @@ The only deliberate performance change is:
 ```
 
 The baseline uses Spark's default Snappy codec. The independently runnable
-[iteration snapshot](../../experiments/01_compression/README.md) retains the same
+[iteration snapshot](../../experiments/02_compression/README.md) retains the same
 transforms, validation, measurements, and resource budget. No compression level,
 join hint, partitioning, sorting, caching, or shuffle setting was tuned.
 
@@ -29,7 +29,7 @@ work, so smaller files do not guarantee a faster overall pipeline.
 Three full-data runs per version, in alternating order. MB means 1,000,000 bytes.
 Times below are medians unless a range is explicitly shown.
 
-| Measurement | Baseline: Snappy | Iteration 1: ZSTD | Interpretation |
+| Measurement | Baseline: Snappy | Iteration 2: ZSTD | Interpretation |
 | --- | ---: | ---: | --- |
 | Eight output tables | 925.72 MB | 630.85 MB | **294.86 MB / 31.85% smaller** |
 | Pipeline processing | 34.236 s | 33.934 s | 0.88% lower median; no clear speed gain |
@@ -118,7 +118,7 @@ query benchmark. We measured local seconds and bytes, not cloud dollar costs.
 **Decision:** retain ZSTD as the starting point for the next experiment because
 it delivered consistent storage savings without an observed substantial runtime
 regression here. Future changes should be compared with this version as well as
-keeping the original baseline available. No iteration 2 changes are included.
+keeping the original baseline available. No further optimization changes are included.
 
 ## Evidence and reproduction
 
@@ -132,8 +132,8 @@ keeping the original baseline available. No iteration 2 changes are included.
 Run a new comparison after following the root README's setup instructions:
 
 ```bash
-bash scripts/compare.sh --right experiments/01_compression/run.py \
-  --comparison-id compression-01-rerun --repeats 3 \
+bash scripts/compare.sh --right experiments/02_compression/run.py \
+  --comparison-id compression-02-rerun --repeats 3 \
   --change 'Parquet compression: Snappy to ZSTD across Bronze, Silver, and Gold' \
   --changed-setting spark.sql.parquet.compression.codec
 ```
@@ -151,12 +151,21 @@ export SPARK_LOCAL_IP=127.0.0.1
 export PYSPARK_SUBMIT_ARGS='--driver-memory 2g pyspark-shell'
 export PYSPARK_PYTHON="$PWD/.venv/bin/python"
 uv run --frozen python -m benchmarks.storage_codecs \
-  outputs/comparisons/compression-01-rerun
+  outputs/comparisons/compression-02-rerun
 ```
 
 The published comparison ID is `compression-01-20260927`. Its tables, full event
 logs, and test logs remain locally under the ignored `outputs/comparisons/`
 directory. Only small result summaries are in Git. The completed experiment and
-report are preserved with tag `iteration-01-compression`; the original baseline
-remains `baseline-v0.1`. CSV-versus-Parquet remains an optional separate learning
-lab and was not implemented in this iteration.
+report are preserved with tag `iteration-02-compression`; the original baseline
+remains `baseline-v0.1`. CSV-versus-Parquet is now planned as iteration 1 and has not yet been implemented.
+
+## Renumbering note
+
+Compression was originally called iteration 1 and is now **iteration 2**, reserving
+iteration 1 for CSV versus Parquet. The raw JSON evidence and generated
+`measurements.md` are preserved exactly as recorded: they refer to the original
+`experiments/01_compression` path, comparison ID, and measured commit. The runnable
+code now lives in `experiments/02_compression`. The old `iteration-01-compression`
+tag remains a historical snapshot; `iteration-02-compression` preserves the
+renamed version. This rename does not represent a new benchmark run.

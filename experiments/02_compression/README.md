@@ -1,4 +1,4 @@
-# Iteration 1: Snappy versus ZSTD
+# Iteration 2: Snappy versus ZSTD
 
 **One deliberate change:** set `spark.sql.parquet.compression.codec` to `zstd`.
 The baseline uses the default `snappy`. Both versions remain Delta Lake pipelines
@@ -10,9 +10,9 @@ description, success message, and default output directory. Transforms, schemas,
 validation, measurements, resource budget, and SQL defaults are otherwise identical.
 No compression level, join hints, partitioning, sorting, or caching is tuned.
 
-**Completed:** [results and evidence](../../results/01_compression/README.md) show
+**Completed:** [results and evidence](../../results/02_compression/README.md) show
 31.85% smaller tables, no clear processing-speed improvement, and identical
-reporting results. Preserved as `iteration-01-compression`.
+reporting results. Preserved as `iteration-02-compression`.
 
 ## Hypothesis and measurements
 
@@ -31,20 +31,21 @@ requested codec was actually used. File-footer checks happen outside timed runs.
 
 ```bash
 bash scripts/run_compression.sh
-bash scripts/compare.sh --right experiments/01_compression/run.py \
-  --comparison-id compression-01 --repeats 3 \
+bash scripts/compare.sh --right experiments/02_compression/run.py \
+  --comparison-id compression-02 --repeats 3 \
   --change 'Parquet compression: Snappy to ZSTD across Bronze, Silver, and Gold' \
   --changed-setting spark.sql.parquet.compression.codec
 ```
 
 Use a fresh comparison ID each time. The baseline remains in `00_baseline` and
-its tag is unchanged. Small summaries are published under `results/01_compression`;
+its tag is unchanged. Small summaries are published under `results/02_compression`;
 all large output tables and logs stay local. See the [central index](../../results/README.md).
 
 ## Learning note
 
-CSV-versus-Parquet is a separate, optional learning lab explaining a format choice
-already present in iteration 0. It is not iteration 1 and is not implemented here.
+CSV-versus-Parquet is [iteration 1](../01_csv_vs_parquet/README.md), explaining a
+format choice already present in iteration 0. It is planned, not yet implemented.
+Compression was completed first and later renumbered to iteration 2.
 
 [Spark's codec configuration](https://spark.apache.org/docs/4.0.1/sql-data-sources-parquet.html#configuration)
 lists the supported codecs and the default. We verify the actual files rather

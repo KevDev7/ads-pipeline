@@ -1,4 +1,4 @@
-"""Run iteration 1 with ZSTD compression: CSV -> Bronze -> Silver -> Gold -> checks."""
+"""Run iteration 2 with ZSTD compression: CSV -> Bronze -> Silver -> Gold -> checks."""
 import argparse
 from contextlib import contextmanager
 from datetime import datetime, timezone
@@ -116,7 +116,7 @@ def run(source: Path, output: Path, run_id: str) -> dict:
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--source-dir', type=Path, default=Path('data/raw/taobao'))
-    parser.add_argument('--output-dir', type=Path, default=Path('outputs/01_compression'))
+    parser.add_argument('--output-dir', type=Path, default=Path('outputs/02_compression'))
     parser.add_argument('--run-id', default=datetime.now(timezone.utc).strftime('%Y%m%dT%H%M%S%fZ'))
     args = parser.parse_args()
     run(args.source_dir, args.output_dir, args.run_id)

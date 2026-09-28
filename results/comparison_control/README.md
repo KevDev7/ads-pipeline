@@ -2,7 +2,7 @@
 
 **Passed on September 27, 2026. No optimization was applied.** Both sides ran
 `experiments/00_baseline/run.py`, unchanged from the preserved `baseline-v0.1`.
-This verifies our comparison process before iteration 1.
+This verifies our comparison process before the compression experiment (now iteration 2).
 
 ## What was tested
 
