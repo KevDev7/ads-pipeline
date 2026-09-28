@@ -163,3 +163,7 @@ recommendation. Tag: `iteration-06-shuffle-partitions`.
 Iteration 7 verifies cache reuse but is slower for this two-report workload.
 See [the caching results](results/07_cached_enrichment/README.md); iteration 2
 remains the preferred reference for independent experiments.
+
+Iteration 8 confirms that automatic shuffle-partition combining helps this
+workload: disabling it increased median Gold time by 27.96% and produced 200
+files per Gold report instead of four. See [the coalescing results](results/08_no_shuffle_coalescing/README.md).

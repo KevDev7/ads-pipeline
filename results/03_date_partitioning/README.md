@@ -205,3 +205,11 @@ logs retain it. The completed implementation and evidence are preserved with tag
 `iteration-03-date-partitioning`. Earlier implementations/tags remain unchanged.
 CSV versus Parquet was not part of this experiment; its separately completed
 [iteration 1 results](../01_csv_vs_parquet/README.md) are now available.
+
+## Retention update for iteration 8
+
+On 2026-09-28, with user approval, only the generated Bronze/Silver/Gold tables
+from the six `partitioning-03-20260927` comparison runs were removed: 18
+directories, 3,503,948,949 bytes. Reports, logs, plans, query evidence, source
+data, the original baseline run, and every project version were preserved.
+See the [cleanup manifest](../08_no_shuffle_coalescing/cleanup.json).

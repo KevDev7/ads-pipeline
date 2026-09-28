@@ -40,6 +40,7 @@ alongside timing variation. A speedup is not required for a useful lesson.
 [Central results index](../../results/README.md) ·
 [Spark coalescing documentation](https://spark.apache.org/docs/4.0.1/sql-performance-tuning.html#coalescing-post-shuffle-partitions)
 
-Implementation and the full fixture workflow passed. Full-data benchmarking is
-paused pending storage; no performance conclusion is available yet.
-See [the status and fixture evidence](../../results/08_no_shuffle_coalescing/README.md).
+All six full-data builds, 40 exact comparisons, execution checks, and 1,404
+ZSTD footer checks passed. Disabling combining increased median Gold time by
+27.96% and processing time by 8.90%. Keep iteration 2 as the reference.
+See [the complete findings](../../results/08_no_shuffle_coalescing/README.md).

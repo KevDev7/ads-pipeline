@@ -1,0 +1,102 @@
+{
+  "authorized_cleanup": "Generated Bronze/Silver/Gold tables only; user approved in chat",
+  "started_at": "2026-09-28T18:24:42.262676+00:00",
+  "free_bytes_before": 4091904000,
+  "directories": [
+    {
+      "path": "outputs/comparisons/partitioning-03-20260927/runs/01-left/bronze",
+      "bytes": 227336979
+    },
+    {
+      "path": "outputs/comparisons/partitioning-03-20260927/runs/01-left/silver",
+      "bytes": 367941965
+    },
+    {
+      "path": "outputs/comparisons/partitioning-03-20260927/runs/01-left/gold",
+      "bytes": 35575538
+    },
+    {
+      "path": "outputs/comparisons/partitioning-03-20260927/runs/01-right/bronze",
+      "bytes": 227336979
+    },
+    {
+      "path": "outputs/comparisons/partitioning-03-20260927/runs/01-right/silver",
+      "bytes": 275668471
+    },
+    {
+      "path": "outputs/comparisons/partitioning-03-20260927/runs/01-right/gold",
+      "bytes": 34123051
+    },
+    {
+      "path": "outputs/comparisons/partitioning-03-20260927/runs/02-right/bronze",
+      "bytes": 227336979
+    },
+    {
+      "path": "outputs/comparisons/partitioning-03-20260927/runs/02-right/silver",
+      "bytes": 275668471
+    },
+    {
+      "path": "outputs/comparisons/partitioning-03-20260927/runs/02-right/gold",
+      "bytes": 34123051
+    },
+    {
+      "path": "outputs/comparisons/partitioning-03-20260927/runs/02-left/bronze",
+      "bytes": 227336979
+    },
+    {
+      "path": "outputs/comparisons/partitioning-03-20260927/runs/02-left/silver",
+      "bytes": 367941965
+    },
+    {
+      "path": "outputs/comparisons/partitioning-03-20260927/runs/02-left/gold",
+      "bytes": 35575538
+    },
+    {
+      "path": "outputs/comparisons/partitioning-03-20260927/runs/03-left/bronze",
+      "bytes": 227336979
+    },
+    {
+      "path": "outputs/comparisons/partitioning-03-20260927/runs/03-left/silver",
+      "bytes": 367941965
+    },
+    {
+      "path": "outputs/comparisons/partitioning-03-20260927/runs/03-left/gold",
+      "bytes": 35575538
+    },
+    {
+      "path": "outputs/comparisons/partitioning-03-20260927/runs/03-right/bronze",
+      "bytes": 227336979
+    },
+    {
+      "path": "outputs/comparisons/partitioning-03-20260927/runs/03-right/silver",
+      "bytes": 275668471
+    },
+    {
+      "path": "outputs/comparisons/partitioning-03-20260927/runs/03-right/gold",
+      "bytes": 34123051
+    }
+  ],
+  "removed": [
+    "outputs/comparisons/partitioning-03-20260927/runs/01-left/bronze",
+    "outputs/comparisons/partitioning-03-20260927/runs/01-left/silver",
+    "outputs/comparisons/partitioning-03-20260927/runs/01-left/gold",
+    "outputs/comparisons/partitioning-03-20260927/runs/01-right/bronze",
+    "outputs/comparisons/partitioning-03-20260927/runs/01-right/silver",
+    "outputs/comparisons/partitioning-03-20260927/runs/01-right/gold",
+    "outputs/comparisons/partitioning-03-20260927/runs/02-right/bronze",
+    "outputs/comparisons/partitioning-03-20260927/runs/02-right/silver",
+    "outputs/comparisons/partitioning-03-20260927/runs/02-right/gold",
+    "outputs/comparisons/partitioning-03-20260927/runs/02-left/bronze",
+    "outputs/comparisons/partitioning-03-20260927/runs/02-left/silver",
+    "outputs/comparisons/partitioning-03-20260927/runs/02-left/gold",
+    "outputs/comparisons/partitioning-03-20260927/runs/03-left/bronze",
+    "outputs/comparisons/partitioning-03-20260927/runs/03-left/silver",
+    "outputs/comparisons/partitioning-03-20260927/runs/03-left/gold",
+    "outputs/comparisons/partitioning-03-20260927/runs/03-right/bronze",
+    "outputs/comparisons/partitioning-03-20260927/runs/03-right/silver",
+    "outputs/comparisons/partitioning-03-20260927/runs/03-right/gold"
+  ],
+  "finished_at": "2026-09-28T18:24:50.270425+00:00",
+  "free_bytes_after": 7618560000,
+  "total_bytes_removed": 3503948949
+}

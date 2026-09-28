@@ -1,0 +1,18 @@
+== Physical Plan ==
+* Project (3)
++- * Filter (2)
+   +- * Scan ExistingRDD Delta Table State #0 - file://<repo>/outputs/comparisons/coalescing-08-20260928/runs/01-left/gold/audience_daily/_delta_log (1)
+
+
+(1) Scan ExistingRDD Delta Table State #0 - file://<repo>/outputs/comparisons/coalescing-08-20260928/runs/01-left/gold/audience_daily/_delta_log [codegen id : 1]
+Output [10]: [txn#10477, add#10478, remove#10479, metaData#10480, protocol#10481, cdc#10482, checkpointMetadata#10483, sidecar#10484, domainMetadata#10485, commitInfo#10486]
+Arguments: [txn#10477, add#10478, remove#10479, metaData#10480, protocol#10481, cdc#10482, checkpointMetadata#10483, sidecar#10484, domainMetadata#10485, commitInfo#10486], Delta Table State #0 - file://<repo>/outputs/comparisons/coalescing-08-20260928/runs/01-left/gold/audience_daily/_delta_log MapPartitionsRDD[434] at $anonfun$recordDeltaOperationInternal$1 at DatabricksLogging.scala:128, ExistingRDD, UnknownPartitioning(0)
+
+(2) Filter [codegen id : 1]
+Input [10]: [txn#10477, add#10478, remove#10479, metaData#10480, protocol#10481, cdc#10482, checkpointMetadata#10483, sidecar#10484, domainMetadata#10485, commitInfo#10486]
+Condition : isnotnull(add#10478)
+
+(3) Project [codegen id : 1]
+Output [11]: [add#10478.path AS path#10551, add#10478.partitionValues AS partitionValues#10552, add#10478.size AS size#10553L, add#10478.modificationTime AS modificationTime#10554L, add#10478.dataChange AS dataChange#10555, add#10478.stats AS stats#10556, add#10478.tags AS tags#10557, add#10478.deletionVector AS deletionVector#10558, add#10478.baseRowId AS baseRowId#10559L, add#10478.defaultRowCommitVersion AS defaultRowCommitVersion#10560L, add#10478.clusteringProvider AS clusteringProvider#10561]
+Input [10]: [txn#10477, add#10478, remove#10479, metaData#10480, protocol#10481, cdc#10482, checkpointMetadata#10483, sidecar#10484, domainMetadata#10485, commitInfo#10486]
+

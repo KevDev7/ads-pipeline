@@ -1,0 +1,420 @@
+{
+  "comparison_id": "coalescing-08-20260928",
+  "method": "Combined Gold times sum both timed writes. CPU and task counters are cumulative, not wall-clock or physical disk I/O. Joined SQL stages and other Gold stages are reported separately; other stages are primarily Delta metadata work.",
+  "runs": {
+    "left": [
+      {
+        "disk_spill_bytes": 0,
+        "executor_cpu_ns": 18016719000,
+        "failed_task_attempts": 0,
+        "input_bytes": 222553916,
+        "joined_sql_cpu_ns": 17124072000,
+        "joined_sql_tasks": 34,
+        "memory_spill_bytes": 0,
+        "other_gold_cpu_ns": 892647000,
+        "other_gold_tasks": 702,
+        "run_id": "01-left",
+        "seconds": 7.097,
+        "shuffle_read_bytes": 138691933,
+        "shuffle_write_bytes": 138691933,
+        "task_attempts": 736
+      },
+      {
+        "disk_spill_bytes": 0,
+        "executor_cpu_ns": 17890548000,
+        "failed_task_attempts": 0,
+        "input_bytes": 222553588,
+        "joined_sql_cpu_ns": 17026722000,
+        "joined_sql_tasks": 34,
+        "memory_spill_bytes": 0,
+        "other_gold_cpu_ns": 863826000,
+        "other_gold_tasks": 702,
+        "run_id": "02-left",
+        "seconds": 7.024,
+        "shuffle_read_bytes": 138691806,
+        "shuffle_write_bytes": 138691806,
+        "task_attempts": 736
+      },
+      {
+        "disk_spill_bytes": 0,
+        "executor_cpu_ns": 18025508000,
+        "failed_task_attempts": 0,
+        "input_bytes": 222552060,
+        "joined_sql_cpu_ns": 17180139000,
+        "joined_sql_tasks": 34,
+        "memory_spill_bytes": 0,
+        "other_gold_cpu_ns": 845369000,
+        "other_gold_tasks": 702,
+        "run_id": "03-left",
+        "seconds": 6.784,
+        "shuffle_read_bytes": 138692253,
+        "shuffle_write_bytes": 138692253,
+        "task_attempts": 736
+      }
+    ],
+    "right": [
+      {
+        "disk_spill_bytes": 0,
+        "executor_cpu_ns": 20006145000,
+        "failed_task_attempts": 0,
+        "input_bytes": 222543444,
+        "joined_sql_cpu_ns": 19872866000,
+        "joined_sql_tasks": 426,
+        "memory_spill_bytes": 0,
+        "other_gold_cpu_ns": 133279000,
+        "other_gold_tasks": 600,
+        "run_id": "01-right",
+        "seconds": 9.248,
+        "shuffle_read_bytes": 138687109,
+        "shuffle_write_bytes": 138687109,
+        "task_attempts": 1026
+      },
+      {
+        "disk_spill_bytes": 0,
+        "executor_cpu_ns": 18941025000,
+        "failed_task_attempts": 0,
+        "input_bytes": 222545612,
+        "joined_sql_cpu_ns": 18824173000,
+        "joined_sql_tasks": 426,
+        "memory_spill_bytes": 0,
+        "other_gold_cpu_ns": 116852000,
+        "other_gold_tasks": 600,
+        "run_id": "02-right",
+        "seconds": 8.676,
+        "shuffle_read_bytes": 138687109,
+        "shuffle_write_bytes": 138687109,
+        "task_attempts": 1026
+      },
+      {
+        "disk_spill_bytes": 0,
+        "executor_cpu_ns": 20336469000,
+        "failed_task_attempts": 0,
+        "input_bytes": 222546596,
+        "joined_sql_cpu_ns": 20195841000,
+        "joined_sql_tasks": 426,
+        "memory_spill_bytes": 0,
+        "other_gold_cpu_ns": 140628000,
+        "other_gold_tasks": 600,
+        "run_id": "03-right",
+        "seconds": 8.988,
+        "shuffle_read_bytes": 138687109,
+        "shuffle_write_bytes": 138687109,
+        "task_attempts": 1026
+      }
+    ]
+  },
+  "summary": {
+    "disk_spill_bytes": {
+      "left": {
+        "max": 0,
+        "median": 0,
+        "min": 0,
+        "samples": [
+          0,
+          0,
+          0
+        ],
+        "stdev": 0.0
+      },
+      "right": {
+        "max": 0,
+        "median": 0,
+        "min": 0,
+        "samples": [
+          0,
+          0,
+          0
+        ],
+        "stdev": 0.0
+      }
+    },
+    "executor_cpu_ns": {
+      "left": {
+        "max": 18025508000,
+        "median": 18016719000,
+        "min": 17890548000,
+        "samples": [
+          18016719000,
+          17890548000,
+          18025508000
+        ],
+        "stdev": 75510009.6698003
+      },
+      "right": {
+        "max": 20336469000,
+        "median": 20006145000,
+        "min": 18941025000,
+        "samples": [
+          20006145000,
+          18941025000,
+          20336469000
+        ],
+        "stdev": 729252872.9816564
+      }
+    },
+    "failed_task_attempts": {
+      "left": {
+        "max": 0,
+        "median": 0,
+        "min": 0,
+        "samples": [
+          0,
+          0,
+          0
+        ],
+        "stdev": 0.0
+      },
+      "right": {
+        "max": 0,
+        "median": 0,
+        "min": 0,
+        "samples": [
+          0,
+          0,
+          0
+        ],
+        "stdev": 0.0
+      }
+    },
+    "input_bytes": {
+      "left": {
+        "max": 222553916,
+        "median": 222553588,
+        "min": 222552060,
+        "samples": [
+          222553916,
+          222553588,
+          222552060
+        ],
+        "stdev": 990.5473234530493
+      },
+      "right": {
+        "max": 222546596,
+        "median": 222545612,
+        "min": 222543444,
+        "samples": [
+          222543444,
+          222545612,
+          222546596
+        ],
+        "stdev": 1612.6367642260093
+      }
+    },
+    "joined_sql_cpu_ns": {
+      "left": {
+        "max": 17180139000,
+        "median": 17124072000,
+        "min": 17026722000,
+        "samples": [
+          17124072000,
+          17026722000,
+          17180139000
+        ],
+        "stdev": 77628717.70807502
+      },
+      "right": {
+        "max": 20195841000,
+        "median": 19872866000,
+        "min": 18824173000,
+        "samples": [
+          19872866000,
+          18824173000,
+          20195841000
+        ],
+        "stdev": 717117256.9273452
+      }
+    },
+    "joined_sql_tasks": {
+      "left": {
+        "max": 34,
+        "median": 34,
+        "min": 34,
+        "samples": [
+          34,
+          34,
+          34
+        ],
+        "stdev": 0.0
+      },
+      "right": {
+        "max": 426,
+        "median": 426,
+        "min": 426,
+        "samples": [
+          426,
+          426,
+          426
+        ],
+        "stdev": 0.0
+      }
+    },
+    "memory_spill_bytes": {
+      "left": {
+        "max": 0,
+        "median": 0,
+        "min": 0,
+        "samples": [
+          0,
+          0,
+          0
+        ],
+        "stdev": 0.0
+      },
+      "right": {
+        "max": 0,
+        "median": 0,
+        "min": 0,
+        "samples": [
+          0,
+          0,
+          0
+        ],
+        "stdev": 0.0
+      }
+    },
+    "other_gold_cpu_ns": {
+      "left": {
+        "max": 892647000,
+        "median": 863826000,
+        "min": 845369000,
+        "samples": [
+          892647000,
+          863826000,
+          845369000
+        ],
+        "stdev": 23827575.670498528
+      },
+      "right": {
+        "max": 140628000,
+        "median": 133279000,
+        "min": 116852000,
+        "samples": [
+          133279000,
+          116852000,
+          140628000
+        ],
+        "stdev": 12173415.749082096
+      }
+    },
+    "other_gold_tasks": {
+      "left": {
+        "max": 702,
+        "median": 702,
+        "min": 702,
+        "samples": [
+          702,
+          702,
+          702
+        ],
+        "stdev": 0.0
+      },
+      "right": {
+        "max": 600,
+        "median": 600,
+        "min": 600,
+        "samples": [
+          600,
+          600,
+          600
+        ],
+        "stdev": 0.0
+      }
+    },
+    "seconds": {
+      "left": {
+        "max": 7.097,
+        "median": 7.024,
+        "min": 6.784,
+        "samples": [
+          7.097,
+          7.024,
+          6.784
+        ],
+        "stdev": 0.16375693369544211
+      },
+      "right": {
+        "max": 9.248,
+        "median": 8.988,
+        "min": 8.676,
+        "samples": [
+          9.248,
+          8.676,
+          8.988
+        ],
+        "stdev": 0.28639366845887687
+      }
+    },
+    "shuffle_read_bytes": {
+      "left": {
+        "max": 138692253,
+        "median": 138691933,
+        "min": 138691806,
+        "samples": [
+          138691933,
+          138691806,
+          138692253
+        ],
+        "stdev": 230.33960435264564
+      },
+      "right": {
+        "max": 138687109,
+        "median": 138687109,
+        "min": 138687109,
+        "samples": [
+          138687109,
+          138687109,
+          138687109
+        ],
+        "stdev": 0.0
+      }
+    },
+    "shuffle_write_bytes": {
+      "left": {
+        "max": 138692253,
+        "median": 138691933,
+        "min": 138691806,
+        "samples": [
+          138691933,
+          138691806,
+          138692253
+        ],
+        "stdev": 230.33960435264564
+      },
+      "right": {
+        "max": 138687109,
+        "median": 138687109,
+        "min": 138687109,
+        "samples": [
+          138687109,
+          138687109,
+          138687109
+        ],
+        "stdev": 0.0
+      }
+    },
+    "task_attempts": {
+      "left": {
+        "max": 736,
+        "median": 736,
+        "min": 736,
+        "samples": [
+          736,
+          736,
+          736
+        ],
+        "stdev": 0.0
+      },
+      "right": {
+        "max": 1026,
+        "median": 1026,
+        "min": 1026,
+        "samples": [
+          1026,
+          1026,
+          1026
+        ],
+        "stdev": 0.0
+      }
+    }
+  }
+}

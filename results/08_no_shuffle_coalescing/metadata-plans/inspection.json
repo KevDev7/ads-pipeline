@@ -1,0 +1,722 @@
+{
+  "method": "Other Gold stages matched to SQL execution descriptions and latest physical plans; costs are observed, the optimizer cause is not isolated. Gold Delta-log JSON scan plans are also matched across all job groups to identify timing-group movement.",
+  "runs": {
+    "01-left": [
+      {
+        "execution_id": "77",
+        "description": "Delta: gold.campaign_daily: Filtering files for query",
+        "tasks": 50,
+        "executor_cpu_ns": 12280000,
+        "plan_contains_delta_log_json": false
+      },
+      {
+        "execution_id": "78",
+        "description": "Delta: gold.campaign_daily: Filtering files for query",
+        "tasks": 50,
+        "executor_cpu_ns": 12194000,
+        "plan_contains_delta_log_json": false
+      },
+      {
+        "execution_id": "79",
+        "description": "Delta: gold.campaign_daily: Filtering files for query",
+        "tasks": 50,
+        "executor_cpu_ns": 14215000,
+        "plan_contains_delta_log_json": false
+      },
+      {
+        "execution_id": "82",
+        "description": "Delta: gold.campaign_daily: Filtering files for query",
+        "tasks": 50,
+        "executor_cpu_ns": 11488000,
+        "plan_contains_delta_log_json": false
+      },
+      {
+        "execution_id": "83",
+        "description": "Delta: gold.campaign_daily: Filtering files for query",
+        "tasks": 50,
+        "executor_cpu_ns": 13378000,
+        "plan_contains_delta_log_json": false
+      },
+      {
+        "execution_id": "84",
+        "description": "Delta: gold.campaign_daily: Filtering files for query",
+        "tasks": 50,
+        "executor_cpu_ns": 14715000,
+        "plan_contains_delta_log_json": false
+      },
+      {
+        "execution_id": "86",
+        "description": "gold.campaign_daily",
+        "tasks": 1,
+        "executor_cpu_ns": 14973000,
+        "example_plan": "01-left-sql-86.txt",
+        "plan_contains_delta_log_json": true
+      },
+      {
+        "execution_id": "87",
+        "description": "gold.campaign_daily",
+        "tasks": 50,
+        "executor_cpu_ns": 356459000,
+        "plan_contains_delta_log_json": false,
+        "example_plan": "01-left-sql-87.txt"
+      },
+      {
+        "execution_id": "94",
+        "description": "Delta: gold.audience_daily: Filtering files for query",
+        "tasks": 50,
+        "executor_cpu_ns": 11811000,
+        "plan_contains_delta_log_json": false
+      },
+      {
+        "execution_id": "95",
+        "description": "Delta: gold.audience_daily: Filtering files for query",
+        "tasks": 50,
+        "executor_cpu_ns": 11793000,
+        "plan_contains_delta_log_json": false
+      },
+      {
+        "execution_id": "96",
+        "description": "Delta: gold.audience_daily: Filtering files for query",
+        "tasks": 50,
+        "executor_cpu_ns": 12164000,
+        "plan_contains_delta_log_json": false
+      },
+      {
+        "execution_id": "99",
+        "description": "Delta: gold.audience_daily: Filtering files for query",
+        "tasks": 50,
+        "executor_cpu_ns": 11068000,
+        "plan_contains_delta_log_json": false
+      },
+      {
+        "execution_id": "100",
+        "description": "Delta: gold.audience_daily: Filtering files for query",
+        "tasks": 50,
+        "executor_cpu_ns": 11022000,
+        "plan_contains_delta_log_json": false
+      },
+      {
+        "execution_id": "101",
+        "description": "Delta: gold.audience_daily: Filtering files for query",
+        "tasks": 50,
+        "executor_cpu_ns": 11372000,
+        "plan_contains_delta_log_json": false
+      },
+      {
+        "execution_id": "103",
+        "description": "gold.audience_daily",
+        "tasks": 1,
+        "executor_cpu_ns": 6291000,
+        "example_plan": "01-left-sql-103.txt",
+        "plan_contains_delta_log_json": true
+      },
+      {
+        "execution_id": "104",
+        "description": "gold.audience_daily",
+        "tasks": 50,
+        "executor_cpu_ns": 367424000,
+        "plan_contains_delta_log_json": false,
+        "example_plan": "01-left-sql-104.txt"
+      }
+    ],
+    "01-right": [
+      {
+        "execution_id": "77",
+        "description": "Delta: gold.campaign_daily: Filtering files for query",
+        "tasks": 50,
+        "executor_cpu_ns": 9016000,
+        "plan_contains_delta_log_json": false
+      },
+      {
+        "execution_id": "78",
+        "description": "Delta: gold.campaign_daily: Filtering files for query",
+        "tasks": 50,
+        "executor_cpu_ns": 14859000,
+        "plan_contains_delta_log_json": false
+      },
+      {
+        "execution_id": "79",
+        "description": "Delta: gold.campaign_daily: Filtering files for query",
+        "tasks": 50,
+        "executor_cpu_ns": 13005000,
+        "plan_contains_delta_log_json": false
+      },
+      {
+        "execution_id": "82",
+        "description": "Delta: gold.campaign_daily: Filtering files for query",
+        "tasks": 50,
+        "executor_cpu_ns": 8667000,
+        "plan_contains_delta_log_json": false
+      },
+      {
+        "execution_id": "83",
+        "description": "Delta: gold.campaign_daily: Filtering files for query",
+        "tasks": 50,
+        "executor_cpu_ns": 12202000,
+        "plan_contains_delta_log_json": false
+      },
+      {
+        "execution_id": "84",
+        "description": "Delta: gold.campaign_daily: Filtering files for query",
+        "tasks": 50,
+        "executor_cpu_ns": 14923000,
+        "plan_contains_delta_log_json": false
+      },
+      {
+        "execution_id": "92",
+        "description": "Delta: gold.audience_daily: Filtering files for query",
+        "tasks": 50,
+        "executor_cpu_ns": 8738000,
+        "plan_contains_delta_log_json": false
+      },
+      {
+        "execution_id": "93",
+        "description": "Delta: gold.audience_daily: Filtering files for query",
+        "tasks": 50,
+        "executor_cpu_ns": 8990000,
+        "plan_contains_delta_log_json": false
+      },
+      {
+        "execution_id": "94",
+        "description": "Delta: gold.audience_daily: Filtering files for query",
+        "tasks": 50,
+        "executor_cpu_ns": 9118000,
+        "plan_contains_delta_log_json": false
+      },
+      {
+        "execution_id": "97",
+        "description": "Delta: gold.audience_daily: Filtering files for query",
+        "tasks": 50,
+        "executor_cpu_ns": 9487000,
+        "plan_contains_delta_log_json": false
+      },
+      {
+        "execution_id": "98",
+        "description": "Delta: gold.audience_daily: Filtering files for query",
+        "tasks": 50,
+        "executor_cpu_ns": 13868000,
+        "plan_contains_delta_log_json": false
+      },
+      {
+        "execution_id": "99",
+        "description": "Delta: gold.audience_daily: Filtering files for query",
+        "tasks": 50,
+        "executor_cpu_ns": 10406000,
+        "plan_contains_delta_log_json": false
+      }
+    ],
+    "02-right": [
+      {
+        "execution_id": "77",
+        "description": "Delta: gold.campaign_daily: Filtering files for query",
+        "tasks": 50,
+        "executor_cpu_ns": 10895000,
+        "plan_contains_delta_log_json": false
+      },
+      {
+        "execution_id": "78",
+        "description": "Delta: gold.campaign_daily: Filtering files for query",
+        "tasks": 50,
+        "executor_cpu_ns": 11084000,
+        "plan_contains_delta_log_json": false
+      },
+      {
+        "execution_id": "79",
+        "description": "Delta: gold.campaign_daily: Filtering files for query",
+        "tasks": 50,
+        "executor_cpu_ns": 10381000,
+        "plan_contains_delta_log_json": false
+      },
+      {
+        "execution_id": "82",
+        "description": "Delta: gold.campaign_daily: Filtering files for query",
+        "tasks": 50,
+        "executor_cpu_ns": 8306000,
+        "plan_contains_delta_log_json": false
+      },
+      {
+        "execution_id": "83",
+        "description": "Delta: gold.campaign_daily: Filtering files for query",
+        "tasks": 50,
+        "executor_cpu_ns": 10259000,
+        "plan_contains_delta_log_json": false
+      },
+      {
+        "execution_id": "84",
+        "description": "Delta: gold.campaign_daily: Filtering files for query",
+        "tasks": 50,
+        "executor_cpu_ns": 10343000,
+        "plan_contains_delta_log_json": false
+      },
+      {
+        "execution_id": "92",
+        "description": "Delta: gold.audience_daily: Filtering files for query",
+        "tasks": 50,
+        "executor_cpu_ns": 7818000,
+        "plan_contains_delta_log_json": false
+      },
+      {
+        "execution_id": "93",
+        "description": "Delta: gold.audience_daily: Filtering files for query",
+        "tasks": 50,
+        "executor_cpu_ns": 9104000,
+        "plan_contains_delta_log_json": false
+      },
+      {
+        "execution_id": "94",
+        "description": "Delta: gold.audience_daily: Filtering files for query",
+        "tasks": 50,
+        "executor_cpu_ns": 9488000,
+        "plan_contains_delta_log_json": false
+      },
+      {
+        "execution_id": "97",
+        "description": "Delta: gold.audience_daily: Filtering files for query",
+        "tasks": 50,
+        "executor_cpu_ns": 7529000,
+        "plan_contains_delta_log_json": false
+      },
+      {
+        "execution_id": "98",
+        "description": "Delta: gold.audience_daily: Filtering files for query",
+        "tasks": 50,
+        "executor_cpu_ns": 11005000,
+        "plan_contains_delta_log_json": false
+      },
+      {
+        "execution_id": "99",
+        "description": "Delta: gold.audience_daily: Filtering files for query",
+        "tasks": 50,
+        "executor_cpu_ns": 10640000,
+        "plan_contains_delta_log_json": false
+      }
+    ],
+    "02-left": [
+      {
+        "execution_id": "77",
+        "description": "Delta: gold.campaign_daily: Filtering files for query",
+        "tasks": 50,
+        "executor_cpu_ns": 10209000,
+        "plan_contains_delta_log_json": false
+      },
+      {
+        "execution_id": "78",
+        "description": "Delta: gold.campaign_daily: Filtering files for query",
+        "tasks": 50,
+        "executor_cpu_ns": 12978000,
+        "plan_contains_delta_log_json": false
+      },
+      {
+        "execution_id": "79",
+        "description": "Delta: gold.campaign_daily: Filtering files for query",
+        "tasks": 50,
+        "executor_cpu_ns": 16692000,
+        "plan_contains_delta_log_json": false
+      },
+      {
+        "execution_id": "82",
+        "description": "Delta: gold.campaign_daily: Filtering files for query",
+        "tasks": 50,
+        "executor_cpu_ns": 10634000,
+        "plan_contains_delta_log_json": false
+      },
+      {
+        "execution_id": "83",
+        "description": "Delta: gold.campaign_daily: Filtering files for query",
+        "tasks": 50,
+        "executor_cpu_ns": 12283000,
+        "plan_contains_delta_log_json": false
+      },
+      {
+        "execution_id": "84",
+        "description": "Delta: gold.campaign_daily: Filtering files for query",
+        "tasks": 50,
+        "executor_cpu_ns": 12469000,
+        "plan_contains_delta_log_json": false
+      },
+      {
+        "execution_id": "86",
+        "description": "gold.campaign_daily",
+        "tasks": 1,
+        "executor_cpu_ns": 24638000,
+        "plan_contains_delta_log_json": true
+      },
+      {
+        "execution_id": "87",
+        "description": "gold.campaign_daily",
+        "tasks": 50,
+        "executor_cpu_ns": 384500000,
+        "plan_contains_delta_log_json": false
+      },
+      {
+        "execution_id": "94",
+        "description": "Delta: gold.audience_daily: Filtering files for query",
+        "tasks": 50,
+        "executor_cpu_ns": 8333000,
+        "plan_contains_delta_log_json": false
+      },
+      {
+        "execution_id": "95",
+        "description": "Delta: gold.audience_daily: Filtering files for query",
+        "tasks": 50,
+        "executor_cpu_ns": 13479000,
+        "plan_contains_delta_log_json": false
+      },
+      {
+        "execution_id": "96",
+        "description": "Delta: gold.audience_daily: Filtering files for query",
+        "tasks": 50,
+        "executor_cpu_ns": 8862000,
+        "plan_contains_delta_log_json": false
+      },
+      {
+        "execution_id": "99",
+        "description": "Delta: gold.audience_daily: Filtering files for query",
+        "tasks": 50,
+        "executor_cpu_ns": 7629000,
+        "plan_contains_delta_log_json": false
+      },
+      {
+        "execution_id": "100",
+        "description": "Delta: gold.audience_daily: Filtering files for query",
+        "tasks": 50,
+        "executor_cpu_ns": 10787000,
+        "plan_contains_delta_log_json": false
+      },
+      {
+        "execution_id": "101",
+        "description": "Delta: gold.audience_daily: Filtering files for query",
+        "tasks": 50,
+        "executor_cpu_ns": 9649000,
+        "plan_contains_delta_log_json": false
+      },
+      {
+        "execution_id": "103",
+        "description": "gold.audience_daily",
+        "tasks": 1,
+        "executor_cpu_ns": 6565000,
+        "plan_contains_delta_log_json": true
+      },
+      {
+        "execution_id": "104",
+        "description": "gold.audience_daily",
+        "tasks": 50,
+        "executor_cpu_ns": 314119000,
+        "plan_contains_delta_log_json": false
+      }
+    ],
+    "03-left": [
+      {
+        "execution_id": "77",
+        "description": "Delta: gold.campaign_daily: Filtering files for query",
+        "tasks": 50,
+        "executor_cpu_ns": 8734000,
+        "plan_contains_delta_log_json": false
+      },
+      {
+        "execution_id": "78",
+        "description": "Delta: gold.campaign_daily: Filtering files for query",
+        "tasks": 50,
+        "executor_cpu_ns": 15430000,
+        "plan_contains_delta_log_json": false
+      },
+      {
+        "execution_id": "79",
+        "description": "Delta: gold.campaign_daily: Filtering files for query",
+        "tasks": 50,
+        "executor_cpu_ns": 9900000,
+        "plan_contains_delta_log_json": false
+      },
+      {
+        "execution_id": "82",
+        "description": "Delta: gold.campaign_daily: Filtering files for query",
+        "tasks": 50,
+        "executor_cpu_ns": 9557000,
+        "plan_contains_delta_log_json": false
+      },
+      {
+        "execution_id": "83",
+        "description": "Delta: gold.campaign_daily: Filtering files for query",
+        "tasks": 50,
+        "executor_cpu_ns": 9485000,
+        "plan_contains_delta_log_json": false
+      },
+      {
+        "execution_id": "84",
+        "description": "Delta: gold.campaign_daily: Filtering files for query",
+        "tasks": 50,
+        "executor_cpu_ns": 9243000,
+        "plan_contains_delta_log_json": false
+      },
+      {
+        "execution_id": "86",
+        "description": "gold.campaign_daily",
+        "tasks": 1,
+        "executor_cpu_ns": 17931000,
+        "plan_contains_delta_log_json": true
+      },
+      {
+        "execution_id": "87",
+        "description": "gold.campaign_daily",
+        "tasks": 50,
+        "executor_cpu_ns": 389193000,
+        "plan_contains_delta_log_json": false
+      },
+      {
+        "execution_id": "94",
+        "description": "Delta: gold.audience_daily: Filtering files for query",
+        "tasks": 50,
+        "executor_cpu_ns": 12513000,
+        "plan_contains_delta_log_json": false
+      },
+      {
+        "execution_id": "95",
+        "description": "Delta: gold.audience_daily: Filtering files for query",
+        "tasks": 50,
+        "executor_cpu_ns": 12227000,
+        "plan_contains_delta_log_json": false
+      },
+      {
+        "execution_id": "96",
+        "description": "Delta: gold.audience_daily: Filtering files for query",
+        "tasks": 50,
+        "executor_cpu_ns": 9882000,
+        "plan_contains_delta_log_json": false
+      },
+      {
+        "execution_id": "99",
+        "description": "Delta: gold.audience_daily: Filtering files for query",
+        "tasks": 50,
+        "executor_cpu_ns": 10828000,
+        "plan_contains_delta_log_json": false
+      },
+      {
+        "execution_id": "100",
+        "description": "Delta: gold.audience_daily: Filtering files for query",
+        "tasks": 50,
+        "executor_cpu_ns": 11333000,
+        "plan_contains_delta_log_json": false
+      },
+      {
+        "execution_id": "101",
+        "description": "Delta: gold.audience_daily: Filtering files for query",
+        "tasks": 50,
+        "executor_cpu_ns": 10591000,
+        "plan_contains_delta_log_json": false
+      },
+      {
+        "execution_id": "103",
+        "description": "gold.audience_daily",
+        "tasks": 1,
+        "executor_cpu_ns": 5952000,
+        "plan_contains_delta_log_json": true
+      },
+      {
+        "execution_id": "104",
+        "description": "gold.audience_daily",
+        "tasks": 50,
+        "executor_cpu_ns": 302570000,
+        "plan_contains_delta_log_json": false
+      }
+    ],
+    "03-right": [
+      {
+        "execution_id": "77",
+        "description": "Delta: gold.campaign_daily: Filtering files for query",
+        "tasks": 50,
+        "executor_cpu_ns": 11861000,
+        "plan_contains_delta_log_json": false
+      },
+      {
+        "execution_id": "78",
+        "description": "Delta: gold.campaign_daily: Filtering files for query",
+        "tasks": 50,
+        "executor_cpu_ns": 12113000,
+        "plan_contains_delta_log_json": false
+      },
+      {
+        "execution_id": "79",
+        "description": "Delta: gold.campaign_daily: Filtering files for query",
+        "tasks": 50,
+        "executor_cpu_ns": 11794000,
+        "plan_contains_delta_log_json": false
+      },
+      {
+        "execution_id": "82",
+        "description": "Delta: gold.campaign_daily: Filtering files for query",
+        "tasks": 50,
+        "executor_cpu_ns": 8693000,
+        "plan_contains_delta_log_json": false
+      },
+      {
+        "execution_id": "83",
+        "description": "Delta: gold.campaign_daily: Filtering files for query",
+        "tasks": 50,
+        "executor_cpu_ns": 14094000,
+        "plan_contains_delta_log_json": false
+      },
+      {
+        "execution_id": "84",
+        "description": "Delta: gold.campaign_daily: Filtering files for query",
+        "tasks": 50,
+        "executor_cpu_ns": 10218000,
+        "plan_contains_delta_log_json": false
+      },
+      {
+        "execution_id": "92",
+        "description": "Delta: gold.audience_daily: Filtering files for query",
+        "tasks": 50,
+        "executor_cpu_ns": 8399000,
+        "plan_contains_delta_log_json": false
+      },
+      {
+        "execution_id": "93",
+        "description": "Delta: gold.audience_daily: Filtering files for query",
+        "tasks": 50,
+        "executor_cpu_ns": 13150000,
+        "plan_contains_delta_log_json": false
+      },
+      {
+        "execution_id": "94",
+        "description": "Delta: gold.audience_daily: Filtering files for query",
+        "tasks": 50,
+        "executor_cpu_ns": 10796000,
+        "plan_contains_delta_log_json": false
+      },
+      {
+        "execution_id": "97",
+        "description": "Delta: gold.audience_daily: Filtering files for query",
+        "tasks": 50,
+        "executor_cpu_ns": 10981000,
+        "plan_contains_delta_log_json": false
+      },
+      {
+        "execution_id": "98",
+        "description": "Delta: gold.audience_daily: Filtering files for query",
+        "tasks": 50,
+        "executor_cpu_ns": 15449000,
+        "plan_contains_delta_log_json": false
+      },
+      {
+        "execution_id": "99",
+        "description": "Delta: gold.audience_daily: Filtering files for query",
+        "tasks": 50,
+        "executor_cpu_ns": 13080000,
+        "plan_contains_delta_log_json": false
+      }
+    ]
+  },
+  "gold_log_scan_execution_groups": {
+    "01-left": [
+      {
+        "execution_id": "86",
+        "operation": "gold.campaign_daily",
+        "scheduled_tasks": [
+          1
+        ],
+        "plan_contains_gold_delta_log_json": true
+      },
+      {
+        "execution_id": "103",
+        "operation": "gold.audience_daily",
+        "scheduled_tasks": [
+          1
+        ],
+        "plan_contains_gold_delta_log_json": true
+      }
+    ],
+    "01-right": [
+      {
+        "execution_id": "86",
+        "operation": "validate.campaign_daily",
+        "scheduled_tasks": [
+          1
+        ],
+        "plan_contains_gold_delta_log_json": true,
+        "example_plan": "01-right-sql-86.txt"
+      },
+      {
+        "execution_id": "101",
+        "operation": "validate.audience_daily",
+        "scheduled_tasks": [
+          1
+        ],
+        "plan_contains_gold_delta_log_json": true,
+        "example_plan": "01-right-sql-101.txt"
+      }
+    ],
+    "02-right": [
+      {
+        "execution_id": "86",
+        "operation": "validate.campaign_daily",
+        "scheduled_tasks": [
+          1
+        ],
+        "plan_contains_gold_delta_log_json": true
+      },
+      {
+        "execution_id": "101",
+        "operation": "validate.audience_daily",
+        "scheduled_tasks": [
+          1
+        ],
+        "plan_contains_gold_delta_log_json": true
+      }
+    ],
+    "02-left": [
+      {
+        "execution_id": "86",
+        "operation": "gold.campaign_daily",
+        "scheduled_tasks": [
+          1
+        ],
+        "plan_contains_gold_delta_log_json": true
+      },
+      {
+        "execution_id": "103",
+        "operation": "gold.audience_daily",
+        "scheduled_tasks": [
+          1
+        ],
+        "plan_contains_gold_delta_log_json": true
+      }
+    ],
+    "03-left": [
+      {
+        "execution_id": "86",
+        "operation": "gold.campaign_daily",
+        "scheduled_tasks": [
+          1
+        ],
+        "plan_contains_gold_delta_log_json": true
+      },
+      {
+        "execution_id": "103",
+        "operation": "gold.audience_daily",
+        "scheduled_tasks": [
+          1
+        ],
+        "plan_contains_gold_delta_log_json": true
+      }
+    ],
+    "03-right": [
+      {
+        "execution_id": "86",
+        "operation": "validate.campaign_daily",
+        "scheduled_tasks": [
+          1
+        ],
+        "plan_contains_gold_delta_log_json": true
+      },
+      {
+        "execution_id": "101",
+        "operation": "validate.audience_daily",
+        "scheduled_tasks": [
+          1
+        ],
+        "plan_contains_gold_delta_log_json": true
+      }
+    ]
+  },
+  "interpretation": "The one-task Gold Delta-log JSON scans move from Gold to validation groups in the variant. Controls additionally have one 50-task Delta table-state scan in each Gold group. Validation has its own state scans on both sides, so not all of the Gold task reduction is simply movement. The internal optimizer cause was not isolated."
+}

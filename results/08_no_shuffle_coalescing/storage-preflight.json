@@ -1,11 +1,20 @@
 {
-  "candidate_directories": 18,
-  "candidate_generated_table_bytes": 3503948949,
-  "checked_at": "2026-09-28T17:40:26.021260+00:00",
-  "cleanup_approval": "pending",
-  "cleanup_candidate": "outputs/comparisons/partitioning-03-20260927",
-  "deleted_directories": [],
-  "free_bytes": 4136960000,
-  "full_benchmark_status": "not_started_insufficient_space",
-  "minimum_free_bytes": 7516192768
+  "initial_preflight": {
+    "candidate_directories": 18,
+    "candidate_generated_table_bytes": 3503948949,
+    "checked_at": "2026-09-28T17:40:26.021260+00:00",
+    "cleanup_approval": "pending",
+    "cleanup_candidate": "outputs/comparisons/partitioning-03-20260927",
+    "deleted_directories": [],
+    "free_bytes": 4136960000,
+    "full_benchmark_status": "not_started_insufficient_space",
+    "minimum_free_bytes": 7516192768
+  },
+  "cleanup_approval": "User approved in chat before removal",
+  "cleanup_manifest": "cleanup.json",
+  "free_bytes_before_full_suite": 7618560000,
+  "minimum_free_bytes": 7516192768,
+  "full_benchmark_status": "succeeded",
+  "free_bytes_after_full_suite": 3727360000,
+  "checked_at": "2026-09-28T18:49:27.378527+00:00"
 }

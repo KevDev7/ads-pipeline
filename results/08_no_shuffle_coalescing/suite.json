@@ -1,0 +1,22 @@
+{
+  "comparison_id": "coalescing-08-20260928",
+  "finished_at": "2026-09-28T18:48:22.140106+00:00",
+  "iteration": "8",
+  "repeats": 3,
+  "started_at": "2026-09-28T18:24:59.298348+00:00",
+  "status": "succeeded",
+  "steps": {
+    "coalescing": {
+      "log": "coalescing-08-20260928-suite-logs/coalescing.log",
+      "status": "succeeded"
+    },
+    "codecs": {
+      "log": "coalescing-08-20260928-suite-logs/codecs.log",
+      "status": "succeeded"
+    },
+    "pipeline": {
+      "log": "coalescing-08-20260928-suite-logs/pipeline.log",
+      "status": "succeeded"
+    }
+  }
+}

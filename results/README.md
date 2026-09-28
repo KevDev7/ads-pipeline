@@ -18,7 +18,7 @@ no measurable difference.
 
 | 07 — Cached enrichment | Iteration 2 versus persisting full enrichment for both reports | Complete: reuse verified, Gold +132.45%, processing +22.32%; keep iteration 2; 40 exact comparisons passed | [Results](07_cached_enrichment/README.md) |
 
-| 08 — Shuffle coalescing | Iteration 2 versus disabling automatic shuffle-partition combining | Implementation verified: 32 tests and fixture workflow passed; full-data benchmark paused for storage | [Status and fixture evidence](08_no_shuffle_coalescing/README.md) |
+| 08 — Shuffle coalescing | Iteration 2 versus disabling automatic shuffle-partition combining | Complete: Gold +27.96%, processing +8.90%; 4 → 200 readers/files per Gold report; 40 exact comparisons passed | [Results](08_no_shuffle_coalescing/README.md) |
 
 ## Reproduce an experiment
 
