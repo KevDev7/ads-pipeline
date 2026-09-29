@@ -49,3 +49,12 @@ comparison and a `RESULTS.md` linking all applicable automated checks. See
 
 See [the comparison procedure](../docs/comparisons.md) for commands, methodology,
 the experiment entrypoint contract, and what is automated.
+
+## Generated-table retention
+
+Old benchmark table copies may be removed while their implementations and evidence
+remain available. On 2026-09-29, generated tables from iterations 6–8 were removed,
+reclaiming about 10.56 GiB; iteration 9 outputs and the original baseline were kept.
+See the [retention history and exact cleanup manifest](retention/README.md).
+Historical reports describe the outputs at measurement time; this retention log
+records which generated tables remain on disk afterward.

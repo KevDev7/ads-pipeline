@@ -1,0 +1,339 @@
+{
+  "active_spark_or_benchmark_processes_found": false,
+  "at": "2026-09-29T17:23:24.963298+00:00",
+  "authorization": "User requested project cleanup; standing authorization permits old generated table removal.",
+  "finished_at": "2026-09-29T17:23:43.487538+00:00",
+  "free_after_bytes": 17326080000,
+  "free_before_bytes": 5775360000,
+  "items": [
+    {
+      "bytes": 227336979,
+      "files": 46,
+      "path": "outputs/comparisons/shuffle-06-20260927/runs/01-left/bronze",
+      "removed": true
+    },
+    {
+      "bytes": 367941965,
+      "files": 38,
+      "path": "outputs/comparisons/shuffle-06-20260927/runs/01-left/silver",
+      "removed": true
+    },
+    {
+      "bytes": 35575538,
+      "files": 24,
+      "path": "outputs/comparisons/shuffle-06-20260927/runs/01-left/gold",
+      "removed": true
+    },
+    {
+      "bytes": 227336979,
+      "files": 46,
+      "path": "outputs/comparisons/shuffle-06-20260927/runs/01-right/bronze",
+      "removed": true
+    },
+    {
+      "bytes": 367941965,
+      "files": 38,
+      "path": "outputs/comparisons/shuffle-06-20260927/runs/01-right/silver",
+      "removed": true
+    },
+    {
+      "bytes": 34505595,
+      "files": 28,
+      "path": "outputs/comparisons/shuffle-06-20260927/runs/01-right/gold",
+      "removed": true
+    },
+    {
+      "bytes": 227336979,
+      "files": 46,
+      "path": "outputs/comparisons/shuffle-06-20260927/runs/02-right/bronze",
+      "removed": true
+    },
+    {
+      "bytes": 367941965,
+      "files": 38,
+      "path": "outputs/comparisons/shuffle-06-20260927/runs/02-right/silver",
+      "removed": true
+    },
+    {
+      "bytes": 34505595,
+      "files": 28,
+      "path": "outputs/comparisons/shuffle-06-20260927/runs/02-right/gold",
+      "removed": true
+    },
+    {
+      "bytes": 227336979,
+      "files": 46,
+      "path": "outputs/comparisons/shuffle-06-20260927/runs/02-left/bronze",
+      "removed": true
+    },
+    {
+      "bytes": 367941965,
+      "files": 38,
+      "path": "outputs/comparisons/shuffle-06-20260927/runs/02-left/silver",
+      "removed": true
+    },
+    {
+      "bytes": 35575538,
+      "files": 24,
+      "path": "outputs/comparisons/shuffle-06-20260927/runs/02-left/gold",
+      "removed": true
+    },
+    {
+      "bytes": 227336979,
+      "files": 46,
+      "path": "outputs/comparisons/shuffle-06-20260927/runs/03-left/bronze",
+      "removed": true
+    },
+    {
+      "bytes": 367941965,
+      "files": 38,
+      "path": "outputs/comparisons/shuffle-06-20260927/runs/03-left/silver",
+      "removed": true
+    },
+    {
+      "bytes": 35575538,
+      "files": 24,
+      "path": "outputs/comparisons/shuffle-06-20260927/runs/03-left/gold",
+      "removed": true
+    },
+    {
+      "bytes": 227336979,
+      "files": 46,
+      "path": "outputs/comparisons/shuffle-06-20260927/runs/03-right/bronze",
+      "removed": true
+    },
+    {
+      "bytes": 367941965,
+      "files": 38,
+      "path": "outputs/comparisons/shuffle-06-20260927/runs/03-right/silver",
+      "removed": true
+    },
+    {
+      "bytes": 34505595,
+      "files": 28,
+      "path": "outputs/comparisons/shuffle-06-20260927/runs/03-right/gold",
+      "removed": true
+    },
+    {
+      "bytes": 227336979,
+      "files": 46,
+      "path": "outputs/comparisons/cache-07-20260928/runs/01-left/bronze",
+      "removed": true
+    },
+    {
+      "bytes": 367941965,
+      "files": 38,
+      "path": "outputs/comparisons/cache-07-20260928/runs/01-left/silver",
+      "removed": true
+    },
+    {
+      "bytes": 35575538,
+      "files": 24,
+      "path": "outputs/comparisons/cache-07-20260928/runs/01-left/gold",
+      "removed": true
+    },
+    {
+      "bytes": 227336979,
+      "files": 46,
+      "path": "outputs/comparisons/cache-07-20260928/runs/01-right/bronze",
+      "removed": true
+    },
+    {
+      "bytes": 367941965,
+      "files": 38,
+      "path": "outputs/comparisons/cache-07-20260928/runs/01-right/silver",
+      "removed": true
+    },
+    {
+      "bytes": 30794382,
+      "files": 24,
+      "path": "outputs/comparisons/cache-07-20260928/runs/01-right/gold",
+      "removed": true
+    },
+    {
+      "bytes": 227336979,
+      "files": 46,
+      "path": "outputs/comparisons/cache-07-20260928/runs/02-right/bronze",
+      "removed": true
+    },
+    {
+      "bytes": 367941965,
+      "files": 38,
+      "path": "outputs/comparisons/cache-07-20260928/runs/02-right/silver",
+      "removed": true
+    },
+    {
+      "bytes": 30794382,
+      "files": 24,
+      "path": "outputs/comparisons/cache-07-20260928/runs/02-right/gold",
+      "removed": true
+    },
+    {
+      "bytes": 227336979,
+      "files": 46,
+      "path": "outputs/comparisons/cache-07-20260928/runs/02-left/bronze",
+      "removed": true
+    },
+    {
+      "bytes": 367941965,
+      "files": 38,
+      "path": "outputs/comparisons/cache-07-20260928/runs/02-left/silver",
+      "removed": true
+    },
+    {
+      "bytes": 35575538,
+      "files": 24,
+      "path": "outputs/comparisons/cache-07-20260928/runs/02-left/gold",
+      "removed": true
+    },
+    {
+      "bytes": 227336979,
+      "files": 46,
+      "path": "outputs/comparisons/cache-07-20260928/runs/03-left/bronze",
+      "removed": true
+    },
+    {
+      "bytes": 367941965,
+      "files": 38,
+      "path": "outputs/comparisons/cache-07-20260928/runs/03-left/silver",
+      "removed": true
+    },
+    {
+      "bytes": 35575538,
+      "files": 24,
+      "path": "outputs/comparisons/cache-07-20260928/runs/03-left/gold",
+      "removed": true
+    },
+    {
+      "bytes": 227336979,
+      "files": 46,
+      "path": "outputs/comparisons/cache-07-20260928/runs/03-right/bronze",
+      "removed": true
+    },
+    {
+      "bytes": 367941965,
+      "files": 38,
+      "path": "outputs/comparisons/cache-07-20260928/runs/03-right/silver",
+      "removed": true
+    },
+    {
+      "bytes": 30794382,
+      "files": 24,
+      "path": "outputs/comparisons/cache-07-20260928/runs/03-right/gold",
+      "removed": true
+    },
+    {
+      "bytes": 227336979,
+      "files": 46,
+      "path": "outputs/comparisons/coalescing-08-20260928/runs/01-left/bronze",
+      "removed": true
+    },
+    {
+      "bytes": 367941965,
+      "files": 38,
+      "path": "outputs/comparisons/coalescing-08-20260928/runs/01-left/silver",
+      "removed": true
+    },
+    {
+      "bytes": 35575538,
+      "files": 24,
+      "path": "outputs/comparisons/coalescing-08-20260928/runs/01-left/gold",
+      "removed": true
+    },
+    {
+      "bytes": 227336979,
+      "files": 46,
+      "path": "outputs/comparisons/coalescing-08-20260928/runs/01-right/bronze",
+      "removed": true
+    },
+    {
+      "bytes": 367941965,
+      "files": 38,
+      "path": "outputs/comparisons/coalescing-08-20260928/runs/01-right/silver",
+      "removed": true
+    },
+    {
+      "bytes": 36659020,
+      "files": 808,
+      "path": "outputs/comparisons/coalescing-08-20260928/runs/01-right/gold",
+      "removed": true
+    },
+    {
+      "bytes": 227336979,
+      "files": 46,
+      "path": "outputs/comparisons/coalescing-08-20260928/runs/02-right/bronze",
+      "removed": true
+    },
+    {
+      "bytes": 367941965,
+      "files": 38,
+      "path": "outputs/comparisons/coalescing-08-20260928/runs/02-right/silver",
+      "removed": true
+    },
+    {
+      "bytes": 36659020,
+      "files": 808,
+      "path": "outputs/comparisons/coalescing-08-20260928/runs/02-right/gold",
+      "removed": true
+    },
+    {
+      "bytes": 227336979,
+      "files": 46,
+      "path": "outputs/comparisons/coalescing-08-20260928/runs/02-left/bronze",
+      "removed": true
+    },
+    {
+      "bytes": 367941965,
+      "files": 38,
+      "path": "outputs/comparisons/coalescing-08-20260928/runs/02-left/silver",
+      "removed": true
+    },
+    {
+      "bytes": 35575538,
+      "files": 24,
+      "path": "outputs/comparisons/coalescing-08-20260928/runs/02-left/gold",
+      "removed": true
+    },
+    {
+      "bytes": 227336979,
+      "files": 46,
+      "path": "outputs/comparisons/coalescing-08-20260928/runs/03-left/bronze",
+      "removed": true
+    },
+    {
+      "bytes": 367941965,
+      "files": 38,
+      "path": "outputs/comparisons/coalescing-08-20260928/runs/03-left/silver",
+      "removed": true
+    },
+    {
+      "bytes": 35575538,
+      "files": 24,
+      "path": "outputs/comparisons/coalescing-08-20260928/runs/03-left/gold",
+      "removed": true
+    },
+    {
+      "bytes": 227336979,
+      "files": 46,
+      "path": "outputs/comparisons/coalescing-08-20260928/runs/03-right/bronze",
+      "removed": true
+    },
+    {
+      "bytes": 367941965,
+      "files": 38,
+      "path": "outputs/comparisons/coalescing-08-20260928/runs/03-right/silver",
+      "removed": true
+    },
+    {
+      "bytes": 36659020,
+      "files": 808,
+      "path": "outputs/comparisons/coalescing-08-20260928/runs/03-right/gold",
+      "removed": true
+    }
+  ],
+  "retained_files_unchanged": 153,
+  "retained_inventory_check": "Relative paths, file sizes and modification timestamps match before and after cleanup.",
+  "scope": "Only Bronze/Silver/Gold tables from successful iteration 6, 7 and 8 comparisons. Keep original baseline, source data, all implementations, latest iteration 9 outputs, failed runs and all reports/logs/plans.",
+  "status": "completed",
+  "total_removed_bytes": 11341077825
+}
